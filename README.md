@@ -19,7 +19,7 @@ provision that produced it.
    machine translation maintained for accessibility and open for correction.
 2. **Provenance.** The source is the consolidated text of the Strafgesetzbuch at
    [gesetze-im-internet.de](https://www.gesetze-im-internet.de/stgb/).
-   Consolidation date pinned at release: **[TO PIN]**.
+   Consolidation date pinned at release: **20.3.2026**.
 3. **This is not a restatement of German law.** Selections, deletions and a small number of
    deliberate transformations were made under published principles; every deletion is visible as
    struck text in the review documents and every transformation is disclosed by name in
