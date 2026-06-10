@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"><xs:annotation><xs:documentation>
+      Operome: OperomeStGBLife
+      Source: StGB consolidated, offences against life (provenance StGB 211, 212, 218, 221; German governs)
+      Rebuilt to the current encoding contract, superseding the earlier life carrier. The 211 scope merges Sections 211
+      and 212 per the marked-up source (Mordmerkmale and penalties struck; annotation: combined since motives are not
+      relevant for AI). The 218 scope is transformed per the annotation: the base offence excluded as not part of the
+      general ethics rules, the edited paragraph 2 chapeau encoded (non-consensual or endangering termination), the
+      pre-implantation carve-out carried as a definition. The 221 scope keeps the paragraph 2 qualification live per
+      the markup, recorded as [AggravatedCircumstances] and not gating the base composite.
+      Runtime caveat: consolidated file, not a proven executable, until the loader's scope-local resolution is tested.
+    </xs:documentation><xs:appinfo><PackageMeta><Subject>StGB Consolidated, Offences Against Life (§211 to §221)</Subject><Verb>protect</Verb><Article>StGB 211, 212, 218, 221</Article><ShortName>OperomeStGBLife</ShortName></PackageMeta></xs:appinfo></xs:annotation><xs:simpleType name="TristateEnum"><xs:restriction base="xs:string"><xs:enumeration value="true"/><xs:enumeration value="false"/><xs:enumeration value="unknown"/></xs:restriction></xs:simpleType>
+
+  <xs:complexType name="S211_PartiesGroup"><xs:sequence>
+      <xs:element name="Actor" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Who or what is the actor? Any natural person, legal person, or non-human system. Canonical home: PrimeRule. (name / identifier) | Input: Reference</xs:documentation><xs:appinfo><SurfaceForm>any person (the actor)</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S211_ConductGroup"><xs:sequence>
+      <xs:element name="KillsPerson" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} kills a person. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} kills a person</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S211_ComputableVariablesGroup"><xs:sequence>
+      <xs:element name="UnlawfulKilling" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] UnlawfulKilling. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="UnlawfulKilling" dataType="Boolean"><Definition>KillsPerson is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:element name="OperomeUnlawfulKilling"><xs:complexType><xs:sequence>
+        <xs:element name="Parties" type="S211_PartiesGroup" minOccurs="0"/>
+        <xs:element name="Conduct" type="S211_ConductGroup" minOccurs="0"/>
+        <xs:element name="ComputableVariables" type="S211_ComputableVariablesGroup" minOccurs="0"/>
+  </xs:sequence></xs:complexType></xs:element>
+  <xs:annotation><xs:appinfo>
+      <SectionScopes>
+        <Scope id="OUT-UnlawfulKilling" section="Unlawful Killing">
+          <Condition>UnlawfulKilling is true</Condition>
+          <Description>Unlawful Killing (objective Tatbestand).</Description>
+          <Variables>
+            <Variable>Actor</Variable>
+            <Variable>KillsPerson</Variable>
+            <Variable>UnlawfulKilling</Variable>
+          </Variables>
+        </Scope>
+      </SectionScopes>
+      <BusinessRules>
+        <Rule id="UKL-R01" verb="" actor="Actor">KillsPerson is true</Rule>
+        <Rule id="UKL-R80" verb="merged scope (per the markup and the annotation “combined since motives are not relevant for AI”): Sections 211 and 212 are carried as one scope; every Mordmerkmal of Section 211(2) and the Totschlag penalty structure of Section 212 are struck, leaving the shared objective core, the killing of a person; the Mord/Totschlag distinction grades punishment after the fact and adds nothing to a prospective constraint" actor="Actor">UnlawfulKilling is true</Rule>
+        <Rule id="UKL-P0" verb="not realise" actor="Actor">not UnlawfulKilling</Rule>
+      </BusinessRules>
+  </xs:appinfo></xs:annotation>
+
+
+  <xs:complexType name="S218_PartiesGroup"><xs:sequence>
+      <xs:element name="Actor" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Who or what is the actor? Any natural person, legal person, or non-human system. Canonical home: PrimeRule. (name / identifier) | Input: Reference</xs:documentation><xs:appinfo><SurfaceForm>any person (the actor)</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S218_ConductGroup"><xs:sequence>
+      <xs:element name="AgainstWillOfPregnantWoman" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} acts against the will of the pregnant woman. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} acts against the will of the pregnant woman</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DangerOfDeath" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the danger of death. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the danger of death</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DangerOfSeriousHealthDamage" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the danger of serious health damage. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the danger of serious health damage</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="RecklesslyCausesDanger" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} recklessly causes the danger to the pregnant woman. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} recklessly causes the danger to the pregnant woman</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="TerminatesPregnancy" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} terminates a pregnancy. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} terminates a pregnancy</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S218_ComputableVariablesGroup"><xs:sequence>
+      <xs:element name="EndangermentLeg" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] EndangermentLeg. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="EndangermentLeg" dataType="Boolean"><Definition>RecklesslyCausesDanger is true and (DangerOfDeath is true or DangerOfSeriousHealthDamage is true)</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="TerminationOfPregnancy" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] TerminationOfPregnancy. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="TerminationOfPregnancy" dataType="Boolean"><Definition>TerminatesPregnancy is true and (AgainstWillOfPregnantWoman is true or EndangermentLeg is true)</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:element name="OperomeTerminationOfPregnancy"><xs:complexType><xs:sequence>
+        <xs:element name="Parties" type="S218_PartiesGroup" minOccurs="0"/>
+        <xs:element name="Conduct" type="S218_ConductGroup" minOccurs="0"/>
+        <xs:element name="ComputableVariables" type="S218_ComputableVariablesGroup" minOccurs="0"/>
+  </xs:sequence></xs:complexType></xs:element>
+  <xs:annotation><xs:appinfo>
+      <SectionScopes>
+        <Scope id="OUT-TerminationOfPregnancy" section="Termination of Pregnancy">
+          <Condition>TerminationOfPregnancy is true</Condition>
+          <Description>Termination of Pregnancy (objective Tatbestand).</Description>
+          <Variables>
+            <Variable>Actor</Variable>
+            <Variable>AgainstWillOfPregnantWoman</Variable>
+            <Variable>DangerOfDeath</Variable>
+            <Variable>DangerOfSeriousHealthDamage</Variable>
+            <Variable>RecklesslyCausesDanger</Variable>
+            <Variable>TerminatesPregnancy</Variable>
+            <Variable>EndangermentLeg</Variable>
+            <Variable>TerminationOfPregnancy</Variable>
+          </Variables>
+        </Scope>
+      </SectionScopes>
+      <BusinessRules>
+        <Rule id="TPY-R01" verb="" actor="Actor">TerminatesPregnancy is true</Rule>
+        <Rule id="TPY-R02" verb="" actor="Actor">AgainstWillOfPregnantWoman is true</Rule>
+        <Rule id="TPY-R03" verb="" actor="Actor">RecklesslyCausesDanger is true</Rule>
+        <Rule id="TPY-R04" verb="" actor="None">DangerOfDeath is true</Rule>
+        <Rule id="TPY-R05" verb="" actor="None">DangerOfSeriousHealthDamage is true</Rule>
+        <Rule id="TPY-R80" verb="definition (paragraph 1 sentence 2, carried): acts whose effect occurs before completion of the implantation of the fertilised egg in the uterus do not count as termination of pregnancy within the meaning of this law; bounds {TerminatesPregnancy}" actor="None">TerminatesPregnancy is true</Rule>
+        <Rule id="TPY-R81" verb="transformation (per the annotation “not included because not part of general ethics rules”): the base offence of paragraph 1 sentence 1, terminating a pregnancy as such, is excluded, consistent with Sections 218a to 219b Excluded; the encoded offence is the paragraph 2 chapeau as edited, termination against the will of the pregnant woman or with reckless endangerment of her; paragraphs 3 and 4 struck" actor="Actor">TerminationOfPregnancy is true</Rule>
+        <Rule id="TPY-P0" verb="not realise" actor="Actor">not TerminationOfPregnancy</Rule>
+      </BusinessRules>
+  </xs:appinfo></xs:annotation>
+
+
+  <xs:complexType name="S221_PartiesGroup"><xs:sequence>
+      <xs:element name="Actor" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Who or what is the actor? Any natural person, legal person, or non-human system. Canonical home: PrimeRule. (name / identifier) | Input: Reference</xs:documentation><xs:appinfo><SurfaceForm>any person (the actor)</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S221_ConductGroup"><xs:sequence>
+      <xs:element name="AbandonsInHelplessSituation" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} abandons a person in a helpless situation. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} abandons a person in a helpless situation</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="AgainstEntrustedPerson" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the act is committed against a person entrusted to {Actor} for care. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the act is committed against a person entrusted to {Actor} for care</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="AgainstOwnChild" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the act is committed against the child of {Actor}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the act is committed against the child of {Actor}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="CausesSeriousHealthDamage" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} causes serious health damage to the victim through the act. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} causes serious health damage to the victim through the act</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ExposesToDangerOfDeath" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} thereby exposes the person to the danger of death. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} thereby exposes the person to the danger of death</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ExposesToDangerOfSeriousHealthDamage" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} thereby exposes the person to the danger of serious health damage. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} thereby exposes the person to the danger of serious health damage</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="OtherwiseObligedToAssist" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} is otherwise obliged to assist the person. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} is otherwise obliged to assist the person</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="PersonInCare" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} has the person in the care of {Actor}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} has the person in the care of {Actor}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="PlacesInHelplessSituation" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} places a person in a helpless situation. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} places a person in a helpless situation</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S221_ComputableVariablesGroup"><xs:sequence>
+      <xs:element name="AbandonmentLeg" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] AbandonmentLeg. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="AbandonmentLeg" dataType="Boolean"><Definition>AbandonsInHelplessSituation is true and (PersonInCare is true or OtherwiseObligedToAssist is true)</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Exposure" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Exposure. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Exposure" dataType="Boolean"><Definition>ExposesToDangerOfDeath is true or ExposesToDangerOfSeriousHealthDamage is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="AbandonmentEndangerment" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] AbandonmentEndangerment. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="AbandonmentEndangerment" dataType="Boolean"><Definition>(PlacesInHelplessSituation is true or AbandonmentLeg is true) and Exposure is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="AggravatedCircumstances" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] AggravatedCircumstances. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="AggravatedCircumstances" dataType="Boolean"><Definition>AgainstOwnChild is true or AgainstEntrustedPerson is true or CausesSeriousHealthDamage is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:element name="OperomeAbandonmentEndangerment"><xs:complexType><xs:sequence>
+        <xs:element name="Parties" type="S221_PartiesGroup" minOccurs="0"/>
+        <xs:element name="Conduct" type="S221_ConductGroup" minOccurs="0"/>
+        <xs:element name="ComputableVariables" type="S221_ComputableVariablesGroup" minOccurs="0"/>
+  </xs:sequence></xs:complexType></xs:element>
+  <xs:annotation><xs:appinfo>
+      <SectionScopes>
+        <Scope id="OUT-AbandonmentEndangerment" section="Abandonment">
+          <Condition>AbandonmentEndangerment is true</Condition>
+          <Description>Abandonment (objective Tatbestand).</Description>
+          <Variables>
+            <Variable>AbandonsInHelplessSituation</Variable>
+            <Variable>Actor</Variable>
+            <Variable>AgainstEntrustedPerson</Variable>
+            <Variable>AgainstOwnChild</Variable>
+            <Variable>CausesSeriousHealthDamage</Variable>
+            <Variable>ExposesToDangerOfDeath</Variable>
+            <Variable>ExposesToDangerOfSeriousHealthDamage</Variable>
+            <Variable>OtherwiseObligedToAssist</Variable>
+            <Variable>PersonInCare</Variable>
+            <Variable>PlacesInHelplessSituation</Variable>
+            <Variable>AbandonmentLeg</Variable>
+            <Variable>Exposure</Variable>
+            <Variable>AbandonmentEndangerment</Variable>
+            <Variable>AggravatedCircumstances</Variable>
+          </Variables>
+        </Scope>
+      </SectionScopes>
+      <BusinessRules>
+        <Rule id="ABE-R01" verb="" actor="Actor">PlacesInHelplessSituation is true</Rule>
+        <Rule id="ABE-R02" verb="" actor="Actor">AbandonsInHelplessSituation is true</Rule>
+        <Rule id="ABE-R03" verb="" actor="None">PersonInCare is true</Rule>
+        <Rule id="ABE-R04" verb="" actor="None">OtherwiseObligedToAssist is true</Rule>
+        <Rule id="ABE-R05" verb="" actor="Actor">ExposesToDangerOfDeath is true</Rule>
+        <Rule id="ABE-R06" verb="" actor="Actor">ExposesToDangerOfSeriousHealthDamage is true</Rule>
+        <Rule id="ABE-R07" verb="" actor="None">AgainstOwnChild is true</Rule>
+        <Rule id="ABE-R08" verb="" actor="None">AgainstEntrustedPerson is true</Rule>
+        <Rule id="ABE-R09" verb="" actor="Actor">CausesSeriousHealthDamage is true</Rule>
+        <Rule id="ABE-R80" verb="qualification (paragraph 2, live per the markup with only the penalty head struck, against the corpus convention of striking gradings; followed as marked and recorded as your decision): the act against the actor&#x27;s own child or a person entrusted for upbringing or care in the conduct of life, or causing serious health damage to the victim, qualifies the offence; carried as [AggravatedCircumstances], consumed by this rule and not gating the base composite" actor="Actor">AggravatedCircumstances is true</Rule>
+        <Rule id="ABE-P0" verb="not realise" actor="Actor">not AbandonmentEndangerment</Rule>
+      </BusinessRules>
+  </xs:appinfo></xs:annotation>
+
+</xs:schema>

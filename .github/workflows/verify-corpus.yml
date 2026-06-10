@@ -1,0 +1,24 @@
+name: verify-corpus
+on: [push, pull_request]
+jobs:
+  regenerate-and-diff:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Regenerate corpus.json from substrates
+        run: |
+          python scripts/xsd_to_json.py substrates corpus/corpus.json /tmp/regenerated.json
+      - name: Fail if committed corpus.json differs from the substrates
+        run: |
+          python - <<'PY'
+          import json
+          a=json.load(open("corpus/corpus.json")); b=json.load(open("/tmp/regenerated.json"))
+          for s in (a,b):
+              s.pop("provenance",None)
+          assert a==b, "corpus.json does not match the substrates; regenerate with scripts/xsd_to_json.py"
+          print("corpus.json matches the substrates")
+          PY
+      - name: Run golden vectors against the reference evaluator
+        run: python scripts/reference_evaluator.py corpus/corpus.json corpus/tests.json

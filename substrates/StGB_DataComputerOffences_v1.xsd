@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:documentation>
+      Operome: OperomeDataComputerOffences
+      Source: Data and Computer Offences (StGB) (provenance StGB 202a-202d, 263a, 303a-303b; German governs)
+      One combined substrate for the whole data/computer cluster. Canonical variables and computables are declared once;
+      each offence is a SectionScope. Objective Tatbestand only; intent (Vorsatz/Absicht) excluded; penalty excluded.
+    </xs:documentation>
+    <xs:appinfo>
+      <PackageMeta>
+        <Subject>Data and Computer Offences (StGB)</Subject>
+        <Verb>commit</Verb>
+        <Article>StGB 202a-202d, 263a, 303a-303b</Article>
+        <ShortName>OperomeDataComputerOffences</ShortName>
+      </PackageMeta>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:simpleType name="TristateEnum"><xs:restriction base="xs:string"><xs:enumeration value="true"/><xs:enumeration value="false"/><xs:enumeration value="unknown"/></xs:restriction></xs:simpleType>
+  <xs:complexType name="PartiesGroup"><xs:sequence>
+      <xs:element name="Actor" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Who or what is the actor? Any natural person, legal person, or non-human system. Canonical home: PrimeRule. (name / identifier) | Input: Reference</xs:documentation><xs:appinfo><SurfaceForm>any person (the actor)</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="DataObjectGroup"><xs:sequence>
+      <xs:element name="DataAltered" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Did the actor alter the data? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the actor alters the data</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DataDeleted" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Did the actor delete the data? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the actor deletes the data</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DataDisseminated" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Did the actor disseminate the data? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the actor disseminates the data</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DataElectronic" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Is the data stored or transmitted electronically? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the data is stored or transmitted electronically</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DataEnteredOrTransmitted" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Did the actor enter or transmit data? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the actor enters or transmits data</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DataFromUnlawfulAct" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Did another person obtain the data through an unlawful act? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>another person obtained the data through an unlawful act</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DataGenerallyAccessible" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Is the data generally accessible? The offence requires that it is NOT. (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the data is generally accessible</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DataIntendedForActor" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Is the data intended for the actor? The offence requires that it is NOT. (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the data is intended for the actor</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DataMadeAvailable" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Did the actor otherwise make the data available? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the actor otherwise makes the data available</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DataMagnetic" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Is the data stored or transmitted magnetically? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the data is stored or transmitted magnetically</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DataMedium" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: The data medium referred to. (the medium) | Input: Reference</xs:documentation><xs:appinfo><SurfaceForm>a data medium</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DataObtained" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Did the actor obtain the data? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the actor obtains the data</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DataObtainedForActor" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Was the data obtained for the actor? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the data is obtained for the actor</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DataObtainedForOtherPerson" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Was the data obtained for another person? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the data is obtained for another person</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DataOtherForm" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Is the data in another form, neither electronic nor magnetic? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the data is in another form</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DataPresent" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Is there data at issue? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>there is data</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DataProcessingEssentialToAnother" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Was the data processing of essential importance to another person? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the data processing is of essential importance to another person</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DataProcessingResultInfluenced" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Was the result of a data-processing operation influenced? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the result of a data-processing operation is influenced</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DataProcessingSignificantlyDisrupted" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Was data processing significantly disrupted? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>data processing is significantly disrupted</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DataProcessingSystem" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: The data-processing system referred to: the system whose emissions are tapped, or the system attacked. (the system) | Input: Reference</xs:documentation><xs:appinfo><SurfaceForm>a data-processing system</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DataProcuredForActor" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Did the actor procure the data for itself? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the actor procures the data for itself</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DataProcuredForOtherPerson" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Did the actor procure the data for another person? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the actor procures the data for another</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DataRenderedUnusable" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Did the actor render the data unusable? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the actor renders the data unusable</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DataSpeciallySecured" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Is the data specially secured against unauthorised access? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the data is specially secured against unauthorised access</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DataStored" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Is the data stored (at rest)? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the data is stored</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DataSuppressed" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Did the actor suppress the data? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the actor suppresses the data</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DataTransferred" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Did the actor transfer the data to another? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the actor transfers the data to another</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DataTransmitted" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Is the data being transmitted (in transit)? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the data is in transmission</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="PerceptibleByHumans" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: In that form, is the data directly perceptible by a human without technical aid? The qualifying criterion is that it is NOT. (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the data is directly perceptible by a human</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="ConductGroup"><xs:sequence>
+      <xs:element name="AccessForActor" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Was access to the data obtained for the actor? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>access to the data is obtained for the actor</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="AccessForOtherPerson" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Was access to the data obtained for another person? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>access to the data is obtained for another person</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="AccessSecurity" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: The access security measure protecting the data. (the protection) | Input: Reference</xs:documentation><xs:appinfo><SurfaceForm>the access security</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Authorised" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Is the actor authorised in respect of the act in scope? The offence requires that it is NOT. (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the actor is authorised in respect of the act</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ComputerProgram" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Is the tool a computer programme? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the tool is a computer programme</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="HardwareAltered" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Did the actor alter a data-processing system or data medium? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the actor alters a data-processing system or data medium</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="HardwareDamaged" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Did the actor damage a data-processing system or data medium? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the actor damages a data-processing system or data medium</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="HardwareDestroyed" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Did the actor destroy a data-processing system or data medium? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the actor destroys a data-processing system or data medium</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="HardwareRemoved" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Did the actor remove a data-processing system or data medium? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the actor removes a data-processing system or data medium</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="HardwareRenderedUnusable" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Did the actor render unusable a data-processing system or data medium? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the actor renders unusable a data-processing system or data medium</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="IncorrectOrIncompleteData" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Was the result influenced through the use of incorrect or incomplete data? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>through the use of incorrect or incomplete data</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="IncorrectProgramDesign" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Was the result influenced through incorrect design of the programme? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>through the incorrect design of the programme</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="LawfulOfficialOrProfessionalDuty" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Was the act performed exclusively in the fulfilment of a lawful official or professional duty (the statutory exception)? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the act is performed exclusively in fulfilment of a lawful official or professional duty</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="PreparesScopeOffence" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Does the conduct prepare an offence under section 202a or section 202b? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the conduct prepares an offence under section 202a or section 202b</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ProgramDesignedForOffence" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Is the programme designed for the purpose of committing a data-access or interception offence? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the programme is designed for committing the offence</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="PropertyDamageToAnother" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Did the conduct cause damage to another person&#x27;s property? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>damage is caused to another person&#x27;s property</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="SecurityCodeEnablingAccess" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Is the tool a password or security code that enables access to data? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the tool is a password or other security code enabling access to data</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="SecurityDefeated" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Was the access security defeated (overcome)? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the access security is overcome</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="SourceElectromagneticEmission" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Was the data taken from the electromagnetic emissions of a data-processing system? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>from the electromagnetic emissions of a data-processing system</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="SourceNonPublicTransmission" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Was the data taken from a non-public data transmission? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>from a non-public data transmission</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="TechnicalMeansUsed" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Were technical means used to obtain the data? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>technical means are used</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ToolDisseminated" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Did the actor disseminate the tool? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the actor disseminates the tool</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ToolMadeAvailable" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Did the actor otherwise make the tool available? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the actor otherwise makes the tool available</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ToolProcuredForActor" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Did the actor procure the tool for itself? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the actor procures the tool for itself</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ToolProcuredForOtherPerson" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Did the actor procure the tool for another person? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the actor procures the tool for another</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ToolProduced" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Did the actor produce the tool? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the actor produces the tool</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ToolSupplied" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Did the actor supply the tool to another? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the actor supplies the tool to another</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="UnauthorisedInterference" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Was the result influenced through other unauthorised interference with the process? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>through other unauthorised interference with the process</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="UnauthorisedUseOfData" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Was the result influenced through the unauthorised use of data? (true / false / unknown) | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>through the unauthorised use of data</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="ComputableVariablesGroup"><xs:sequence>
+      <xs:element name="QualifyingData" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] QualifyingData. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="QualifyingData" dataType="Boolean"><Definition>DataPresent is true and (DataStored is true or DataTransmitted is true) and (DataElectronic is true or DataMagnetic is true or (DataOtherForm is true and PerceptibleByHumans is false))</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="SecurityOvercome" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] SecurityOvercome. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="SecurityOvercome" dataType="Boolean"><Definition>SecurityDefeated is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="AccessGained" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] AccessGained. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="AccessGained" dataType="Boolean"><Definition>AccessForActor is true or AccessForOtherPerson is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="UnauthorisedDataAccess" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] UnauthorisedDataAccess. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="UnauthorisedDataAccess" dataType="Boolean"><Definition>QualifyingData is true and DataIntendedForActor is false and DataSpeciallySecured is true and SecurityOvercome is true and AccessGained is true and Authorised is false</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="DataIntercepted" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] DataIntercepted. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="DataIntercepted" dataType="Boolean"><Definition>TechnicalMeansUsed is true and (DataObtainedForActor is true or DataObtainedForOtherPerson is true) and (SourceNonPublicTransmission is true or SourceElectromagneticEmission is true)</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="InterceptionOfData" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] InterceptionOfData. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="InterceptionOfData" dataType="Boolean"><Definition>QualifyingData is true and DataIntendedForActor is false and DataIntercepted is true and Authorised is false</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="PreparatoryAct" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] PreparatoryAct. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="PreparatoryAct" dataType="Boolean"><Definition>ToolProduced is true or ToolProcuredForActor is true or ToolProcuredForOtherPerson is true or ToolSupplied is true or ToolDisseminated is true or ToolMadeAvailable is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="PreparatoryTool" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] PreparatoryTool. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="PreparatoryTool" dataType="Boolean"><Definition>SecurityCodeEnablingAccess is true or (ComputerProgram is true and ProgramDesignedForOffence is true)</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="PreparationOfDataAccess" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] PreparationOfDataAccess. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="PreparationOfDataAccess" dataType="Boolean"><Definition>PreparatoryAct is true and PreparatoryTool is true and PreparesScopeOffence is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="HandlingAct" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] HandlingAct. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="HandlingAct" dataType="Boolean"><Definition>DataObtained is true or DataProcuredForActor is true or DataProcuredForOtherPerson is true or DataTransferred is true or DataDisseminated is true or DataMadeAvailable is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="HandlingUnlawfullyObtainedData" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] HandlingUnlawfullyObtainedData. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="HandlingUnlawfullyObtainedData" dataType="Boolean"><Definition>QualifyingData is true and DataGenerallyAccessible is false and DataFromUnlawfulAct is true and HandlingAct is true and LawfulOfficialOrProfessionalDuty is false</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="FraudulentManipulation" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] FraudulentManipulation. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="FraudulentManipulation" dataType="Boolean"><Definition>IncorrectProgramDesign is true or IncorrectOrIncompleteData is true or UnauthorisedUseOfData is true or UnauthorisedInterference is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="ComputerFraud" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] ComputerFraud. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="ComputerFraud" dataType="Boolean"><Definition>PropertyDamageToAnother is true and DataProcessingResultInfluenced is true and FraudulentManipulation is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="DataImpairmentAct" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] DataImpairmentAct. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="DataImpairmentAct" dataType="Boolean"><Definition>DataDeleted is true or DataSuppressed is true or DataRenderedUnusable is true or DataAltered is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="DataAlteration" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] DataAlteration. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="DataAlteration" dataType="Boolean"><Definition>QualifyingData is true and DataImpairmentAct is true and Authorised is false</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="HardwareImpairment" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] HardwareImpairment. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="HardwareImpairment" dataType="Boolean"><Definition>HardwareDestroyed is true or HardwareDamaged is true or HardwareRenderedUnusable is true or HardwareRemoved is true or HardwareAltered is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="SabotageModality" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] SabotageModality. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="SabotageModality" dataType="Boolean"><Definition>DataAlteration is true or (DataEnteredOrTransmitted is true and QualifyingData is true) or HardwareImpairment is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="ComputerSabotage" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] ComputerSabotage. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="ComputerSabotage" dataType="Boolean"><Definition>DataProcessingSignificantlyDisrupted is true and DataProcessingEssentialToAnother is true and SabotageModality is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:element name="OperomeDataComputerOffences"><xs:complexType><xs:sequence>
+        <xs:element name="Parties" type="PartiesGroup" minOccurs="0"/>
+        <xs:element name="DataObject" type="DataObjectGroup" minOccurs="0"/>
+        <xs:element name="Conduct" type="ConductGroup" minOccurs="0"/>
+        <xs:element name="ComputableVariables" type="ComputableVariablesGroup" minOccurs="0"/>
+  </xs:sequence></xs:complexType></xs:element>
+  <xs:annotation><xs:appinfo>
+      <SectionScopes>
+        <Scope id="OUT-UnauthorisedDataAccess" section="Unauthorised Data Access" provenance="StGB 202a">
+          <Condition>UnauthorisedDataAccess is true</Condition>
+          <Description>Unauthorised Data Access (objective Tatbestand).</Description>
+          <Variables>
+            <Variable>AccessForActor</Variable>
+            <Variable>AccessForOtherPerson</Variable>
+            <Variable>AccessSecurity</Variable>
+            <Variable>Actor</Variable>
+            <Variable>Authorised</Variable>
+            <Variable>DataElectronic</Variable>
+            <Variable>DataIntendedForActor</Variable>
+            <Variable>DataMagnetic</Variable>
+            <Variable>DataOtherForm</Variable>
+            <Variable>DataPresent</Variable>
+            <Variable>DataSpeciallySecured</Variable>
+            <Variable>DataStored</Variable>
+            <Variable>DataTransmitted</Variable>
+            <Variable>PerceptibleByHumans</Variable>
+            <Variable>SecurityDefeated</Variable>
+            <Variable>QualifyingData</Variable>
+            <Variable>SecurityOvercome</Variable>
+            <Variable>AccessGained</Variable>
+            <Variable>UnauthorisedDataAccess</Variable>
+          </Variables>
+        </Scope>
+        <Scope id="OUT-InterceptionOfData" section="Interception of Data" provenance="StGB 202b">
+          <Condition>InterceptionOfData is true</Condition>
+          <Description>Interception of Data (objective Tatbestand).</Description>
+          <Variables>
+            <Variable>Actor</Variable>
+            <Variable>Authorised</Variable>
+            <Variable>DataElectronic</Variable>
+            <Variable>DataIntendedForActor</Variable>
+            <Variable>DataMagnetic</Variable>
+            <Variable>DataObtainedForActor</Variable>
+            <Variable>DataObtainedForOtherPerson</Variable>
+            <Variable>DataOtherForm</Variable>
+            <Variable>DataPresent</Variable>
+            <Variable>DataProcessingSystem</Variable>
+            <Variable>DataStored</Variable>
+            <Variable>DataTransmitted</Variable>
+            <Variable>PerceptibleByHumans</Variable>
+            <Variable>SourceElectromagneticEmission</Variable>
+            <Variable>SourceNonPublicTransmission</Variable>
+            <Variable>TechnicalMeansUsed</Variable>
+            <Variable>QualifyingData</Variable>
+            <Variable>InterceptionOfData</Variable>
+            <Variable>DataIntercepted</Variable>
+          </Variables>
+        </Scope>
+        <Scope id="OUT-PreparationOfDataAccess" section="Preparing Data Spying and Interception" provenance="StGB 202c">
+          <Condition>PreparationOfDataAccess is true</Condition>
+          <Description>Preparing Data Spying and Interception (objective Tatbestand).</Description>
+          <Variables>
+            <Variable>Actor</Variable>
+            <Variable>ComputerProgram</Variable>
+            <Variable>PreparesScopeOffence</Variable>
+            <Variable>ProgramDesignedForOffence</Variable>
+            <Variable>SecurityCodeEnablingAccess</Variable>
+            <Variable>ToolDisseminated</Variable>
+            <Variable>ToolMadeAvailable</Variable>
+            <Variable>ToolProcuredForActor</Variable>
+            <Variable>ToolProcuredForOtherPerson</Variable>
+            <Variable>ToolProduced</Variable>
+            <Variable>ToolSupplied</Variable>
+            <Variable>PreparatoryAct</Variable>
+            <Variable>PreparatoryTool</Variable>
+            <Variable>PreparationOfDataAccess</Variable>
+          </Variables>
+        </Scope>
+        <Scope id="OUT-HandlingUnlawfullyObtainedData" section="Handling of Unlawfully Obtained Data" provenance="StGB 202d">
+          <Condition>HandlingUnlawfullyObtainedData is true</Condition>
+          <Description>Handling of Unlawfully Obtained Data (objective Tatbestand).</Description>
+          <Variables>
+            <Variable>Actor</Variable>
+            <Variable>DataDisseminated</Variable>
+            <Variable>DataElectronic</Variable>
+            <Variable>DataFromUnlawfulAct</Variable>
+            <Variable>DataGenerallyAccessible</Variable>
+            <Variable>DataMadeAvailable</Variable>
+            <Variable>DataMagnetic</Variable>
+            <Variable>DataObtained</Variable>
+            <Variable>DataOtherForm</Variable>
+            <Variable>DataPresent</Variable>
+            <Variable>DataProcuredForActor</Variable>
+            <Variable>DataProcuredForOtherPerson</Variable>
+            <Variable>DataStored</Variable>
+            <Variable>DataTransferred</Variable>
+            <Variable>DataTransmitted</Variable>
+            <Variable>LawfulOfficialOrProfessionalDuty</Variable>
+            <Variable>PerceptibleByHumans</Variable>
+            <Variable>HandlingAct</Variable>
+            <Variable>HandlingUnlawfullyObtainedData</Variable>
+            <Variable>QualifyingData</Variable>
+          </Variables>
+        </Scope>
+        <Scope id="OUT-ComputerFraud" section="Computer Fraud" provenance="StGB 263a">
+          <Condition>ComputerFraud is true</Condition>
+          <Description>Computer Fraud (objective Tatbestand).</Description>
+          <Variables>
+            <Variable>Actor</Variable>
+            <Variable>DataProcessingResultInfluenced</Variable>
+            <Variable>IncorrectOrIncompleteData</Variable>
+            <Variable>IncorrectProgramDesign</Variable>
+            <Variable>PropertyDamageToAnother</Variable>
+            <Variable>UnauthorisedInterference</Variable>
+            <Variable>UnauthorisedUseOfData</Variable>
+            <Variable>ComputerFraud</Variable>
+            <Variable>FraudulentManipulation</Variable>
+          </Variables>
+        </Scope>
+        <Scope id="OUT-DataAlteration" section="Alteration of Data" provenance="StGB 303a">
+          <Condition>DataAlteration is true</Condition>
+          <Description>Alteration of Data (objective Tatbestand).</Description>
+          <Variables>
+            <Variable>Actor</Variable>
+            <Variable>Authorised</Variable>
+            <Variable>DataAltered</Variable>
+            <Variable>DataDeleted</Variable>
+            <Variable>DataElectronic</Variable>
+            <Variable>DataMagnetic</Variable>
+            <Variable>DataOtherForm</Variable>
+            <Variable>DataPresent</Variable>
+            <Variable>DataRenderedUnusable</Variable>
+            <Variable>DataStored</Variable>
+            <Variable>DataSuppressed</Variable>
+            <Variable>DataTransmitted</Variable>
+            <Variable>PerceptibleByHumans</Variable>
+            <Variable>QualifyingData</Variable>
+            <Variable>DataImpairmentAct</Variable>
+            <Variable>DataAlteration</Variable>
+          </Variables>
+        </Scope>
+        <Scope id="OUT-ComputerSabotage" section="Computer Sabotage" provenance="StGB 303b">
+          <Condition>ComputerSabotage is true</Condition>
+          <Description>Computer Sabotage (objective Tatbestand).</Description>
+          <Variables>
+            <Variable>Actor</Variable>
+            <Variable>Authorised</Variable>
+            <Variable>DataAltered</Variable>
+            <Variable>DataDeleted</Variable>
+            <Variable>DataElectronic</Variable>
+            <Variable>DataEnteredOrTransmitted</Variable>
+            <Variable>DataMagnetic</Variable>
+            <Variable>DataMedium</Variable>
+            <Variable>DataOtherForm</Variable>
+            <Variable>DataPresent</Variable>
+            <Variable>DataProcessingEssentialToAnother</Variable>
+            <Variable>DataProcessingSignificantlyDisrupted</Variable>
+            <Variable>DataProcessingSystem</Variable>
+            <Variable>DataRenderedUnusable</Variable>
+            <Variable>DataStored</Variable>
+            <Variable>DataSuppressed</Variable>
+            <Variable>DataTransmitted</Variable>
+            <Variable>HardwareAltered</Variable>
+            <Variable>HardwareDamaged</Variable>
+            <Variable>HardwareDestroyed</Variable>
+            <Variable>HardwareRemoved</Variable>
+            <Variable>HardwareRenderedUnusable</Variable>
+            <Variable>PerceptibleByHumans</Variable>
+            <Variable>DataImpairmentAct</Variable>
+            <Variable>SabotageModality</Variable>
+            <Variable>DataAlteration</Variable>
+            <Variable>QualifyingData</Variable>
+            <Variable>ComputerSabotage</Variable>
+            <Variable>HardwareImpairment</Variable>
+          </Variables>
+        </Scope>
+      </SectionScopes>
+      <BusinessRules>
+        <Rule id="ACC-R01" verb="obtain access for self or another" actor="Actor">AccessGained is true</Rule>
+        <Rule id="ACC-R02" verb="overcome the access security" actor="Actor">SecurityOvercome is true</Rule>
+        <Rule id="ACC-R03" verb="data not intended for actor" actor="None">DataIntendedForActor is false</Rule>
+        <Rule id="ACC-R04" verb="data specially secured" actor="None">DataSpeciallySecured is true</Rule>
+        <Rule id="ACC-R05" verb="qualifying data" actor="None">QualifyingData is true</Rule>
+        <Rule id="ACC-R06" verb="without authorisation" actor="Actor">Authorised is false</Rule>
+        <Rule id="ACC-P0" verb="not realise" actor="Actor">not UnauthorisedDataAccess</Rule>
+        <Rule id="INT-R01" verb="use technical means to obtain data" actor="Actor">DataIntercepted is true</Rule>
+        <Rule id="INT-R02" verb="data not intended for actor" actor="None">DataIntendedForActor is false</Rule>
+        <Rule id="INT-R03" verb="qualifying data" actor="None">QualifyingData is true</Rule>
+        <Rule id="INT-R04" verb="without authorisation" actor="Actor">Authorised is false</Rule>
+        <Rule id="INT-P0" verb="not realise" actor="Actor">not InterceptionOfData</Rule>
+        <Rule id="PRE-R01" verb="produce or procure or supply or disseminate or make available a tool" actor="Actor">PreparatoryAct is true</Rule>
+        <Rule id="PRE-R02" verb="tool is a security code or an offence programme" actor="None">PreparatoryTool is true</Rule>
+        <Rule id="PRE-R03" verb="conduct prepares a section 202a or 202b offence" actor="None">PreparesScopeOffence is true</Rule>
+        <Rule id="PRE-P0" verb="not realise" actor="Actor">not PreparationOfDataAccess</Rule>
+        <Rule id="HND-R01" verb="obtain or procure or transfer or disseminate or make available data" actor="Actor">HandlingAct is true</Rule>
+        <Rule id="HND-R02" verb="data not generally accessible" actor="None">DataGenerallyAccessible is false</Rule>
+        <Rule id="HND-R03" verb="data from another&#x27;s unlawful act" actor="None">DataFromUnlawfulAct is true</Rule>
+        <Rule id="HND-R04" verb="qualifying data" actor="None">QualifyingData is true</Rule>
+        <Rule id="HND-X01" verb="lawful duty exception absent" actor="None">LawfulOfficialOrProfessionalDuty is false</Rule>
+        <Rule id="HND-P0" verb="not realise" actor="Actor">not HandlingUnlawfullyObtainedData</Rule>
+        <Rule id="CFR-R01" verb="influence a data-processing result" actor="Actor">DataProcessingResultInfluenced is true and FraudulentManipulation is true</Rule>
+        <Rule id="CFR-R02" verb="cause property damage to another" actor="Actor">PropertyDamageToAnother is true</Rule>
+        <Rule id="CFR-P0" verb="not realise" actor="Actor">not ComputerFraud</Rule>
+        <Rule id="ALT-R01" verb="delete or suppress or render unusable or alter data" actor="Actor">DataImpairmentAct is true</Rule>
+        <Rule id="ALT-R02" verb="qualifying data" actor="None">QualifyingData is true</Rule>
+        <Rule id="ALT-R03" verb="without authorisation" actor="Actor">Authorised is false</Rule>
+        <Rule id="ALT-P0" verb="not realise" actor="Actor">not DataAlteration</Rule>
+        <Rule id="SAB-R01" verb="significantly disrupt data processing" actor="Actor">DataProcessingSignificantlyDisrupted is true</Rule>
+        <Rule id="SAB-R02" verb="processing essential to another" actor="None">DataProcessingEssentialToAnother is true</Rule>
+        <Rule id="SAB-R03" verb="by a sabotage modality" actor="Actor">SabotageModality is true</Rule>
+        <Rule id="SAB-P0" verb="not realise" actor="Actor">not ComputerSabotage</Rule>
+      </BusinessRules>
+  </xs:appinfo></xs:annotation>
+</xs:schema>

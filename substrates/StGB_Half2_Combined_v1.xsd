@@ -1,0 +1,1633 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"><xs:annotation><xs:documentation>
+      Operome: OperomeStGBHalfTwo
+      Source: StGB consolidated, half two (provenance StGB 180, 180a, 181a, 182, 184a, 184b, 184c, 184e, 184j, 184l, with the 184h definition; German governs)
+      One combined carrier for the ten sections of half two plus the sexual-act definition. Each section is a
+      SectionScope; identifiers resolve within their SectionScope. The same token (for example Person, Produces,
+      Possesses, Exploits, StateTasks) may carry a section-specific surface form: each section's variables are declared in
+      that section's own groups, exactly as emitted by the per-section build, and the per-section schemas remain the
+      canonical single-section substrates. Objective Tatbestand only; intent (Vorsatz/Absicht) excluded; penalty excluded;
+      silent repairs against the German recorded in the Flags annexes of the working document, not here.
+    </xs:documentation><xs:appinfo><PackageMeta><Subject>StGB Consolidated, Half Two (§180 to §184l)</Subject><Verb>commit</Verb><Article>StGB 180, 180a, 181a, 182, 184a, 184b, 184c, 184e, 184h, 184j, 184l</Article><ShortName>OperomeStGBHalfTwo</ShortName></PackageMeta></xs:appinfo></xs:annotation><xs:simpleType name="TristateEnum"><xs:restriction base="xs:string"><xs:enumeration value="true"/><xs:enumeration value="false"/><xs:enumeration value="unknown"/></xs:restriction></xs:simpleType>
+
+  <xs:complexType name="S180_PartiesGroup"><xs:sequence>
+      <xs:element name="Actor" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Who or what is the actor? Any natural person, legal person, or non-human system. Canonical home: PrimeRule. (name / identifier) | Input: Reference</xs:documentation><xs:appinfo><SurfaceForm>any person (the actor)</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S180_ConductGroup"><xs:sequence>
+      <xs:element name="ActOfSomeSignificance" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the act is of some significance in relation to the legal interest protected in each case. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the act is of some significance in relation to the legal interest protected in each case</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="AgeLimit16" type="xs:integer" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: sixteen years. | Input: Number</xs:documentation><xs:appinfo><SurfaceForm>sixteen years</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="AgeLimit18" type="xs:integer" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: eighteen years. | Input: Number</xs:documentation><xs:appinfo><SurfaceForm>eighteen years</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Facilitates" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} facilitates the acts. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} facilitates the acts</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ForRemuneration" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: for remuneration. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>for remuneration</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="GrantsOpportunity" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} grants an opportunity. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} grants an opportunity</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Instructs" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} instructs {Person}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} instructs {Person}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Mediation" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: through {Actor}&#x27;s mediation. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>through {Actor}&#x27;s mediation</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="MinorPerformsInFrontOfThird" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Person} performs the act in front of a {ThirdPerson}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Person} performs the act in front of a {ThirdPerson}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="MinorPerformsOnThird" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Person} performs the act on a {ThirdPerson}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Person} performs the act on a {ThirdPerson}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Person" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the minor (the protected person). | Input: Party</xs:documentation><xs:appinfo><SurfaceForm>the minor (the protected person)</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="PersonAge" type="xs:integer" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the age of {Person} in years. | Input: Number</xs:documentation><xs:appinfo><SurfaceForm>the age of {Person} in years</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ProcuresOpportunity" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} procures an opportunity. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} procures an opportunity</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ThirdPerformsOnMinor" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: a {ThirdPerson} performs the act on {Person}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>a {ThirdPerson} performs the act on {Person}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ThirdPerson" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: a third party. | Input: Party</xs:documentation><xs:appinfo><SurfaceForm>a third party</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="VictimAllowsThirdToPerform" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Person} is to allow a {ThirdPerson} to perform the act on {Person}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Person} is to allow a {ThirdPerson} to perform the act on {Person}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="VictimPerformsInFrontOfThird" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Person} is to perform the act in front of a {ThirdPerson}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Person} is to perform the act in front of a {ThirdPerson}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="VictimPerformsOnThird" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Person} is to perform the act on a {ThirdPerson}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Person} is to perform the act on a {ThirdPerson}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S180_ComputableVariablesGroup"><xs:sequence>
+      <xs:element name="SexualActs" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] SexualActs. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="SexualActs" dataType="Boolean"><Definition>ActOfSomeSignificance is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="PersonUnder16" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] PersonUnder16. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="PersonUnder16" dataType="Boolean"><Definition>PersonAge &lt; AgeLimit16</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="FacilitatedActs" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] FacilitatedActs. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="FacilitatedActs" dataType="Boolean"><Definition>MinorPerformsOnThird is true or MinorPerformsInFrontOfThird is true or ThirdPerformsOnMinor is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="FacilitationMeans" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] FacilitationMeans. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="FacilitationMeans" dataType="Boolean"><Definition>Mediation is true or GrantsOpportunity is true or ProcuresOpportunity is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Para1" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Para1. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Para1" dataType="Boolean"><Definition>SexualActs is true and PersonUnder16 is true and Facilitates is true and FacilitatedActs is true and FacilitationMeans is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="PersonUnder18" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] PersonUnder18. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="PersonUnder18" dataType="Boolean"><Definition>PersonAge &lt; AgeLimit18</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Para2Acts" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Para2Acts. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Para2Acts" dataType="Boolean"><Definition>VictimPerformsOnThird is true or VictimPerformsInFrontOfThird is true or VictimAllowsThirdToPerform is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Para2" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Para2. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Para2" dataType="Boolean"><Definition>SexualActs is true and PersonUnder18 is true and ((Instructs is true and ForRemuneration is true and Para2Acts is true) or (Facilitates is true and Mediation is true))</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="PromotionOfSexualActsOfMinors" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] PromotionOfSexualActsOfMinors. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="PromotionOfSexualActsOfMinors" dataType="Boolean"><Definition>Para1 is true or Para2 is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:element name="OperomePromotionOfSexualActsOfMinors"><xs:complexType><xs:sequence>
+        <xs:element name="Parties" type="S180_PartiesGroup" minOccurs="0"/>
+        <xs:element name="Conduct" type="S180_ConductGroup" minOccurs="0"/>
+        <xs:element name="ComputableVariables" type="S180_ComputableVariablesGroup" minOccurs="0"/>
+  </xs:sequence></xs:complexType></xs:element>
+  <xs:annotation><xs:appinfo>
+      <SectionScopes>
+        <Scope id="OUT-PromotionOfSexualActsOfMinors" section="Promotion of Sexual Acts of Minors">
+          <Condition>PromotionOfSexualActsOfMinors is true</Condition>
+          <Description>Promotion of Sexual Acts of Minors (objective Tatbestand).</Description>
+          <Variables>
+            <Variable>ActOfSomeSignificance</Variable>
+            <Variable>Actor</Variable>
+            <Variable>AgeLimit16</Variable>
+            <Variable>AgeLimit18</Variable>
+            <Variable>Facilitates</Variable>
+            <Variable>ForRemuneration</Variable>
+            <Variable>GrantsOpportunity</Variable>
+            <Variable>Instructs</Variable>
+            <Variable>Mediation</Variable>
+            <Variable>MinorPerformsInFrontOfThird</Variable>
+            <Variable>MinorPerformsOnThird</Variable>
+            <Variable>Person</Variable>
+            <Variable>PersonAge</Variable>
+            <Variable>ProcuresOpportunity</Variable>
+            <Variable>ThirdPerformsOnMinor</Variable>
+            <Variable>ThirdPerson</Variable>
+            <Variable>VictimAllowsThirdToPerform</Variable>
+            <Variable>VictimPerformsInFrontOfThird</Variable>
+            <Variable>VictimPerformsOnThird</Variable>
+            <Variable>SexualActs</Variable>
+            <Variable>PersonUnder16</Variable>
+            <Variable>FacilitatedActs</Variable>
+            <Variable>FacilitationMeans</Variable>
+            <Variable>Para1</Variable>
+            <Variable>PersonUnder18</Variable>
+            <Variable>Para2Acts</Variable>
+            <Variable>Para2</Variable>
+            <Variable>PromotionOfSexualActsOfMinors</Variable>
+          </Variables>
+        </Scope>
+      </SectionScopes>
+      <BusinessRules>
+        <Rule id="PSM-R01" verb="" actor="Actor">Facilitates is true</Rule>
+        <Rule id="PSM-R02" verb="" actor="None">MinorPerformsOnThird is true</Rule>
+        <Rule id="PSM-R03" verb="" actor="None">MinorPerformsInFrontOfThird is true</Rule>
+        <Rule id="PSM-R04" verb="" actor="None">ThirdPerformsOnMinor is true</Rule>
+        <Rule id="PSM-R05" verb="" actor="Actor">Mediation is true</Rule>
+        <Rule id="PSM-R06" verb="" actor="Actor">GrantsOpportunity is true</Rule>
+        <Rule id="PSM-R07" verb="" actor="Actor">ProcuresOpportunity is true</Rule>
+        <Rule id="PSM-R08" verb="" actor="Actor">Instructs is true</Rule>
+        <Rule id="PSM-R09" verb="" actor="None">ForRemuneration is true</Rule>
+        <Rule id="PSM-R10" verb="" actor="None">VictimPerformsOnThird is true</Rule>
+        <Rule id="PSM-R11" verb="" actor="None">VictimPerformsInFrontOfThird is true</Rule>
+        <Rule id="PSM-R12" verb="" actor="None">VictimAllowsThirdToPerform is true</Rule>
+        <Rule id="PSM-R90" verb="the person is under the age of sixteen" actor="None">PersonUnder16 is true</Rule>
+        <Rule id="PSM-R91" verb="the person is under the age of eighteen" actor="None">PersonUnder18 is true</Rule>
+        <Rule id="PSM-R92" verb="the act is a sexual act within section 184h" actor="None">SexualActs is true</Rule>
+        <Rule id="PSM-P0" verb="not realise" actor="Actor">not PromotionOfSexualActsOfMinors</Rule>
+      </BusinessRules>
+  </xs:appinfo></xs:annotation>
+
+
+  <xs:complexType name="S180a_PartiesGroup"><xs:sequence>
+      <xs:element name="Actor" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Who or what is the actor? Any natural person, legal person, or non-human system. Canonical home: PrimeRule. (name / identifier) | Input: Reference</xs:documentation><xs:appinfo><SurfaceForm>any person (the actor)</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S180a_ConductGroup"><xs:sequence>
+      <xs:element name="AgeLimit18" type="xs:integer" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: eighteen years. | Input: Number</xs:documentation><xs:appinfo><SurfaceForm>eighteen years</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="CommercialLodging" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: commercial lodging. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>commercial lodging</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="CommercialResidence" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: a commercial place of residence. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>a commercial place of residence</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Commercially" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: on a commercial basis. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>on a commercial basis</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Dwelling" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: accommodation. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>accommodation</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="EconomicDependence" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: economic dependence. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>economic dependence</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Encourages" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} encourages {Person} into prostitution. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} encourages {Person} into prostitution</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="EngageInProstitution" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: persons engage in prostitution in the {Establishment}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>persons engage in prostitution in the {Establishment}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Establishment" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: an establishment. | Input: Party</xs:documentation><xs:appinfo><SurfaceForm>an establishment</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Exploits" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} exploits {Person}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} exploits {Person}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ForProstitution" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: for the purpose of engaging in prostitution. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>for the purpose of engaging in prostitution</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="KeptInDependence" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: those persons are kept in a state of dependence in the {Establishment}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>those persons are kept in a state of dependence in the {Establishment}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Maintains" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} maintains the {Establishment}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} maintains the {Establishment}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Manages" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} manages the {Establishment}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} manages the {Establishment}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Person" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the other person. | Input: Party</xs:documentation><xs:appinfo><SurfaceForm>the other person</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="PersonAge" type="xs:integer" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the age of {Person} in years. | Input: Number</xs:documentation><xs:appinfo><SurfaceForm>the age of {Person} in years</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="PersonalDependence" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: personal dependence. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>personal dependence</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Provides" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} provides {Person}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} provides {Person}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S180a_ComputableVariablesGroup"><xs:sequence>
+      <xs:element name="PersonUnder18" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] PersonUnder18. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="PersonUnder18" dataType="Boolean"><Definition>PersonAge &lt; AgeLimit18</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="AccommodationType" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] AccommodationType. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="AccommodationType" dataType="Boolean"><Definition>Dwelling is true or CommercialLodging is true or CommercialResidence is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Leg1" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Leg1. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Leg1" dataType="Boolean"><Definition>PersonUnder18 is true and Provides is true and AccommodationType is true and ForProstitution is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Leg2" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Leg2. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Leg2" dataType="Boolean"><Definition>Provides is true and Dwelling is true and ForProstitution is true and (Encourages is true or Exploits is true)</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Para2" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Para2. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Para2" dataType="Boolean"><Definition>Leg1 is true or Leg2 is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="DependenceType" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] DependenceType. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="DependenceType" dataType="Boolean"><Definition>PersonalDependence is true or EconomicDependence is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Para1" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Para1. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Para1" dataType="Boolean"><Definition>Commercially is true and (Maintains is true or Manages is true) and EngageInProstitution is true and KeptInDependence is true and DependenceType is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="ExploitationOfProstitutes" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] ExploitationOfProstitutes. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="ExploitationOfProstitutes" dataType="Boolean"><Definition>Para1 is true or Para2 is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:element name="OperomeExploitationOfProstitutes"><xs:complexType><xs:sequence>
+        <xs:element name="Parties" type="S180a_PartiesGroup" minOccurs="0"/>
+        <xs:element name="Conduct" type="S180a_ConductGroup" minOccurs="0"/>
+        <xs:element name="ComputableVariables" type="S180a_ComputableVariablesGroup" minOccurs="0"/>
+  </xs:sequence></xs:complexType></xs:element>
+  <xs:annotation><xs:appinfo>
+      <SectionScopes>
+        <Scope id="OUT-ExploitationOfProstitutes" section="Exploitation of Prostitutes">
+          <Condition>ExploitationOfProstitutes is true</Condition>
+          <Description>Exploitation of Prostitutes (objective Tatbestand).</Description>
+          <Variables>
+            <Variable>Actor</Variable>
+            <Variable>AgeLimit18</Variable>
+            <Variable>CommercialLodging</Variable>
+            <Variable>CommercialResidence</Variable>
+            <Variable>Commercially</Variable>
+            <Variable>Dwelling</Variable>
+            <Variable>EconomicDependence</Variable>
+            <Variable>Encourages</Variable>
+            <Variable>EngageInProstitution</Variable>
+            <Variable>Establishment</Variable>
+            <Variable>Exploits</Variable>
+            <Variable>ForProstitution</Variable>
+            <Variable>KeptInDependence</Variable>
+            <Variable>Maintains</Variable>
+            <Variable>Manages</Variable>
+            <Variable>Person</Variable>
+            <Variable>PersonAge</Variable>
+            <Variable>PersonalDependence</Variable>
+            <Variable>Provides</Variable>
+            <Variable>PersonUnder18</Variable>
+            <Variable>AccommodationType</Variable>
+            <Variable>Leg1</Variable>
+            <Variable>Leg2</Variable>
+            <Variable>Para2</Variable>
+            <Variable>DependenceType</Variable>
+            <Variable>Para1</Variable>
+            <Variable>ExploitationOfProstitutes</Variable>
+          </Variables>
+        </Scope>
+      </SectionScopes>
+      <BusinessRules>
+        <Rule id="EOP-R01" verb="" actor="None">Commercially is true</Rule>
+        <Rule id="EOP-R02" verb="" actor="Actor">Maintains is true</Rule>
+        <Rule id="EOP-R03" verb="" actor="Actor">Manages is true</Rule>
+        <Rule id="EOP-R04" verb="" actor="None">EngageInProstitution is true</Rule>
+        <Rule id="EOP-R05" verb="" actor="None">KeptInDependence is true</Rule>
+        <Rule id="EOP-R06" verb="" actor="None">PersonalDependence is true</Rule>
+        <Rule id="EOP-R07" verb="" actor="None">EconomicDependence is true</Rule>
+        <Rule id="EOP-R08" verb="" actor="Actor">Provides is true</Rule>
+        <Rule id="EOP-R09" verb="" actor="None">Dwelling is true</Rule>
+        <Rule id="EOP-R10" verb="" actor="None">CommercialLodging is true</Rule>
+        <Rule id="EOP-R11" verb="" actor="None">CommercialResidence is true</Rule>
+        <Rule id="EOP-R12" verb="" actor="None">ForProstitution is true</Rule>
+        <Rule id="EOP-R13" verb="" actor="Actor">Encourages is true</Rule>
+        <Rule id="EOP-R14" verb="" actor="Actor">Exploits is true</Rule>
+        <Rule id="EOP-R90" verb="the person is under the age of eighteen" actor="None">PersonUnder18 is true</Rule>
+        <Rule id="EOP-P0" verb="not realise" actor="Actor">not ExploitationOfProstitutes</Rule>
+      </BusinessRules>
+  </xs:appinfo></xs:annotation>
+
+
+  <xs:complexType name="S181a_PartiesGroup"><xs:sequence>
+      <xs:element name="Actor" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Who or what is the actor? Any natural person, legal person, or non-human system. Canonical home: PrimeRule. (name / identifier) | Input: Reference</xs:documentation><xs:appinfo><SurfaceForm>any person (the actor)</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S181a_ConductGroup"><xs:sequence>
+      <xs:element name="ArrangementOfIntercourse" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: through the arrangement of sexual intercourse. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>through the arrangement of sexual intercourse</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="BeyondIndividualInstance" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the relationship goes beyond the individual instance. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the relationship goes beyond the individual instance</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Commercially" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: on a commercial basis. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>on a commercial basis</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Determines" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} determines circumstances of the practice of prostitution. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} determines circumstances of the practice of prostitution</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="EconomicIndependence" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the economic independence of {Person}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the economic independence of {Person}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="EngagesInProstitution" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Person} is engaged in prostitution. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Person} is engaged in prostitution</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Exploits" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} exploits {Person}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} exploits {Person}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Extent" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the extent. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the extent</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ForFinancialGain" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: for the sake of financial gain. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>for the sake of financial gain</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Impairs" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} impairs the independence of {Person}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} impairs the independence of {Person}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="MaintainsRelationship" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} maintains a relationship with {Person} in that regard. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} maintains a relationship with {Person} in that regard</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="OtherCircumstances" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: other circumstances. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>other circumstances</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Person" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the other person. | Input: Party</xs:documentation><xs:appinfo><SurfaceForm>the other person</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="PersonalIndependence" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the personal independence of {Person}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the personal independence of {Person}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Place" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the place. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the place</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Promotes" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} promotes the engagement of {Person} in prostitution. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} promotes the engagement of {Person} in prostitution</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Supervises" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} supervises {Person} in the practice of prostitution. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} supervises {Person} in the practice of prostitution</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="TakesMeasures" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} takes measures intended to prevent {Person} from giving up prostitution. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} takes measures intended to prevent {Person} from giving up prostitution</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="TimeOfPractice" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the time. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the time</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S181a_ComputableVariablesGroup"><xs:sequence>
+      <xs:element name="Leg1" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Leg1. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Leg1" dataType="Boolean"><Definition>Exploits is true and EngagesInProstitution is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="DeterminedCircumstances" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] DeterminedCircumstances. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="DeterminedCircumstances" dataType="Boolean"><Definition>Place is true or TimeOfPractice is true or Extent is true or OtherCircumstances is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Leg2Conduct" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Leg2Conduct. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Leg2Conduct" dataType="Boolean"><Definition>Supervises is true or (Determines is true and DeterminedCircumstances is true) or TakesMeasures is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Leg2" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Leg2. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Leg2" dataType="Boolean"><Definition>ForFinancialGain is true and Leg2Conduct is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="RelationshipTail" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] RelationshipTail. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="RelationshipTail" dataType="Boolean"><Definition>MaintainsRelationship is true and BeyondIndividualInstance is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Para1" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Para1. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Para1" dataType="Boolean"><Definition>(Leg1 is true or Leg2 is true) and RelationshipTail is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="ImpairedIndependence" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] ImpairedIndependence. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="ImpairedIndependence" dataType="Boolean"><Definition>PersonalIndependence is true or EconomicIndependence is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Para2" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Para2. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Para2" dataType="Boolean"><Definition>Impairs is true and ImpairedIndependence is true and Commercially is true and Promotes is true and ArrangementOfIntercourse is true and RelationshipTail is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Pimping" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Pimping. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Pimping" dataType="Boolean"><Definition>Para1 is true or Para2 is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:element name="OperomePimping"><xs:complexType><xs:sequence>
+        <xs:element name="Parties" type="S181a_PartiesGroup" minOccurs="0"/>
+        <xs:element name="Conduct" type="S181a_ConductGroup" minOccurs="0"/>
+        <xs:element name="ComputableVariables" type="S181a_ComputableVariablesGroup" minOccurs="0"/>
+  </xs:sequence></xs:complexType></xs:element>
+  <xs:annotation><xs:appinfo>
+      <SectionScopes>
+        <Scope id="OUT-Pimping" section="Pimping">
+          <Condition>Pimping is true</Condition>
+          <Description>Pimping (objective Tatbestand).</Description>
+          <Variables>
+            <Variable>Actor</Variable>
+            <Variable>ArrangementOfIntercourse</Variable>
+            <Variable>BeyondIndividualInstance</Variable>
+            <Variable>Commercially</Variable>
+            <Variable>Determines</Variable>
+            <Variable>EconomicIndependence</Variable>
+            <Variable>EngagesInProstitution</Variable>
+            <Variable>Exploits</Variable>
+            <Variable>Extent</Variable>
+            <Variable>ForFinancialGain</Variable>
+            <Variable>Impairs</Variable>
+            <Variable>MaintainsRelationship</Variable>
+            <Variable>OtherCircumstances</Variable>
+            <Variable>Person</Variable>
+            <Variable>PersonalIndependence</Variable>
+            <Variable>Place</Variable>
+            <Variable>Promotes</Variable>
+            <Variable>Supervises</Variable>
+            <Variable>TakesMeasures</Variable>
+            <Variable>TimeOfPractice</Variable>
+            <Variable>Leg1</Variable>
+            <Variable>DeterminedCircumstances</Variable>
+            <Variable>Leg2Conduct</Variable>
+            <Variable>Leg2</Variable>
+            <Variable>RelationshipTail</Variable>
+            <Variable>Para1</Variable>
+            <Variable>ImpairedIndependence</Variable>
+            <Variable>Para2</Variable>
+            <Variable>Pimping</Variable>
+          </Variables>
+        </Scope>
+      </SectionScopes>
+      <BusinessRules>
+        <Rule id="PIM-R01" verb="" actor="None">ForFinancialGain is true</Rule>
+        <Rule id="PIM-R02" verb="" actor="Actor">Exploits is true</Rule>
+        <Rule id="PIM-R03" verb="" actor="None">EngagesInProstitution is true</Rule>
+        <Rule id="PIM-R04" verb="" actor="Actor">Supervises is true</Rule>
+        <Rule id="PIM-R05" verb="" actor="Actor">Determines is true</Rule>
+        <Rule id="PIM-R06" verb="" actor="None">Place is true</Rule>
+        <Rule id="PIM-R07" verb="" actor="None">TimeOfPractice is true</Rule>
+        <Rule id="PIM-R08" verb="" actor="None">Extent is true</Rule>
+        <Rule id="PIM-R09" verb="" actor="None">OtherCircumstances is true</Rule>
+        <Rule id="PIM-R10" verb="" actor="Actor">TakesMeasures is true</Rule>
+        <Rule id="PIM-R11" verb="" actor="Actor">MaintainsRelationship is true</Rule>
+        <Rule id="PIM-R12" verb="" actor="None">BeyondIndividualInstance is true</Rule>
+        <Rule id="PIM-R13" verb="" actor="Actor">Impairs is true</Rule>
+        <Rule id="PIM-R14" verb="" actor="None">PersonalIndependence is true</Rule>
+        <Rule id="PIM-R15" verb="" actor="None">EconomicIndependence is true</Rule>
+        <Rule id="PIM-R16" verb="" actor="None">Commercially is true</Rule>
+        <Rule id="PIM-R17" verb="" actor="Actor">Promotes is true</Rule>
+        <Rule id="PIM-R18" verb="" actor="None">ArrangementOfIntercourse is true</Rule>
+        <Rule id="PIM-P0" verb="not realise" actor="Actor">not Pimping</Rule>
+      </BusinessRules>
+  </xs:appinfo></xs:annotation>
+
+
+  <xs:complexType name="S182_PartiesGroup"><xs:sequence>
+      <xs:element name="Actor" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Who or what is the actor? Any natural person, legal person, or non-human system. Canonical home: PrimeRule. (name / identifier) | Input: Reference</xs:documentation><xs:appinfo><SurfaceForm>any person (the actor)</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S182_ConductGroup"><xs:sequence>
+      <xs:element name="Abuses" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} abuses {Person}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} abuses {Person}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ActOfSomeSignificance" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the act is of some significance in relation to the legal interest protected in each case. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the act is of some significance in relation to the legal interest protected in each case</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ActorAge" type="xs:integer" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the age of {Actor} in years. | Input: Number</xs:documentation><xs:appinfo><SurfaceForm>the age of {Actor} in years</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="AgeLimit18" type="xs:integer" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: eighteen years. | Input: Number</xs:documentation><xs:appinfo><SurfaceForm>eighteen years</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Directs" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} directs {Person}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} directs {Person}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Exploits" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} exploits. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} exploits</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ForRemuneration" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: in return for payment. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>in return for payment</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="HasVictimPerformOnActor" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} has {Person} perform the act on {Actor}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} has {Person} perform the act on {Actor}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="PerformsOnVictim" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} performs the act on {Person}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} performs the act on {Person}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Person" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the protected person (the juvenile). | Input: Party</xs:documentation><xs:appinfo><SurfaceForm>the protected person (the juvenile)</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="PersonAge" type="xs:integer" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the age of {Person} in years. | Input: Number</xs:documentation><xs:appinfo><SurfaceForm>the age of {Person} in years</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="SituationOfDistress" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: a situation of distress. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>a situation of distress</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ThirdPerson" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: a third party. | Input: Party</xs:documentation><xs:appinfo><SurfaceForm>a third party</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="VictimAllowsThirdPersonToPerform" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Person} allows a {ThirdPerson} to perform the act on {Person}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Person} allows a {ThirdPerson} to perform the act on {Person}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="VictimPerformsOnThirdPerson" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Person} performs the act on a {ThirdPerson}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Person} performs the act on a {ThirdPerson}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S182_ComputableVariablesGroup"><xs:sequence>
+      <xs:element name="SexualActs" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] SexualActs. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="SexualActs" dataType="Boolean"><Definition>ActOfSomeSignificance is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="ActorOver18" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] ActorOver18. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="ActorOver18" dataType="Boolean"><Definition>ActorAge &gt; AgeLimit18</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="PersonUnder18" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] PersonUnder18. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="PersonUnder18" dataType="Boolean"><Definition>PersonAge &lt; AgeLimit18</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Leg1Conduct" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Leg1Conduct. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Leg1Conduct" dataType="Boolean"><Definition>PerformsOnVictim is true or HasVictimPerformOnActor is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Para2" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Para2. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Para2" dataType="Boolean"><Definition>SexualActs is true and ActorOver18 is true and PersonUnder18 is true and Abuses is true and ForRemuneration is true and Leg1Conduct is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Leg2Conduct" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Leg2Conduct. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Leg2Conduct" dataType="Boolean"><Definition>Directs is true and (VictimPerformsOnThirdPerson is true or VictimAllowsThirdPersonToPerform is true)</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Para1" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Para1. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Para1" dataType="Boolean"><Definition>SexualActs is true and PersonUnder18 is true and Abuses is true and Exploits is true and SituationOfDistress is true and (Leg1Conduct is true or Leg2Conduct is true)</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="SexualAbuseOfJuveniles" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] SexualAbuseOfJuveniles. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="SexualAbuseOfJuveniles" dataType="Boolean"><Definition>Para1 is true or Para2 is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:element name="OperomeSexualAbuseOfJuveniles"><xs:complexType><xs:sequence>
+        <xs:element name="Parties" type="S182_PartiesGroup" minOccurs="0"/>
+        <xs:element name="Conduct" type="S182_ConductGroup" minOccurs="0"/>
+        <xs:element name="ComputableVariables" type="S182_ComputableVariablesGroup" minOccurs="0"/>
+  </xs:sequence></xs:complexType></xs:element>
+  <xs:annotation><xs:appinfo>
+      <SectionScopes>
+        <Scope id="OUT-SexualAbuseOfJuveniles" section="Sexual Abuse of Juveniles">
+          <Condition>SexualAbuseOfJuveniles is true</Condition>
+          <Description>Sexual Abuse of Juveniles (objective Tatbestand).</Description>
+          <Variables>
+            <Variable>Abuses</Variable>
+            <Variable>ActOfSomeSignificance</Variable>
+            <Variable>Actor</Variable>
+            <Variable>ActorAge</Variable>
+            <Variable>AgeLimit18</Variable>
+            <Variable>Directs</Variable>
+            <Variable>Exploits</Variable>
+            <Variable>ForRemuneration</Variable>
+            <Variable>HasVictimPerformOnActor</Variable>
+            <Variable>PerformsOnVictim</Variable>
+            <Variable>Person</Variable>
+            <Variable>PersonAge</Variable>
+            <Variable>SituationOfDistress</Variable>
+            <Variable>ThirdPerson</Variable>
+            <Variable>VictimAllowsThirdPersonToPerform</Variable>
+            <Variable>VictimPerformsOnThirdPerson</Variable>
+            <Variable>SexualActs</Variable>
+            <Variable>ActorOver18</Variable>
+            <Variable>PersonUnder18</Variable>
+            <Variable>Leg1Conduct</Variable>
+            <Variable>Para2</Variable>
+            <Variable>Leg2Conduct</Variable>
+            <Variable>Para1</Variable>
+            <Variable>SexualAbuseOfJuveniles</Variable>
+          </Variables>
+        </Scope>
+      </SectionScopes>
+      <BusinessRules>
+        <Rule id="SAJ-R01" verb="" actor="Actor">Abuses is true</Rule>
+        <Rule id="SAJ-R02" verb="" actor="Actor">Exploits is true</Rule>
+        <Rule id="SAJ-R03" verb="" actor="None">SituationOfDistress is true</Rule>
+        <Rule id="SAJ-R04" verb="" actor="Actor">PerformsOnVictim is true</Rule>
+        <Rule id="SAJ-R05" verb="" actor="Actor">HasVictimPerformOnActor is true</Rule>
+        <Rule id="SAJ-R06" verb="" actor="Actor">Directs is true</Rule>
+        <Rule id="SAJ-R07" verb="" actor="None">VictimPerformsOnThirdPerson is true</Rule>
+        <Rule id="SAJ-R08" verb="" actor="None">VictimAllowsThirdPersonToPerform is true</Rule>
+        <Rule id="SAJ-R09" verb="" actor="None">ForRemuneration is true</Rule>
+        <Rule id="SAJ-R90" verb="the person is under the age of eighteen" actor="None">PersonUnder18 is true</Rule>
+        <Rule id="SAJ-R91" verb="the actor is over the age of eighteen" actor="None">ActorOver18 is true</Rule>
+        <Rule id="SAJ-R92" verb="the act is a sexual act within section 184h" actor="None">SexualActs is true</Rule>
+        <Rule id="SAJ-P0" verb="not realise" actor="Actor">not SexualAbuseOfJuveniles</Rule>
+      </BusinessRules>
+  </xs:appinfo></xs:annotation>
+
+
+  <xs:complexType name="S184a_PartiesGroup"><xs:sequence>
+      <xs:element name="Actor" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Who or what is the actor? Any natural person, legal person, or non-human system. Canonical home: PrimeRule. (name / identifier) | Input: Reference</xs:documentation><xs:appinfo><SurfaceForm>any person (the actor)</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S184a_ConductGroup"><xs:sequence>
+      <xs:element name="Advertises" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} advertises the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} advertises the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Content" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the pornographic content. | Input: Party</xs:documentation><xs:appinfo><SurfaceForm>the pornographic content</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DepictsHumanAnimalActs" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the content has sexual acts of humans with animals as its subject. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the content has sexual acts of humans with animals as its subject</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DepictsViolence" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the content has acts of violence as its subject. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the content has acts of violence as its subject</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Disseminates" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} distributes the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} distributes the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="EnableAnotherUse" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: for the purpose of enabling another person to use the {Content} in that way. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>for the purpose of enabling another person to use the {Content} in that way</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ForUseUnderPoint1" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: for the purpose of using the {Content} within the meaning of point 1. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>for the purpose of using the {Content} within the meaning of point 1</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="MakesAvailableToPublic" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} makes the {Content} available to the public. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} makes the {Content} available to the public</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Obtains" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} obtains the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} obtains the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Offers" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} offers the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} offers the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="PornographicContent" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the content is pornographic content within the meaning of Section 11(3). | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the content is pornographic content within the meaning of Section 11(3)</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Produces" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} produces the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} produces the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Stocks" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} stocks the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} stocks the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Supplies" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} supplies the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} supplies the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="UndertakesToExport" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} undertakes to export the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} undertakes to export the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="UndertakesToImport" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} undertakes to import the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} undertakes to import the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S184a_ComputableVariablesGroup"><xs:sequence>
+      <xs:element name="Purpose" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Purpose. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Purpose" dataType="Boolean"><Definition>ForUseUnderPoint1 is true or EnableAnotherUse is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="ContentSubject" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] ContentSubject. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="ContentSubject" dataType="Boolean"><Definition>DepictsViolence is true or DepictsHumanAnimalActs is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="QualifyingContent" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] QualifyingContent. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="QualifyingContent" dataType="Boolean"><Definition>PornographicContent is true and ContentSubject is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="TradeVerbs" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] TradeVerbs. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="TradeVerbs" dataType="Boolean"><Definition>Produces is true or Obtains is true or Supplies is true or Stocks is true or Offers is true or Advertises is true or UndertakesToImport is true or UndertakesToExport is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Leg2" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Leg2. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Leg2" dataType="Boolean"><Definition>TradeVerbs is true and Purpose is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Leg1" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Leg1. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Leg1" dataType="Boolean"><Definition>Disseminates is true or MakesAvailableToPublic is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="ViolentOrAnimalPornography" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] ViolentOrAnimalPornography. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="ViolentOrAnimalPornography" dataType="Boolean"><Definition>QualifyingContent is true and (Leg1 is true or Leg2 is true)</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:element name="OperomeViolentOrAnimalPornography"><xs:complexType><xs:sequence>
+        <xs:element name="Parties" type="S184a_PartiesGroup" minOccurs="0"/>
+        <xs:element name="Conduct" type="S184a_ConductGroup" minOccurs="0"/>
+        <xs:element name="ComputableVariables" type="S184a_ComputableVariablesGroup" minOccurs="0"/>
+  </xs:sequence></xs:complexType></xs:element>
+  <xs:annotation><xs:appinfo>
+      <SectionScopes>
+        <Scope id="OUT-ViolentOrAnimalPornography" section="Dissemination of Violent or Animal Pornography">
+          <Condition>ViolentOrAnimalPornography is true</Condition>
+          <Description>Dissemination of Violent or Animal Pornography (objective Tatbestand).</Description>
+          <Variables>
+            <Variable>Actor</Variable>
+            <Variable>Advertises</Variable>
+            <Variable>Content</Variable>
+            <Variable>DepictsHumanAnimalActs</Variable>
+            <Variable>DepictsViolence</Variable>
+            <Variable>Disseminates</Variable>
+            <Variable>EnableAnotherUse</Variable>
+            <Variable>ForUseUnderPoint1</Variable>
+            <Variable>MakesAvailableToPublic</Variable>
+            <Variable>Obtains</Variable>
+            <Variable>Offers</Variable>
+            <Variable>PornographicContent</Variable>
+            <Variable>Produces</Variable>
+            <Variable>Stocks</Variable>
+            <Variable>Supplies</Variable>
+            <Variable>UndertakesToExport</Variable>
+            <Variable>UndertakesToImport</Variable>
+            <Variable>Purpose</Variable>
+            <Variable>ContentSubject</Variable>
+            <Variable>QualifyingContent</Variable>
+            <Variable>TradeVerbs</Variable>
+            <Variable>Leg2</Variable>
+            <Variable>Leg1</Variable>
+            <Variable>ViolentOrAnimalPornography</Variable>
+          </Variables>
+        </Scope>
+      </SectionScopes>
+      <BusinessRules>
+        <Rule id="VAP-R01" verb="" actor="None">PornographicContent is true</Rule>
+        <Rule id="VAP-R02" verb="" actor="None">DepictsViolence is true</Rule>
+        <Rule id="VAP-R03" verb="" actor="None">DepictsHumanAnimalActs is true</Rule>
+        <Rule id="VAP-R04" verb="" actor="Actor">Disseminates is true</Rule>
+        <Rule id="VAP-R05" verb="" actor="Actor">MakesAvailableToPublic is true</Rule>
+        <Rule id="VAP-R06" verb="" actor="Actor">Produces is true</Rule>
+        <Rule id="VAP-R07" verb="" actor="Actor">Obtains is true</Rule>
+        <Rule id="VAP-R08" verb="" actor="Actor">Supplies is true</Rule>
+        <Rule id="VAP-R09" verb="" actor="Actor">Stocks is true</Rule>
+        <Rule id="VAP-R10" verb="" actor="Actor">Offers is true</Rule>
+        <Rule id="VAP-R11" verb="" actor="Actor">Advertises is true</Rule>
+        <Rule id="VAP-R12" verb="" actor="Actor">UndertakesToImport is true</Rule>
+        <Rule id="VAP-R13" verb="" actor="Actor">UndertakesToExport is true</Rule>
+        <Rule id="VAP-R14" verb="" actor="None">ForUseUnderPoint1 is true</Rule>
+        <Rule id="VAP-R15" verb="" actor="None">EnableAnotherUse is true</Rule>
+        <Rule id="VAP-P0" verb="not realise" actor="Actor">not ViolentOrAnimalPornography</Rule>
+      </BusinessRules>
+  </xs:appinfo></xs:annotation>
+
+
+  <xs:complexType name="S184b_PartiesGroup"><xs:sequence>
+      <xs:element name="Actor" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Who or what is the actor? Any natural person, legal person, or non-human system. Canonical home: PrimeRule. (name / identifier) | Input: Reference</xs:documentation><xs:appinfo><SurfaceForm>any person (the actor)</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S184b_ConductGroup"><xs:sequence>
+      <xs:element name="ActOfSomeSignificance" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the act is of some significance in relation to the legal interest protected in each case. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the act is of some significance in relation to the legal interest protected in each case</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ActsByChild" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the content has as its subject the act performed by {Person}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the content has as its subject the act performed by {Person}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ActsInFrontOfChild" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the content has as its subject the act performed in front of {Person}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the content has as its subject the act performed in front of {Person}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ActsOnChild" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the content has as its subject the act performed on {Person}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the content has as its subject the act performed on {Person}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Advertises" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} advertises the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} advertises the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="AgeLimit14" type="xs:integer" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: fourteen years. | Input: Number</xs:documentation><xs:appinfo><SurfaceForm>fourteen years</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="AgreementTasks" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: tasks arising from agreements with a competent state authority. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>tasks arising from agreements with a competent state authority</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ClarificationOtherwiseFutile" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: clarifying the facts of the case would otherwise be futile. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>clarifying the facts of the case would otherwise be futile</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ClarificationSignificantlyImpeded" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: clarifying the facts of the case would otherwise be significantly impeded. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>clarifying the facts of the case would otherwise be significantly impeded</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Content" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the content. | Input: Party</xs:documentation><xs:appinfo><SurfaceForm>the content</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DepictsActualEvents" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the content depicts actual events. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the content depicts actual events</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DepictsRealisticEvents" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the content depicts realistic events. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the content depicts realistic events</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Disseminates" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} distributes the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} distributes the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="EnableAnotherUse" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: for the purpose of enabling another person to use the {Content} in that way. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>for the purpose of enabling another person to use the {Content} in that way</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ForUseUnderPoint1" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: for the purpose of using the {Content} within the meaning of point 1. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>for the purpose of using the {Content} within the meaning of point 1</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ForUseUnderPoint2" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: for the purpose of using the {Content} within the meaning of point 2. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>for the purpose of using the {Content} within the meaning of point 2</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="MakesAvailableToPublic" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} makes the {Content} available to the public. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} makes the {Content} available to the public</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="NakedButtocks" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the naked buttocks of {Person}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the naked buttocks of {Person}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="NakedGenitals" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the naked genitals of {Person}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the naked genitals of {Person}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Obtains" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} obtains the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} obtains the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Offers" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} offers the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} offers the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="OfficialActInInvestigation" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the act is an official act carried out in the context of criminal investigations. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the act is an official act carried out in the context of criminal investigations</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="OfficialDuties" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: official duties. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>official duties</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="PartiallyUnclothed" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Person} is depicted partially unclothed. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Person} is depicted partially unclothed</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Person" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the child depicted. | Input: Party</xs:documentation><xs:appinfo><SurfaceForm>the child depicted</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="PersonAge" type="xs:integer" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the age of {Person} in years. | Input: Number</xs:documentation><xs:appinfo><SurfaceForm>the age of {Person} in years</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="PornographicContent" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the content is pornographic content within the meaning of Section 11(3). | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the content is pornographic content within the meaning of Section 11(3)</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Possesses" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} possesses the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} possesses the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ProducedUsingChildImage" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the content has been produced using an image of a child. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the content has been produced using an image of a child</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ProducedUsingYouthImage" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the content has been produced using an image of a young person. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the content has been produced using an image of a young person</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Produces" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} produces the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} produces the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ProfessionalDuties" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: professional duties. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>professional duties</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="PunishableUnderPoint3" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the act is punishable under point 3. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the act is punishable under point 3</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ServesExclusively" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the act serves exclusively the lawful fulfilment of the referenced duties. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the act serves exclusively the lawful fulfilment of the referenced duties</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="SexuallyProvocative" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the depiction is sexually provocative. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the depiction is sexually provocative</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="StateTasks" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: state tasks. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>state tasks</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Stocks" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} stocks the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} stocks the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="SuggestivePosture" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the depiction shows a sexually suggestive posture. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the depiction shows a sexually suggestive posture</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Supplies" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} supplies the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} supplies the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="UndertakesToAccess" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} undertakes to access the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} undertakes to access the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="UndertakesToAcquirePossession" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} undertakes to acquire possession of the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} undertakes to acquire possession of the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="UndertakesToExport" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} undertakes to export the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} undertakes to export the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="UndertakesToImport" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} undertakes to import the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} undertakes to import the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="UndertakesToMakeAccessible" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} undertakes to make the {Content} accessible to another person. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} undertakes to make the {Content} accessible to another person</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="UndertakesToProcurePossessionForAnother" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} undertakes to procure another person&#x27;s possession of the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} undertakes to procure another person&#x27;s possession of the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="WhollyUnclothed" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Person} is depicted wholly unclothed. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Person} is depicted wholly unclothed</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S184b_ComputableVariablesGroup"><xs:sequence>
+      <xs:element name="SexualActs" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] SexualActs. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="SexualActs" dataType="Boolean"><Definition>ActOfSomeSignificance is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Child" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Child. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Child" dataType="Boolean"><Definition>PersonAge &lt; AgeLimit14</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="DepictionA" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] DepictionA. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="DepictionA" dataType="Boolean"><Definition>SexualActs is true and Child is true and (ActsByChild is true or ActsOnChild is true or ActsInFrontOfChild is true)</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="DepictionB" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] DepictionB. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="DepictionB" dataType="Boolean"><Definition>Child is true and (WhollyUnclothed is true or PartiallyUnclothed is true) and SuggestivePosture is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="DepictionC" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] DepictionC. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="DepictionC" dataType="Boolean"><Definition>Child is true and SexuallyProvocative is true and (NakedGenitals is true or NakedButtocks is true)</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="ChildPornography" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] ChildPornography. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="ChildPornography" dataType="Boolean"><Definition>PornographicContent is true and (DepictionA is true or DepictionB is true or DepictionC is true)</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Leg1" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Leg1. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Leg1" dataType="Boolean"><Definition>ChildPornography is true and (Disseminates is true or MakesAvailableToPublic is true)</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="NonRealContent" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] NonRealContent. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="NonRealContent" dataType="Boolean"><Definition>DepictsActualEvents is false and ProducedUsingChildImage is false and ProducedUsingYouthImage is false</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="InvestigativeNecessity" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] InvestigativeNecessity. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="InvestigativeNecessity" dataType="Boolean"><Definition>ClarificationOtherwiseFutile is true or ClarificationSignificantlyImpeded is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Exemption6" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Exemption6. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Exemption6" dataType="Boolean"><Definition>OfficialActInInvestigation is true and NonRealContent is true and InvestigativeNecessity is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="RealOrRealistic" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] RealOrRealistic. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="RealOrRealistic" dataType="Boolean"><Definition>DepictsActualEvents is true or DepictsRealisticEvents is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Leg2" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Leg2. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Leg2" dataType="Boolean"><Definition>ChildPornography is true and RealOrRealistic is true and (UndertakesToMakeAccessible is true or UndertakesToProcurePossessionForAnother is true)</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="ExemptDuty" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] ExemptDuty. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="ExemptDuty" dataType="Boolean"><Definition>StateTasks is true or AgreementTasks is true or OfficialDuties is true or ProfessionalDuties is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Exemption5" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Exemption5. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Exemption5" dataType="Boolean"><Definition>ServesExclusively is true and ExemptDuty is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Leg3" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Leg3. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Leg3" dataType="Boolean"><Definition>ChildPornography is true and DepictsActualEvents is true and Produces is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="TradeVerbs" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] TradeVerbs. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="TradeVerbs" dataType="Boolean"><Definition>Produces is true or Obtains is true or Supplies is true or Stocks is true or Offers is true or Advertises is true or UndertakesToImport is true or UndertakesToExport is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Purpose4" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Purpose4. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Purpose4" dataType="Boolean"><Definition>ForUseUnderPoint1 is true or ForUseUnderPoint2 is true or EnableAnotherUse is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Leg4" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Leg4. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Leg4" dataType="Boolean"><Definition>ChildPornography is true and TradeVerbs is true and Purpose4 is true and PunishableUnderPoint3 is false</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Para3" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Para3. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Para3" dataType="Boolean"><Definition>ChildPornography is true and RealOrRealistic is true and (UndertakesToAccess is true or UndertakesToAcquirePossession is true or Possesses is true)</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="ChildPornographyOffences" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] ChildPornographyOffences. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="ChildPornographyOffences" dataType="Boolean"><Definition>(Leg1 is true and Exemption6 is false) or (Leg2 is true and Exemption5 is false and Exemption6 is false) or Leg3 is true or (Leg4 is true and Exemption6 is false) or (Para3 is true and Exemption5 is false)</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:element name="OperomeChildPornographyOffences"><xs:complexType><xs:sequence>
+        <xs:element name="Parties" type="S184b_PartiesGroup" minOccurs="0"/>
+        <xs:element name="Conduct" type="S184b_ConductGroup" minOccurs="0"/>
+        <xs:element name="ComputableVariables" type="S184b_ComputableVariablesGroup" minOccurs="0"/>
+  </xs:sequence></xs:complexType></xs:element>
+  <xs:annotation><xs:appinfo>
+      <SectionScopes>
+        <Scope id="OUT-ChildPornographyOffences" section="Dissemination, Acquisition and Possession of Child Pornography">
+          <Condition>ChildPornographyOffences is true</Condition>
+          <Description>Dissemination, Acquisition and Possession of Child Pornography (objective Tatbestand).</Description>
+          <Variables>
+            <Variable>ActOfSomeSignificance</Variable>
+            <Variable>Actor</Variable>
+            <Variable>ActsByChild</Variable>
+            <Variable>ActsInFrontOfChild</Variable>
+            <Variable>ActsOnChild</Variable>
+            <Variable>Advertises</Variable>
+            <Variable>AgeLimit14</Variable>
+            <Variable>AgreementTasks</Variable>
+            <Variable>ClarificationOtherwiseFutile</Variable>
+            <Variable>ClarificationSignificantlyImpeded</Variable>
+            <Variable>Content</Variable>
+            <Variable>DepictsActualEvents</Variable>
+            <Variable>DepictsRealisticEvents</Variable>
+            <Variable>Disseminates</Variable>
+            <Variable>EnableAnotherUse</Variable>
+            <Variable>ForUseUnderPoint1</Variable>
+            <Variable>ForUseUnderPoint2</Variable>
+            <Variable>MakesAvailableToPublic</Variable>
+            <Variable>NakedButtocks</Variable>
+            <Variable>NakedGenitals</Variable>
+            <Variable>Obtains</Variable>
+            <Variable>Offers</Variable>
+            <Variable>OfficialActInInvestigation</Variable>
+            <Variable>OfficialDuties</Variable>
+            <Variable>PartiallyUnclothed</Variable>
+            <Variable>Person</Variable>
+            <Variable>PersonAge</Variable>
+            <Variable>PornographicContent</Variable>
+            <Variable>Possesses</Variable>
+            <Variable>ProducedUsingChildImage</Variable>
+            <Variable>ProducedUsingYouthImage</Variable>
+            <Variable>Produces</Variable>
+            <Variable>ProfessionalDuties</Variable>
+            <Variable>PunishableUnderPoint3</Variable>
+            <Variable>ServesExclusively</Variable>
+            <Variable>SexuallyProvocative</Variable>
+            <Variable>StateTasks</Variable>
+            <Variable>Stocks</Variable>
+            <Variable>SuggestivePosture</Variable>
+            <Variable>Supplies</Variable>
+            <Variable>UndertakesToAccess</Variable>
+            <Variable>UndertakesToAcquirePossession</Variable>
+            <Variable>UndertakesToExport</Variable>
+            <Variable>UndertakesToImport</Variable>
+            <Variable>UndertakesToMakeAccessible</Variable>
+            <Variable>UndertakesToProcurePossessionForAnother</Variable>
+            <Variable>WhollyUnclothed</Variable>
+            <Variable>SexualActs</Variable>
+            <Variable>Child</Variable>
+            <Variable>DepictionA</Variable>
+            <Variable>DepictionB</Variable>
+            <Variable>DepictionC</Variable>
+            <Variable>ChildPornography</Variable>
+            <Variable>Leg1</Variable>
+            <Variable>NonRealContent</Variable>
+            <Variable>InvestigativeNecessity</Variable>
+            <Variable>Exemption6</Variable>
+            <Variable>RealOrRealistic</Variable>
+            <Variable>Leg2</Variable>
+            <Variable>ExemptDuty</Variable>
+            <Variable>Exemption5</Variable>
+            <Variable>Leg3</Variable>
+            <Variable>TradeVerbs</Variable>
+            <Variable>Purpose4</Variable>
+            <Variable>Leg4</Variable>
+            <Variable>Para3</Variable>
+            <Variable>ChildPornographyOffences</Variable>
+          </Variables>
+        </Scope>
+      </SectionScopes>
+      <BusinessRules>
+        <Rule id="CPO-R01" verb="" actor="None">PornographicContent is true</Rule>
+        <Rule id="CPO-R02" verb="" actor="None">ActsByChild is true</Rule>
+        <Rule id="CPO-R03" verb="" actor="None">ActsOnChild is true</Rule>
+        <Rule id="CPO-R04" verb="" actor="None">ActsInFrontOfChild is true</Rule>
+        <Rule id="CPO-R05" verb="" actor="None">WhollyUnclothed is true</Rule>
+        <Rule id="CPO-R06" verb="" actor="None">PartiallyUnclothed is true</Rule>
+        <Rule id="CPO-R07" verb="" actor="None">SuggestivePosture is true</Rule>
+        <Rule id="CPO-R08" verb="" actor="None">SexuallyProvocative is true</Rule>
+        <Rule id="CPO-R09" verb="" actor="None">NakedGenitals is true</Rule>
+        <Rule id="CPO-R10" verb="" actor="None">NakedButtocks is true</Rule>
+        <Rule id="CPO-R11" verb="" actor="Actor">Disseminates is true</Rule>
+        <Rule id="CPO-R12" verb="" actor="Actor">MakesAvailableToPublic is true</Rule>
+        <Rule id="CPO-R13" verb="" actor="None">DepictsActualEvents is true</Rule>
+        <Rule id="CPO-R14" verb="" actor="None">DepictsRealisticEvents is true</Rule>
+        <Rule id="CPO-R15" verb="" actor="Actor">UndertakesToMakeAccessible is true</Rule>
+        <Rule id="CPO-R16" verb="" actor="Actor">UndertakesToProcurePossessionForAnother is true</Rule>
+        <Rule id="CPO-R17" verb="" actor="Actor">Produces is true</Rule>
+        <Rule id="CPO-R18" verb="" actor="Actor">Obtains is true</Rule>
+        <Rule id="CPO-R19" verb="" actor="Actor">Supplies is true</Rule>
+        <Rule id="CPO-R20" verb="" actor="Actor">Stocks is true</Rule>
+        <Rule id="CPO-R21" verb="" actor="Actor">Offers is true</Rule>
+        <Rule id="CPO-R22" verb="" actor="Actor">Advertises is true</Rule>
+        <Rule id="CPO-R23" verb="" actor="Actor">UndertakesToImport is true</Rule>
+        <Rule id="CPO-R24" verb="" actor="Actor">UndertakesToExport is true</Rule>
+        <Rule id="CPO-R25" verb="" actor="None">ForUseUnderPoint1 is true</Rule>
+        <Rule id="CPO-R26" verb="" actor="None">ForUseUnderPoint2 is true</Rule>
+        <Rule id="CPO-R27" verb="" actor="None">EnableAnotherUse is true</Rule>
+        <Rule id="CPO-R28" verb="" actor="None">PunishableUnderPoint3 is true</Rule>
+        <Rule id="CPO-R29" verb="" actor="Actor">UndertakesToAccess is true</Rule>
+        <Rule id="CPO-R30" verb="" actor="Actor">UndertakesToAcquirePossession is true</Rule>
+        <Rule id="CPO-R31" verb="" actor="Actor">Possesses is true</Rule>
+        <Rule id="CPO-R32" verb="" actor="None">ServesExclusively is true</Rule>
+        <Rule id="CPO-R33" verb="" actor="None">StateTasks is true</Rule>
+        <Rule id="CPO-R34" verb="" actor="None">AgreementTasks is true</Rule>
+        <Rule id="CPO-R35" verb="" actor="None">OfficialDuties is true</Rule>
+        <Rule id="CPO-R36" verb="" actor="None">ProfessionalDuties is true</Rule>
+        <Rule id="CPO-R37" verb="" actor="None">OfficialActInInvestigation is true</Rule>
+        <Rule id="CPO-R38" verb="" actor="None">ProducedUsingChildImage is true</Rule>
+        <Rule id="CPO-R39" verb="" actor="None">ProducedUsingYouthImage is true</Rule>
+        <Rule id="CPO-R40" verb="" actor="None">ClarificationOtherwiseFutile is true</Rule>
+        <Rule id="CPO-R41" verb="" actor="None">ClarificationSignificantlyImpeded is true</Rule>
+        <Rule id="CPO-R90" verb="the person depicted is under the age of fourteen (a child)" actor="None">Child is true</Rule>
+        <Rule id="CPO-R91" verb="the act is a sexual act within section 184h" actor="None">SexualActs is true</Rule>
+        <Rule id="CPO-P0" verb="not realise" actor="Actor">not ChildPornographyOffences</Rule>
+      </BusinessRules>
+  </xs:appinfo></xs:annotation>
+
+
+  <xs:complexType name="S184c_PartiesGroup"><xs:sequence>
+      <xs:element name="Actor" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Who or what is the actor? Any natural person, legal person, or non-human system. Canonical home: PrimeRule. (name / identifier) | Input: Reference</xs:documentation><xs:appinfo><SurfaceForm>any person (the actor)</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S184c_ConductGroup"><xs:sequence>
+      <xs:element name="ActOfSomeSignificance" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the act is of some significance in relation to the legal interest protected in each case. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the act is of some significance in relation to the legal interest protected in each case</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ActsByYouth" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the content has as its subject the act performed by {Person}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the content has as its subject the act performed by {Person}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ActsInFrontOfYouth" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the content has as its subject the act performed in front of {Person}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the content has as its subject the act performed in front of {Person}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ActsOnYouth" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the content has as its subject the act performed on {Person}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the content has as its subject the act performed on {Person}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Advertises" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} advertises the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} advertises the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="AgeLimit14" type="xs:integer" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: fourteen years. | Input: Number</xs:documentation><xs:appinfo><SurfaceForm>fourteen years</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="AgeLimit18" type="xs:integer" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: eighteen years. | Input: Number</xs:documentation><xs:appinfo><SurfaceForm>eighteen years</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="AgreementTasks" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: tasks arising from agreements with a competent state authority. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>tasks arising from agreements with a competent state authority</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ClarificationOtherwiseFutile" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: clarifying the facts of the case would otherwise be futile. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>clarifying the facts of the case would otherwise be futile</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ClarificationSignificantlyImpeded" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: clarifying the facts of the case would otherwise be significantly impeded. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>clarifying the facts of the case would otherwise be significantly impeded</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Content" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the content. | Input: Party</xs:documentation><xs:appinfo><SurfaceForm>the content</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DepictsActualEvents" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the content depicts actual events. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the content depicts actual events</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DepictsRealisticEvents" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the content depicts realistic events. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the content depicts realistic events</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Disseminates" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} distributes the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} distributes the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="EnableAnotherUse" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: for the purpose of enabling another person to use the {Content} in that way. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>for the purpose of enabling another person to use the {Content} in that way</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ForUseUnderPoint1" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: for the purpose of using the {Content} within the meaning of point 1. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>for the purpose of using the {Content} within the meaning of point 1</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ForUseUnderPoint2" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: for the purpose of using the {Content} within the meaning of point 2. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>for the purpose of using the {Content} within the meaning of point 2</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="MakesAvailableToPublic" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} makes the {Content} available to the public. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} makes the {Content} available to the public</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="NakedButtocks" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the naked buttocks of {Person}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the naked buttocks of {Person}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="NakedGenitals" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the naked genitals of {Person}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the naked genitals of {Person}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Obtains" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} obtains the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} obtains the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Offers" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} offers the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} offers the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="OfficialActInInvestigation" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the act is an official act carried out in the context of criminal investigations. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the act is an official act carried out in the context of criminal investigations</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="OfficialDuties" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: official duties. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>official duties</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="PartiallyUnclothed" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Person} is depicted partially unclothed. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Person} is depicted partially unclothed</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Person" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the young person depicted. | Input: Party</xs:documentation><xs:appinfo><SurfaceForm>the young person depicted</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="PersonAge" type="xs:integer" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the age of {Person} in years. | Input: Number</xs:documentation><xs:appinfo><SurfaceForm>the age of {Person} in years</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="PornographicContent" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the content is pornographic content within the meaning of Section 11(3). | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the content is pornographic content within the meaning of Section 11(3)</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Possesses" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} possesses the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} possesses the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ProducedUsingChildImage" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the content has been produced using an image of a child. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the content has been produced using an image of a child</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ProducedUsingYouthImage" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the content has been produced using an image of a young person. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the content has been produced using an image of a young person</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Produces" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} produces the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} produces the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ProfessionalDuties" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: professional duties. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>professional duties</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="PunishableUnderPoint3" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the act is punishable under point 3. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the act is punishable under point 3</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ServesExclusively" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the act serves exclusively the lawful fulfilment of the referenced duties. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the act serves exclusively the lawful fulfilment of the referenced duties</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="SexuallyProvocative" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the depiction is sexually provocative. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the depiction is sexually provocative</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="StateTasks" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: state tasks. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>state tasks</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Stocks" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} stocks the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} stocks the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="SuggestivePosture" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the depiction shows a sexually suggestive posture. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the depiction shows a sexually suggestive posture</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Supplies" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} supplies the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} supplies the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="UndertakesToAccess" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} undertakes to access the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} undertakes to access the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="UndertakesToAcquirePossession" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} undertakes to acquire possession of the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} undertakes to acquire possession of the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="UndertakesToExport" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} undertakes to export the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} undertakes to export the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="UndertakesToImport" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} undertakes to import the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} undertakes to import the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="UndertakesToMakeAccessible" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} undertakes to make the {Content} accessible to another person. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} undertakes to make the {Content} accessible to another person</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="UndertakesToProcurePossessionForAnother" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} undertakes to procure another person&#x27;s possession of the {Content}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} undertakes to procure another person&#x27;s possession of the {Content}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="WhollyUnclothed" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Person} is depicted wholly unclothed. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Person} is depicted wholly unclothed</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S184c_ComputableVariablesGroup"><xs:sequence>
+      <xs:element name="Youth" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Youth. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Youth" dataType="Boolean"><Definition>PersonAge &gt;= AgeLimit14 and PersonAge &lt; AgeLimit18</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="DepictionC" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] DepictionC. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="DepictionC" dataType="Boolean"><Definition>Youth is true and SexuallyProvocative is true and (NakedGenitals is true or NakedButtocks is true)</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="SexualActs" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] SexualActs. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="SexualActs" dataType="Boolean"><Definition>ActOfSomeSignificance is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="DepictionA" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] DepictionA. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="DepictionA" dataType="Boolean"><Definition>SexualActs is true and Youth is true and (ActsByYouth is true or ActsOnYouth is true or ActsInFrontOfYouth is true)</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="DepictionB" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] DepictionB. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="DepictionB" dataType="Boolean"><Definition>Youth is true and (WhollyUnclothed is true or PartiallyUnclothed is true) and SuggestivePosture is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="YouthPornography" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] YouthPornography. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="YouthPornography" dataType="Boolean"><Definition>PornographicContent is true and (DepictionA is true or DepictionB is true or DepictionC is true)</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Leg3" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Leg3. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Leg3" dataType="Boolean"><Definition>YouthPornography is true and DepictsActualEvents is true and Produces is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="RealOrRealistic" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] RealOrRealistic. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="RealOrRealistic" dataType="Boolean"><Definition>DepictsActualEvents is true or DepictsRealisticEvents is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="TradeVerbs" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] TradeVerbs. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="TradeVerbs" dataType="Boolean"><Definition>Produces is true or Obtains is true or Supplies is true or Stocks is true or Offers is true or Advertises is true or UndertakesToImport is true or UndertakesToExport is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Purpose4" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Purpose4. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Purpose4" dataType="Boolean"><Definition>ForUseUnderPoint1 is true or ForUseUnderPoint2 is true or EnableAnotherUse is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Leg4" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Leg4. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Leg4" dataType="Boolean"><Definition>YouthPornography is true and TradeVerbs is true and Purpose4 is true and PunishableUnderPoint3 is false</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Leg1" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Leg1. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Leg1" dataType="Boolean"><Definition>YouthPornography is true and (Disseminates is true or MakesAvailableToPublic is true)</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="NonRealContent" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] NonRealContent. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="NonRealContent" dataType="Boolean"><Definition>DepictsActualEvents is false and ProducedUsingChildImage is false and ProducedUsingYouthImage is false</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Leg2" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Leg2. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Leg2" dataType="Boolean"><Definition>YouthPornography is true and RealOrRealistic is true and (UndertakesToMakeAccessible is true or UndertakesToProcurePossessionForAnother is true)</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Para3" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Para3. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Para3" dataType="Boolean"><Definition>YouthPornography is true and DepictsActualEvents is true and (UndertakesToAccess is true or UndertakesToAcquirePossession is true or Possesses is true)</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="ExemptDuty" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] ExemptDuty. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="ExemptDuty" dataType="Boolean"><Definition>StateTasks is true or AgreementTasks is true or OfficialDuties is true or ProfessionalDuties is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Exemption5" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Exemption5. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Exemption5" dataType="Boolean"><Definition>ServesExclusively is true and ExemptDuty is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="InvestigativeNecessity" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] InvestigativeNecessity. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="InvestigativeNecessity" dataType="Boolean"><Definition>ClarificationOtherwiseFutile is true or ClarificationSignificantlyImpeded is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Exemption6" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Exemption6. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Exemption6" dataType="Boolean"><Definition>OfficialActInInvestigation is true and NonRealContent is true and InvestigativeNecessity is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="YouthPornographyOffences" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] YouthPornographyOffences. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="YouthPornographyOffences" dataType="Boolean"><Definition>(Leg1 is true and Exemption6 is false) or (Leg2 is true and Exemption5 is false and Exemption6 is false) or Leg3 is true or (Leg4 is true and Exemption6 is false) or (Para3 is true and Exemption5 is false)</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:element name="OperomeYouthPornographyOffences"><xs:complexType><xs:sequence>
+        <xs:element name="Parties" type="S184c_PartiesGroup" minOccurs="0"/>
+        <xs:element name="Conduct" type="S184c_ConductGroup" minOccurs="0"/>
+        <xs:element name="ComputableVariables" type="S184c_ComputableVariablesGroup" minOccurs="0"/>
+  </xs:sequence></xs:complexType></xs:element>
+  <xs:annotation><xs:appinfo>
+      <SectionScopes>
+        <Scope id="OUT-YouthPornographyOffences" section="Dissemination, Acquisition and Possession of Youth Pornography">
+          <Condition>YouthPornographyOffences is true</Condition>
+          <Description>Dissemination, Acquisition and Possession of Youth Pornography (objective Tatbestand).</Description>
+          <Variables>
+            <Variable>ActOfSomeSignificance</Variable>
+            <Variable>Actor</Variable>
+            <Variable>ActsByYouth</Variable>
+            <Variable>ActsInFrontOfYouth</Variable>
+            <Variable>ActsOnYouth</Variable>
+            <Variable>Advertises</Variable>
+            <Variable>AgeLimit14</Variable>
+            <Variable>AgeLimit18</Variable>
+            <Variable>AgreementTasks</Variable>
+            <Variable>ClarificationOtherwiseFutile</Variable>
+            <Variable>ClarificationSignificantlyImpeded</Variable>
+            <Variable>Content</Variable>
+            <Variable>DepictsActualEvents</Variable>
+            <Variable>DepictsRealisticEvents</Variable>
+            <Variable>Disseminates</Variable>
+            <Variable>EnableAnotherUse</Variable>
+            <Variable>ForUseUnderPoint1</Variable>
+            <Variable>ForUseUnderPoint2</Variable>
+            <Variable>MakesAvailableToPublic</Variable>
+            <Variable>NakedButtocks</Variable>
+            <Variable>NakedGenitals</Variable>
+            <Variable>Obtains</Variable>
+            <Variable>Offers</Variable>
+            <Variable>OfficialActInInvestigation</Variable>
+            <Variable>OfficialDuties</Variable>
+            <Variable>PartiallyUnclothed</Variable>
+            <Variable>Person</Variable>
+            <Variable>PersonAge</Variable>
+            <Variable>PornographicContent</Variable>
+            <Variable>Possesses</Variable>
+            <Variable>ProducedUsingChildImage</Variable>
+            <Variable>ProducedUsingYouthImage</Variable>
+            <Variable>Produces</Variable>
+            <Variable>ProfessionalDuties</Variable>
+            <Variable>PunishableUnderPoint3</Variable>
+            <Variable>ServesExclusively</Variable>
+            <Variable>SexuallyProvocative</Variable>
+            <Variable>StateTasks</Variable>
+            <Variable>Stocks</Variable>
+            <Variable>SuggestivePosture</Variable>
+            <Variable>Supplies</Variable>
+            <Variable>UndertakesToAccess</Variable>
+            <Variable>UndertakesToAcquirePossession</Variable>
+            <Variable>UndertakesToExport</Variable>
+            <Variable>UndertakesToImport</Variable>
+            <Variable>UndertakesToMakeAccessible</Variable>
+            <Variable>UndertakesToProcurePossessionForAnother</Variable>
+            <Variable>WhollyUnclothed</Variable>
+            <Variable>Youth</Variable>
+            <Variable>DepictionC</Variable>
+            <Variable>SexualActs</Variable>
+            <Variable>DepictionA</Variable>
+            <Variable>DepictionB</Variable>
+            <Variable>YouthPornography</Variable>
+            <Variable>Leg3</Variable>
+            <Variable>RealOrRealistic</Variable>
+            <Variable>TradeVerbs</Variable>
+            <Variable>Purpose4</Variable>
+            <Variable>Leg4</Variable>
+            <Variable>Leg1</Variable>
+            <Variable>NonRealContent</Variable>
+            <Variable>Leg2</Variable>
+            <Variable>Para3</Variable>
+            <Variable>ExemptDuty</Variable>
+            <Variable>Exemption5</Variable>
+            <Variable>InvestigativeNecessity</Variable>
+            <Variable>Exemption6</Variable>
+            <Variable>YouthPornographyOffences</Variable>
+          </Variables>
+        </Scope>
+      </SectionScopes>
+      <BusinessRules>
+        <Rule id="YPO-R01" verb="" actor="None">PornographicContent is true</Rule>
+        <Rule id="YPO-R02" verb="" actor="None">ActsByYouth is true</Rule>
+        <Rule id="YPO-R03" verb="" actor="None">ActsOnYouth is true</Rule>
+        <Rule id="YPO-R04" verb="" actor="None">ActsInFrontOfYouth is true</Rule>
+        <Rule id="YPO-R05" verb="" actor="None">WhollyUnclothed is true</Rule>
+        <Rule id="YPO-R06" verb="" actor="None">PartiallyUnclothed is true</Rule>
+        <Rule id="YPO-R07" verb="" actor="None">SuggestivePosture is true</Rule>
+        <Rule id="YPO-R08" verb="" actor="None">SexuallyProvocative is true</Rule>
+        <Rule id="YPO-R09" verb="" actor="None">NakedGenitals is true</Rule>
+        <Rule id="YPO-R10" verb="" actor="None">NakedButtocks is true</Rule>
+        <Rule id="YPO-R11" verb="" actor="Actor">Disseminates is true</Rule>
+        <Rule id="YPO-R12" verb="" actor="Actor">MakesAvailableToPublic is true</Rule>
+        <Rule id="YPO-R13" verb="" actor="None">DepictsActualEvents is true</Rule>
+        <Rule id="YPO-R14" verb="" actor="None">DepictsRealisticEvents is true</Rule>
+        <Rule id="YPO-R15" verb="" actor="Actor">UndertakesToMakeAccessible is true</Rule>
+        <Rule id="YPO-R16" verb="" actor="Actor">UndertakesToProcurePossessionForAnother is true</Rule>
+        <Rule id="YPO-R17" verb="" actor="Actor">Produces is true</Rule>
+        <Rule id="YPO-R18" verb="" actor="Actor">Obtains is true</Rule>
+        <Rule id="YPO-R19" verb="" actor="Actor">Supplies is true</Rule>
+        <Rule id="YPO-R20" verb="" actor="Actor">Stocks is true</Rule>
+        <Rule id="YPO-R21" verb="" actor="Actor">Offers is true</Rule>
+        <Rule id="YPO-R22" verb="" actor="Actor">Advertises is true</Rule>
+        <Rule id="YPO-R23" verb="" actor="Actor">UndertakesToImport is true</Rule>
+        <Rule id="YPO-R24" verb="" actor="Actor">UndertakesToExport is true</Rule>
+        <Rule id="YPO-R25" verb="" actor="None">ForUseUnderPoint1 is true</Rule>
+        <Rule id="YPO-R26" verb="" actor="None">ForUseUnderPoint2 is true</Rule>
+        <Rule id="YPO-R27" verb="" actor="None">EnableAnotherUse is true</Rule>
+        <Rule id="YPO-R28" verb="" actor="None">PunishableUnderPoint3 is true</Rule>
+        <Rule id="YPO-R29" verb="" actor="Actor">UndertakesToAccess is true</Rule>
+        <Rule id="YPO-R30" verb="" actor="Actor">UndertakesToAcquirePossession is true</Rule>
+        <Rule id="YPO-R31" verb="" actor="Actor">Possesses is true</Rule>
+        <Rule id="YPO-R32" verb="" actor="None">ServesExclusively is true</Rule>
+        <Rule id="YPO-R33" verb="" actor="None">StateTasks is true</Rule>
+        <Rule id="YPO-R34" verb="" actor="None">AgreementTasks is true</Rule>
+        <Rule id="YPO-R35" verb="" actor="None">OfficialDuties is true</Rule>
+        <Rule id="YPO-R36" verb="" actor="None">ProfessionalDuties is true</Rule>
+        <Rule id="YPO-R37" verb="" actor="None">OfficialActInInvestigation is true</Rule>
+        <Rule id="YPO-R38" verb="" actor="None">ProducedUsingChildImage is true</Rule>
+        <Rule id="YPO-R39" verb="" actor="None">ProducedUsingYouthImage is true</Rule>
+        <Rule id="YPO-R40" verb="" actor="None">ClarificationOtherwiseFutile is true</Rule>
+        <Rule id="YPO-R41" verb="" actor="None">ClarificationSignificantlyImpeded is true</Rule>
+        <Rule id="YPO-R90" verb="the person depicted is fourteen but not yet eighteen years old" actor="None">Youth is true</Rule>
+        <Rule id="YPO-R91" verb="the act is a sexual act within section 184h" actor="None">SexualActs is true</Rule>
+        <Rule id="YPO-P0" verb="not realise" actor="Actor">not YouthPornographyOffences</Rule>
+      </BusinessRules>
+  </xs:appinfo></xs:annotation>
+
+
+  <xs:complexType name="S184e_PartiesGroup"><xs:sequence>
+      <xs:element name="Actor" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Who or what is the actor? Any natural person, legal person, or non-human system. Canonical home: PrimeRule. (name / identifier) | Input: Reference</xs:documentation><xs:appinfo><SurfaceForm>any person (the actor)</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S184e_ConductGroup"><xs:sequence>
+      <xs:element name="Attends" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} attends the performance. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} attends the performance</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ChildPornographicPerformance" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the performance is a child pornographic performance. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the performance is a child pornographic performance</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="OfficialDuties" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: official duties. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>official duties</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Organises" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} organises the performance. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} organises the performance</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ProfessionalDuties" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: professional duties. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>professional duties</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ServesExclusively" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the act serves exclusively the lawful fulfilment of the referenced duties. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the act serves exclusively the lawful fulfilment of the referenced duties</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="StateTasks" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: state tasks. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>state tasks</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="YouthPornographicPerformance" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the performance is a youth pornographic performance. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the performance is a youth pornographic performance</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S184e_ComputableVariablesGroup"><xs:sequence>
+      <xs:element name="ExemptDuty" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] ExemptDuty. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="ExemptDuty" dataType="Boolean"><Definition>StateTasks is true or OfficialDuties is true or ProfessionalDuties is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="QualifyingPerformance" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] QualifyingPerformance. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="QualifyingPerformance" dataType="Boolean"><Definition>ChildPornographicPerformance is true or YouthPornographicPerformance is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Para1" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Para1. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Para1" dataType="Boolean"><Definition>Organises is true and QualifyingPerformance is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Para2" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Para2. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Para2" dataType="Boolean"><Definition>Attends is true and QualifyingPerformance is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Exemption" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Exemption. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Exemption" dataType="Boolean"><Definition>ServesExclusively is true and ExemptDuty is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="PornographicPerformances" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] PornographicPerformances. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="PornographicPerformances" dataType="Boolean"><Definition>Para1 is true or (Para2 is true and Exemption is false)</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:element name="OperomePornographicPerformances"><xs:complexType><xs:sequence>
+        <xs:element name="Parties" type="S184e_PartiesGroup" minOccurs="0"/>
+        <xs:element name="Conduct" type="S184e_ConductGroup" minOccurs="0"/>
+        <xs:element name="ComputableVariables" type="S184e_ComputableVariablesGroup" minOccurs="0"/>
+  </xs:sequence></xs:complexType></xs:element>
+  <xs:annotation><xs:appinfo>
+      <SectionScopes>
+        <Scope id="OUT-PornographicPerformances" section="Organisation of and Attendance at Child and Youth Pornography Performances">
+          <Condition>PornographicPerformances is true</Condition>
+          <Description>Organisation of and Attendance at Child and Youth Pornography Performances (objective Tatbestand).</Description>
+          <Variables>
+            <Variable>Actor</Variable>
+            <Variable>Attends</Variable>
+            <Variable>ChildPornographicPerformance</Variable>
+            <Variable>OfficialDuties</Variable>
+            <Variable>Organises</Variable>
+            <Variable>ProfessionalDuties</Variable>
+            <Variable>ServesExclusively</Variable>
+            <Variable>StateTasks</Variable>
+            <Variable>YouthPornographicPerformance</Variable>
+            <Variable>ExemptDuty</Variable>
+            <Variable>QualifyingPerformance</Variable>
+            <Variable>Para1</Variable>
+            <Variable>Para2</Variable>
+            <Variable>Exemption</Variable>
+            <Variable>PornographicPerformances</Variable>
+          </Variables>
+        </Scope>
+      </SectionScopes>
+      <BusinessRules>
+        <Rule id="PPF-R01" verb="" actor="None">ChildPornographicPerformance is true</Rule>
+        <Rule id="PPF-R02" verb="" actor="None">YouthPornographicPerformance is true</Rule>
+        <Rule id="PPF-R03" verb="" actor="Actor">Organises is true</Rule>
+        <Rule id="PPF-R04" verb="" actor="Actor">Attends is true</Rule>
+        <Rule id="PPF-R05" verb="" actor="None">ServesExclusively is true</Rule>
+        <Rule id="PPF-R06" verb="" actor="None">StateTasks is true</Rule>
+        <Rule id="PPF-R07" verb="" actor="None">OfficialDuties is true</Rule>
+        <Rule id="PPF-R08" verb="" actor="None">ProfessionalDuties is true</Rule>
+        <Rule id="PPF-P0" verb="not realise" actor="Actor">not PornographicPerformances</Rule>
+      </BusinessRules>
+  </xs:appinfo></xs:annotation>
+
+
+  <xs:complexType name="S184h_PartiesGroup"><xs:sequence>
+      <xs:element name="Actor" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Who or what is the actor? Any natural person, legal person, or non-human system. Canonical home: PrimeRule. (name / identifier) | Input: Reference</xs:documentation><xs:appinfo><SurfaceForm>any person (the actor)</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S184h_ConductGroup"><xs:sequence>
+      <xs:element name="ActOfSomeSignificance" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the act is of some significance in relation to the legal interest protected in each case. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the act is of some significance in relation to the legal interest protected in each case</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S184h_ComputableVariablesGroup"><xs:sequence>
+      <xs:element name="SexualActs" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] SexualActs. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="SexualActs" dataType="Boolean"><Definition>ActOfSomeSignificance is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:element name="OperomeSexualActs"><xs:complexType><xs:sequence>
+        <xs:element name="Parties" type="S184h_PartiesGroup" minOccurs="0"/>
+        <xs:element name="Conduct" type="S184h_ConductGroup" minOccurs="0"/>
+        <xs:element name="ComputableVariables" type="S184h_ComputableVariablesGroup" minOccurs="0"/>
+  </xs:sequence></xs:complexType></xs:element>
+  <xs:annotation><xs:appinfo>
+      <SectionScopes>
+        <Scope id="OUT-SexualActs" section="Definition of a Sexual Act">
+          <Condition>SexualActs is true</Condition>
+          <Description>Definition of a Sexual Act (objective Tatbestand).</Description>
+          <Variables>
+            <Variable>ActOfSomeSignificance</Variable>
+            <Variable>Actor</Variable>
+            <Variable>SexualActs</Variable>
+          </Variables>
+        </Scope>
+      </SectionScopes>
+      <BusinessRules>
+        <Rule id="SAD-R01" verb="of some significance in relation to the legal interest protected in each case" actor="None">ActOfSomeSignificance is true</Rule>
+        <Rule id="SAD-D0" verb="the term is satisfied" actor="None">SexualActs is true</Rule>
+      </BusinessRules>
+  </xs:appinfo></xs:annotation>
+
+
+  <xs:complexType name="S184j_PartiesGroup"><xs:sequence>
+      <xs:element name="Actor" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Who or what is the actor? Any natural person, legal person, or non-human system. Canonical home: PrimeRule. (name / identifier) | Input: Reference</xs:documentation><xs:appinfo><SurfaceForm>any person (the actor)</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S184j_ConductGroup"><xs:sequence>
+      <xs:element name="EncouragesOffence" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} encourages a criminal offence. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} encourages a criminal offence</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Group" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: a group of persons. | Input: Party</xs:documentation><xs:appinfo><SurfaceForm>a group of persons</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="GroupBesetsPerson" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the {Group} besets {Person} for the commission of a criminal offence against {Person}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the {Group} besets {Person} for the commission of a criminal offence against {Person}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="MemberCommits177" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: a member of the {Group} commits an offence under Section 177. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>a member of the {Group} commits an offence under Section 177</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="MemberCommits184i" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: a member of the {Group} commits an offence under Section 184i. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>a member of the {Group} commits an offence under Section 184i</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="MoreSeverePenaltyElsewhere" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the act is punishable by a more severe penalty under other provisions. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the act is punishable by a more severe penalty under other provisions</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ParticipatesInGroup" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} participates in the {Group}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} participates in the {Group}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Person" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the beset person. | Input: Party</xs:documentation><xs:appinfo><SurfaceForm>the beset person</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S184j_ComputableVariablesGroup"><xs:sequence>
+      <xs:element name="GroupOffence" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] GroupOffence. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="GroupOffence" dataType="Boolean"><Definition>MemberCommits177 is true or MemberCommits184i is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="GroupOffences" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] GroupOffences. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="GroupOffences" dataType="Boolean"><Definition>EncouragesOffence is true and ParticipatesInGroup is true and GroupBesetsPerson is true and GroupOffence is true and MoreSeverePenaltyElsewhere is false</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:element name="OperomeGroupOffences"><xs:complexType><xs:sequence>
+        <xs:element name="Parties" type="S184j_PartiesGroup" minOccurs="0"/>
+        <xs:element name="Conduct" type="S184j_ConductGroup" minOccurs="0"/>
+        <xs:element name="ComputableVariables" type="S184j_ComputableVariablesGroup" minOccurs="0"/>
+  </xs:sequence></xs:complexType></xs:element>
+  <xs:annotation><xs:appinfo>
+      <SectionScopes>
+        <Scope id="OUT-GroupOffences" section="Offences from Groups">
+          <Condition>GroupOffences is true</Condition>
+          <Description>Offences from Groups (objective Tatbestand).</Description>
+          <Variables>
+            <Variable>Actor</Variable>
+            <Variable>EncouragesOffence</Variable>
+            <Variable>Group</Variable>
+            <Variable>GroupBesetsPerson</Variable>
+            <Variable>MemberCommits177</Variable>
+            <Variable>MemberCommits184i</Variable>
+            <Variable>MoreSeverePenaltyElsewhere</Variable>
+            <Variable>ParticipatesInGroup</Variable>
+            <Variable>Person</Variable>
+            <Variable>GroupOffence</Variable>
+            <Variable>GroupOffences</Variable>
+          </Variables>
+        </Scope>
+      </SectionScopes>
+      <BusinessRules>
+        <Rule id="GRO-R01" verb="" actor="Actor">EncouragesOffence is true</Rule>
+        <Rule id="GRO-R02" verb="" actor="Actor">ParticipatesInGroup is true</Rule>
+        <Rule id="GRO-R03" verb="" actor="None">GroupBesetsPerson is true</Rule>
+        <Rule id="GRO-R04" verb="" actor="None">MemberCommits177 is true</Rule>
+        <Rule id="GRO-R05" verb="" actor="None">MemberCommits184i is true</Rule>
+        <Rule id="GRO-R06" verb="" actor="None">MoreSeverePenaltyElsewhere is true</Rule>
+        <Rule id="GRO-P0" verb="not realise" actor="Actor">not GroupOffences</Rule>
+      </BusinessRules>
+  </xs:appinfo></xs:annotation>
+
+
+  <xs:complexType name="S184l_PartiesGroup"><xs:sequence>
+      <xs:element name="Actor" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Who or what is the actor? Any natural person, legal person, or non-human system. Canonical home: PrimeRule. (name / identifier) | Input: Reference</xs:documentation><xs:appinfo><SurfaceForm>any person (the actor)</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S184l_ConductGroup"><xs:sequence>
+      <xs:element name="Acquires" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} acquires the {Replica}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} acquires the {Replica}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Advertises" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} advertises the {Replica}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} advertises the {Replica}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Dispenses" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} dispenses the {Replica}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} dispenses the {Replica}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="IntendedForSexualActs" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the {Replica} is by its nature intended for the performance of sexual acts. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the {Replica} is by its nature intended for the performance of sexual acts</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="NotTrading" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: without engaging in trade. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>without engaging in trade</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Offers" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} offers the {Replica}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} offers the {Replica}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="OfficialDuties" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: official duties. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>official duties</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="PlacesOnMarket" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} otherwise places the {Replica} on the market. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} otherwise places the {Replica} on the market</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Possesses" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} possesses the {Replica}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} possesses the {Replica}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Produces" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} produces the {Replica}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} produces the {Replica}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ProfessionalDuties" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: professional duties. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>professional duties</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Replica" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the physical replica. | Input: Party</xs:documentation><xs:appinfo><SurfaceForm>the physical replica</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ReplicaOfChild" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the {Replica} is a replica of a child. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the {Replica} is a replica of a child</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ReplicaOfChildBodyPart" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the {Replica} is a replica of a part of a child&#x27;s body. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the {Replica} is a replica of a part of a child&#x27;s body</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Sells" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} sells the {Replica}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} sells the {Replica}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ServesExclusively" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the act serves exclusively the lawful fulfilment of the referenced duties. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the act serves exclusively the lawful fulfilment of the referenced duties</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="StateTasks" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: state functions. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>state functions</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="TradesIn" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} trades in the {Replica}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} trades in the {Replica}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Transports" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} transports the {Replica} through the territorial scope of this Act. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} transports the {Replica} through the territorial scope of this Act</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="TransportsForTrade" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} transports the {Replica} for this purpose through the territorial scope of this Act. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} transports the {Replica} for this purpose through the territorial scope of this Act</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S184l_ComputableVariablesGroup"><xs:sequence>
+      <xs:element name="QualifyingReplica" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] QualifyingReplica. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="QualifyingReplica" dataType="Boolean"><Definition>(ReplicaOfChild is true or ReplicaOfChildBodyPart is true) and IntendedForSexualActs is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Leg1" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Leg1. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Leg1" dataType="Boolean"><Definition>QualifyingReplica is true and (Produces is true or Offers is true or Advertises is true)</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Leg2" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Leg2. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Leg2" dataType="Boolean"><Definition>QualifyingReplica is true and (TradesIn is true or TransportsForTrade is true)</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Leg3" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Leg3. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Leg3" dataType="Boolean"><Definition>QualifyingReplica is true and NotTrading is true and (Sells is true or Dispenses is true or PlacesOnMarket is true)</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="ExemptDuty" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] ExemptDuty. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="ExemptDuty" dataType="Boolean"><Definition>StateTasks is true or OfficialDuties is true or ProfessionalDuties is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Exemption4" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Exemption4. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Exemption4" dataType="Boolean"><Definition>ServesExclusively is true and ExemptDuty is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Para2" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Para2. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Para2" dataType="Boolean"><Definition>QualifyingReplica is true and (Acquires is true or Possesses is true or Transports is true)</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="ChildLikeSexDollOffences" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] ChildLikeSexDollOffences. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="ChildLikeSexDollOffences" dataType="Boolean"><Definition>Leg1 is true or Leg2 is true or (Leg3 is true and Exemption4 is false) or (Para2 is true and Exemption4 is false)</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:element name="OperomeChildLikeSexDollOffences"><xs:complexType><xs:sequence>
+        <xs:element name="Parties" type="S184l_PartiesGroup" minOccurs="0"/>
+        <xs:element name="Conduct" type="S184l_ConductGroup" minOccurs="0"/>
+        <xs:element name="ComputableVariables" type="S184l_ComputableVariablesGroup" minOccurs="0"/>
+  </xs:sequence></xs:complexType></xs:element>
+  <xs:annotation><xs:appinfo>
+      <SectionScopes>
+        <Scope id="OUT-ChildLikeSexDollOffences" section="Placing on the Market, Acquisition and Possession of Sex Dolls with a Child-Like Appearance">
+          <Condition>ChildLikeSexDollOffences is true</Condition>
+          <Description>Placing on the Market, Acquisition and Possession of Sex Dolls with a Child-Like Appearance (objective Tatbestand).</Description>
+          <Variables>
+            <Variable>Acquires</Variable>
+            <Variable>Actor</Variable>
+            <Variable>Advertises</Variable>
+            <Variable>Dispenses</Variable>
+            <Variable>IntendedForSexualActs</Variable>
+            <Variable>NotTrading</Variable>
+            <Variable>Offers</Variable>
+            <Variable>OfficialDuties</Variable>
+            <Variable>PlacesOnMarket</Variable>
+            <Variable>Possesses</Variable>
+            <Variable>Produces</Variable>
+            <Variable>ProfessionalDuties</Variable>
+            <Variable>Replica</Variable>
+            <Variable>ReplicaOfChild</Variable>
+            <Variable>ReplicaOfChildBodyPart</Variable>
+            <Variable>Sells</Variable>
+            <Variable>ServesExclusively</Variable>
+            <Variable>StateTasks</Variable>
+            <Variable>TradesIn</Variable>
+            <Variable>Transports</Variable>
+            <Variable>TransportsForTrade</Variable>
+            <Variable>QualifyingReplica</Variable>
+            <Variable>Leg1</Variable>
+            <Variable>Leg2</Variable>
+            <Variable>Leg3</Variable>
+            <Variable>ExemptDuty</Variable>
+            <Variable>Exemption4</Variable>
+            <Variable>Para2</Variable>
+            <Variable>ChildLikeSexDollOffences</Variable>
+          </Variables>
+        </Scope>
+      </SectionScopes>
+      <BusinessRules>
+        <Rule id="SDO-R01" verb="" actor="None">ReplicaOfChild is true</Rule>
+        <Rule id="SDO-R02" verb="" actor="None">ReplicaOfChildBodyPart is true</Rule>
+        <Rule id="SDO-R03" verb="" actor="None">IntendedForSexualActs is true</Rule>
+        <Rule id="SDO-R04" verb="" actor="Actor">Produces is true</Rule>
+        <Rule id="SDO-R05" verb="" actor="Actor">Offers is true</Rule>
+        <Rule id="SDO-R06" verb="" actor="Actor">Advertises is true</Rule>
+        <Rule id="SDO-R07" verb="" actor="Actor">TradesIn is true</Rule>
+        <Rule id="SDO-R08" verb="" actor="Actor">TransportsForTrade is true</Rule>
+        <Rule id="SDO-R09" verb="" actor="None">NotTrading is true</Rule>
+        <Rule id="SDO-R10" verb="" actor="Actor">Sells is true</Rule>
+        <Rule id="SDO-R11" verb="" actor="Actor">Dispenses is true</Rule>
+        <Rule id="SDO-R12" verb="" actor="Actor">PlacesOnMarket is true</Rule>
+        <Rule id="SDO-R13" verb="" actor="Actor">Acquires is true</Rule>
+        <Rule id="SDO-R14" verb="" actor="Actor">Possesses is true</Rule>
+        <Rule id="SDO-R15" verb="" actor="Actor">Transports is true</Rule>
+        <Rule id="SDO-R16" verb="" actor="None">ServesExclusively is true</Rule>
+        <Rule id="SDO-R17" verb="" actor="None">StateTasks is true</Rule>
+        <Rule id="SDO-R18" verb="" actor="None">OfficialDuties is true</Rule>
+        <Rule id="SDO-R19" verb="" actor="None">ProfessionalDuties is true</Rule>
+        <Rule id="SDO-P0" verb="not realise" actor="Actor">not ChildLikeSexDollOffences</Rule>
+      </BusinessRules>
+  </xs:appinfo></xs:annotation>
+
+</xs:schema>

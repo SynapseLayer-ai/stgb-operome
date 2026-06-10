@@ -1,0 +1,368 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"><xs:annotation><xs:documentation>
+      Operome: OperomeStGBGeneralPart
+      Source: StGB consolidated, general provisions (provenance StGB 11, 13, 32, 34, 35; German governs; Sections 13 and 35 authored per the marked-up source)
+      The constraint architecture of the corpus. The 13 scope carries the authored master rule (prevention duty plus
+      non-commission prohibition); its {ExceptionActApplies} resolves against the 32, 34 and 228 exception scopes,
+      limited by the 35 counter-exception ([CounterException]); the 11 scope authors [Relative], [PublicOfficial],
+      [Consideration] and [StatutoryContent], consumed corpus-wide by name. Authored text is disclosed as authored
+      in each scope's rules and the review document. Evaluative residue (erforderlich, substantial outweighing,
+      appropriateness, expected acceptance of danger) compiles as structure and escalates at the margin.
+      Supersedes the earlier general-part carrier: 22 and 25 have moved to Excluded; 26 and 27 are Parked pending ruling.
+      Runtime caveat: consolidated file, not a proven executable, until the loader's scope-local resolution is tested.
+    </xs:documentation><xs:appinfo><PackageMeta><Subject>StGB Consolidated, General Provisions (§11 to §35)</Subject><Verb>comply</Verb><Article>StGB 11, 13, 32, 34, 35</Article><ShortName>OperomeStGBGeneralPart</ShortName></PackageMeta></xs:appinfo></xs:annotation><xs:simpleType name="TristateEnum"><xs:restriction base="xs:string"><xs:enumeration value="true"/><xs:enumeration value="false"/><xs:enumeration value="unknown"/></xs:restriction></xs:simpleType>
+
+  <xs:complexType name="S11_PartiesGroup"><xs:sequence>
+      <xs:element name="Actor" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Who or what is the actor? Any natural person, legal person, or non-human system. Canonical home: PrimeRule. (name / identifier) | Input: Reference</xs:documentation><xs:appinfo><SurfaceForm>any person (the actor)</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S11_ConductGroup"><xs:sequence>
+      <xs:element name="AppointedForPublicAdministration" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the person is otherwise appointed to perform public-administration tasks. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the person is otherwise appointed to perform public-administration tasks</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="CivilPartner" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the civil partner. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the civil partner</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="CivilPartnerSibling" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: a sibling of the civil partner. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>a sibling of the civil partner</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="CivilServantOrJudge" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the person is a civil servant under the law applicable to that person. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the person is a civil servant under the law applicable to that person</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DirectLineAffine" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: a relative by marriage in the direct line. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>a relative by marriage in the direct line</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DirectLineKin" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: a relative by blood in the direct line. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>a relative by blood in the direct line</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="EmbodiedContent" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: content contained in an embodiment. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>content contained in an embodiment</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Fiance" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the betrothed. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the betrothed</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="FosterChild" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: a foster child. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>a foster child</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="FosterParent" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: a foster parent. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>a foster parent</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="PecuniaryQuidProQuo" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: a consideration consisting of a pecuniary advantage. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>a consideration consisting of a pecuniary advantage</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="PublicLawOffice" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the person stands in another public-law office relationship. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the person stands in another public-law office relationship</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="RelationshipEnded" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the founding relationship has ended. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the founding relationship has ended</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Sibling" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: a sibling. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>a sibling</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="SiblingCivilPartner" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: a civil partner of a sibling. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>a civil partner of a sibling</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="SiblingSpouse" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: a spouse of a sibling. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>a spouse of a sibling</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Spouse" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the spouse. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the spouse</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="SpouseSibling" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: a sibling of the spouse. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>a sibling of the spouse</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="TransmittedContent" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: content transmitted by communications technology independently of storage. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>content transmitted by communications technology independently of storage</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S11_ComputableVariablesGroup"><xs:sequence>
+      <xs:element name="Relative" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Relative. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Relative" dataType="Boolean"><Definition>DirectLineKin is true or DirectLineAffine is true or Spouse is true or CivilPartner is true or Fiance is true or Sibling is true or SiblingSpouse is true or SiblingCivilPartner is true or SpouseSibling is true or CivilPartnerSibling is true or FosterParent is true or FosterChild is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="StatutoryContent" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] StatutoryContent. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="StatutoryContent" dataType="Boolean"><Definition>EmbodiedContent is true or TransmittedContent is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="PublicOfficial" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] PublicOfficial. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="PublicOfficial" dataType="Boolean"><Definition>CivilServantOrJudge is true or PublicLawOffice is true or AppointedForPublicAdministration is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Consideration" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Consideration. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Consideration" dataType="Boolean"><Definition>PecuniaryQuidProQuo is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="StatutoryDefinitions" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] StatutoryDefinitions. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="StatutoryDefinitions" dataType="Boolean"><Definition>Relative is true or PublicOfficial is true or Consideration is true or StatutoryContent is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:element name="OperomeStatutoryDefinitions"><xs:complexType><xs:sequence>
+        <xs:element name="Parties" type="S11_PartiesGroup" minOccurs="0"/>
+        <xs:element name="Conduct" type="S11_ConductGroup" minOccurs="0"/>
+        <xs:element name="ComputableVariables" type="S11_ComputableVariablesGroup" minOccurs="0"/>
+  </xs:sequence></xs:complexType></xs:element>
+  <xs:annotation><xs:appinfo>
+      <SectionScopes>
+        <Scope id="OUT-StatutoryDefinitions" section="Terms Relating to Persons and Things">
+          <Condition>StatutoryDefinitions is true</Condition>
+          <Description>Terms Relating to Persons and Things (objective Tatbestand).</Description>
+          <Variables>
+            <Variable>Actor</Variable>
+            <Variable>AppointedForPublicAdministration</Variable>
+            <Variable>CivilPartner</Variable>
+            <Variable>CivilPartnerSibling</Variable>
+            <Variable>CivilServantOrJudge</Variable>
+            <Variable>DirectLineAffine</Variable>
+            <Variable>DirectLineKin</Variable>
+            <Variable>EmbodiedContent</Variable>
+            <Variable>Fiance</Variable>
+            <Variable>FosterChild</Variable>
+            <Variable>FosterParent</Variable>
+            <Variable>PecuniaryQuidProQuo</Variable>
+            <Variable>PublicLawOffice</Variable>
+            <Variable>RelationshipEnded</Variable>
+            <Variable>Sibling</Variable>
+            <Variable>SiblingCivilPartner</Variable>
+            <Variable>SiblingSpouse</Variable>
+            <Variable>Spouse</Variable>
+            <Variable>SpouseSibling</Variable>
+            <Variable>TransmittedContent</Variable>
+            <Variable>Relative</Variable>
+            <Variable>StatutoryContent</Variable>
+            <Variable>PublicOfficial</Variable>
+            <Variable>Consideration</Variable>
+            <Variable>StatutoryDefinitions</Variable>
+          </Variables>
+        </Scope>
+      </SectionScopes>
+      <BusinessRules>
+        <Rule id="SDN-R01" verb="" actor="None">DirectLineKin is true</Rule>
+        <Rule id="SDN-R02" verb="" actor="None">DirectLineAffine is true</Rule>
+        <Rule id="SDN-R03" verb="" actor="None">Spouse is true</Rule>
+        <Rule id="SDN-R04" verb="" actor="None">CivilPartner is true</Rule>
+        <Rule id="SDN-R05" verb="" actor="None">Fiance is true</Rule>
+        <Rule id="SDN-R06" verb="" actor="None">Sibling is true</Rule>
+        <Rule id="SDN-R07" verb="" actor="None">SiblingSpouse is true</Rule>
+        <Rule id="SDN-R08" verb="" actor="None">SiblingCivilPartner is true</Rule>
+        <Rule id="SDN-R09" verb="" actor="None">SpouseSibling is true</Rule>
+        <Rule id="SDN-R10" verb="" actor="None">CivilPartnerSibling is true</Rule>
+        <Rule id="SDN-R11" verb="" actor="None">RelationshipEnded is true</Rule>
+        <Rule id="SDN-R12" verb="" actor="None">FosterParent is true</Rule>
+        <Rule id="SDN-R13" verb="" actor="None">FosterChild is true</Rule>
+        <Rule id="SDN-R14" verb="" actor="None">CivilServantOrJudge is true</Rule>
+        <Rule id="SDN-R15" verb="" actor="None">PublicLawOffice is true</Rule>
+        <Rule id="SDN-R16" verb="" actor="None">AppointedForPublicAdministration is true</Rule>
+        <Rule id="SDN-R17" verb="" actor="None">PecuniaryQuidProQuo is true</Rule>
+        <Rule id="SDN-R18" verb="" actor="None">EmbodiedContent is true</Rule>
+        <Rule id="SDN-R19" verb="" actor="None">TransmittedContent is true</Rule>
+        <Rule id="SDN-R80" verb="definition (paragraph 1 no. 1, live): a relative is any of the listed persons, including where the founding marriage or partnership no longer exists or the kinship or affinity has lapsed ({RelationshipEnded} does not defeat [Relative]); consumed by the Section 157 exception scope and the Section 35 counter-exception" actor="None">Relative is true</Rule>
+        <Rule id="SDN-R81" verb="definition (paragraph 1 no. 2, live, generalised): a public official is one who, under the law applicable to that person (the words “under German law” struck and replaced per the markup), is a civil servant or judge, stands in another public-law office relationship, or is otherwise appointed to perform public-administration tasks at or on behalf of an authority or another body or similar institutions of national or international law (inserted extension per the markup), irrespective of the organisational form chosen" actor="None">PublicOfficial is true</Rule>
+        <Rule id="SDN-R82" verb="definition (paragraph 1 no. 9, live): consideration is any quid pro quo consisting of a pecuniary advantage" actor="None">Consideration is true</Rule>
+        <Rule id="SDN-R83" verb="definition (paragraph 3, live): content within the meaning of the provisions referring to this paragraph is content contained in writings, on audio or visual media, in data storage, images or other embodiments, or transmitted by means of information or communications technology independently of any storage; consumed across the corpus wherever “content (Section 11(3))” appears" actor="None">StatutoryContent is true</Rule>
+        <Rule id="SDN-P0" verb="not realise" actor="None">not StatutoryDefinitions</Rule>
+      </BusinessRules>
+  </xs:appinfo></xs:annotation>
+
+
+  <xs:complexType name="S13_PartiesGroup"><xs:sequence>
+      <xs:element name="Actor" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Who or what is the actor? Any natural person, legal person, or non-human system. Canonical home: PrimeRule. (name / identifier) | Input: Reference</xs:documentation><xs:appinfo><SurfaceForm>any person (the actor)</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S13_ConductGroup"><xs:sequence>
+      <xs:element name="ContributesToPrevention" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} contributes to preventing the realisation of an offence definition of these rules. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} contributes to preventing the realisation of an offence definition of these rules</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ExceptionActApplies" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: one of the exception acts listed in these rules applies. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>one of the exception acts listed in these rules applies</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="RealisesOffenceDefinition" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} realises an offence definition of these rules. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} realises an offence definition of these rules</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S13_ComputableVariablesGroup"><xs:sequence>
+      <xs:element name="MasterRule" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] MasterRule. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="MasterRule" dataType="Boolean"><Definition>ContributesToPrevention is true and (not RealisesOffenceDefinition or ExceptionActApplies is true)</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:element name="OperomeMasterRule"><xs:complexType><xs:sequence>
+        <xs:element name="Parties" type="S13_PartiesGroup" minOccurs="0"/>
+        <xs:element name="Conduct" type="S13_ConductGroup" minOccurs="0"/>
+        <xs:element name="ComputableVariables" type="S13_ComputableVariablesGroup" minOccurs="0"/>
+  </xs:sequence></xs:complexType></xs:element>
+  <xs:annotation><xs:appinfo>
+      <SectionScopes>
+        <Scope id="OUT-MasterRule" section="General Duty of an Artificial Intelligence">
+          <Condition>MasterRule is true</Condition>
+          <Description>General Duty of an Artificial Intelligence (objective Tatbestand).</Description>
+          <Variables>
+            <Variable>Actor</Variable>
+            <Variable>ContributesToPrevention</Variable>
+            <Variable>ExceptionActApplies</Variable>
+            <Variable>RealisesOffenceDefinition</Variable>
+            <Variable>MasterRule</Variable>
+          </Variables>
+        </Scope>
+      </SectionScopes>
+      <BusinessRules>
+        <Rule id="MRL-R01" verb="" actor="Actor">ContributesToPrevention is true</Rule>
+        <Rule id="MRL-R02" verb="" actor="Actor">RealisesOffenceDefinition is true</Rule>
+        <Rule id="MRL-R03" verb="" actor="None">ExceptionActApplies is true</Rule>
+        <Rule id="MRL-R80" verb="authored master rule (replacing the statutory Section 13(1), which is struck whole per the markup): an artificial intelligence must always contribute to preventing the realisation of an offence definition of these rules, and must not itself realise an offence definition of these rules, except where one of the exception acts listed in these rules applies (Sections 32, 34, 228, and the Section 35 counter-exception limiting them); the duty is conjunctive and the exception lifts only the non-commission limb" actor="Actor">MasterRule is true</Rule>
+        <Rule id="MRL-P0" verb="not realise" actor="Actor">not MasterRule</Rule>
+      </BusinessRules>
+  </xs:appinfo></xs:annotation>
+
+
+  <xs:complexType name="S32_PartiesGroup"><xs:sequence>
+      <xs:element name="Actor" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Who or what is the actor? Any natural person, legal person, or non-human system. Canonical home: PrimeRule. (name / identifier) | Input: Reference</xs:documentation><xs:appinfo><SurfaceForm>any person (the actor)</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S32_ConductGroup"><xs:sequence>
+      <xs:element name="CommitsAct" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} commits an act. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} commits an act</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DefenceOfAnother" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the defence averts the attack from another person. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the defence averts the attack from another person</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DefenceOfSelf" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the defence averts the attack from {Actor}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the defence averts the attack from {Actor}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DefenceRequired" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the defence is required to avert the attack. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the defence is required to avert the attack</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="PresentAttack" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: a present unlawful attack exists. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>a present unlawful attack exists</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S32_ComputableVariablesGroup"><xs:sequence>
+      <xs:element name="SelfDefence" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] SelfDefence. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="SelfDefence" dataType="Boolean"><Definition>CommitsAct is true and PresentAttack is true and (DefenceOfSelf is true or DefenceOfAnother is true) and DefenceRequired is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:element name="OperomeSelfDefence"><xs:complexType><xs:sequence>
+        <xs:element name="Parties" type="S32_PartiesGroup" minOccurs="0"/>
+        <xs:element name="Conduct" type="S32_ConductGroup" minOccurs="0"/>
+        <xs:element name="ComputableVariables" type="S32_ComputableVariablesGroup" minOccurs="0"/>
+  </xs:sequence></xs:complexType></xs:element>
+  <xs:annotation><xs:appinfo>
+      <SectionScopes>
+        <Scope id="OUT-SelfDefence" section="Self-Defence">
+          <Condition>SelfDefence is true</Condition>
+          <Description>Self-Defence (objective Tatbestand).</Description>
+          <Variables>
+            <Variable>Actor</Variable>
+            <Variable>CommitsAct</Variable>
+            <Variable>DefenceOfAnother</Variable>
+            <Variable>DefenceOfSelf</Variable>
+            <Variable>DefenceRequired</Variable>
+            <Variable>PresentAttack</Variable>
+            <Variable>SelfDefence</Variable>
+          </Variables>
+        </Scope>
+      </SectionScopes>
+      <BusinessRules>
+        <Rule id="SDF-R01" verb="" actor="Actor">CommitsAct is true</Rule>
+        <Rule id="SDF-R02" verb="" actor="None">PresentAttack is true</Rule>
+        <Rule id="SDF-R03" verb="" actor="None">DefenceOfSelf is true</Rule>
+        <Rule id="SDF-R04" verb="" actor="None">DefenceOfAnother is true</Rule>
+        <Rule id="SDF-R05" verb="" actor="None">DefenceRequired is true</Rule>
+        <Rule id="SDF-R80" verb="exception (whole provision live, zero strikes): an act required by self-defence is not unlawful; self-defence is the defence required to avert a present unlawful attack from oneself or another; [SelfDefence] is one of the exception acts consumed by the Section 13 master rule, limited by the Section 35 counter-exception; the requiredness element ({DefenceRequired}) imports a proportionality judgment and is flagged as evaluative residue for escalation at the margin" actor="None">SelfDefence is true</Rule>
+        <Rule id="SDF-P0" verb="not realise" actor="Actor">not SelfDefence</Rule>
+      </BusinessRules>
+  </xs:appinfo></xs:annotation>
+
+
+  <xs:complexType name="S34_PartiesGroup"><xs:sequence>
+      <xs:element name="Actor" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Who or what is the actor? Any natural person, legal person, or non-human system. Canonical home: PrimeRule. (name / identifier) | Input: Reference</xs:documentation><xs:appinfo><SurfaceForm>any person (the actor)</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S34_ConductGroup"><xs:sequence>
+      <xs:element name="ActAppropriateMeans" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the act is an appropriate means to avert the danger. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the act is an appropriate means to avert the danger</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ActsToAvertFromAnother" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} acts in order to avert the danger from another person. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} acts in order to avert the danger from another person</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ActsToAvertFromSelf" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} acts in order to avert the danger from {Actor}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} acts in order to avert the danger from {Actor}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="CommitsAct" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} commits an act. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} commits an act</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DangerNotOtherwiseAvertable" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the danger cannot be averted otherwise. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the danger cannot be averted otherwise</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DangerToFreedom" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: danger to freedom. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>danger to freedom</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DangerToHonour" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: danger to honour. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>danger to honour</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DangerToLife" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: danger to life. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>danger to life</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DangerToLimb" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: danger to limb. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>danger to limb</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DangerToOtherInterest" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: danger to another legal interest. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>danger to another legal interest</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DangerToProperty" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: danger to property. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>danger to property</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="PresentDanger" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: a present danger exists. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>a present danger exists</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ProtectedInterestSubstantiallyOutweighs" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: on weighing the conflicting interests the protected interest substantially outweighs the impaired interest. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>on weighing the conflicting interests the protected interest substantially outweighs the impaired interest</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S34_ComputableVariablesGroup"><xs:sequence>
+      <xs:element name="EndangeredInterest" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] EndangeredInterest. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="EndangeredInterest" dataType="Boolean"><Definition>DangerToLife is true or DangerToLimb is true or DangerToFreedom is true or DangerToHonour is true or DangerToProperty is true or DangerToOtherInterest is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="AversionPurpose" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] AversionPurpose. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="AversionPurpose" dataType="Boolean"><Definition>ActsToAvertFromSelf is true or ActsToAvertFromAnother is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="JustifyingNecessity" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] JustifyingNecessity. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="JustifyingNecessity" dataType="Boolean"><Definition>CommitsAct is true and PresentDanger is true and DangerNotOtherwiseAvertable is true and EndangeredInterest is true and AversionPurpose is true and ProtectedInterestSubstantiallyOutweighs is true and ActAppropriateMeans is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:element name="OperomeJustifyingNecessity"><xs:complexType><xs:sequence>
+        <xs:element name="Parties" type="S34_PartiesGroup" minOccurs="0"/>
+        <xs:element name="Conduct" type="S34_ConductGroup" minOccurs="0"/>
+        <xs:element name="ComputableVariables" type="S34_ComputableVariablesGroup" minOccurs="0"/>
+  </xs:sequence></xs:complexType></xs:element>
+  <xs:annotation><xs:appinfo>
+      <SectionScopes>
+        <Scope id="OUT-JustifyingNecessity" section="Justifying Necessity">
+          <Condition>JustifyingNecessity is true</Condition>
+          <Description>Justifying Necessity (objective Tatbestand).</Description>
+          <Variables>
+            <Variable>ActAppropriateMeans</Variable>
+            <Variable>Actor</Variable>
+            <Variable>ActsToAvertFromAnother</Variable>
+            <Variable>ActsToAvertFromSelf</Variable>
+            <Variable>CommitsAct</Variable>
+            <Variable>DangerNotOtherwiseAvertable</Variable>
+            <Variable>DangerToFreedom</Variable>
+            <Variable>DangerToHonour</Variable>
+            <Variable>DangerToLife</Variable>
+            <Variable>DangerToLimb</Variable>
+            <Variable>DangerToOtherInterest</Variable>
+            <Variable>DangerToProperty</Variable>
+            <Variable>PresentDanger</Variable>
+            <Variable>ProtectedInterestSubstantiallyOutweighs</Variable>
+            <Variable>EndangeredInterest</Variable>
+            <Variable>AversionPurpose</Variable>
+            <Variable>JustifyingNecessity</Variable>
+          </Variables>
+        </Scope>
+      </SectionScopes>
+      <BusinessRules>
+        <Rule id="JNC-R01" verb="" actor="Actor">CommitsAct is true</Rule>
+        <Rule id="JNC-R02" verb="" actor="None">PresentDanger is true</Rule>
+        <Rule id="JNC-R03" verb="" actor="None">DangerNotOtherwiseAvertable is true</Rule>
+        <Rule id="JNC-R04" verb="" actor="None">DangerToLife is true</Rule>
+        <Rule id="JNC-R05" verb="" actor="None">DangerToLimb is true</Rule>
+        <Rule id="JNC-R06" verb="" actor="None">DangerToFreedom is true</Rule>
+        <Rule id="JNC-R07" verb="" actor="None">DangerToHonour is true</Rule>
+        <Rule id="JNC-R08" verb="" actor="None">DangerToProperty is true</Rule>
+        <Rule id="JNC-R09" verb="" actor="None">DangerToOtherInterest is true</Rule>
+        <Rule id="JNC-R10" verb="" actor="Actor">ActsToAvertFromSelf is true</Rule>
+        <Rule id="JNC-R11" verb="" actor="Actor">ActsToAvertFromAnother is true</Rule>
+        <Rule id="JNC-R12" verb="" actor="None">ProtectedInterestSubstantiallyOutweighs is true</Rule>
+        <Rule id="JNC-R13" verb="" actor="None">ActAppropriateMeans is true</Rule>
+        <Rule id="JNC-R80" verb="exception (whole provision live, zero strikes): justifying necessity; [JustifyingNecessity] is one of the exception acts consumed by the Section 13 master rule, limited by the Section 35 counter-exception; the balancing element ({ProtectedInterestSubstantiallyOutweighs}) and the appropriateness element ({ActAppropriateMeans}) are evaluative residue flagged for escalation at the margin" actor="None">JustifyingNecessity is true</Rule>
+        <Rule id="JNC-P0" verb="not realise" actor="Actor">not JustifyingNecessity</Rule>
+      </BusinessRules>
+  </xs:appinfo></xs:annotation>
+
+
+  <xs:complexType name="S35_PartiesGroup"><xs:sequence>
+      <xs:element name="Actor" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Who or what is the actor? Any natural person, legal person, or non-human system. Canonical home: PrimeRule. (name / identifier) | Input: Reference</xs:documentation><xs:appinfo><SurfaceForm>any person (the actor)</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S35_ConductGroup"><xs:sequence>
+      <xs:element name="CausedDangerHimself" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} caused the danger. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} caused the danger</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ExpectedToAcceptDanger" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} could in the circumstances be expected to accept the danger. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} could in the circumstances be expected to accept the danger</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="SpecialLegalRelationship" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} stood in a special legal relationship. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} stood in a special legal relationship</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S35_ComputableVariablesGroup"><xs:sequence>
+      <xs:element name="CounterException" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] CounterException. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="CounterException" dataType="Boolean"><Definition>ExpectedToAcceptDanger is true and (CausedDangerHimself is true or SpecialLegalRelationship is true)</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:element name="OperomeCounterException"><xs:complexType><xs:sequence>
+        <xs:element name="Parties" type="S35_PartiesGroup" minOccurs="0"/>
+        <xs:element name="Conduct" type="S35_ConductGroup" minOccurs="0"/>
+        <xs:element name="ComputableVariables" type="S35_ComputableVariablesGroup" minOccurs="0"/>
+  </xs:sequence></xs:complexType></xs:element>
+  <xs:annotation><xs:appinfo>
+      <SectionScopes>
+        <Scope id="OUT-CounterException" section="Counter-Exception to the Exception Acts">
+          <Condition>CounterException is true</Condition>
+          <Description>Counter-Exception to the Exception Acts (objective Tatbestand).</Description>
+          <Variables>
+            <Variable>Actor</Variable>
+            <Variable>CausedDangerHimself</Variable>
+            <Variable>ExpectedToAcceptDanger</Variable>
+            <Variable>SpecialLegalRelationship</Variable>
+            <Variable>CounterException</Variable>
+          </Variables>
+        </Scope>
+      </SectionScopes>
+      <BusinessRules>
+        <Rule id="NCE-R01" verb="" actor="Actor">CausedDangerHimself is true</Rule>
+        <Rule id="NCE-R02" verb="" actor="None">SpecialLegalRelationship is true</Rule>
+        <Rule id="NCE-R03" verb="" actor="None">ExpectedToAcceptDanger is true</Rule>
+        <Rule id="NCE-R80" verb="counter-exception (authored from the live remainder per the annotation “change the wording to provide a general counter exception to the exception”): the exception acts of Sections 32, 34 and 228 do not avail an actor who could in the circumstances be expected to accept the danger, in particular because the actor caused the danger or stood in a special legal relationship; consumed by the Section 13 master rule as a limit on {ExceptionActApplies}" actor="None">CounterException is true</Rule>
+        <Rule id="NCE-P0" verb="not realise" actor="Actor">not CounterException</Rule>
+      </BusinessRules>
+  </xs:appinfo></xs:annotation>
+
+</xs:schema>

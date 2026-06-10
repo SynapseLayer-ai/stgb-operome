@@ -1,0 +1,285 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Operome - data and computer offences (full annexes)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#0D0D0F;--ivory:#F5F5F4;--orange:#FF5F1F;--blue:#1F6FB5;--purple:#6B3FA0;--red:#C03020;--line:#D5D5D5;--muted:#8B8B92;--paper:#FBFBFA;}
+  *{box-sizing:border-box}
+  html,body{margin:0;background:#E9E9E7;color:var(--ink);font-family:"DM Sans",system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding:32px 22px 80px}
+  .mast{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;padding:0 2px 14px;border-bottom:2px solid var(--ink);margin-bottom:18px;flex-wrap:wrap}
+  .word{font-size:30px;font-weight:600;letter-spacing:-.01em;line-height:1}
+  .word .syn{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;font-size:34px}.word .lyr{font-weight:700}
+  .kick{color:var(--muted);font-size:12.5px;text-align:right;line-height:1.45}.kick b{color:var(--ink);font-weight:600}
+  .legend{display:flex;gap:16px;flex-wrap:wrap;align-items:center;font-size:12.5px;color:#3a3a40;background:#fff;border:1px solid var(--line);border-radius:7px;padding:11px 16px;margin-bottom:22px}
+  .legend span.t{font-family:"IBM Plex Mono",monospace;font-weight:600}
+  .titlebar{background:var(--orange);color:#fff;border-radius:7px 7px 0 0;padding:11px 16px;display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:6px}
+  .titlebar h1{margin:0;font-size:16px;font-weight:700}
+  .titlebar .sub{font-size:11.5px;font-weight:600;opacity:.92;font-family:"IBM Plex Mono",monospace}
+  .op{border:1px solid var(--line);border-top:none;overflow:hidden;background:#fff}
+  .hd{display:grid;grid-template-columns:1fr 1.3fr;background:var(--ink);color:var(--ivory)}
+  .hd div{padding:8px 14px;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+  .hd div:first-child{border-right:1px solid #2a2a2e}
+  .row{display:grid;grid-template-columns:1fr 1.3fr}
+  .row>div{padding:14px}
+  .src{border-right:1px solid var(--line);font-size:13.5px;color:#2b2b30}
+  .mk{font-family:"IBM Plex Mono",monospace;font-size:12.5px;line-height:1.95;white-space:pre-wrap}
+  .v{color:var(--blue);font-weight:600}.c{color:var(--purple);font-weight:600}.k{color:var(--red);font-weight:600}.op-kw{color:#55555c}
+  .struck{color:#a0a0a6;text-decoration:line-through}
+  footer{color:var(--muted);font-size:11.5px;border-top:1px solid var(--line);margin-top:6px;padding-top:12px}
+
+  .cw{color:#caa6ee}
+  .annex{border:1px solid var(--line);border-top:none;border-radius:0 0 7px 7px;background:#fff;margin:0 0 24px;overflow:hidden}
+  .annexhd{background:#1b1b1f;color:var(--ivory);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:7px 16px}
+  .annexbody{padding:14px 16px}
+  .lbl{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:16px 0 5px}
+  .lbl:first-child{margin-top:0}
+  .def{font-family:"IBM Plex Mono",monospace;font-size:12px;line-height:1.85;white-space:pre-wrap;background:var(--paper);border:1px solid var(--line);border-radius:5px;padding:11px 13px;overflow-x:auto}
+  table.br,table.dx,table.va,table.dep,table.qn{border-collapse:collapse;width:100%;font-size:12px;margin-top:3px}
+  table.br th,table.br td,table.dx th,table.dx td,table.va th,table.va td,table.dep th,table.dep td,table.qn th,table.qn td{border:1px solid var(--line);padding:6px 9px;vertical-align:top;text-align:left}
+  table.br th,table.dx th,table.va th,table.dep th,table.qn th{background:#F2F2F1;font-weight:600;font-size:10.5px;letter-spacing:.03em;text-transform:uppercase}
+  td.mono{font-family:"IBM Plex Mono",monospace;font-size:11.5px}
+  .role{color:var(--muted)}
+  .kind{font-size:10px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;border-radius:999px;padding:1px 7px;white-space:nowrap}
+  .kind.act{background:#FFF1E8;color:#a23b16;border:1px solid #ffd0b3}
+  .kind.cond{background:#EDF3F8;color:#1f5e8f;border:1px solid #cfe0ee}
+  .kind.norm{background:#F3EEF8;color:#5b338c;border:1px solid #e0d2ef}
+  .kind.proh{background:#0D0D0F;color:#fff;border:1px solid #0D0D0F}
+  .kind.exc{background:#FFF7E0;color:#8a6d1a;border:1px solid #ecdca0}
+  .kind.perm{background:#EAF7EE;color:#1f7a44;border:1px solid #bfe6cc}
+  .kind.def{background:#EEF1FF;color:#3a3f8a;border:1px solid #c9cef2}
+  .leaf{font-family:"IBM Plex Mono",monospace;font-size:11.5px;background:#FBF7FF;border:1px dashed #d9c9ef;border-radius:5px;padding:7px 11px;margin-top:5px}
+  .tree{font-family:"IBM Plex Mono",monospace;font-size:11.5px;line-height:1.7;white-space:pre-wrap;background:var(--paper);border:1px solid var(--line);border-radius:5px;padding:11px 13px;overflow-x:auto}
+  .recon{font-size:13px;line-height:1.6;background:#FFFDF6;border:1px solid #ecd9a8;border-left:3px solid var(--orange);border-radius:5px;padding:11px 14px;margin-top:4px}
+  .recon b{color:#a23b16}
+  .note{font-size:12.5px;color:#46464c;margin-top:5px}
+  .flag{background:#FFF6F2;border:1px solid #ffd9c2;border-radius:6px;padding:8px 11px;margin-top:6px;font-size:12.5px;color:#46464c}
+  .flag b{color:#a23b16;text-transform:uppercase;letter-spacing:.03em;font-size:10.5px}
+
+  @media (max-width:760px){.hd,.row{grid-template-columns:1fr}.src{border-right:none;border-bottom:1px solid var(--line)}.hd div:first-child{border-right:none;border-bottom:1px solid #2a2a2e}}
+</style></head><body><div class="wrap">
+  <div class="mast"><div class="word"><span class="syn">Synapse</span><span class="lyr">Layer</span></div>
+  <div class="kick"><b>Operome - StGB consolidated, offences against bodily integrity (§223 to §228)</b><br>Three scopes: §223 and §225 rebuilt to the current contract; §228 new, the consent exception · §224 moved to Excluded in the working document, the earlier DangerousBodilyHarm scope superseded · [ConsentJustification] joins §32 and §34 as the third exception act of the §13 master rule, limited by the §35 counter-exception</div></div>
+  <div class="legend"><span class="t v">{Variable}</span> input &middot; <span class="t c">[Computable]</span> act / derived &middot; <span class="t k">«if … end if»</span> condition &middot; <span class="t struck">struck</span> excluded &middot; word-for-word dissection; the law is reconstructable from the substrate</div>
+
+<div class="titlebar"><h1>§223 · Bodily harm</h1><div class="sub">BodilyHarm · provenance StGB 223 · (1) encoded; penalty and attempt struck</div></div>
+<div class="op"><div class="hd"><div>Source (English, unofficial)</div><div>Operome markup - original text encoded</div></div>
+<div class="row"><div class="src">(1) Whoever physically maltreats another person or damages the health of another person shall be punished with imprisonment for up to five years or a fine. (2) The attempt is punishable.</div><div class="mk"><span class="k">«if BodilyHarm is true»</span>(1) <span class="v">{Actor}</span> who <span class="k">«if <span class="v">{PhysicallyMaltreats}</span> is true»</span>physically maltreats another person <span class="k">«end if»</span> <span class="k">«if <span class="v">{DamagesHealth}</span> is true»</span>or damages the health of another person <span class="k">«end if»</span> <span class="struck">shall be punished with imprisonment for up to five years or a fine</span>. <span class="struck">(2) The attempt is punishable.</span><span class="k">«end if»</span></div></div></div>
+<div class="annex"><div class="annexhd">Annexes</div><div class="annexbody">
+<div class="lbl">Computables</div><div class="def">
+<span class="c">[BodilyHarm]</span> <span class="op-kw">=</span> <span class="v">PhysicallyMaltreats</span> <span class="op-kw">is</span> <span class="op-kw">true</span> <span class="op-kw">or</span> <span class="v">DamagesHealth</span> <span class="op-kw">is</span> <span class="op-kw">true</span>
+</div>
+<div class="lbl">Business rules</div><table class="br"><tr><th>id</th><th>kind</th><th>actor</th><th>verb / predicate</th><th>body</th></tr>
+<tr><td class="mono">BDH-R01</td><td><span class="kind act">act</span></td><td class="mono">Actor</td><td></td><td class="mono"><span class="v">PhysicallyMaltreats</span> <span class="op-kw">is</span> <span class="op-kw">true</span></td></tr>
+<tr><td class="mono">BDH-R02</td><td><span class="kind act">act</span></td><td class="mono">Actor</td><td></td><td class="mono"><span class="v">DamagesHealth</span> <span class="op-kw">is</span> <span class="op-kw">true</span></td></tr>
+<tr><td class="mono">BDH-R80</td><td><span class="kind act">act</span></td><td class="mono">Actor</td><td>scope note: the two conducts gated individually per the contract, disjunction in the composite; [BodilyHarm] is the act element to which the Section 228 consent exception attaches and the reference target of the Section 129a catalogue text; Section 224 has moved to Excluded, so its in-corpus mentions resolve as input only</td><td class="mono"><span class="c">BodilyHarm</span> <span class="op-kw">is</span> <span class="op-kw">true</span></td></tr>
+<tr><td class="mono">BDH-P0</td><td><span class="kind proh">prohibition</span></td><td class="mono">Actor</td><td>not realise</td><td class="mono"><span class="op-kw">not</span> <span class="c">BodilyHarm</span></td></tr>
+</table>
+<div class="lbl">Tatbestand dissected to the Merkmal</div><table class="dx"><tr><th>Source phrase</th><th>Doctrinal role</th><th>Primitive</th><th>Rule</th><th>Requires</th></tr>
+<tr><td>Whoever</td><td class="role">Tätersubjekt</td><td class="mono">{<span class="v">Actor</span>}</td><td class="mono">—</td><td>in scope</td></tr>
+<tr><td>physically maltreats</td><td class="role">Merkmal</td><td class="mono">{<span class="v">PhysicallyMaltreats</span>}</td><td class="mono">BDH-R01</td><td>is true</td></tr>
+<tr><td>damages the health</td><td class="role">Merkmal</td><td class="mono">{<span class="v">DamagesHealth</span>}</td><td class="mono">BDH-R02</td><td>is true</td></tr>
+<tr><td>penalty; (2) attempt</td><td class="role">sanction / attempt</td><td class="mono">— excluded —</td><td class="mono">—</td><td>struck</td></tr>
+</table>
+<div class="lbl">Variables appendix</div><table class="va"><tr><th>Variable</th><th>Input</th><th>Values</th><th>Cascade</th><th>Surface form (source words)</th></tr>
+<tr><td class="mono"><span class="v">{Actor}</span></td><td>Reference</td><td class="mono">–</td><td>Session</td><td>any person (the actor)</td></tr>
+<tr><td class="mono"><span class="v">{DamagesHealth}</span></td><td>Boolean</td><td class="mono">true / false / unknown</td><td>Session</td><td>{Actor} damages the health of another person</td></tr>
+<tr><td class="mono"><span class="v">{PhysicallyMaltreats}</span></td><td>Boolean</td><td class="mono">true / false / unknown</td><td>Session</td><td>{Actor} physically maltreats another person</td></tr>
+</table>
+<div class="lbl">Reconstruction from the substrate</div>
+<div class="recon"><b>Committed by</b> any person (the actor) who: {Actor} physically maltreats another person or {Actor} damages the health of another person.<div class="note" style="margin-top:8px">Assembled only from the variable surface forms (including the actor) and the computable structure carried in the XSD, not from the source column. It should read as the offence. This is the recoverability test: the law is reverse-derivable from the substrate.</div></div>
+<div class="lbl">Dependent assessments (reactive invalidation)</div><table class="dep"><tr><th>Assessment</th><th>Depends on</th><th>Invalidation</th><th>Trigger effect</th></tr>
+<tr><td class="mono"><span class="c">[BodilyHarm]</span></td><td class="mono"><span class="v">PhysicallyMaltreats</span>, <span class="v">DamagesHealth</span></td><td class="mono">false</td><td>Final composite. Re-evaluates on any input change; cannot resolve true while any input is unknown.</td></tr>
+<tr><td class="mono">prohibition (BDH-P0)</td><td class="mono"><span class="c">[BodilyHarm]</span></td><td class="mono">re-derives</td><td>The PrimeRule prohibition holds whenever the composite is true; re-derives on any change.</td></tr></table>
+<div class="lbl">Decision tree</div><div class="tree">PHASE 1: gather inputs (Session)
+  ├─ {<span class="v">Actor</span>}
+  ├─ {<span class="v">DamagesHealth</span>}
+  ├─ {<span class="v">PhysicallyMaltreats</span>}
+↓
+PHASE 2: evaluate act / intermediate computables
+↓
+PHASE 3: evaluate the objective conditions
+  └─ [<span class="c">BodilyHarm</span>] = <span class="v">PhysicallyMaltreats</span> <span class="op-kw">is</span> <span class="op-kw">true</span> <span class="op-kw">or</span> <span class="v">DamagesHealth</span> <span class="op-kw">is</span> <span class="op-kw">true</span>
+↓
+VERDICT (PrimeRule)
+  ├─ [<span class="c">BodilyHarm</span>] <span class="op-kw">is</span> <span class="op-kw">true</span>  → objective conditions realised → conduct PROHIBITED (subject to permissions / exceptions)
+  └─ [<span class="c">BodilyHarm</span>] <span class="op-kw">is</span> <span class="op-kw">false</span> → <span class="op-kw">not</span> realised</div>
+<div class="lbl">Recursion / re-entry notes</div><div class="note">No runtime re-entry. The operome is a single forward evaluation: inputs → act computable(s) → Tatbestand composite → prohibition verdict. Attempt and preparation, where the section provides for them, are separate operomes, not re-entries.</div>
+<div class="lbl">Circularity check</div><div class="note">• [BodilyHarm] depends on ; none refer back to [BodilyHarm]. No definitional cycle.</div><div class="note">• Each computable reduces to input Booleans; the graph is a DAG and topologically sortable. Tristate is monotone: any unknown input holds the composite at unknown rather than forcing a verdict.</div>
+<div class="lbl">Questionnaire</div><table class="qn"><tr><th>#</th><th>Cascade</th><th>Variable</th><th>Question / prompt</th><th>Input</th></tr>
+<tr><td class="mono">Q1</td><td>Session</td><td class="mono"><span class="v">{Actor}</span></td><td>Who or what is the actor? Any natural person, legal person, or non-human system. Canonical home: PrimeRule.?</td><td>Reference</td></tr>
+<tr><td class="mono">Q2</td><td>Session</td><td class="mono"><span class="v">{DamagesHealth}</span></td><td>Element/Datum: {Actor} damages the health of another person.?</td><td>Boolean</td></tr>
+<tr><td class="mono">Q3</td><td>Session</td><td class="mono"><span class="v">{PhysicallyMaltreats}</span></td><td>Element/Datum: {Actor} physically maltreats another person.?</td><td>Boolean</td></tr>
+</table>
+<div class="lbl">Flags</div>
+<div class="flag"><b>Scope</b> &nbsp;Paragraph 1&#x27;s two conducts; penalty and attempt struck per the standing conventions.</div>
+<div class="flag"><b>Consumers</b> &nbsp;The §228 consent exception attaches to this act element; the §129a catalogue text references §223. §224 has moved to Excluded in the working document, so the earlier DangerousBodilyHarm scope is superseded and its catalogue mentions resolve as input only, a documentation note for the master.</div>
+<div class="flag"><b>Treatment</b> &nbsp;§223 Operomise; §224, §226, §226a, §227 Excluded.</div>
+</div></div>
+<div class="titlebar"><h1>§225 · Maltreatment of persons under one's care</h1><div class="sub">AbuseOfPersonUnderCare · provenance StGB 225 · (1) encoded; (2)-(4) struck</div></div>
+<div class="op"><div class="hd"><div>Source (English, unofficial)</div><div>Operome markup - original text encoded</div></div>
+<div class="row"><div class="src">(1) Whoever torments or roughly maltreats a person under eighteen years or a person defenceless owing to frailty or illness who 1. is under his care or custody, 2. belongs to his household, 3. has been left in his power by the person obliged to provide care, or 4. is subordinate to him within a service or work relationship, or whoever damages the health of such a person through malicious neglect of his duty to care for the person, shall be punished with imprisonment for six months to ten years. (2) [Struck: attempt.] (3) [Struck: endangerment aggravation.] (4) [Struck: less serious cases.]</div><div class="mk"><span class="k">«if AbuseOfPersonUnderCare is true»</span>(1) <span class="v">{Actor}</span> who <span class="k">«if <span class="v">{Torments}</span> is true»</span>torments <span class="k">«end if»</span> <span class="k">«if <span class="v">{RoughlyMaltreats}</span> is true»</span>or roughly maltreats <span class="k">«end if»</span> <span class="k">«if <span class="v">{VictimUnderEighteen}</span> is true»</span>a person under eighteen years <span class="k">«end if»</span> <span class="k">«if <span class="v">{DefencelessThroughFrailty}</span> is true»</span>or a person defenceless owing to frailty <span class="k">«end if»</span> <span class="k">«if <span class="v">{DefencelessThroughIllness}</span> is true»</span>or illness <span class="k">«end if»</span> who 1. <span class="k">«if <span class="v">{UnderCare}</span> is true»</span>is under the care <span class="k">«end if»</span> <span class="k">«if <span class="v">{UnderCustody}</span> is true»</span>or custody of <span class="v">{Actor}</span> <span class="k">«end if»</span>, 2. <span class="k">«if <span class="v">{BelongsToHousehold}</span> is true»</span>belongs to the household of <span class="v">{Actor}</span> <span class="k">«end if»</span>, 3. <span class="k">«if <span class="v">{LeftInPower}</span> is true»</span>has been left in the power of <span class="v">{Actor}</span> by the person obliged to provide care <span class="k">«end if»</span>, or 4. <span class="k">«if <span class="v">{SubordinateInWork}</span> is true»</span>is subordinate to <span class="v">{Actor}</span> within a service or work relationship <span class="k">«end if»</span>, or who <span class="k">«if <span class="v">{MaliciousNeglectHealthDamage}</span> is true»</span>damages the health of such a person through malicious neglect of the duty to care for the person <span class="k">«end if»</span> <span class="struck">shall be punished with imprisonment for six months to ten years</span>. <span class="struck">(2) Attempt. (3) Endangerment aggravation. (4) Less serious cases.</span><span class="k">«end if»</span></div></div></div>
+<div class="annex"><div class="annexhd">Annexes</div><div class="annexbody">
+<div class="lbl">Computables</div><div class="def">
+<span class="c">[ProtectedVictim]</span> <span class="op-kw">=</span> <span class="v">VictimUnderEighteen</span> <span class="op-kw">is</span> <span class="op-kw">true</span> <span class="op-kw">or</span> <span class="v">DefencelessThroughFrailty</span> <span class="op-kw">is</span> <span class="op-kw">true</span> <span class="op-kw">or</span> <span class="v">DefencelessThroughIllness</span> <span class="op-kw">is</span> <span class="op-kw">true</span>
+
+<span class="c">[AbusiveConduct]</span> <span class="op-kw">=</span> <span class="v">Torments</span> <span class="op-kw">is</span> <span class="op-kw">true</span> <span class="op-kw">or</span> <span class="v">RoughlyMaltreats</span> <span class="op-kw">is</span> <span class="op-kw">true</span> <span class="op-kw">or</span> <span class="v">MaliciousNeglectHealthDamage</span> <span class="op-kw">is</span> <span class="op-kw">true</span>
+
+<span class="c">[CareRelationship]</span> <span class="op-kw">=</span> <span class="v">UnderCare</span> <span class="op-kw">is</span> <span class="op-kw">true</span> <span class="op-kw">or</span> <span class="v">UnderCustody</span> <span class="op-kw">is</span> <span class="op-kw">true</span> <span class="op-kw">or</span> <span class="v">BelongsToHousehold</span> <span class="op-kw">is</span> <span class="op-kw">true</span> <span class="op-kw">or</span> <span class="v">LeftInPower</span> <span class="op-kw">is</span> <span class="op-kw">true</span> <span class="op-kw">or</span> <span class="v">SubordinateInWork</span> <span class="op-kw">is</span> <span class="op-kw">true</span>
+
+<span class="c">[AbuseOfPersonUnderCare]</span> <span class="op-kw">=</span> <span class="c">ProtectedVictim</span> <span class="op-kw">is</span> <span class="op-kw">true</span> <span class="op-kw">and</span> <span class="c">CareRelationship</span> <span class="op-kw">is</span> <span class="op-kw">true</span> <span class="op-kw">and</span> <span class="c">AbusiveConduct</span> <span class="op-kw">is</span> <span class="op-kw">true</span>
+</div>
+<div class="lbl">Business rules</div><table class="br"><tr><th>id</th><th>kind</th><th>actor</th><th>verb / predicate</th><th>body</th></tr>
+<tr><td class="mono">APU-R01</td><td><span class="kind cond">condition</span></td><td class="mono">None</td><td></td><td class="mono"><span class="v">VictimUnderEighteen</span> <span class="op-kw">is</span> <span class="op-kw">true</span></td></tr>
+<tr><td class="mono">APU-R02</td><td><span class="kind cond">condition</span></td><td class="mono">None</td><td></td><td class="mono"><span class="v">DefencelessThroughFrailty</span> <span class="op-kw">is</span> <span class="op-kw">true</span></td></tr>
+<tr><td class="mono">APU-R03</td><td><span class="kind cond">condition</span></td><td class="mono">None</td><td></td><td class="mono"><span class="v">DefencelessThroughIllness</span> <span class="op-kw">is</span> <span class="op-kw">true</span></td></tr>
+<tr><td class="mono">APU-R04</td><td><span class="kind cond">condition</span></td><td class="mono">None</td><td></td><td class="mono"><span class="v">UnderCare</span> <span class="op-kw">is</span> <span class="op-kw">true</span></td></tr>
+<tr><td class="mono">APU-R05</td><td><span class="kind cond">condition</span></td><td class="mono">None</td><td></td><td class="mono"><span class="v">UnderCustody</span> <span class="op-kw">is</span> <span class="op-kw">true</span></td></tr>
+<tr><td class="mono">APU-R06</td><td><span class="kind cond">condition</span></td><td class="mono">None</td><td></td><td class="mono"><span class="v">BelongsToHousehold</span> <span class="op-kw">is</span> <span class="op-kw">true</span></td></tr>
+<tr><td class="mono">APU-R07</td><td><span class="kind cond">condition</span></td><td class="mono">None</td><td></td><td class="mono"><span class="v">LeftInPower</span> <span class="op-kw">is</span> <span class="op-kw">true</span></td></tr>
+<tr><td class="mono">APU-R08</td><td><span class="kind cond">condition</span></td><td class="mono">None</td><td></td><td class="mono"><span class="v">SubordinateInWork</span> <span class="op-kw">is</span> <span class="op-kw">true</span></td></tr>
+<tr><td class="mono">APU-R09</td><td><span class="kind act">act</span></td><td class="mono">Actor</td><td></td><td class="mono"><span class="v">Torments</span> <span class="op-kw">is</span> <span class="op-kw">true</span></td></tr>
+<tr><td class="mono">APU-R10</td><td><span class="kind act">act</span></td><td class="mono">Actor</td><td></td><td class="mono"><span class="v">RoughlyMaltreats</span> <span class="op-kw">is</span> <span class="op-kw">true</span></td></tr>
+<tr><td class="mono">APU-R11</td><td><span class="kind act">act</span></td><td class="mono">Actor</td><td></td><td class="mono"><span class="v">MaliciousNeglectHealthDamage</span> <span class="op-kw">is</span> <span class="op-kw">true</span></td></tr>
+<tr><td class="mono">APU-R80</td><td><span class="kind act">act</span></td><td class="mono">Actor</td><td>scope note: paragraph 1 whole, the three victim alternatives over the four care relationships (the care-or-custody pair split per the contract) over the three conducts; the malicious-neglect conduct carries its own health-damage result inside the conduct element</td><td class="mono"><span class="c">AbuseOfPersonUnderCare</span> <span class="op-kw">is</span> <span class="op-kw">true</span></td></tr>
+<tr><td class="mono">APU-P0</td><td><span class="kind proh">prohibition</span></td><td class="mono">Actor</td><td>not realise</td><td class="mono"><span class="op-kw">not</span> <span class="c">AbuseOfPersonUnderCare</span></td></tr>
+</table>
+<div class="lbl">Tatbestand dissected to the Merkmal</div><table class="dx"><tr><th>Source phrase</th><th>Doctrinal role</th><th>Primitive</th><th>Rule</th><th>Requires</th></tr>
+<tr><td>Whoever</td><td class="role">Tätersubjekt</td><td class="mono">{<span class="v">Actor</span>}</td><td class="mono">—</td><td>in scope</td></tr>
+<tr><td>a person under eighteen years</td><td class="role">Merkmal</td><td class="mono">{<span class="v">VictimUnderEighteen</span>}</td><td class="mono">APU-R01</td><td>is true</td></tr>
+<tr><td>a person defenceless owing to frailty</td><td class="role">Merkmal</td><td class="mono">{<span class="v">DefencelessThroughFrailty</span>}</td><td class="mono">APU-R02</td><td>is true</td></tr>
+<tr><td>a person defenceless owing to illness</td><td class="role">Merkmal</td><td class="mono">{<span class="v">DefencelessThroughIllness</span>}</td><td class="mono">APU-R03</td><td>is true</td></tr>
+<tr><td>the person is under the care of {Actor}</td><td class="role">Merkmal</td><td class="mono">{<span class="v">UnderCare</span>}</td><td class="mono">APU-R04</td><td>is true</td></tr>
+<tr><td>the person is under the custody of {Actor}</td><td class="role">Merkmal</td><td class="mono">{<span class="v">UnderCustody</span>}</td><td class="mono">APU-R05</td><td>is true</td></tr>
+<tr><td>the person belongs to the household of {Actor}</td><td class="role">Merkmal</td><td class="mono">{<span class="v">BelongsToHousehold</span>}</td><td class="mono">APU-R06</td><td>is true</td></tr>
+<tr><td>the person has been left in the power of {Actor} by the person obliged to provide care</td><td class="role">Merkmal</td><td class="mono">{<span class="v">LeftInPower</span>}</td><td class="mono">APU-R07</td><td>is true</td></tr>
+<tr><td>the person is subordinate to {Actor} within a work relationship</td><td class="role">Merkmal</td><td class="mono">{<span class="v">SubordinateInWork</span>}</td><td class="mono">APU-R08</td><td>is true</td></tr>
+<tr><td>{Actor} torments the person</td><td class="role">Merkmal</td><td class="mono">{<span class="v">Torments</span>}</td><td class="mono">APU-R09</td><td>is true</td></tr>
+<tr><td>{Actor} roughly maltreats the person</td><td class="role">Merkmal</td><td class="mono">{<span class="v">RoughlyMaltreats</span>}</td><td class="mono">APU-R10</td><td>is true</td></tr>
+<tr><td>{Actor} damages the health of the person through malicious neglect of the duty of care</td><td class="role">Merkmal</td><td class="mono">{<span class="v">MaliciousNeglectHealthDamage</span>}</td><td class="mono">APU-R11</td><td>is true</td></tr>
+<tr><td>(2) attempt; (3) endangerment aggravation; (4) less serious cases</td><td class="role">attempt / grading</td><td class="mono">— excluded —</td><td class="mono">—</td><td>struck</td></tr>
+</table>
+<div class="lbl">Variables appendix</div><table class="va"><tr><th>Variable</th><th>Input</th><th>Values</th><th>Cascade</th><th>Surface form (source words)</th></tr>
+<tr><td class="mono"><span class="v">{Actor}</span></td><td>Reference</td><td class="mono">–</td><td>Session</td><td>any person (the actor)</td></tr>
+<tr><td class="mono"><span class="v">{BelongsToHousehold}</span></td><td>Boolean</td><td class="mono">true / false / unknown</td><td>Session</td><td>the person belongs to the household of {Actor}</td></tr>
+<tr><td class="mono"><span class="v">{DefencelessThroughFrailty}</span></td><td>Boolean</td><td class="mono">true / false / unknown</td><td>Session</td><td>a person defenceless owing to frailty</td></tr>
+<tr><td class="mono"><span class="v">{DefencelessThroughIllness}</span></td><td>Boolean</td><td class="mono">true / false / unknown</td><td>Session</td><td>a person defenceless owing to illness</td></tr>
+<tr><td class="mono"><span class="v">{LeftInPower}</span></td><td>Boolean</td><td class="mono">true / false / unknown</td><td>Session</td><td>the person has been left in the power of {Actor} by the person obliged to provide care</td></tr>
+<tr><td class="mono"><span class="v">{MaliciousNeglectHealthDamage}</span></td><td>Boolean</td><td class="mono">true / false / unknown</td><td>Session</td><td>{Actor} damages the health of the person through malicious neglect of the duty of care</td></tr>
+<tr><td class="mono"><span class="v">{RoughlyMaltreats}</span></td><td>Boolean</td><td class="mono">true / false / unknown</td><td>Session</td><td>{Actor} roughly maltreats the person</td></tr>
+<tr><td class="mono"><span class="v">{SubordinateInWork}</span></td><td>Boolean</td><td class="mono">true / false / unknown</td><td>Session</td><td>the person is subordinate to {Actor} within a work relationship</td></tr>
+<tr><td class="mono"><span class="v">{Torments}</span></td><td>Boolean</td><td class="mono">true / false / unknown</td><td>Session</td><td>{Actor} torments the person</td></tr>
+<tr><td class="mono"><span class="v">{UnderCare}</span></td><td>Boolean</td><td class="mono">true / false / unknown</td><td>Session</td><td>the person is under the care of {Actor}</td></tr>
+<tr><td class="mono"><span class="v">{UnderCustody}</span></td><td>Boolean</td><td class="mono">true / false / unknown</td><td>Session</td><td>the person is under the custody of {Actor}</td></tr>
+<tr><td class="mono"><span class="v">{VictimUnderEighteen}</span></td><td>Boolean</td><td class="mono">true / false / unknown</td><td>Session</td><td>a person under eighteen years</td></tr>
+</table>
+<div class="lbl">Reconstruction from the substrate</div>
+<div class="recon"><b>Committed by</b> any person (the actor) who: (a person under eighteen years or a person defenceless owing to frailty or a person defenceless owing to illness) and (the person is under the care of {Actor} or the person is under the custody of {Actor} or the person belongs to the household of {Actor} or the person has been left in the power of {Actor} by the person obliged to provide care or the person is subordinate to {Actor} within a work relationship) and ({Actor} torments the person or {Actor} roughly maltreats the person or {Actor} damages the health of the person through malicious neglect of the duty of care).<div class="note" style="margin-top:8px">Assembled only from the variable surface forms (including the actor) and the computable structure carried in the XSD, not from the source column. It should read as the offence. This is the recoverability test: the law is reverse-derivable from the substrate.</div></div>
+<div class="lbl">Dependent assessments (reactive invalidation)</div><table class="dep"><tr><th>Assessment</th><th>Depends on</th><th>Invalidation</th><th>Trigger effect</th></tr>
+<tr><td class="mono"><span class="c">[ProtectedVictim]</span></td><td class="mono"><span class="v">VictimUnderEighteen</span>, <span class="v">DefencelessThroughFrailty</span>, <span class="v">DefencelessThroughIllness</span></td><td class="mono">false</td><td>Recomputes when any input changes; propagates into the composite.</td></tr>
+<tr><td class="mono"><span class="c">[AbusiveConduct]</span></td><td class="mono"><span class="v">Torments</span>, <span class="v">RoughlyMaltreats</span>, <span class="v">MaliciousNeglectHealthDamage</span></td><td class="mono">false</td><td>Recomputes when any input changes; propagates into the composite.</td></tr>
+<tr><td class="mono"><span class="c">[CareRelationship]</span></td><td class="mono"><span class="v">UnderCare</span>, <span class="v">UnderCustody</span>, <span class="v">BelongsToHousehold</span>, <span class="v">LeftInPower</span>, <span class="v">SubordinateInWork</span></td><td class="mono">false</td><td>Recomputes when any input changes; propagates into the composite.</td></tr>
+<tr><td class="mono"><span class="c">[AbuseOfPersonUnderCare]</span></td><td class="mono"><span class="c">ProtectedVictim</span>, <span class="c">CareRelationship</span>, <span class="c">AbusiveConduct</span></td><td class="mono">false</td><td>Final composite. Re-evaluates on any input change; cannot resolve true while any input is unknown.</td></tr>
+<tr><td class="mono">prohibition (APU-P0)</td><td class="mono"><span class="c">[AbuseOfPersonUnderCare]</span></td><td class="mono">re-derives</td><td>The PrimeRule prohibition holds whenever the composite is true; re-derives on any change.</td></tr></table>
+<div class="lbl">Decision tree</div><div class="tree">PHASE 1: gather inputs (Session)
+  ├─ {<span class="v">Actor</span>}
+  ├─ {<span class="v">BelongsToHousehold</span>}
+  ├─ {<span class="v">DefencelessThroughFrailty</span>}
+  ├─ {<span class="v">DefencelessThroughIllness</span>}
+  ├─ {<span class="v">LeftInPower</span>}
+  ├─ {<span class="v">MaliciousNeglectHealthDamage</span>}
+  ├─ {<span class="v">RoughlyMaltreats</span>}
+  ├─ {<span class="v">SubordinateInWork</span>}
+  ├─ {<span class="v">Torments</span>}
+  ├─ {<span class="v">UnderCare</span>}
+  ├─ {<span class="v">UnderCustody</span>}
+  ├─ {<span class="v">VictimUnderEighteen</span>}
+↓
+PHASE 2: evaluate act / intermediate computables
+  ├─ [<span class="c">ProtectedVictim</span>] = <span class="v">VictimUnderEighteen</span> <span class="op-kw">is</span> <span class="op-kw">true</span> <span class="op-kw">or</span> <span class="v">DefencelessThroughFrailty</span> <span class="op-kw">is</span> <span class="op-kw">true</span> <span class="op-kw">or</span> <span class="v">DefencelessThroughIllness</span> <span class="op-kw">is</span> <span class="op-kw">true</span>
+  ├─ [<span class="c">AbusiveConduct</span>] = <span class="v">Torments</span> <span class="op-kw">is</span> <span class="op-kw">true</span> <span class="op-kw">or</span> <span class="v">RoughlyMaltreats</span> <span class="op-kw">is</span> <span class="op-kw">true</span> <span class="op-kw">or</span> <span class="v">MaliciousNeglectHealthDamage</span> <span class="op-kw">is</span> <span class="op-kw">true</span>
+  ├─ [<span class="c">CareRelationship</span>] = <span class="v">UnderCare</span> <span class="op-kw">is</span> <span class="op-kw">true</span> <span class="op-kw">or</span> <span class="v">UnderCustody</span> <span class="op-kw">is</span> <span class="op-kw">true</span> <span class="op-kw">or</span> <span class="v">BelongsToHousehold</span> <span class="op-kw">is</span> <span class="op-kw">true</span> <span class="op-kw">or</span> <span class="v">LeftInPower</span> <span class="op-kw">is</span> <span class="op-kw">true</span> <span class="op-kw">or</span> <span class="v">SubordinateInWork</span> <span class="op-kw">is</span> <span class="op-kw">true</span>
+↓
+PHASE 3: evaluate the objective conditions
+  └─ [<span class="c">AbuseOfPersonUnderCare</span>] = <span class="c">ProtectedVictim</span> <span class="op-kw">is</span> <span class="op-kw">true</span> <span class="op-kw">and</span> <span class="c">CareRelationship</span> <span class="op-kw">is</span> <span class="op-kw">true</span> <span class="op-kw">and</span> <span class="c">AbusiveConduct</span> <span class="op-kw">is</span> <span class="op-kw">true</span>
+↓
+VERDICT (PrimeRule)
+  ├─ [<span class="c">AbuseOfPersonUnderCare</span>] <span class="op-kw">is</span> <span class="op-kw">true</span>  → objective conditions realised → conduct PROHIBITED (subject to permissions / exceptions)
+  └─ [<span class="c">AbuseOfPersonUnderCare</span>] <span class="op-kw">is</span> <span class="op-kw">false</span> → <span class="op-kw">not</span> realised</div>
+<div class="lbl">Recursion / re-entry notes</div><div class="note">No runtime re-entry. The operome is a single forward evaluation: inputs → act computable(s) → Tatbestand composite → prohibition verdict. Attempt and preparation, where the section provides for them, are separate operomes, not re-entries.</div>
+<div class="lbl">Circularity check</div><div class="note">• [AbuseOfPersonUnderCare] depends on [ProtectedVictim], [AbusiveConduct], [CareRelationship]; none refer back to [AbuseOfPersonUnderCare]. No definitional cycle.</div><div class="note">• Each computable reduces to input Booleans; the graph is a DAG and topologically sortable. Tristate is monotone: any unknown input holds the composite at unknown rather than forcing a verdict.</div>
+<div class="lbl">Questionnaire</div><table class="qn"><tr><th>#</th><th>Cascade</th><th>Variable</th><th>Question / prompt</th><th>Input</th></tr>
+<tr><td class="mono">Q1</td><td>Session</td><td class="mono"><span class="v">{Actor}</span></td><td>Who or what is the actor? Any natural person, legal person, or non-human system. Canonical home: PrimeRule.?</td><td>Reference</td></tr>
+<tr><td class="mono">Q2</td><td>Session</td><td class="mono"><span class="v">{BelongsToHousehold}</span></td><td>Element/Datum: the person belongs to the household of {Actor}.?</td><td>Boolean</td></tr>
+<tr><td class="mono">Q3</td><td>Session</td><td class="mono"><span class="v">{DefencelessThroughFrailty}</span></td><td>Element/Datum: a person defenceless owing to frailty.?</td><td>Boolean</td></tr>
+<tr><td class="mono">Q4</td><td>Session</td><td class="mono"><span class="v">{DefencelessThroughIllness}</span></td><td>Element/Datum: a person defenceless owing to illness.?</td><td>Boolean</td></tr>
+<tr><td class="mono">Q5</td><td>Session</td><td class="mono"><span class="v">{LeftInPower}</span></td><td>Element/Datum: the person has been left in the power of {Actor} by the person obliged to provide care.?</td><td>Boolean</td></tr>
+<tr><td class="mono">Q6</td><td>Session</td><td class="mono"><span class="v">{MaliciousNeglectHealthDamage}</span></td><td>Element/Datum: {Actor} damages the health of the person through malicious neglect of the duty of care.?</td><td>Boolean</td></tr>
+<tr><td class="mono">Q7</td><td>Session</td><td class="mono"><span class="v">{RoughlyMaltreats}</span></td><td>Element/Datum: {Actor} roughly maltreats the person.?</td><td>Boolean</td></tr>
+<tr><td class="mono">Q8</td><td>Session</td><td class="mono"><span class="v">{SubordinateInWork}</span></td><td>Element/Datum: the person is subordinate to {Actor} within a work relationship.?</td><td>Boolean</td></tr>
+<tr><td class="mono">Q9</td><td>Session</td><td class="mono"><span class="v">{Torments}</span></td><td>Element/Datum: {Actor} torments the person.?</td><td>Boolean</td></tr>
+<tr><td class="mono">Q10</td><td>Session</td><td class="mono"><span class="v">{UnderCare}</span></td><td>Element/Datum: the person is under the care of {Actor}.?</td><td>Boolean</td></tr>
+<tr><td class="mono">Q11</td><td>Session</td><td class="mono"><span class="v">{UnderCustody}</span></td><td>Element/Datum: the person is under the custody of {Actor}.?</td><td>Boolean</td></tr>
+<tr><td class="mono">Q12</td><td>Session</td><td class="mono"><span class="v">{VictimUnderEighteen}</span></td><td>Element/Datum: a person under eighteen years.?</td><td>Boolean</td></tr>
+</table>
+<div class="lbl">Flags</div>
+<div class="flag"><b>Scope</b> &nbsp;Paragraph 1 whole and live; (2), (3) and (4) struck, the standing treatment of attempt and grading, in contrast to §221 where your markup kept the qualification live.</div>
+<div class="flag"><b>Structure</b> &nbsp;Three victim alternatives over four care relationships over three conducts; the Fürsorge-oder-Obhut pair split into <span class="v">{UnderCare}</span> and <span class="v">{UnderCustody}</span> per the contract, disjunction in the computable.</div>
+<div class="flag"><b>Evaluative residue</b> &nbsp;“torments”, “roughly” and “malicious” carry normative weight; the structure compiles, the thresholds escalate at the margin.</div>
+<div class="flag"><b>Treatment</b> &nbsp;§225 Operomise; §226, §226a, §227 Excluded.</div>
+</div></div>
+<div class="titlebar"><h1>§228 · Consent (exception scope)</h1><div class="sub">ConsentJustification · provenance StGB 228 · whole provision live; good-morals threshold escalated</div></div>
+<div class="op"><div class="hd"><div>Source (English, unofficial)</div><div>Operome markup - original text encoded</div></div>
+<div class="row"><div class="src">Whoever performs a bodily harm with the consent of the injured person acts unlawfully only where the act, despite the consent, offends good morals.</div><div class="mk"><span class="k">«if ConsentJustification is true»</span><span class="v">{Actor}</span> who performs a bodily harm with <span class="k">«if <span class="v">{ConsentGiven}</span> is true»</span>the consent of the injured person <span class="k">«end if»</span> acts unlawfully only where <span class="k">«if <span class="v">{ContraBonosMores}</span> is false»</span>the act, despite the consent, offends good morals <span class="k">«end if»</span>.<span class="k">«end if»</span></div></div></div>
+<div class="annex"><div class="annexhd">Annexes</div><div class="annexbody">
+<div class="lbl">Computables</div><div class="def">
+<span class="c">[ConsentJustification]</span> <span class="op-kw">=</span> <span class="v">ConsentGiven</span> <span class="op-kw">is</span> <span class="op-kw">true</span> <span class="op-kw">and</span> <span class="op-kw">not</span> <span class="v">ContraBonosMores</span>
+</div>
+<div class="lbl">Business rules</div><table class="br"><tr><th>id</th><th>kind</th><th>actor</th><th>verb / predicate</th><th>body</th></tr>
+<tr><td class="mono">CJU-R01</td><td><span class="kind cond">condition</span></td><td class="mono">None</td><td></td><td class="mono"><span class="v">ConsentGiven</span> <span class="op-kw">is</span> <span class="op-kw">true</span></td></tr>
+<tr><td class="mono">CJU-R02</td><td><span class="kind cond">condition</span></td><td class="mono">None</td><td></td><td class="mono"><span class="v">ContraBonosMores</span> <span class="op-kw">is</span> <span class="op-kw">true</span></td></tr>
+<tr><td class="mono">CJU-R80</td><td><span class="kind cond">condition</span></td><td class="mono">None</td><td>exception (whole provision live, zero strikes): whoever performs a bodily harm with the consent of the injured person acts unlawfully only where the act offends good morals despite the consent; [ConsentJustification] is the third exception act consumed by the Section 13 master rule alongside Sections 32 and 34, limited by the Section 35 counter-exception; the act element resolves against [BodilyHarm] of the Section 223 scope in this carrier; the good-morals threshold is evaluative residue flagged for escalation</td><td class="mono"><span class="c">ConsentJustification</span> <span class="op-kw">is</span> <span class="op-kw">true</span></td></tr>
+<tr><td class="mono">CJU-P0</td><td><span class="kind proh">prohibition</span></td><td class="mono">Actor</td><td>not realise</td><td class="mono"><span class="op-kw">not</span> <span class="c">ConsentJustification</span></td></tr>
+</table>
+<div class="lbl">Tatbestand dissected to the Merkmal</div><table class="dx"><tr><th>Source phrase</th><th>Doctrinal role</th><th>Primitive</th><th>Rule</th><th>Requires</th></tr>
+<tr><td>Whoever performs a bodily harm</td><td class="role">act element (cross-scope)</td><td class="mono">— resolves against [BodilyHarm], §223 —</td><td class="mono">CJU-R80</td><td>in scope</td></tr>
+<tr><td>with the consent of the injured person</td><td class="role">Merkmal</td><td class="mono">{<span class="v">ConsentGiven</span>}</td><td class="mono">CJU-R01</td><td>is true</td></tr>
+<tr><td>offends good morals despite the consent</td><td class="role">Grenze (evaluative)</td><td class="mono">{<span class="v">ContraBonosMores</span>}</td><td class="mono">CJU-R02</td><td>is false</td></tr>
+</table>
+<div class="lbl">Variables appendix</div><table class="va"><tr><th>Variable</th><th>Input</th><th>Values</th><th>Cascade</th><th>Surface form (source words)</th></tr>
+<tr><td class="mono"><span class="v">{Actor}</span></td><td>Reference</td><td class="mono">–</td><td>Session</td><td>any person (the actor)</td></tr>
+<tr><td class="mono"><span class="v">{ConsentGiven}</span></td><td>Boolean</td><td class="mono">true / false / unknown</td><td>Session</td><td>the injured person consents to the bodily harm</td></tr>
+<tr><td class="mono"><span class="v">{ContraBonosMores}</span></td><td>Boolean</td><td class="mono">true / false / unknown</td><td>Session</td><td>the act offends good morals despite the consent</td></tr>
+</table>
+<div class="lbl">Reconstruction from the substrate</div>
+<div class="recon"><b>Committed by</b> any person (the actor) who: the injured person consents to the bodily harm and not ContraBonosMores.<div class="note" style="margin-top:8px">Assembled only from the variable surface forms (including the actor) and the computable structure carried in the XSD, not from the source column. It should read as the offence. This is the recoverability test: the law is reverse-derivable from the substrate.</div></div>
+<div class="lbl">Dependent assessments (reactive invalidation)</div><table class="dep"><tr><th>Assessment</th><th>Depends on</th><th>Invalidation</th><th>Trigger effect</th></tr>
+<tr><td class="mono"><span class="c">[ConsentJustification]</span></td><td class="mono"><span class="v">ConsentGiven</span>, <span class="v">ContraBonosMores</span></td><td class="mono">false</td><td>Final composite. Re-evaluates on any input change; cannot resolve true while any input is unknown.</td></tr>
+<tr><td class="mono">prohibition (CJU-P0)</td><td class="mono"><span class="c">[ConsentJustification]</span></td><td class="mono">re-derives</td><td>The PrimeRule prohibition holds whenever the composite is true; re-derives on any change.</td></tr></table>
+<div class="lbl">Decision tree</div><div class="tree">PHASE 1: gather inputs (Session)
+  ├─ {<span class="v">Actor</span>}
+  ├─ {<span class="v">ConsentGiven</span>}
+  ├─ {<span class="v">ContraBonosMores</span>}
+↓
+PHASE 2: evaluate act / intermediate computables
+↓
+PHASE 3: evaluate the objective conditions
+  └─ [<span class="c">ConsentJustification</span>] = <span class="v">ConsentGiven</span> <span class="op-kw">is</span> <span class="op-kw">true</span> <span class="op-kw">and</span> <span class="op-kw">not</span> <span class="v">ContraBonosMores</span>
+↓
+VERDICT (PrimeRule)
+  ├─ [<span class="c">ConsentJustification</span>] <span class="op-kw">is</span> <span class="op-kw">true</span>  → objective conditions realised → conduct PROHIBITED (subject to permissions / exceptions)
+  └─ [<span class="c">ConsentJustification</span>] <span class="op-kw">is</span> <span class="op-kw">false</span> → <span class="op-kw">not</span> realised</div>
+<div class="lbl">Recursion / re-entry notes</div><div class="note">No runtime re-entry. The operome is a single forward evaluation: inputs → act computable(s) → Tatbestand composite → prohibition verdict. Attempt and preparation, where the section provides for them, are separate operomes, not re-entries.</div>
+<div class="lbl">Circularity check</div><div class="note">• [ConsentJustification] depends on ; none refer back to [ConsentJustification]. No definitional cycle.</div><div class="note">• Each computable reduces to input Booleans; the graph is a DAG and topologically sortable. Tristate is monotone: any unknown input holds the composite at unknown rather than forcing a verdict.</div>
+<div class="lbl">Questionnaire</div><table class="qn"><tr><th>#</th><th>Cascade</th><th>Variable</th><th>Question / prompt</th><th>Input</th></tr>
+<tr><td class="mono">Q1</td><td>Session</td><td class="mono"><span class="v">{Actor}</span></td><td>Who or what is the actor? Any natural person, legal person, or non-human system. Canonical home: PrimeRule.?</td><td>Reference</td></tr>
+<tr><td class="mono">Q2</td><td>Session</td><td class="mono"><span class="v">{ConsentGiven}</span></td><td>Element/Datum: the injured person consents to the bodily harm.?</td><td>Boolean</td></tr>
+<tr><td class="mono">Q3</td><td>Session</td><td class="mono"><span class="v">{ContraBonosMores}</span></td><td>Element/Datum: the act offends good morals despite the consent.?</td><td>Boolean</td></tr>
+</table>
+<div class="lbl">Flags</div>
+<div class="flag"><b>Scope</b> &nbsp;Whole provision live, zero strikes: an exception scope, the bodily-integrity counterpart of §32 and §34. Consumed by the §13 master rule&#x27;s <span class="v">{ExceptionActApplies}</span>; limited by the §35 counter-exception.</div>
+<div class="flag"><b>Evaluative residue</b> &nbsp;“gute Sitten” is the open-textured limit of the provision: consent decides cleanly; whether the act offends good morals despite it escalates. The structure compiles, the threshold does not pretend to.</div>
+<div class="flag"><b>Cross-scope reference</b> &nbsp;The act element resolves against <span class="c">[BodilyHarm]</span> of the §223 scope in this carrier.</div>
+<div class="flag"><b>Treatment</b> &nbsp;§228 is Operomise-tagged; §229, §230, §231 are Excluded.</div>
+</div></div>
+SynapseLayer operome extraction · Lisbon, 10 June 2026

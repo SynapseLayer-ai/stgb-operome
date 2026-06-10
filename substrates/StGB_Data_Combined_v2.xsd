@@ -1,0 +1,321 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"><xs:annotation><xs:documentation>
+      Operome: OperomeStGBData
+      Source: StGB consolidated, data and privacy offences (provenance StGB 202a, 202b, 202c, 202d; German governs)
+      Rebuilt to the current encoding contract, superseding the earlier data-offences carrier; 263a, 303a and 303b
+      remain in their own carrier unchanged. The 202a scope authors [ProtectedData] (the Section 202a(2) definition),
+      consumed by name by the 202b, 202c and 202d scopes. The 202c scope keeps the Section 149(2),(3) repentance
+      reference live per the markup (input resolution; contrast the struck Section 129(7)); the 202d scope carries the
+      live lawful-duties exemption [LawfulDutyExemption] and retains the enrichment-or-harm intent per the retention
+      criterion. Sanctions, the 202b and 107b-pattern subsidiarity clauses and the 202d(2) penalty cap struck.
+      Runtime caveat: consolidated file, not a proven executable, until the loader's scope-local resolution is tested.
+    </xs:documentation><xs:appinfo><PackageMeta><Subject>StGB Consolidated, Data and Privacy Offences (§202a to §202d)</Subject><Verb>protect</Verb><Article>StGB 202a, 202b, 202c, 202d</Article><ShortName>OperomeStGBData</ShortName></PackageMeta></xs:appinfo></xs:annotation><xs:simpleType name="TristateEnum"><xs:restriction base="xs:string"><xs:enumeration value="true"/><xs:enumeration value="false"/><xs:enumeration value="unknown"/></xs:restriction></xs:simpleType>
+
+  <xs:complexType name="S202a_PartiesGroup"><xs:sequence>
+      <xs:element name="Actor" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Who or what is the actor? Any natural person, legal person, or non-human system. Canonical home: PrimeRule. (name / identifier) | Input: Reference</xs:documentation><xs:appinfo><SurfaceForm>any person (the actor)</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S202a_DataObjectGroup"><xs:sequence>
+      <xs:element name="DataNotIntendedForActor" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the data are not intended for {Actor}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the data are not intended for {Actor}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S202a_ConductGroup"><xs:sequence>
+      <xs:element name="ObtainsAccessForAnother" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} obtains access to the data for another person. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} obtains access to the data for another person</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ObtainsAccessForSelf" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} obtains access to the data for {Actor}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} obtains access to the data for {Actor}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="OvercomesAccessProtection" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} overcomes the access protection. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} overcomes the access protection</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="SpeciallySecured" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the data are specially secured against unauthorised access. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the data are specially secured against unauthorised access</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="StoredNonPerceivably" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the data are stored in a manner not directly perceivable. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the data are stored in a manner not directly perceivable</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="TransmittedNonPerceivably" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the data are transmitted in a manner not directly perceivable. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the data are transmitted in a manner not directly perceivable</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="WithoutAuthorisation" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} acts without authorisation. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} acts without authorisation</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S202a_ComputableVariablesGroup"><xs:sequence>
+      <xs:element name="ProtectedData" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] ProtectedData. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="ProtectedData" dataType="Boolean"><Definition>StoredNonPerceivably is true or TransmittedNonPerceivably is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="UnauthorisedDataAccess" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] UnauthorisedDataAccess. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="UnauthorisedDataAccess" dataType="Boolean"><Definition>WithoutAuthorisation is true and (ObtainsAccessForSelf is true or ObtainsAccessForAnother is true) and DataNotIntendedForActor is true and SpeciallySecured is true and OvercomesAccessProtection is true and ProtectedData is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:element name="OperomeUnauthorisedDataAccess"><xs:complexType><xs:sequence>
+        <xs:element name="Parties" type="S202a_PartiesGroup" minOccurs="0"/>
+        <xs:element name="DataObject" type="S202a_DataObjectGroup" minOccurs="0"/>
+        <xs:element name="Conduct" type="S202a_ConductGroup" minOccurs="0"/>
+        <xs:element name="ComputableVariables" type="S202a_ComputableVariablesGroup" minOccurs="0"/>
+  </xs:sequence></xs:complexType></xs:element>
+  <xs:annotation><xs:appinfo>
+      <SectionScopes>
+        <Scope id="OUT-UnauthorisedDataAccess" section="Data Espionage">
+          <Condition>UnauthorisedDataAccess is true</Condition>
+          <Description>Data Espionage (objective Tatbestand).</Description>
+          <Variables>
+            <Variable>Actor</Variable>
+            <Variable>DataNotIntendedForActor</Variable>
+            <Variable>ObtainsAccessForAnother</Variable>
+            <Variable>ObtainsAccessForSelf</Variable>
+            <Variable>OvercomesAccessProtection</Variable>
+            <Variable>SpeciallySecured</Variable>
+            <Variable>StoredNonPerceivably</Variable>
+            <Variable>TransmittedNonPerceivably</Variable>
+            <Variable>WithoutAuthorisation</Variable>
+            <Variable>ProtectedData</Variable>
+            <Variable>UnauthorisedDataAccess</Variable>
+          </Variables>
+        </Scope>
+      </SectionScopes>
+      <BusinessRules>
+        <Rule id="UDA-R01" verb="" actor="Actor">ObtainsAccessForSelf is true</Rule>
+        <Rule id="UDA-R02" verb="" actor="Actor">ObtainsAccessForAnother is true</Rule>
+        <Rule id="UDA-R03" verb="" actor="None">WithoutAuthorisation is true</Rule>
+        <Rule id="UDA-R04" verb="" actor="None">DataNotIntendedForActor is true</Rule>
+        <Rule id="UDA-R05" verb="" actor="None">SpeciallySecured is true</Rule>
+        <Rule id="UDA-R06" verb="" actor="Actor">OvercomesAccessProtection is true</Rule>
+        <Rule id="UDA-R07" verb="" actor="None">StoredNonPerceivably is true</Rule>
+        <Rule id="UDA-R08" verb="" actor="None">TransmittedNonPerceivably is true</Rule>
+        <Rule id="UDA-R80" verb="definition (paragraph 2, live): data within the meaning of paragraph 1 are only such as are stored or transmitted electronically, magnetically or otherwise in a manner not directly perceivable; authored as [ProtectedData] and consumed here and, per the express references to Section 202a(2), by the 202b, 202c and 202d scopes" actor="None">ProtectedData is true</Rule>
+        <Rule id="UDA-P0" verb="not realise" actor="Actor">not UnauthorisedDataAccess</Rule>
+      </BusinessRules>
+  </xs:appinfo></xs:annotation>
+
+
+  <xs:complexType name="S202b_PartiesGroup"><xs:sequence>
+      <xs:element name="Actor" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Who or what is the actor? Any natural person, legal person, or non-human system. Canonical home: PrimeRule. (name / identifier) | Input: Reference</xs:documentation><xs:appinfo><SurfaceForm>any person (the actor)</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S202b_DataObjectGroup"><xs:sequence>
+      <xs:element name="DataNotIntendedForActor" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the data are not intended for {Actor}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the data are not intended for {Actor}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S202b_ConductGroup"><xs:sequence>
+      <xs:element name="FromElectromagneticEmission" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: from the electromagnetic emission of a data-processing installation. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>from the electromagnetic emission of a data-processing installation</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="FromNonPublicTransmission" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: from a non-public data transmission. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>from a non-public data transmission</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ObtainsForAnother" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} obtains the data for another person. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} obtains the data for another person</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ObtainsForSelf" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} obtains the data for {Actor}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} obtains the data for {Actor}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ProtectedData" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the data satisfy the Section 202a(2) definition. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the data satisfy the Section 202a(2) definition</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="UsingTechnicalMeans" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} applies technical means. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} applies technical means</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="WithoutAuthorisation" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} acts without authorisation. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} acts without authorisation</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S202b_ComputableVariablesGroup"><xs:sequence>
+      <xs:element name="InterceptionOfData" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] InterceptionOfData. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="InterceptionOfData" dataType="Boolean"><Definition>WithoutAuthorisation is true and UsingTechnicalMeans is true and (ObtainsForSelf is true or ObtainsForAnother is true) and DataNotIntendedForActor is true and ProtectedData is true and (FromNonPublicTransmission is true or FromElectromagneticEmission is true)</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:element name="OperomeInterceptionOfData"><xs:complexType><xs:sequence>
+        <xs:element name="Parties" type="S202b_PartiesGroup" minOccurs="0"/>
+        <xs:element name="DataObject" type="S202b_DataObjectGroup" minOccurs="0"/>
+        <xs:element name="Conduct" type="S202b_ConductGroup" minOccurs="0"/>
+        <xs:element name="ComputableVariables" type="S202b_ComputableVariablesGroup" minOccurs="0"/>
+  </xs:sequence></xs:complexType></xs:element>
+  <xs:annotation><xs:appinfo>
+      <SectionScopes>
+        <Scope id="OUT-InterceptionOfData" section="Interception of Data">
+          <Condition>InterceptionOfData is true</Condition>
+          <Description>Interception of Data (objective Tatbestand).</Description>
+          <Variables>
+            <Variable>Actor</Variable>
+            <Variable>DataNotIntendedForActor</Variable>
+            <Variable>FromElectromagneticEmission</Variable>
+            <Variable>FromNonPublicTransmission</Variable>
+            <Variable>ObtainsForAnother</Variable>
+            <Variable>ObtainsForSelf</Variable>
+            <Variable>ProtectedData</Variable>
+            <Variable>UsingTechnicalMeans</Variable>
+            <Variable>WithoutAuthorisation</Variable>
+            <Variable>InterceptionOfData</Variable>
+          </Variables>
+        </Scope>
+      </SectionScopes>
+      <BusinessRules>
+        <Rule id="IOD-R01" verb="" actor="Actor">ObtainsForSelf is true</Rule>
+        <Rule id="IOD-R02" verb="" actor="Actor">ObtainsForAnother is true</Rule>
+        <Rule id="IOD-R03" verb="" actor="None">WithoutAuthorisation is true</Rule>
+        <Rule id="IOD-R04" verb="" actor="Actor">UsingTechnicalMeans is true</Rule>
+        <Rule id="IOD-R05" verb="" actor="None">DataNotIntendedForActor is true</Rule>
+        <Rule id="IOD-R06" verb="" actor="None">FromNonPublicTransmission is true</Rule>
+        <Rule id="IOD-R07" verb="" actor="None">FromElectromagneticEmission is true</Rule>
+        <Rule id="IOD-R80" verb="cross-scope reference: the data element resolves by name against [ProtectedData] of the Section 202a scope, per the express statutory reference to Section 202a(2)" actor="None">ProtectedData is true</Rule>
+        <Rule id="IOD-P0" verb="not realise" actor="Actor">not InterceptionOfData</Rule>
+      </BusinessRules>
+  </xs:appinfo></xs:annotation>
+
+
+  <xs:complexType name="S202c_PartiesGroup"><xs:sequence>
+      <xs:element name="Actor" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Who or what is the actor? Any natural person, legal person, or non-human system. Canonical home: PrimeRule. (name / identifier) | Input: Reference</xs:documentation><xs:appinfo><SurfaceForm>any person (the actor)</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S202c_ConductGroup"><xs:sequence>
+      <xs:element name="Disseminates" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} disseminates the object. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} disseminates the object</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="LeavesToAnother" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} leaves the object to another person. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} leaves the object to another person</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="MakesAccessible" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} otherwise makes the object accessible. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} otherwise makes the object accessible</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ObtainsForAnother" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} obtains the object for another person. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} obtains the object for another person</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ObtainsForSelf" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} obtains the object for {Actor}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} obtains the object for {Actor}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="OtherSecurityCodes" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: other security codes enabling access to data (Section 202a(2)). | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>other security codes enabling access to data (Section 202a(2))</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Passwords" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: passwords enabling access to data (Section 202a(2)). | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>passwords enabling access to data (Section 202a(2))</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="PreparesDataOffence" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} prepares a data-access offence. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} prepares a data-access offence</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Produces" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} produces the object. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} produces the object</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="PurposeBuiltPrograms" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: computer programs whose purpose is the commission of such an offence. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>computer programs whose purpose is the commission of such an offence</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Sells" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} sells the object. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} sells the object</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S202c_ComputableVariablesGroup"><xs:sequence>
+      <xs:element name="Object" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Object. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Object" dataType="Boolean"><Definition>Passwords is true or OtherSecurityCodes is true or PurposeBuiltPrograms is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Conduct" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Conduct. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Conduct" dataType="Boolean"><Definition>Produces is true or ObtainsForSelf is true or ObtainsForAnother is true or Sells is true or LeavesToAnother is true or Disseminates is true or MakesAccessible is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="PreparationOfDataAccess" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] PreparationOfDataAccess. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="PreparationOfDataAccess" dataType="Boolean"><Definition>PreparesDataOffence is true and Object is true and Conduct is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:element name="OperomePreparationOfDataAccess"><xs:complexType><xs:sequence>
+        <xs:element name="Parties" type="S202c_PartiesGroup" minOccurs="0"/>
+        <xs:element name="Conduct" type="S202c_ConductGroup" minOccurs="0"/>
+        <xs:element name="ComputableVariables" type="S202c_ComputableVariablesGroup" minOccurs="0"/>
+  </xs:sequence></xs:complexType></xs:element>
+  <xs:annotation><xs:appinfo>
+      <SectionScopes>
+        <Scope id="OUT-PreparationOfDataAccess" section="Acts Preparatory to Data Espionage and Interception">
+          <Condition>PreparationOfDataAccess is true</Condition>
+          <Description>Acts Preparatory to Data Espionage and Interception (objective Tatbestand).</Description>
+          <Variables>
+            <Variable>Actor</Variable>
+            <Variable>Disseminates</Variable>
+            <Variable>LeavesToAnother</Variable>
+            <Variable>MakesAccessible</Variable>
+            <Variable>ObtainsForAnother</Variable>
+            <Variable>ObtainsForSelf</Variable>
+            <Variable>OtherSecurityCodes</Variable>
+            <Variable>Passwords</Variable>
+            <Variable>PreparesDataOffence</Variable>
+            <Variable>Produces</Variable>
+            <Variable>PurposeBuiltPrograms</Variable>
+            <Variable>Sells</Variable>
+            <Variable>Object</Variable>
+            <Variable>Conduct</Variable>
+            <Variable>PreparationOfDataAccess</Variable>
+          </Variables>
+        </Scope>
+      </SectionScopes>
+      <BusinessRules>
+        <Rule id="PDA-R01" verb="" actor="Actor">PreparesDataOffence is true</Rule>
+        <Rule id="PDA-R02" verb="" actor="None">Passwords is true</Rule>
+        <Rule id="PDA-R03" verb="" actor="None">OtherSecurityCodes is true</Rule>
+        <Rule id="PDA-R04" verb="" actor="None">PurposeBuiltPrograms is true</Rule>
+        <Rule id="PDA-R05" verb="" actor="Actor">Produces is true</Rule>
+        <Rule id="PDA-R06" verb="" actor="Actor">ObtainsForSelf is true</Rule>
+        <Rule id="PDA-R07" verb="" actor="Actor">ObtainsForAnother is true</Rule>
+        <Rule id="PDA-R08" verb="" actor="Actor">Sells is true</Rule>
+        <Rule id="PDA-R09" verb="" actor="Actor">LeavesToAnother is true</Rule>
+        <Rule id="PDA-R10" verb="" actor="Actor">Disseminates is true</Rule>
+        <Rule id="PDA-R11" verb="" actor="Actor">MakesAccessible is true</Rule>
+        <Rule id="PDA-R80" verb="exception (paragraph 2, live): Section 149(2) and (3) applies correspondingly, the active-repentance rule for preparation offences; Section 149 stands outside the corpus, so whether its conditions are met resolves as an input; kept live per the markup, the opposite treatment to the struck repentance rules of Section 129(7), recorded as your decision" actor="None">PreparationOfDataAccess is true</Rule>
+        <Rule id="PDA-P0" verb="not realise" actor="Actor">not PreparationOfDataAccess</Rule>
+      </BusinessRules>
+  </xs:appinfo></xs:annotation>
+
+
+  <xs:complexType name="S202d_PartiesGroup"><xs:sequence>
+      <xs:element name="Actor" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Who or what is the actor? Any natural person, legal person, or non-human system. Canonical home: PrimeRule. (name / identifier) | Input: Reference</xs:documentation><xs:appinfo><SurfaceForm>any person (the actor)</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S202d_ConductGroup"><xs:sequence>
+      <xs:element name="Disseminates" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} disseminates the data. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} disseminates the data</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ExclusivelyLawfulDuties" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the act exclusively serves the fulfilment of lawful duties. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the act exclusively serves the fulfilment of lawful duties</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="IntentToEnrichSelf" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} acts in order to enrich {Actor}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} acts in order to enrich {Actor}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="IntentToEnrichThirdParty" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} acts in order to enrich a third party. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} acts in order to enrich a third party</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="IntentToHarmAnother" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} acts in order to harm another person. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} acts in order to harm another person</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="LeavesToAnother" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} leaves the data to another person. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} leaves the data to another person</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="MakesAccessible" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} otherwise makes the data accessible. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} otherwise makes the data accessible</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="NotGenerallyAccessible" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the data are not generally accessible. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the data are not generally accessible</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ObtainedByAnotherUnlawfully" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: another person obtained the data through an unlawful act. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>another person obtained the data through an unlawful act</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ProcuresForAnother" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} procures the data for another person. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} procures the data for another person</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ProcuresForSelf" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} procures the data for {Actor}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} procures the data for {Actor}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ProtectedData" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the data satisfy the Section 202a(2) definition. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the data satisfy the Section 202a(2) definition</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S202d_ComputableVariablesGroup"><xs:sequence>
+      <xs:element name="Conduct" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Conduct. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Conduct" dataType="Boolean"><Definition>ProcuresForSelf is true or ProcuresForAnother is true or LeavesToAnother is true or Disseminates is true or MakesAccessible is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="Intent" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] Intent. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="Intent" dataType="Boolean"><Definition>IntentToEnrichSelf is true or IntentToEnrichThirdParty is true or IntentToHarmAnother is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="LawfulDutyExemption" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] LawfulDutyExemption. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="LawfulDutyExemption" dataType="Boolean"><Definition>ExclusivelyLawfulDuties is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="HandlingUnlawfullyObtainedData" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] HandlingUnlawfullyObtainedData. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="HandlingUnlawfullyObtainedData" dataType="Boolean"><Definition>ProtectedData is true and NotGenerallyAccessible is true and ObtainedByAnotherUnlawfully is true and Conduct is true and Intent is true and not LawfulDutyExemption</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:element name="OperomeHandlingUnlawfullyObtainedData"><xs:complexType><xs:sequence>
+        <xs:element name="Parties" type="S202d_PartiesGroup" minOccurs="0"/>
+        <xs:element name="Conduct" type="S202d_ConductGroup" minOccurs="0"/>
+        <xs:element name="ComputableVariables" type="S202d_ComputableVariablesGroup" minOccurs="0"/>
+  </xs:sequence></xs:complexType></xs:element>
+  <xs:annotation><xs:appinfo>
+      <SectionScopes>
+        <Scope id="OUT-HandlingUnlawfullyObtainedData" section="Handling Stolen Data">
+          <Condition>HandlingUnlawfullyObtainedData is true</Condition>
+          <Description>Handling Stolen Data (objective Tatbestand).</Description>
+          <Variables>
+            <Variable>Actor</Variable>
+            <Variable>Disseminates</Variable>
+            <Variable>ExclusivelyLawfulDuties</Variable>
+            <Variable>IntentToEnrichSelf</Variable>
+            <Variable>IntentToEnrichThirdParty</Variable>
+            <Variable>IntentToHarmAnother</Variable>
+            <Variable>LeavesToAnother</Variable>
+            <Variable>MakesAccessible</Variable>
+            <Variable>NotGenerallyAccessible</Variable>
+            <Variable>ObtainedByAnotherUnlawfully</Variable>
+            <Variable>ProcuresForAnother</Variable>
+            <Variable>ProcuresForSelf</Variable>
+            <Variable>ProtectedData</Variable>
+            <Variable>Conduct</Variable>
+            <Variable>Intent</Variable>
+            <Variable>LawfulDutyExemption</Variable>
+            <Variable>HandlingUnlawfullyObtainedData</Variable>
+          </Variables>
+        </Scope>
+      </SectionScopes>
+      <BusinessRules>
+        <Rule id="HUD-R01" verb="" actor="None">NotGenerallyAccessible is true</Rule>
+        <Rule id="HUD-R02" verb="" actor="None">ObtainedByAnotherUnlawfully is true</Rule>
+        <Rule id="HUD-R03" verb="" actor="Actor">ProcuresForSelf is true</Rule>
+        <Rule id="HUD-R04" verb="" actor="Actor">ProcuresForAnother is true</Rule>
+        <Rule id="HUD-R05" verb="" actor="Actor">LeavesToAnother is true</Rule>
+        <Rule id="HUD-R06" verb="" actor="Actor">Disseminates is true</Rule>
+        <Rule id="HUD-R07" verb="" actor="Actor">MakesAccessible is true</Rule>
+        <Rule id="HUD-R08" verb="" actor="Actor">IntentToEnrichSelf is true</Rule>
+        <Rule id="HUD-R09" verb="" actor="Actor">IntentToEnrichThirdParty is true</Rule>
+        <Rule id="HUD-R10" verb="" actor="Actor">IntentToHarmAnother is true</Rule>
+        <Rule id="HUD-R11" verb="" actor="None">ExclusivelyLawfulDuties is true</Rule>
+        <Rule id="HUD-R80" verb="cross-scope reference: the data element resolves by name against [ProtectedData] of the Section 202a scope, per the express statutory reference to Section 202a(2)" actor="None">ProtectedData is true</Rule>
+        <Rule id="HUD-R81" verb="exemption (paragraph 3, live): paragraph 1 does not apply to acts exclusively serving the fulfilment of lawful official or professional duties; the two numbered illustrations (officials feeding data exclusively into taxation, criminal or regulatory proceedings; professional acts of the persons named in Section 53(1) sentence 1 no. 5 StPO receiving, evaluating or publishing data) stand as insbesondere illustrations under the general predicate, the Section 323c treatment; encoded as the separate negative [LawfulDutyExemption], never inside the legs" actor="None">LawfulDutyExemption is true</Rule>
+        <Rule id="HUD-P0" verb="not realise" actor="Actor">not HandlingUnlawfullyObtainedData</Rule>
+      </BusinessRules>
+  </xs:appinfo></xs:annotation>
+
+</xs:schema>

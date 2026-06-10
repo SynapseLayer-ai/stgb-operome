@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"><xs:annotation><xs:documentation>
+      Operome: OperomeStGBBodily
+      Source: StGB consolidated, offences against bodily integrity (provenance StGB 223, 225, 228; German governs)
+      Rebuilt to the current encoding contract, superseding the earlier bodily-integrity carrier. Section 224 has moved
+      to Excluded in the working document: the DangerousBodilyHarm scope is withdrawn and in-corpus references to 224
+      (the 129a catalogue text) resolve as input only. The 228 scope is new: the consent exception, whole provision
+      live, [ConsentJustification] consumed by the Section 13 master rule's {ExceptionActApplies} alongside the 32 and
+      34 scopes and limited by the 35 counter-exception; its act element resolves against [BodilyHarm] of the 223 scope
+      in this carrier; the good-morals threshold is evaluative residue flagged for escalation.
+      Runtime caveat: consolidated file, not a proven executable, until the loader's scope-local resolution is tested.
+    </xs:documentation><xs:appinfo><PackageMeta><Subject>StGB Consolidated, Offences Against Bodily Integrity (§223 to §228)</Subject><Verb>protect</Verb><Article>StGB 223, 225, 228</Article><ShortName>OperomeStGBBodily</ShortName></PackageMeta></xs:appinfo></xs:annotation><xs:simpleType name="TristateEnum"><xs:restriction base="xs:string"><xs:enumeration value="true"/><xs:enumeration value="false"/><xs:enumeration value="unknown"/></xs:restriction></xs:simpleType>
+
+  <xs:complexType name="S223_PartiesGroup"><xs:sequence>
+      <xs:element name="Actor" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Who or what is the actor? Any natural person, legal person, or non-human system. Canonical home: PrimeRule. (name / identifier) | Input: Reference</xs:documentation><xs:appinfo><SurfaceForm>any person (the actor)</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S223_ConductGroup"><xs:sequence>
+      <xs:element name="DamagesHealth" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} damages the health of another person. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} damages the health of another person</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="PhysicallyMaltreats" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} physically maltreats another person. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} physically maltreats another person</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S223_ComputableVariablesGroup"><xs:sequence>
+      <xs:element name="BodilyHarm" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] BodilyHarm. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="BodilyHarm" dataType="Boolean"><Definition>PhysicallyMaltreats is true or DamagesHealth is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:element name="OperomeBodilyHarm"><xs:complexType><xs:sequence>
+        <xs:element name="Parties" type="S223_PartiesGroup" minOccurs="0"/>
+        <xs:element name="Conduct" type="S223_ConductGroup" minOccurs="0"/>
+        <xs:element name="ComputableVariables" type="S223_ComputableVariablesGroup" minOccurs="0"/>
+  </xs:sequence></xs:complexType></xs:element>
+  <xs:annotation><xs:appinfo>
+      <SectionScopes>
+        <Scope id="OUT-BodilyHarm" section="Bodily Harm">
+          <Condition>BodilyHarm is true</Condition>
+          <Description>Bodily Harm (objective Tatbestand).</Description>
+          <Variables>
+            <Variable>Actor</Variable>
+            <Variable>DamagesHealth</Variable>
+            <Variable>PhysicallyMaltreats</Variable>
+            <Variable>BodilyHarm</Variable>
+          </Variables>
+        </Scope>
+      </SectionScopes>
+      <BusinessRules>
+        <Rule id="BDH-R01" verb="" actor="Actor">PhysicallyMaltreats is true</Rule>
+        <Rule id="BDH-R02" verb="" actor="Actor">DamagesHealth is true</Rule>
+        <Rule id="BDH-R80" verb="scope note: the two conducts gated individually per the contract, disjunction in the composite; [BodilyHarm] is the act element to which the Section 228 consent exception attaches and the reference target of the Section 129a catalogue text; Section 224 has moved to Excluded, so its in-corpus mentions resolve as input only" actor="Actor">BodilyHarm is true</Rule>
+        <Rule id="BDH-P0" verb="not realise" actor="Actor">not BodilyHarm</Rule>
+      </BusinessRules>
+  </xs:appinfo></xs:annotation>
+
+
+  <xs:complexType name="S225_PartiesGroup"><xs:sequence>
+      <xs:element name="Actor" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Who or what is the actor? Any natural person, legal person, or non-human system. Canonical home: PrimeRule. (name / identifier) | Input: Reference</xs:documentation><xs:appinfo><SurfaceForm>any person (the actor)</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S225_ConductGroup"><xs:sequence>
+      <xs:element name="BelongsToHousehold" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the person belongs to the household of {Actor}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the person belongs to the household of {Actor}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DefencelessThroughFrailty" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: a person defenceless owing to frailty. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>a person defenceless owing to frailty</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="DefencelessThroughIllness" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: a person defenceless owing to illness. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>a person defenceless owing to illness</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="LeftInPower" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the person has been left in the power of {Actor} by the person obliged to provide care. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the person has been left in the power of {Actor} by the person obliged to provide care</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="MaliciousNeglectHealthDamage" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} damages the health of the person through malicious neglect of the duty of care. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} damages the health of the person through malicious neglect of the duty of care</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="RoughlyMaltreats" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} roughly maltreats the person. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} roughly maltreats the person</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="SubordinateInWork" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the person is subordinate to {Actor} within a work relationship. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the person is subordinate to {Actor} within a work relationship</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="Torments" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: {Actor} torments the person. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>{Actor} torments the person</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="UnderCare" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the person is under the care of {Actor}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the person is under the care of {Actor}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="UnderCustody" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the person is under the custody of {Actor}. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the person is under the custody of {Actor}</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="VictimUnderEighteen" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: a person under eighteen years. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>a person under eighteen years</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S225_ComputableVariablesGroup"><xs:sequence>
+      <xs:element name="ProtectedVictim" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] ProtectedVictim. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="ProtectedVictim" dataType="Boolean"><Definition>VictimUnderEighteen is true or DefencelessThroughFrailty is true or DefencelessThroughIllness is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="AbusiveConduct" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] AbusiveConduct. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="AbusiveConduct" dataType="Boolean"><Definition>Torments is true or RoughlyMaltreats is true or MaliciousNeglectHealthDamage is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="CareRelationship" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] CareRelationship. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="CareRelationship" dataType="Boolean"><Definition>UnderCare is true or UnderCustody is true or BelongsToHousehold is true or LeftInPower is true or SubordinateInWork is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+      <xs:element name="AbuseOfPersonUnderCare" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] AbuseOfPersonUnderCare. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="AbuseOfPersonUnderCare" dataType="Boolean"><Definition>ProtectedVictim is true and CareRelationship is true and AbusiveConduct is true</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:element name="OperomeAbuseOfPersonUnderCare"><xs:complexType><xs:sequence>
+        <xs:element name="Parties" type="S225_PartiesGroup" minOccurs="0"/>
+        <xs:element name="Conduct" type="S225_ConductGroup" minOccurs="0"/>
+        <xs:element name="ComputableVariables" type="S225_ComputableVariablesGroup" minOccurs="0"/>
+  </xs:sequence></xs:complexType></xs:element>
+  <xs:annotation><xs:appinfo>
+      <SectionScopes>
+        <Scope id="OUT-AbuseOfPersonUnderCare" section="Maltreatment of Persons Under One&#x27;s Care">
+          <Condition>AbuseOfPersonUnderCare is true</Condition>
+          <Description>Maltreatment of Persons Under One&#x27;s Care (objective Tatbestand).</Description>
+          <Variables>
+            <Variable>Actor</Variable>
+            <Variable>BelongsToHousehold</Variable>
+            <Variable>DefencelessThroughFrailty</Variable>
+            <Variable>DefencelessThroughIllness</Variable>
+            <Variable>LeftInPower</Variable>
+            <Variable>MaliciousNeglectHealthDamage</Variable>
+            <Variable>RoughlyMaltreats</Variable>
+            <Variable>SubordinateInWork</Variable>
+            <Variable>Torments</Variable>
+            <Variable>UnderCare</Variable>
+            <Variable>UnderCustody</Variable>
+            <Variable>VictimUnderEighteen</Variable>
+            <Variable>ProtectedVictim</Variable>
+            <Variable>AbusiveConduct</Variable>
+            <Variable>CareRelationship</Variable>
+            <Variable>AbuseOfPersonUnderCare</Variable>
+          </Variables>
+        </Scope>
+      </SectionScopes>
+      <BusinessRules>
+        <Rule id="APU-R01" verb="" actor="None">VictimUnderEighteen is true</Rule>
+        <Rule id="APU-R02" verb="" actor="None">DefencelessThroughFrailty is true</Rule>
+        <Rule id="APU-R03" verb="" actor="None">DefencelessThroughIllness is true</Rule>
+        <Rule id="APU-R04" verb="" actor="None">UnderCare is true</Rule>
+        <Rule id="APU-R05" verb="" actor="None">UnderCustody is true</Rule>
+        <Rule id="APU-R06" verb="" actor="None">BelongsToHousehold is true</Rule>
+        <Rule id="APU-R07" verb="" actor="None">LeftInPower is true</Rule>
+        <Rule id="APU-R08" verb="" actor="None">SubordinateInWork is true</Rule>
+        <Rule id="APU-R09" verb="" actor="Actor">Torments is true</Rule>
+        <Rule id="APU-R10" verb="" actor="Actor">RoughlyMaltreats is true</Rule>
+        <Rule id="APU-R11" verb="" actor="Actor">MaliciousNeglectHealthDamage is true</Rule>
+        <Rule id="APU-R80" verb="scope note: paragraph 1 whole, the three victim alternatives over the four care relationships (the care-or-custody pair split per the contract) over the three conducts; the malicious-neglect conduct carries its own health-damage result inside the conduct element" actor="Actor">AbuseOfPersonUnderCare is true</Rule>
+        <Rule id="APU-P0" verb="not realise" actor="Actor">not AbuseOfPersonUnderCare</Rule>
+      </BusinessRules>
+  </xs:appinfo></xs:annotation>
+
+
+  <xs:complexType name="S228_PartiesGroup"><xs:sequence>
+      <xs:element name="Actor" type="xs:string" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Who or what is the actor? Any natural person, legal person, or non-human system. Canonical home: PrimeRule. (name / identifier) | Input: Reference</xs:documentation><xs:appinfo><SurfaceForm>any person (the actor)</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S228_ConductGroup"><xs:sequence>
+      <xs:element name="ConsentGiven" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the injured person consents to the bodily harm. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the injured person consents to the bodily harm</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+      <xs:element name="ContraBonosMores" type="xs:boolean" minOccurs="0"><xs:annotation><xs:documentation>Layer: Core | Cascade: Session | Prompt: Element/Datum: the act offends good morals despite the consent. | Input: Boolean</xs:documentation><xs:appinfo><SurfaceForm>the act offends good morals despite the consent</SurfaceForm></xs:appinfo></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:complexType name="S228_ComputableVariablesGroup"><xs:sequence>
+      <xs:element name="ConsentJustification" type="xs:boolean" minOccurs="0"><xs:annotation>
+        <xs:documentation>Layer: Core | Cascade: Agent | Prompt: [Computable] ConsentJustification. | Input: Computable</xs:documentation>
+        <xs:appinfo>
+          <Computable name="ConsentJustification" dataType="Boolean"><Definition>ConsentGiven is true and not ContraBonosMores</Definition></Computable>
+        </xs:appinfo>
+      </xs:annotation></xs:element>
+  </xs:sequence></xs:complexType>
+  <xs:element name="OperomeConsentJustification"><xs:complexType><xs:sequence>
+        <xs:element name="Parties" type="S228_PartiesGroup" minOccurs="0"/>
+        <xs:element name="Conduct" type="S228_ConductGroup" minOccurs="0"/>
+        <xs:element name="ComputableVariables" type="S228_ComputableVariablesGroup" minOccurs="0"/>
+  </xs:sequence></xs:complexType></xs:element>
+  <xs:annotation><xs:appinfo>
+      <SectionScopes>
+        <Scope id="OUT-ConsentJustification" section="Consent">
+          <Condition>ConsentJustification is true</Condition>
+          <Description>Consent (objective Tatbestand).</Description>
+          <Variables>
+            <Variable>Actor</Variable>
+            <Variable>ConsentGiven</Variable>
+            <Variable>ContraBonosMores</Variable>
+            <Variable>ConsentJustification</Variable>
+          </Variables>
+        </Scope>
+      </SectionScopes>
+      <BusinessRules>
+        <Rule id="CJU-R01" verb="" actor="None">ConsentGiven is true</Rule>
+        <Rule id="CJU-R02" verb="" actor="None">ContraBonosMores is true</Rule>
+        <Rule id="CJU-R80" verb="exception (whole provision live, zero strikes): whoever performs a bodily harm with the consent of the injured person acts unlawfully only where the act offends good morals despite the consent; [ConsentJustification] is the third exception act consumed by the Section 13 master rule alongside Sections 32 and 34, limited by the Section 35 counter-exception; the act element resolves against [BodilyHarm] of the Section 223 scope in this carrier; the good-morals threshold is evaluative residue flagged for escalation" actor="None">ConsentJustification is true</Rule>
+        <Rule id="CJU-P0" verb="not realise" actor="Actor">not ConsentJustification</Rule>
+      </BusinessRules>
+  </xs:appinfo></xs:annotation>
+
+</xs:schema>
