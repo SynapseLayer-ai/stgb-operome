@@ -50,11 +50,12 @@ arithmetic, so nothing can be dropped silently.
 Verify the corpus yourself:
 
 ```
+python scripts/operome_cli.py evaluate 211 KillsPerson=true
 python scripts/reference_evaluator.py corpus/corpus.json corpus/tests.json
 python scripts/xsd_to_json.py substrates corpus/corpus.json /tmp/regenerated.json
 ```
 
-MCP server: the corpus is queryable at **operome.dev** (endpoint and configuration blocks for
+MCP server: the corpus will be queryable at **operome.dev** (endpoint and configuration blocks for
 Claude Code and Codex are published there). The server exposes section retrieval, schema retrieval,
 deterministic evaluation of fact patterns with full derivation traces, and the master-rule check.
 
