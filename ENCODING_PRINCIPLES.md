@@ -40,6 +40,19 @@ of danger. The structure around them compiles; the threshold itself is flagged a
 residue and escalates to human judgment. The strength of the method is knowing which part of the
 law compiles and which does not.
 
+## The actor convention
+
+The corpus does not redefine the statute's actor. Offence definitions keep the statutory "whoever"; 
+an artificial agent is bound through the authored master rule, which requires it never to realise an 
+offence definition itself and to contribute to preventing their realisation. In evaluation, the agent 
+substitutes its own proposed act into the actor position. Nothing here assumes a machine can bear 
+guilt; only that its conduct can be tested against definitions written for anyone's conduct.
+Generic, unqualified person-objects fold into the conduct predicate: "kills a person" is one variable, 
+because "another person" carries no decision content of its own. A person-term becomes its own variable 
+exactly where the statute qualifies it with something checkable: age, a care relationship, office, 
+kinship. The test is whether the term can independently change the outcome; if it cannot, a separate 
+variable would be noise.
+
 ## Declared transformations
 
 A small number of rules are deliberately transformed or authored. Each is a design decision, made
