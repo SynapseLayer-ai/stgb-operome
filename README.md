@@ -1,4 +1,5 @@
 # stgb-operome
+![verify-corpus](https://github.com/SynapseLayer-ai/stgb-operome/actions/workflows/verify-corpus.yml/badge.svg)
 
 **The German Criminal Code, compiled into an open, deterministic rule layer any AI agent can query.**
 
