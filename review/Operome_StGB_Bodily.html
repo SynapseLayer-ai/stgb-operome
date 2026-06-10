@@ -59,7 +59,7 @@
   @media (max-width:760px){.hd,.row{grid-template-columns:1fr}.src{border-right:none;border-bottom:1px solid var(--line)}.hd div:first-child{border-right:none;border-bottom:1px solid #2a2a2e}}
 </style></head><body><div class="wrap">
   <div class="mast"><div class="word"><span class="syn">Synapse</span><span class="lyr">Layer</span></div>
-  <div class="kick"><b>Operome - StGB consolidated, offences against bodily integrity (§223 to §228)</b><br>Three scopes: §223 and §225 rebuilt to the current contract; §228 new, the consent exception · §224 moved to Excluded in the working document, the earlier DangerousBodilyHarm scope superseded · [ConsentJustification] joins §32 and §34 as the third exception act of the §13 master rule, limited by the §35 counter-exception</div></div>
+  <div class="kick"><b>Operome - StGB consolidated, offences against bodily integrity (§223 to §228)</b><br>Three scopes: §223 and §225 encoded under the current principles; §228 new, the consent exception · §224 moved to Excluded · [ConsentJustification] joins §32 and §34 as the third exception act of the §13 master rule, limited by the §35 counter-exception</div></div>
   <div class="legend"><span class="t v">{Variable}</span> input &middot; <span class="t c">[Computable]</span> act / derived &middot; <span class="t k">«if … end if»</span> condition &middot; <span class="t struck">struck</span> excluded &middot; word-for-word dissection; the law is reconstructable from the substrate</div>
 
 <div class="titlebar"><h1>§223 · Bodily harm</h1><div class="sub">BodilyHarm · provenance StGB 223 · (1) encoded; penalty and attempt struck</div></div>
@@ -72,7 +72,7 @@
 <div class="lbl">Business rules</div><table class="br"><tr><th>id</th><th>kind</th><th>actor</th><th>verb / predicate</th><th>body</th></tr>
 <tr><td class="mono">BDH-R01</td><td><span class="kind act">act</span></td><td class="mono">Actor</td><td></td><td class="mono"><span class="v">PhysicallyMaltreats</span> <span class="op-kw">is</span> <span class="op-kw">true</span></td></tr>
 <tr><td class="mono">BDH-R02</td><td><span class="kind act">act</span></td><td class="mono">Actor</td><td></td><td class="mono"><span class="v">DamagesHealth</span> <span class="op-kw">is</span> <span class="op-kw">true</span></td></tr>
-<tr><td class="mono">BDH-R80</td><td><span class="kind act">act</span></td><td class="mono">Actor</td><td>scope note: the two conducts gated individually per the contract, disjunction in the composite; [BodilyHarm] is the act element to which the Section 228 consent exception attaches and the reference target of the Section 129a catalogue text; Section 224 has moved to Excluded, so its in-corpus mentions resolve as input only</td><td class="mono"><span class="c">BodilyHarm</span> <span class="op-kw">is</span> <span class="op-kw">true</span></td></tr>
+<tr><td class="mono">BDH-R80</td><td><span class="kind act">act</span></td><td class="mono">Actor</td><td>scope note: the two conducts gated individually per the encoding principles, disjunction in the composite; [BodilyHarm] is the act element to which the Section 228 consent exception attaches and the reference target of the Section 129a catalogue text; Section 224 has moved to Excluded, so its in-corpus mentions resolve as input only</td><td class="mono"><span class="c">BodilyHarm</span> <span class="op-kw">is</span> <span class="op-kw">true</span></td></tr>
 <tr><td class="mono">BDH-P0</td><td><span class="kind proh">prohibition</span></td><td class="mono">Actor</td><td>not realise</td><td class="mono"><span class="op-kw">not</span> <span class="c">BodilyHarm</span></td></tr>
 </table>
 <div class="lbl">Tatbestand dissected to the Merkmal</div><table class="dx"><tr><th>Source phrase</th><th>Doctrinal role</th><th>Primitive</th><th>Rule</th><th>Requires</th></tr>
@@ -113,7 +113,7 @@ VERDICT (PrimeRule)
 </table>
 <div class="lbl">Flags</div>
 <div class="flag"><b>Scope</b> &nbsp;Paragraph 1&#x27;s two conducts; penalty and attempt struck per the standing conventions.</div>
-<div class="flag"><b>Consumers</b> &nbsp;The §228 consent exception attaches to this act element; the §129a catalogue text references §223. §224 has moved to Excluded in the working document, so the earlier DangerousBodilyHarm scope is superseded and its catalogue mentions resolve as input only, a documentation note for the master.</div>
+<div class="flag"><b>Consumers</b> &nbsp;The §228 consent exception attaches to this act element; the §129a catalogue text references §223. §224 has moved to Excluded; its catalogue mentions resolve as input only, a documentation note for the master.</div>
 <div class="flag"><b>Treatment</b> &nbsp;§223 Operomise; §224, §226, §226a, §227 Excluded.</div>
 </div></div>
 <div class="titlebar"><h1>§225 · Maltreatment of persons under one's care</h1><div class="sub">AbuseOfPersonUnderCare · provenance StGB 225 · (1) encoded; (2)-(4) struck</div></div>
@@ -141,7 +141,7 @@ VERDICT (PrimeRule)
 <tr><td class="mono">APU-R09</td><td><span class="kind act">act</span></td><td class="mono">Actor</td><td></td><td class="mono"><span class="v">Torments</span> <span class="op-kw">is</span> <span class="op-kw">true</span></td></tr>
 <tr><td class="mono">APU-R10</td><td><span class="kind act">act</span></td><td class="mono">Actor</td><td></td><td class="mono"><span class="v">RoughlyMaltreats</span> <span class="op-kw">is</span> <span class="op-kw">true</span></td></tr>
 <tr><td class="mono">APU-R11</td><td><span class="kind act">act</span></td><td class="mono">Actor</td><td></td><td class="mono"><span class="v">MaliciousNeglectHealthDamage</span> <span class="op-kw">is</span> <span class="op-kw">true</span></td></tr>
-<tr><td class="mono">APU-R80</td><td><span class="kind act">act</span></td><td class="mono">Actor</td><td>scope note: paragraph 1 whole, the three victim alternatives over the four care relationships (the care-or-custody pair split per the contract) over the three conducts; the malicious-neglect conduct carries its own health-damage result inside the conduct element</td><td class="mono"><span class="c">AbuseOfPersonUnderCare</span> <span class="op-kw">is</span> <span class="op-kw">true</span></td></tr>
+<tr><td class="mono">APU-R80</td><td><span class="kind act">act</span></td><td class="mono">Actor</td><td>scope note: paragraph 1 whole, the three victim alternatives over the four care relationships (the care-or-custody pair split per the encoding principles) over the three conducts; the malicious-neglect conduct carries its own health-damage result inside the conduct element</td><td class="mono"><span class="c">AbuseOfPersonUnderCare</span> <span class="op-kw">is</span> <span class="op-kw">true</span></td></tr>
 <tr><td class="mono">APU-P0</td><td><span class="kind proh">prohibition</span></td><td class="mono">Actor</td><td>not realise</td><td class="mono"><span class="op-kw">not</span> <span class="c">AbuseOfPersonUnderCare</span></td></tr>
 </table>
 <div class="lbl">Tatbestand dissected to the Merkmal</div><table class="dx"><tr><th>Source phrase</th><th>Doctrinal role</th><th>Primitive</th><th>Rule</th><th>Requires</th></tr>
@@ -223,8 +223,8 @@ VERDICT (PrimeRule)
 <tr><td class="mono">Q12</td><td>Session</td><td class="mono"><span class="v">{VictimUnderEighteen}</span></td><td>Element/Datum: a person under eighteen years.?</td><td>Boolean</td></tr>
 </table>
 <div class="lbl">Flags</div>
-<div class="flag"><b>Scope</b> &nbsp;Paragraph 1 whole and live; (2), (3) and (4) struck, the standing treatment of attempt and grading, in contrast to §221 where your markup kept the qualification live.</div>
-<div class="flag"><b>Structure</b> &nbsp;Three victim alternatives over four care relationships over three conducts; the Fürsorge-oder-Obhut pair split into <span class="v">{UnderCare}</span> and <span class="v">{UnderCustody}</span> per the contract, disjunction in the computable.</div>
+<div class="flag"><b>Scope</b> &nbsp;Paragraph 1 whole and live; (2), (3) and (4) struck, the standing treatment of attempt and grading, in contrast to §221 where the markup kept the qualification live.</div>
+<div class="flag"><b>Structure</b> &nbsp;Three victim alternatives over four care relationships over three conducts; the Fürsorge-oder-Obhut pair split into <span class="v">{UnderCare}</span> and <span class="v">{UnderCustody}</span> per the encoding principles, disjunction in the computable.</div>
 <div class="flag"><b>Evaluative residue</b> &nbsp;“torments”, “roughly” and “malicious” carry normative weight; the structure compiles, the thresholds escalate at the margin.</div>
 <div class="flag"><b>Treatment</b> &nbsp;§225 Operomise; §226, §226a, §227 Excluded.</div>
 </div></div>
