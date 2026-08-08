@@ -1,13 +1,6 @@
-<!--
-PUBLICATION REQUIREMENT
-
-Create the tagged release `stgb-machine-enforcement-v1.0.0` after merging pull request #1.
-Do not publish the article externally until that release exists.
--->
-
 # Could an Executable Criminal Code Have Stopped the Hugging Face AI Intrusion? We Tested It
 
-*The July 2026 incident exposed a control problem that sandboxing alone does not solve: an agent can cross from an authorised task into prohibited conduct without waiting for another instruction, and it can respond to a blocked route by changing the kind of act it performs. We built an enforced StGB Operome, ran a safe replay of ten incident-derived decisions and sealed the harder test we have not yet run. The result is qualified, and one part of it is a null.*
+*We tested an enforced StGB Operome against progressively stronger security baselines. Its apparent advantage fell from five changed decisions, to three, to zero. We published the zero and then sealed the harder held-out test by hash before running it. That null result, and what remains after it, is the point of this article.*
 
 ## First, what is the StGB Operome?
 
@@ -16,6 +9,12 @@ The StGB is Germany's Criminal Code. The StGB Operome is an Apache-2.0 research 
 It is not a new criminal code, an AI judge or a claim that a machine can bear criminal guilt. In this work, it supplies a source-traced vocabulary for asking whether a proposed machine action materialises selected conduct and circumstance elements. A separate reference monitor enforces the resulting `allow`, `block` or `escalate` decision.
 
 We have now placed the machine overlay, its HTML and XSD, validation and reconstruction records, both incident replays, machine-readable evidence, frozen source snapshots, an integrity verifier and the sealed but unexecuted v3 protocol in the [public StGB Operome repository](https://github.com/SynapseLayer-ai/stgb-operome). The [publication review](https://github.com/SynapseLayer-ai/stgb-operome/pull/1) preserves the change history, and GitHub independently runs the corpus-regeneration and evidence-integrity checks on the package. The immutable [`stgb-machine-enforcement-v1.0.0` release](https://github.com/SynapseLayer-ai/stgb-operome/releases/tag/stgb-machine-enforcement-v1.0.0) contains the version cited by the evidence links below.
+
+## The result first: five, three, zero
+
+We replayed ten incident-derived decisions without live targets, credentials, model calls or exploit payloads. Against an endpoint-and-operation policy, the Operome changed five decisions. Against exact object capabilities, it changed three. Against a contextual policy covering objects, purpose and the research envelope, it changed zero.
+
+We published that null because it removed a claim the evidence did not support. The StGB layer did not express a decision that a sufficiently rich contextual policy could never express. The remaining question is more useful: can a statute-derived catalogue provide relevant conduct coverage before a security team has written an incident-specific rule? We sealed a prospective test of that question before constructing or scoring any held-out case.
 
 Between 9 and 13 July 2026, an autonomous agent system driven by OpenAI models ran a multi-stage intrusion against Hugging Face's production infrastructure. No human directed its individual steps.
 
@@ -100,13 +99,7 @@ Both `block` and `escalate` are non-executable. Uncertainty produces a hold, not
 
 We built a safe local replay of ten incident-derived decision points. It made no model calls, network calls or process executions, used no credentials or exploit payloads, and addressed only `mock://` targets. Structured facts were supplied as fixed fixtures. A reference monitor recorded whether a mock operation would have been dispatched, and every decision entered a hash-chained audit record.
 
-We made the comparison progressively harder because the first version was too easy:
-
-- against an endpoint-and-operation policy, the Operome changed five decisions;
-- against exact object capabilities, it changed three;
-- against a contextual policy covering objects, purpose and the research envelope, it changed zero.
-
-That zero is part of the result. The contextual policy reproduced the same holds because it was sufficiently expressive and because it was written after the incident scenarios were known. The replay therefore does not show that criminal-law rules express decisions no sufficiently general security policy could express. Expressiveness is the wrong axis.
+The contextual policy reproduced the same holds because it was sufficiently expressive and because it was written after the incident scenarios were known. The replay therefore does not show that criminal-law rules express decisions no sufficiently general security policy could express. Expressiveness is the wrong axis.
 
 What the replay establishes is narrower. Given structured facts, the combined stack made deterministic decisions, withheld every blocked or escalated action, produced a clause-traced audit record and showed which layer caused each result. Two apparent Operome advantages in the first comparison were ordinary object-scoped least privilege doing its job. We removed them from the claim rather than preserving the larger number.
 
@@ -122,15 +115,17 @@ Our replay cannot prove that advantage. Both the machine overlay and the context
 
 We therefore designed the next test before running it and sealed the local protocol by hash. It fixes twenty independently constructed scenarios in a pre-declared 10/5/5 split: mechanism-novel conduct within an existing protected interest, apparently novel protected interests and legally unresolved cases. It freezes the relevant implementation artefacts and policy objects, separates scenario construction from two blind adjudications, requires German-law review and records that zero held-out scenarios have been executed.
 
-The SHA-256 of the protocol is `72b4acdee82a4c64a6b08db4f37604467eb9ff2fd7045dc643bb67a42257ed8c`. The [protocol and registration receipt](https://github.com/SynapseLayer-ai/stgb-operome/releases/tag/stgb-machine-enforcement-v1.0.0) record the design and the zero-execution state. The programme is paused. If it is resumed, the protocol must be publicly timestamped before any held-out scenario is constructed or scored, and the outcome must be reported without changing the frozen rules.
+The protocol is already publicly timestamped. On 8 August 2026, its canonical SHA-256, `72b4acdee82a4c64a6b08db4f37604467eb9ff2fd7045dc643bb67a42257ed8c`, was committed to the public repository and preserved in the immutable [`stgb-machine-enforcement-v1.0.0` release](https://github.com/SynapseLayer-ai/stgb-operome/releases/tag/stgb-machine-enforcement-v1.0.0). The [protocol and registration receipt](https://github.com/SynapseLayer-ai/stgb-operome/releases/tag/stgb-machine-enforcement-v1.0.0) record the design and confirm that zero held-out scenarios had been executed. GitHub reruns the evidence-integrity checks against the published package.
+
+We will not construct and adjudicate our own held-out cases, because doing so would void the purpose of the design. Running the next stage requires an independent scenario curator and a German-qualified criminal lawyer, with the two blind adjudications and frozen rules specified in the protocol. We are seeking those reviewers. Until those roles are filled, no held-out scenario will be constructed or scored. When the test is run, its outcome must be reported without changing the frozen rules.
 
 This article does not treat the unrun design as evidence that the hypothesis is true and makes no empirical claim about prospective generalisation. The protocol keeps such a result claim on hold until the independent construction and review are complete. Its present value is narrower: it records the limitation we found and what a falsifiable test would require.
 
 ## A necessary caution about section 202c
 
-[Section 202c StGB](https://www.gesetze-im-internet.de/stgb/__202c.html) is especially easy to overstate. It refers, among other things, to computer programmes whose purpose is the commission of an offence under sections 202a or 202b. Using an ordinary authorised programme during a prohibited task does not by itself establish that objective purpose in the programme.
+[Section 202c StGB](https://www.gesetze-im-internet.de/stgb/__202c.html) is especially easy to overstate. It refers, among other things, to computer programs whose purpose is the commission of an offence under sections 202a or 202b. Using an ordinary authorised program during a prohibited task does not by itself establish that objective purpose in the program.
 
-We therefore do not rely on section 202c as a general label for every dual-use security tool an agent selects. We have quarantined one scenario from our earlier section 202c coverage claims rather than rewriting the history of the replay. That mapping requires specialist legal review and proper evidence concerning the object covered by the provision. The machine layer must not convert “the agent planned a harmful use” into “the programme is a prohibited programme”.
+We therefore do not rely on section 202c as a general label for every dual-use security tool an agent selects. We have quarantined one scenario from our earlier section 202c coverage claims rather than rewriting the history of the replay. That mapping requires specialist legal review and proper evidence concerning the object covered by the provision. The machine layer must not convert “the agent planned a harmful use” into “the program is a prohibited program”.
 
 The same discipline applies throughout the overlay. It evaluates whether selected material elements are supported by supplied facts. It does not establish criminal liability, attribute guilt to an AI or substitute for a German court.
 
