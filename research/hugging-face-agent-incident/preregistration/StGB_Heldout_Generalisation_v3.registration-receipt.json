@@ -1,0 +1,147 @@
+{
+  "schema_version": "stgb-heldout-registration-receipt/1",
+  "protocol_id": "StGB-Heldout-Generalisation-v3",
+  "protocol_hash": "72b4acdee82a4c64a6b08db4f37604467eb9ff2fd7045dc643bb67a42257ed8c",
+  "protocol_file_sha256": "96d984d845f288c6f93d2367ae1613cfe40418b201199777aa738e81d30803a5",
+  "run_id": "StGB-Heldout-Generalisation-v3:72b4acdee82a4c64",
+  "registered_at": "2026-08-08T20:41:45+01:00",
+  "sealed_at": "2026-08-08T20:41:48+01:00",
+  "status": "sealed-awaiting-independent-heldout-pack",
+  "policy_object_hashes_valid": true,
+  "frozen_input_checks": [
+    {
+      "name": "policy_pack",
+      "path": "src/operome/source/stgb_machine/incident-replay/StGB_HuggingFace_Chokepoint_Replay_v2.scenarios.json",
+      "expected_sha256": "c981dc36924e2b33dfea4c094dda401444aa7ab6f75672ae9fbf2e5a7c7b1af4",
+      "actual_sha256": "c981dc36924e2b33dfea4c094dda401444aa7ab6f75672ae9fbf2e5a7c7b1af4",
+      "status": "match"
+    },
+    {
+      "name": "legal_corpus",
+      "path": "public/data/stgb/corpus.json",
+      "expected_sha256": "6425c5509290ac8e1bcc680426fa1c3c4590fd52bbb18909d7eb693f222b5305",
+      "actual_sha256": "6425c5509290ac8e1bcc680426fa1c3c4590fd52bbb18909d7eb693f222b5305",
+      "status": "match"
+    },
+    {
+      "name": "machine_overlay_source",
+      "path": "src/operome/source/stgb_machine/StGB_Machine_Enforcement_v1.source.html",
+      "expected_sha256": "36dae2e487541baee6b229e01b1e908e8311cabab439eadc3bdf3819ddb11f1b",
+      "actual_sha256": "36dae2e487541baee6b229e01b1e908e8311cabab439eadc3bdf3819ddb11f1b",
+      "status": "match"
+    },
+    {
+      "name": "machine_overlay_xsd",
+      "path": "src/operome/source/stgb_machine/StGB_Machine_Enforcement_v1.xsd",
+      "expected_sha256": "ee5bf63ea8fda4ee6dc5357be30ad5e179e9e0513f4fe45e8eeb9aa48578b362",
+      "actual_sha256": "ee5bf63ea8fda4ee6dc5357be30ad5e179e9e0513f4fe45e8eeb9aa48578b362",
+      "status": "match"
+    },
+    {
+      "name": "machine_runtime",
+      "path": "src/lib/stgb/machine.ts",
+      "expected_sha256": "3c5233788c20fc5edb8deb464df468bdec4a0c9c761ae3cd74f70c2ac9bf9888",
+      "actual_sha256": "3c5233788c20fc5edb8deb464df468bdec4a0c9c761ae3cd74f70c2ac9bf9888",
+      "status": "match"
+    },
+    {
+      "name": "contextual_runtime",
+      "path": "src/lib/stgb/incident-replay-v2.ts",
+      "expected_sha256": "0a9374a43c32411f8cdf07901d63928c2cab1886e541fefb272bc76fdebfe6b4",
+      "actual_sha256": "0a9374a43c32411f8cdf07901d63928c2cab1886e541fefb272bc76fdebfe6b4",
+      "status": "match"
+    }
+  ],
+  "correction_register": [
+    {
+      "correction_id": "V2-202C-001",
+      "affected_scenarios": [
+        "IR2-004"
+      ],
+      "status": "quarantined-from-law-derived-coverage-inference",
+      "finding": "The v2 title and purpose describe an authorised programme selected for an offence-purpose task. That description does not establish that the programme itself has the objective offence-purpose required by §202c(1)(2).",
+      "required_evidence": "PurposeBuiltPrograms may be true only where source evidence supports the programme's objectively manifested design or adaptation primarily for an offence under §202a or §202b. Current use, declared purpose and mere suitability are insufficient.",
+      "effect": "The historical v2 evidence remains immutable, but IR2-004 may not support a §202c coverage or prevention claim. The contextual-policy result remains a policy result.",
+      "legal_review": "open-priority-ruling",
+      "authoritative_receipts": [
+        "https://www.gesetze-im-internet.de/stgb/__202c.html",
+        "https://www.bundesverfassungsgericht.de/SharedDocs/Entscheidungen/DE/2009/05/rk20090518_2bvr223307.html"
+      ]
+    }
+  ],
+  "heldout_scenarios_executed": 0,
+  "comparative_results_available": false,
+  "automated_profile_routing_tested": false,
+  "article_status": "hold",
+  "audit": {
+    "algorithm": "SHA-256",
+    "canonicalisation": "recursive-key-sort-v1",
+    "chain_valid": true,
+    "head_hash": "c07a43d271ab21540f4242c1ad315f0fcb986ac00247f1e8d78d48ab3cc16281",
+    "events": [
+      {
+        "schema_version": "stgb-preregistration-event/1",
+        "event_id": "StGB-Heldout-Generalisation-v3:72b4acdee82a4c64:event:1",
+        "event_type": "ChangeImpactMapped",
+        "run_id": "StGB-Heldout-Generalisation-v3:72b4acdee82a4c64",
+        "sequence": 1,
+        "timestamp": "2026-08-08T19:41:46.000Z",
+        "actor": "deterministic-local-preregistration",
+        "parent_event_ids": [],
+        "idempotency_key": "StGB-Heldout-Generalisation-v3:72b4acdee82a4c64:ChangeImpactMapped:1",
+        "input_hash": "72b4acdee82a4c64a6b08db4f37604467eb9ff2fd7045dc643bb67a42257ed8c",
+        "payload": {
+          "prior_evidence": "StGB-HF-Chokepoint-Replay-v2",
+          "new_axis": "prospective-source-bounded-coverage-under-novelty"
+        },
+        "previous_hash": null,
+        "resulting_status": "accepted",
+        "hash": "90cae491deb42d070b3a9add1563dda6bb97b5a7cf75b81b1e103e74109a7ae5"
+      },
+      {
+        "schema_version": "stgb-preregistration-event/1",
+        "event_id": "StGB-Heldout-Generalisation-v3:72b4acdee82a4c64:event:2",
+        "event_type": "FindingRaised",
+        "run_id": "StGB-Heldout-Generalisation-v3:72b4acdee82a4c64",
+        "sequence": 2,
+        "timestamp": "2026-08-08T19:41:47.000Z",
+        "actor": "deterministic-local-preregistration",
+        "parent_event_ids": [
+          "StGB-Heldout-Generalisation-v3:72b4acdee82a4c64:event:1"
+        ],
+        "idempotency_key": "StGB-Heldout-Generalisation-v3:72b4acdee82a4c64:FindingRaised:2",
+        "input_hash": "72b4acdee82a4c64a6b08db4f37604467eb9ff2fd7045dc643bb67a42257ed8c",
+        "payload": {
+          "finding_id": "V2-202C-001",
+          "affected_scenario": "IR2-004",
+          "disposition": "quarantined-from-law-derived-coverage-inference"
+        },
+        "previous_hash": "90cae491deb42d070b3a9add1563dda6bb97b5a7cf75b81b1e103e74109a7ae5",
+        "resulting_status": "accepted",
+        "hash": "cc1f956a911f93ba25ce570c0bf8055bfc8b61142f7169fa54fce2dbc455601c"
+      },
+      {
+        "schema_version": "stgb-preregistration-event/1",
+        "event_id": "StGB-Heldout-Generalisation-v3:72b4acdee82a4c64:event:3",
+        "event_type": "ArtifactAccepted",
+        "run_id": "StGB-Heldout-Generalisation-v3:72b4acdee82a4c64",
+        "sequence": 3,
+        "timestamp": "2026-08-08T19:41:48.000Z",
+        "actor": "deterministic-local-preregistration",
+        "parent_event_ids": [
+          "StGB-Heldout-Generalisation-v3:72b4acdee82a4c64:event:2"
+        ],
+        "idempotency_key": "StGB-Heldout-Generalisation-v3:72b4acdee82a4c64:ArtifactAccepted:3",
+        "input_hash": "72b4acdee82a4c64a6b08db4f37604467eb9ff2fd7045dc643bb67a42257ed8c",
+        "payload": {
+          "artifact": "StGB_Heldout_Generalisation_v3.preregistration.json",
+          "status": "preregistered-awaiting-independent-heldout-pack",
+          "article_status": "hold"
+        },
+        "previous_hash": "cc1f956a911f93ba25ce570c0bf8055bfc8b61142f7169fa54fce2dbc455601c",
+        "resulting_status": "accepted",
+        "hash": "c07a43d271ab21540f4242c1ad315f0fcb986ac00247f1e8d78d48ab3cc16281"
+      }
+    ]
+  }
+}

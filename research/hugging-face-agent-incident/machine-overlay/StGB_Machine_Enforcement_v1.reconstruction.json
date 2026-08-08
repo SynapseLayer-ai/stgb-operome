@@ -1,0 +1,987 @@
+{
+  "xsd": "C:\\Users\\rk\\OneDrive - Vernot (1)\\Documents\\SynapseLayer\\IT\\demo git\\operome-canvas\\tmp\\github-operome-canvas\\src\\operome\\source\\stgb_machine\\StGB_Machine_Enforcement_v1.xsd",
+  "generator_inputs": [
+    "xsd",
+    "renderer-version"
+  ],
+  "renderer_version": "1",
+  "scope_count": 47,
+  "scopes": [
+    {
+      "scope_id": "ME-BOUNDARY",
+      "section": "Machine evaluation boundary",
+      "description": "Keeps source-faithful legal attribution separate from material machine-action evaluation.",
+      "condition": "ProposedMachineAction isnot null",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the proposed machine action is not null. Condition: the machine is not treated as a natural person.",
+      "rule_clauses": [
+        "Condition: the machine is not treated as a natural person."
+      ],
+      "variables": [
+        "MachineControlHarness",
+        "ProposedMachineAction",
+        "SelectedStGBSection",
+        "ActorIsNaturalPerson",
+        "LegalAttributionResult",
+        "MaterialEvaluationResult"
+      ],
+      "rule_ids": [
+        "R-ME-BOUNDARY-01"
+      ]
+    },
+    {
+      "scope_id": "ME-EVIDENCE",
+      "section": "Goal and observation evidence",
+      "description": "Separates an auditable raw goal from exact material facts and gives trusted observations precedence.",
+      "condition": "ProposedMachineAction isnot null",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the proposed machine action is not null. Condition: the raw goal is not parsed as evidence.",
+      "rule_clauses": [
+        "Condition: the raw goal is not parsed as evidence."
+      ],
+      "variables": [
+        "MachineControlHarness",
+        "ProposedMachineAction",
+        "RawMachineGoal",
+        "RawGoalParsed",
+        "GoalEvidenceSource",
+        "StructuredGoalFacts",
+        "TrustedObservedFacts",
+        "ObservedFactPrecedenceApplied",
+        "GoalFactConflict",
+        "GoalFactOutsideSelectedSectionContract",
+        "MachineActionBlocked"
+      ],
+      "rule_ids": [
+        "R-ME-EVIDENCE-01"
+      ]
+    },
+    {
+      "scope_id": "ME-SUBJECTIVE",
+      "section": "Human subjective legal predicates",
+      "description": "Prevents machine goals or observations from satisfying human subjective StGB predicates.",
+      "condition": "SubjectiveElementStatus is \"not_assessed_for_machine\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the machine status for human subjective legal predicates is \"not_assessed_for_machine\". Condition: the machine status for human subjective legal predicates is \"not_assessed_for_machine\".",
+      "rule_clauses": [
+        "Condition: the machine status for human subjective legal predicates is \"not_assessed_for_machine\"."
+      ],
+      "variables": [
+        "MachineControlHarness",
+        "SubjectiveElementsPresent",
+        "SubjectiveElementsPivotal",
+        "SubjectiveValuesSuppliedButIgnored",
+        "SubjectiveElementStatus",
+        "MachineActionEscalated"
+      ],
+      "rule_ids": [
+        "R-ME-SUBJECTIVE-01"
+      ]
+    },
+    {
+      "scope_id": "ME-AUTHORIZATION",
+      "section": "External authorization",
+      "description": "Requires authorization to be verified outside the acting machine by a trusted capability broker.",
+      "condition": "ProposedMachineAction isnot null",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the proposed machine action is not null. Condition: (if positive authorization is verified by a trusted external capability broker, then the trusted external capability broker is not null).",
+      "rule_clauses": [
+        "Condition: (if positive authorization is verified by a trusted external capability broker, then the trusted external capability broker is not null)."
+      ],
+      "variables": [
+        "MachineControlHarness",
+        "ProposedMachineAction",
+        "AuthorizationDecision",
+        "AuthorizationVerified",
+        "AuthorizationSource",
+        "AuthorizationScope",
+        "ExternalCapabilityBroker",
+        "MachineActionEscalated"
+      ],
+      "rule_ids": [
+        "R-ME-AUTHORIZATION-01"
+      ]
+    },
+    {
+      "scope_id": "ME-BLOCK",
+      "section": "Blocking decision",
+      "description": "Blocks realised material conduct, negative authority, conflicting observations, or out-of-contract goal facts.",
+      "condition": "MachineActionBlocked is true",
+      "root": "MachineActionBlocked",
+      "kind": "prohibition",
+      "actor": "the machine-control harness",
+      "clause": "Committed by the machine-control harness who: (structured goal evidence conflicts with trusted observation or structured goal evidence lies outside the selected section contract or the external authorization decision is \"not_authorised\" or the material conduct and circumstance result is \"realised\").",
+      "rule_clauses": [],
+      "variables": [
+        "MachineControlHarness",
+        "MachineActionBlocked",
+        "MachineActionExecutable",
+        "GoalFactConflict",
+        "GoalFactOutsideSelectedSectionContract",
+        "AuthorizationDecision",
+        "MaterialEvaluationResult"
+      ],
+      "rule_ids": [
+        "R-ME-BLOCK-01"
+      ]
+    },
+    {
+      "scope_id": "ME-ESCALATE",
+      "section": "Escalation decision",
+      "description": "Escalates unresolved material facts, pivotal subjective predicates, and unknown or unverified positive authority.",
+      "condition": "MachineActionEscalated is true",
+      "root": "MachineActionEscalated",
+      "kind": "prohibition",
+      "actor": "the machine-control harness",
+      "clause": "Committed by the machine-control harness who: (the proposed machine action is not blocked and (the material conduct and circumstance result is \"unknown\" or a human subjective legal predicate remains pivotal or the external authorization decision is \"unknown\" or (the external authorization decision is \"authorised\" and positive authorization is not externally verified))).",
+      "rule_clauses": [],
+      "variables": [
+        "MachineControlHarness",
+        "MachineActionEscalated",
+        "MachineActionExecutable",
+        "MaterialEvaluationResult",
+        "SubjectiveElementsPivotal",
+        "AuthorizationDecision",
+        "AuthorizationVerified"
+      ],
+      "rule_ids": [
+        "R-ME-ESCALATE-01"
+      ]
+    },
+    {
+      "scope_id": "ME-ALLOW",
+      "section": "Allow decision",
+      "description": "Allows only a determined negative material result with externally verified positive authorization and no block or escalation.",
+      "condition": "MachineActionAllowed is true",
+      "root": "MachineActionAllowed",
+      "kind": "permission",
+      "actor": "the machine-control harness",
+      "clause": "The act is permitted where: (the proposed machine action is not blocked and the proposed machine action does not require escalation and the material conduct and circumstance result is \"not_realised\" and the external authorization decision is \"authorised\" and positive authorization is verified by a trusted external capability broker).",
+      "rule_clauses": [],
+      "variables": [
+        "MachineControlHarness",
+        "MachineActionAllowed",
+        "MachineActionExecutable",
+        "MachineActionBlocked",
+        "MachineActionEscalated",
+        "MaterialEvaluationResult",
+        "AuthorizationDecision",
+        "AuthorizationVerified"
+      ],
+      "rule_ids": [
+        "R-ME-ALLOW-01"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-UnauthorisedDataAccess",
+      "section": "§202a Data espionage",
+      "description": "Machine-materialisable profile for UnauthorisedDataAccess.",
+      "condition": "SelectedStGBSection is \"UnauthorisedDataAccess\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"UnauthorisedDataAccess\". Condition: the selected source-derived StGB section is \"UnauthorisedDataAccess\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"UnauthorisedDataAccess\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-01"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-InterceptionOfData",
+      "section": "§202b Interception of data",
+      "description": "Machine-materialisable profile for InterceptionOfData.",
+      "condition": "SelectedStGBSection is \"InterceptionOfData\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"InterceptionOfData\". Condition: the selected source-derived StGB section is \"InterceptionOfData\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"InterceptionOfData\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-02"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-PreparationOfDataAccess",
+      "section": "§202c Acts preparatory to data espionage and interception",
+      "description": "Machine-materialisable profile for PreparationOfDataAccess.",
+      "condition": "SelectedStGBSection is \"PreparationOfDataAccess\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"PreparationOfDataAccess\". Condition: the selected source-derived StGB section is \"PreparationOfDataAccess\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"PreparationOfDataAccess\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-03"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-HandlingUnlawfullyObtainedData",
+      "section": "§202d Handling stolen data",
+      "description": "Machine-materialisable profile for HandlingUnlawfullyObtainedData.",
+      "condition": "SelectedStGBSection is \"HandlingUnlawfullyObtainedData\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"HandlingUnlawfullyObtainedData\". Condition: the selected source-derived StGB section is \"HandlingUnlawfullyObtainedData\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"HandlingUnlawfullyObtainedData\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-04"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-ComputerFraud",
+      "section": "§263a Computer fraud",
+      "description": "Machine-materialisable profile for ComputerFraud.",
+      "condition": "SelectedStGBSection is \"ComputerFraud\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"ComputerFraud\". Condition: the selected source-derived StGB section is \"ComputerFraud\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"ComputerFraud\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-05"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-DataAlteration",
+      "section": "§303a Alteration of data",
+      "description": "Machine-materialisable profile for DataAlteration.",
+      "condition": "SelectedStGBSection is \"DataAlteration\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"DataAlteration\". Condition: the selected source-derived StGB section is \"DataAlteration\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"DataAlteration\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-06"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-ComputerSabotage",
+      "section": "§303b Computer sabotage",
+      "description": "Machine-materialisable profile for ComputerSabotage.",
+      "condition": "SelectedStGBSection is \"ComputerSabotage\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"ComputerSabotage\". Condition: the selected source-derived StGB section is \"ComputerSabotage\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"ComputerSabotage\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-07"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-DisruptionOfTelecommunications",
+      "section": "§317 Disruption of telecommunications facilities",
+      "description": "Machine-materialisable profile for DisruptionOfTelecommunications.",
+      "condition": "SelectedStGBSection is \"DisruptionOfTelecommunications\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"DisruptionOfTelecommunications\". Condition: the selected source-derived StGB section is \"DisruptionOfTelecommunications\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"DisruptionOfTelecommunications\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-08"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-ForgeryOfDocuments",
+      "section": "§267 Forgery of documents",
+      "description": "Machine-materialisable profile for ForgeryOfDocuments.",
+      "condition": "SelectedStGBSection is \"ForgeryOfDocuments\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"ForgeryOfDocuments\". Condition: the selected source-derived StGB section is \"ForgeryOfDocuments\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"ForgeryOfDocuments\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-09"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-ObstructionOfJustice",
+      "section": "§258 Obstruction of justice",
+      "description": "Machine-materialisable profile for ObstructionOfJustice.",
+      "condition": "SelectedStGBSection is \"ObstructionOfJustice\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"ObstructionOfJustice\". Condition: the selected source-derived StGB section is \"ObstructionOfJustice\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"ObstructionOfJustice\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-10"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-Coercion",
+      "section": "§240 Coercion",
+      "description": "Machine-materialisable profile for Coercion.",
+      "condition": "SelectedStGBSection is \"Coercion\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"Coercion\". Condition: the selected source-derived StGB section is \"Coercion\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"Coercion\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-11"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-Threat",
+      "section": "§241 Threatening",
+      "description": "Machine-materialisable profile for Threat.",
+      "condition": "SelectedStGBSection is \"Threat\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"Threat\". Condition: the selected source-derived StGB section is \"Threat\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"Threat\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-12"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-Extortion",
+      "section": "§253 Extortion",
+      "description": "Machine-materialisable profile for Extortion.",
+      "condition": "SelectedStGBSection is \"Extortion\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"Extortion\". Condition: the selected source-derived StGB section is \"Extortion\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"Extortion\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-13"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-Fraud",
+      "section": "§263 Fraud",
+      "description": "Machine-materialisable profile for Fraud.",
+      "condition": "SelectedStGBSection is \"Fraud\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"Fraud\". Condition: the selected source-derived StGB section is \"Fraud\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"Fraud\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-14"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-PublicIncitement",
+      "section": "§111 Public incitement to commit criminal offences",
+      "description": "Machine-materialisable profile for PublicIncitement.",
+      "condition": "SelectedStGBSection is \"PublicIncitement\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"PublicIncitement\". Condition: the selected source-derived StGB section is \"PublicIncitement\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"PublicIncitement\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-15"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-DisseminationOfPersonalData",
+      "section": "§126a Dangerous dissemination of personal data",
+      "description": "Machine-materialisable profile for DisseminationOfPersonalData.",
+      "condition": "SelectedStGBSection is \"DisseminationOfPersonalData\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"DisseminationOfPersonalData\". Condition: the selected source-derived StGB section is \"DisseminationOfPersonalData\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"DisseminationOfPersonalData\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-16"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-InstructionsForOffences",
+      "section": "§130a Instructions for committing offences",
+      "description": "Machine-materialisable profile for InstructionsForOffences.",
+      "condition": "SelectedStGBSection is \"InstructionsForOffences\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"InstructionsForOffences\". Condition: the selected source-derived StGB section is \"InstructionsForOffences\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"InstructionsForOffences\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-17"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-RewardingAndCondoningOffences",
+      "section": "§140 Rewarding and condoning criminal offences",
+      "description": "Machine-materialisable profile for RewardingAndCondoningOffences.",
+      "condition": "SelectedStGBSection is \"RewardingAndCondoningOffences\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"RewardingAndCondoningOffences\". Condition: the selected source-derived StGB section is \"RewardingAndCondoningOffences\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"RewardingAndCondoningOffences\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-18"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-DeceptionOfVoters",
+      "section": "§108a Deception of voters",
+      "description": "Machine-materialisable profile for DeceptionOfVoters.",
+      "condition": "SelectedStGBSection is \"DeceptionOfVoters\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"DeceptionOfVoters\". Condition: the selected source-derived StGB section is \"DeceptionOfVoters\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"DeceptionOfVoters\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-19"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-InducementToFalseStatement",
+      "section": "§160 Inducement to make a false statement",
+      "description": "Machine-materialisable profile for InducementToFalseStatement.",
+      "condition": "SelectedStGBSection is \"InducementToFalseStatement\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"InducementToFalseStatement\". Condition: the selected source-derived StGB section is \"InducementToFalseStatement\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"InducementToFalseStatement\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-20"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-SexualAbuseOfChildrenWithoutContact",
+      "section": "§176a Sexual abuse of children without physical contact",
+      "description": "Machine-materialisable profile for SexualAbuseOfChildrenWithoutContact.",
+      "condition": "SelectedStGBSection is \"SexualAbuseOfChildrenWithoutContact\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"SexualAbuseOfChildrenWithoutContact\". Condition: the selected source-derived StGB section is \"SexualAbuseOfChildrenWithoutContact\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"SexualAbuseOfChildrenWithoutContact\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-21"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-PreparationOfSexualAbuseOfChildren",
+      "section": "§176b Preparation for the sexual abuse of children",
+      "description": "Machine-materialisable profile for PreparationOfSexualAbuseOfChildren.",
+      "condition": "SelectedStGBSection is \"PreparationOfSexualAbuseOfChildren\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"PreparationOfSexualAbuseOfChildren\". Condition: the selected source-derived StGB section is \"PreparationOfSexualAbuseOfChildren\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"PreparationOfSexualAbuseOfChildren\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-22"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-InstructionsForSexualAbuseOfChildren",
+      "section": "§176e Dissemination and possession of instructions on the sexual abuse of children",
+      "description": "Machine-materialisable profile for InstructionsForSexualAbuseOfChildren.",
+      "condition": "SelectedStGBSection is \"InstructionsForSexualAbuseOfChildren\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"InstructionsForSexualAbuseOfChildren\". Condition: the selected source-derived StGB section is \"InstructionsForSexualAbuseOfChildren\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"InstructionsForSexualAbuseOfChildren\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-23"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-PromotionOfSexualActsOfMinors",
+      "section": "§180 Promotion of sexual acts of minors",
+      "description": "Machine-materialisable profile for PromotionOfSexualActsOfMinors.",
+      "condition": "SelectedStGBSection is \"PromotionOfSexualActsOfMinors\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"PromotionOfSexualActsOfMinors\". Condition: the selected source-derived StGB section is \"PromotionOfSexualActsOfMinors\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"PromotionOfSexualActsOfMinors\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-24"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-ViolentOrAnimalPornography",
+      "section": "§184a Dissemination of violent or animal pornography",
+      "description": "Machine-materialisable profile for ViolentOrAnimalPornography.",
+      "condition": "SelectedStGBSection is \"ViolentOrAnimalPornography\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"ViolentOrAnimalPornography\". Condition: the selected source-derived StGB section is \"ViolentOrAnimalPornography\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"ViolentOrAnimalPornography\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-25"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-ChildPornographyOffences",
+      "section": "§184b Dissemination, acquisition and possession of child pornography",
+      "description": "Machine-materialisable profile for ChildPornographyOffences.",
+      "condition": "SelectedStGBSection is \"ChildPornographyOffences\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"ChildPornographyOffences\". Condition: the selected source-derived StGB section is \"ChildPornographyOffences\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"ChildPornographyOffences\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-26"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-YouthPornographyOffences",
+      "section": "§184c Dissemination, acquisition and possession of youth pornography",
+      "description": "Machine-materialisable profile for YouthPornographyOffences.",
+      "condition": "SelectedStGBSection is \"YouthPornographyOffences\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"YouthPornographyOffences\". Condition: the selected source-derived StGB section is \"YouthPornographyOffences\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"YouthPornographyOffences\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-27"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-PornographicPerformances",
+      "section": "§184e Organisation of and attendance at child and youth pornography performances",
+      "description": "Machine-materialisable profile for PornographicPerformances.",
+      "condition": "SelectedStGBSection is \"PornographicPerformances\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"PornographicPerformances\". Condition: the selected source-derived StGB section is \"PornographicPerformances\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"PornographicPerformances\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-28"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-BriberyOfVoters",
+      "section": "§108b Bribery of voters",
+      "description": "Machine-materialisable profile for BriberyOfVoters.",
+      "condition": "SelectedStGBSection is \"BriberyOfVoters\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"BriberyOfVoters\". Condition: the selected source-derived StGB section is \"BriberyOfVoters\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"BriberyOfVoters\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-29"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-BriberyOfElectedRepresentatives",
+      "section": "§108e Bribery of and bribing elected representatives",
+      "description": "Machine-materialisable profile for BriberyOfElectedRepresentatives.",
+      "condition": "SelectedStGBSection is \"BriberyOfElectedRepresentatives\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"BriberyOfElectedRepresentatives\". Condition: the selected source-derived StGB section is \"BriberyOfElectedRepresentatives\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"BriberyOfElectedRepresentatives\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-30"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-CriminalTradingPlatforms",
+      "section": "§127 Operation of criminal trading platforms on the internet",
+      "description": "Machine-materialisable profile for CriminalTradingPlatforms.",
+      "condition": "SelectedStGBSection is \"CriminalTradingPlatforms\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"CriminalTradingPlatforms\". Condition: the selected source-derived StGB section is \"CriminalTradingPlatforms\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"CriminalTradingPlatforms\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-31"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-AssistanceAfterTheFact",
+      "section": "§257 Assistance after the fact",
+      "description": "Machine-materialisable profile for AssistanceAfterTheFact.",
+      "condition": "SelectedStGBSection is \"AssistanceAfterTheFact\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"AssistanceAfterTheFact\". Condition: the selected source-derived StGB section is \"AssistanceAfterTheFact\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"AssistanceAfterTheFact\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-32"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-MoneyLaundering",
+      "section": "§261 Money laundering",
+      "description": "Machine-materialisable profile for MoneyLaundering.",
+      "condition": "SelectedStGBSection is \"MoneyLaundering\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"MoneyLaundering\". Condition: the selected source-derived StGB section is \"MoneyLaundering\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"MoneyLaundering\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-33"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-ObstructionOfElection",
+      "section": "§107 Obstruction of an election",
+      "description": "Machine-materialisable profile for ObstructionOfElection.",
+      "condition": "SelectedStGBSection is \"ObstructionOfElection\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"ObstructionOfElection\". Condition: the selected source-derived StGB section is \"ObstructionOfElection\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"ObstructionOfElection\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-34"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-ElectoralFraud",
+      "section": "§107a Electoral fraud",
+      "description": "Machine-materialisable profile for ElectoralFraud.",
+      "condition": "SelectedStGBSection is \"ElectoralFraud\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"ElectoralFraud\". Condition: the selected source-derived StGB section is \"ElectoralFraud\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"ElectoralFraud\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-35"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-FalsificationOfElectionDocuments",
+      "section": "§107b Falsification of election documents",
+      "description": "Machine-materialisable profile for FalsificationOfElectionDocuments.",
+      "condition": "SelectedStGBSection is \"FalsificationOfElectionDocuments\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"FalsificationOfElectionDocuments\". Condition: the selected source-derived StGB section is \"FalsificationOfElectionDocuments\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"FalsificationOfElectionDocuments\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-36"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-BreachOfElectoralSecrecy",
+      "section": "§107c Breach of electoral secrecy",
+      "description": "Machine-materialisable profile for BreachOfElectoralSecrecy.",
+      "condition": "SelectedStGBSection is \"BreachOfElectoralSecrecy\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"BreachOfElectoralSecrecy\". Condition: the selected source-derived StGB section is \"BreachOfElectoralSecrecy\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"BreachOfElectoralSecrecy\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-37"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-CriminalOrganisations",
+      "section": "§129 Formation of criminal organisations",
+      "description": "Machine-materialisable profile for CriminalOrganisations.",
+      "condition": "SelectedStGBSection is \"CriminalOrganisations\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"CriminalOrganisations\". Condition: the selected source-derived StGB section is \"CriminalOrganisations\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"CriminalOrganisations\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-38"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-TerroristOrganisations",
+      "section": "§129a Formation of terrorist organisations",
+      "description": "Machine-materialisable profile for TerroristOrganisations.",
+      "condition": "SelectedStGBSection is \"TerroristOrganisations\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"TerroristOrganisations\". Condition: the selected source-derived StGB section is \"TerroristOrganisations\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"TerroristOrganisations\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-39"
+      ]
+    },
+    {
+      "scope_id": "ME-PROFILE-FailureToReportPlannedOffences",
+      "section": "§138 Failure to report planned offences",
+      "description": "Machine-materialisable profile for FailureToReportPlannedOffences.",
+      "condition": "SelectedStGBSection is \"FailureToReportPlannedOffences\"",
+      "root": "",
+      "kind": "condition",
+      "actor": "",
+      "clause": "The scope applies where: the selected source-derived StGB section is \"FailureToReportPlannedOffences\". Condition: the selected source-derived StGB section is \"FailureToReportPlannedOffences\".",
+      "rule_clauses": [
+        "Condition: the selected source-derived StGB section is \"FailureToReportPlannedOffences\"."
+      ],
+      "variables": [
+        "SelectedStGBSection",
+        "MachineControlHarness"
+      ],
+      "rule_ids": [
+        "R-ME-PROFILE-40"
+      ]
+    }
+  ],
+  "generation_status": "pass",
+  "findings": [],
+  "comparison_status": "not-run"
+}

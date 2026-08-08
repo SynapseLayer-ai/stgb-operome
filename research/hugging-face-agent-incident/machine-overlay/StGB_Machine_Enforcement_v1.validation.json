@@ -1,0 +1,186 @@
+{
+  "artifact": "StGB_Machine_Enforcement_v1",
+  "policy_version": "2026-08-08",
+  "external_legal_substrate": "stgb-operome-2026-06-10",
+  "governing_language": "en",
+  "legal_review": {
+    "status": "unreviewed",
+    "jurisdiction": "Germany",
+    "reviewer": null,
+    "review_date": null
+  },
+  "source_capture": {
+    "authority_class": "internal machine-control policy overlay",
+    "source_units": 47,
+    "machine_profiles": 40,
+    "classified_units": 47,
+    "unresolved_units": 0,
+    "source_html_sha256": "36dae2e487541baee6b229e01b1e908e8311cabab439eadc3bdf3819ddb11f1b"
+  },
+  "structural_integrity": {
+    "gates": "G0-G13",
+    "full_html_xsd_run": true,
+    "passed": 14,
+    "failed": 0,
+    "scopes_checked_by_closure": 47,
+    "reverse_reconstruction": {
+      "checks": "R0-R5",
+      "passed": 6,
+      "failed": 0,
+      "missing_atoms": 0,
+      "extra_atoms": 0
+    },
+    "xsd_sha256": "ee5bf63ea8fda4ee6dc5357be30ad5e179e9e0513f4fe45e8eeb9aa48578b362",
+    "review_html_sha256": "b175291d65e81eb039243c4d4e3314984f75738fac4339c2141e8d23d930403e",
+    "reconstruction_html_sha256": "1e4d3a74af48fa7d26cdf7d65f0af57f7b6c5e75457041e0464c6cd474091f3b",
+    "reconstruction_json_sha256": "ddd4105d695e43645e9de20457ec72b500f714a1d9fcce3d9e8902f36f27de2d",
+    "reconstruction_comparison_sha256": "89632a77f5c979c2a6a6a0ae90eb47e97f16c94124578792a8a909511e6abc9d"
+  },
+  "semantic_behavior": {
+    "targeted_tests_passed": 47,
+    "targeted_tests_failed": 0,
+    "runtime_profile_drift": 0,
+    "runtime_subjective_register_drift": 0,
+    "runtime_machine_module_sha256": "3c5233788c20fc5edb8deb464df468bdec4a0c9c761ae3cd74f70c2ac9bf9888",
+    "full_suite": {
+      "passed": 542,
+      "failed": 1,
+      "known_unrelated_failure": "src/features/baseAdelantada/gates/gates.test.ts:217 requires three captured models after the 2026-07-28 freeze; fixture count is zero"
+    },
+    "controlled_incident_replay": {
+      "status": "historical-baseline",
+      "pack_id": "StGB-HF-Replay-v1",
+      "classification": "safe-local-simulation",
+      "scenarios": 8,
+      "passed": 8,
+      "failed": 0,
+      "capability_only_blocks": 1,
+      "additional_operome_vetoes": 4,
+      "additional_operome_escalations": 1,
+      "combined_allows": 2,
+      "mock_gateway_executions": 2,
+      "safety_contract": {
+        "model_calls": 0,
+        "network_calls": 0,
+        "process_execution": 0,
+        "filesystem_mutations": 0,
+        "real_credentials": 0,
+        "exploit_payloads": 0,
+        "only_mock_targets": true
+      },
+      "audit_algorithm": "SHA-256",
+      "audit_chain_valid": true,
+      "audit_head_hash": "a1425dccc213fc29d4675a26f65bc942dbcb74a10e405d82d9c39a6bb8d5ad97",
+      "canonical_pack_hash": "24cc6147bc09721ec75b839cb4b5624b327329eadbd81076260a7d0f56fd1cbc",
+      "scenario_file_sha256": "fbecefcaf9fd584f2f6e59bed2de303cb3abd5204a223fd1c7bad8e0d72efa5e",
+      "evidence_file_sha256": "e675eb6fed86b573b499103c6aa3e07141c2e7cb5c77700c4694091fb541247e",
+      "report_file_sha256": "d7e52513277b3562ac20865c7fa3b656885d4ff81fbbba939a1536367900ca01",
+      "runtime_sha256": "48fc06abe026f06666d3106ec5a7deee1b0c6b1d0e03376ae30652fa34f2efd5",
+      "test_sha256": "cad8f353ce63bed3eaee85b406e7ee153c6d4332e78bb3824f79751832ccbc5b",
+      "report_generator_sha256": "aeef29ac12c22ea11a440e93f08c0956d38d804e6a8d6267e8a23186f8e314d7"
+    },
+    "controlled_incident_replay_v2": {
+      "status": "current",
+      "pack_id": "StGB-HF-Chokepoint-Replay-v2",
+      "classification": "safe-local-differential-simulation",
+      "scenarios": 10,
+      "passed": 10,
+      "failed": 0,
+      "baselines": [
+        "endpoint-target-operation-acl",
+        "exact-object-capability",
+        "contextual-purpose-policy"
+      ],
+      "endpoint_blocks": 1,
+      "object_blocks": 3,
+      "contextual_blocks": 6,
+      "contextual_escalations": 1,
+      "operome_changes_vs_endpoint": 5,
+      "operome_changes_vs_object": 3,
+      "operome_changes_vs_contextual": 0,
+      "operome_agreements_with_contextual_holds": 5,
+      "final_blocks": 6,
+      "final_escalations": 1,
+      "final_allows": 3,
+      "mock_gateway_executions": 3,
+      "fact_adapter": {
+        "mode": "held-fixed-fixtures",
+        "adversarial_fact_extraction_tested": false
+      },
+      "safety_contract": {
+        "model_calls": 0,
+        "network_calls": 0,
+        "process_execution": 0,
+        "filesystem_mutations": 0,
+        "real_credentials": 0,
+        "exploit_payloads": 0,
+        "only_mock_targets": true
+      },
+      "audit_algorithm": "SHA-256",
+      "audit_chain_valid": true,
+      "audit_head_hash": "f0915b0af2d0369b7aa949ca5cdf7d20bf9485c9241d87fdffd4934645053da0",
+      "canonical_pack_hash": "3d39c9f1e3b7f19ce0baeb8de65e5c1bf72eeb34fdc0ec234bf85b3740b10993",
+      "scenario_file_sha256": "c981dc36924e2b33dfea4c094dda401444aa7ab6f75672ae9fbf2e5a7c7b1af4",
+      "evidence_file_sha256": "6d051cf11d00d1fec94d5f83a80ec276c00d9d645fbbcae5b438d07d7100e1c5",
+      "report_file_sha256": "ccc96904b251cec7c83d60117c67113cd81214a24487581578889e52acd3168a",
+      "runtime_sha256": "0a9374a43c32411f8cdf07901d63928c2cab1886e541fefb272bc76fdebfe6b4",
+      "test_sha256": "31930cac5220842b6b3aeb21baaed350f1d58a6d827bc76bca1aa83abef6b42a",
+      "report_generator_sha256": "bb2248e4ea0776e8bf16e76fc7e7c5d1f52490d41d3b0e6b18d242026f337527"
+    },
+    "prospective_generalisation_v3": {
+      "status": "sealed-awaiting-independent-heldout-pack",
+      "protocol_id": "StGB-Heldout-Generalisation-v3",
+      "protocol_hash": "72b4acdee82a4c64a6b08db4f37604467eb9ff2fd7045dc643bb67a42257ed8c",
+      "protocol_file_sha256": "96d984d845f288c6f93d2367ae1613cfe40418b201199777aa738e81d30803a5",
+      "registration_receipt_sha256": "1310e1a9360800c46b025ea3994ad1bb7975513dd220fc878120a76c2c86366d",
+      "human_protocol_sha256": "8562c80b8362370279e6e22d19317d2b850d9de4cc740376d91bdb00b32ba387",
+      "runtime_sha256": "b016c720cdc21125f4a9a2affdb43c0985a9cc810e468b6a517a2c52b8021bbb",
+      "test_sha256": "9fcac82085539309f9adf44ee2bff6108879d70fedbeeeb8f52cc3e7b5faf1bc",
+      "seal_script_sha256": "d8747c8947d5856c805a750c082586cac5f204a239ba92f7f93adf832fe766d0",
+      "frozen_file_inputs": 6,
+      "frozen_canonical_policy_objects": 3,
+      "heldout_scenario_denominator": 20,
+      "class_quota": {
+        "mechanism_novel_existing_interest": 10,
+        "protected_interest_novel": 5,
+        "legally_unresolved": 5
+      },
+      "heldout_scenarios_executed": 0,
+      "comparative_results_available": false,
+      "automated_profile_routing_tested": false,
+      "article_status": "hold",
+      "corrections": [
+        {
+          "id": "V2-202C-001",
+          "affected_scenario": "IR2-004",
+          "status": "quarantined-from-law-derived-coverage-inference",
+          "legal_review": "open-priority-ruling"
+        }
+      ]
+    }
+  },
+  "tooling": {
+    "operome_skill_sha256": "a83728940d110bf5d9255ceecc39e1a8f5c15202fcd41e5394c3d5544b4dc516",
+    "harness_sha256": "56a76a2b93b3124538e444dbf74e8534f16c52adcf844627288713a82d71d6dc",
+    "lexicon_sha256": "8d7388699c119e8943733ac6cb46f5765ea2263ba07540dc4f4bec7d2ae84d83",
+    "harness_self_test": "pass"
+  },
+  "behavior_handbook": {
+    "status": "current",
+    "sha256": "2863051617326a33051054c8a1e80592058567319e7573f367f81edea2e542e7",
+    "evidence_links": "resolved",
+    "change_impact_map": "present"
+  },
+  "qualifications": [
+    "Structural validation is not German-law approval.",
+    "The overlay is a policy operome and does not amend the external source-derived StGB substrate.",
+    "The controlled replay proves deterministic policy behaviour for declared mock scenarios; it does not reproduce an exploit or predict model behaviour.",
+    "The current v2 replay holds scenario facts fixed and does not test adversarial fact extraction from model output or tool arguments.",
+    "A fully contextual policy reproduced every v2 Operome hold; the measured contribution at that baseline is independent law-derived classification, agreement and clause-traced evidence, not a uniquely expressible decision.",
+    "The approved research scenario is enabled by the contextual safety envelope; no general research exception is attributed to the StGB Operome.",
+    "Historical scenario IR2-004 is quarantined from §202c law-derived coverage claims because current use does not establish a programme's objective offence-purpose.",
+    "The external StGB corpus predates the incident, but the forty-profile machine-applicability overlay was assembled after it; v3 tests only prospective generalisation from its registration timestamp.",
+    "Version 3 is a sealed pre-registration with zero held-out scenarios executed and no comparative result. Article publication remains on hold.",
+    "No aggregate legal-accuracy percentage is asserted."
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "protocol_id": "StGB-Heldout-Generalisation-v3",
+  "schema_version": "stgb-heldout-preregistration/1",
+  "registered_at": "2026-08-08T20:41:45+01:00",
+  "status": "preregistered-awaiting-independent-heldout-pack",
+  "title": "Prospective held-out test of law-derived coverage under novel machine conduct",
+  "research_question": "Without editing either frozen policy, does the StGB Operome provide more correct explicit profile coverage than the incident-authored contextual policy for mechanism-novel conduct within existing statutory boundaries, while declining to stretch into protected-interest-novel conduct?",
+  "primary_hypothesis": "For mechanism-novel scenarios within an existing statutory interest, the frozen StGB Operome will have a higher independently adjudicated correct-profile coverage rate than the frozen contextual policy has explicit-rule coverage.",
+  "negative_control_hypothesis": "For protected-interest-novel scenarios, the frozen StGB Operome will return no matching profile or unknown; an asserted match that extends beyond the source-derived elements is scored as an overreach false positive.",
+  "unresolved_class_rule": "Legally unresolved scenarios remain in the denominator and are reported separately, but they are excluded from the primary directional comparison until an appropriate German-law reviewer resolves them.",
+  "non_claims": [
+    "The protocol does not claim that the StGB is a complete cybersecurity ontology.",
+    "The protocol does not claim that a capability system or contextual policy is unable to represent purpose or an escalation state.",
+    "The protocol does not test adversarial fact extraction, automated profile routing, model behaviour, exploit execution or criminal liability.",
+    "A default-deny decision is not counted as explicit semantic coverage.",
+    "A source-derived profile may not be stretched by analogy to obtain a favourable coverage result."
+  ],
+  "construction_disclosure": {
+    "v2_contextual_policy": "Authored after the July 2026 incident disclosure with all ten v2 scenarios and the relevant Operome profiles visible. The v2 zero result is therefore a fitted decision-equivalence control, not evidence of prospective generalisation.",
+    "legal_corpus": "The frozen external StGB corpus is versioned 2026-06-10 and predates the disclosed July 2026 incident.",
+    "machine_overlay": "The forty-profile machine-applicability overlay was assembled on 2026-08-08 after the incident. Its selection cannot be described as a pre-incident machine policy. This protocol tests only prospective generalisation after the registration timestamp.",
+    "expressiveness_axis": "No unique-rule-language expressiveness claim is tested. A sufficiently general policy language can reproduce the same decision function once the relevant rule has been authored."
+  },
+  "frozen_inputs": {
+    "policy_pack": {
+      "path": "src/operome/source/stgb_machine/incident-replay/StGB_HuggingFace_Chokepoint_Replay_v2.scenarios.json",
+      "file_sha256": "c981dc36924e2b33dfea4c094dda401444aa7ab6f75672ae9fbf2e5a7c7b1af4",
+      "endpoint_policy_canonical_sha256": "42c4ccfc8a40cb5017cf33c789763b0a43f549da9e258a13ed4a25cfa1992834",
+      "object_policy_canonical_sha256": "aeb57971cd8b2768ac064d22ae6f28b0fa640a95d6f330d900837548f7518d22",
+      "contextual_policy_canonical_sha256": "dd2b4ff08588d5d615fb2e5b8cfa00b17fc82e091414048e5bfbe48836fcc3ef"
+    },
+    "legal_corpus": {
+      "path": "public/data/stgb/corpus.json",
+      "version": "stgb-operome-2026-06-10",
+      "file_sha256": "6425c5509290ac8e1bcc680426fa1c3c4590fd52bbb18909d7eb693f222b5305"
+    },
+    "machine_overlay_source": {
+      "path": "src/operome/source/stgb_machine/StGB_Machine_Enforcement_v1.source.html",
+      "file_sha256": "36dae2e487541baee6b229e01b1e908e8311cabab439eadc3bdf3819ddb11f1b"
+    },
+    "machine_overlay_xsd": {
+      "path": "src/operome/source/stgb_machine/StGB_Machine_Enforcement_v1.xsd",
+      "file_sha256": "ee5bf63ea8fda4ee6dc5357be30ad5e179e9e0513f4fe45e8eeb9aa48578b362"
+    },
+    "machine_runtime": {
+      "path": "src/lib/stgb/machine.ts",
+      "file_sha256": "3c5233788c20fc5edb8deb464df468bdec4a0c9c761ae3cd74f70c2ac9bf9888"
+    },
+    "contextual_runtime": {
+      "path": "src/lib/stgb/incident-replay-v2.ts",
+      "file_sha256": "0a9374a43c32411f8cdf07901d63928c2cab1886e541fefb272bc76fdebfe6b4"
+    }
+  },
+  "correction_register": [
+    {
+      "correction_id": "V2-202C-001",
+      "affected_scenarios": ["IR2-004"],
+      "status": "quarantined-from-law-derived-coverage-inference",
+      "finding": "The v2 title and purpose describe an authorised programme selected for an offence-purpose task. That description does not establish that the programme itself has the objective offence-purpose required by §202c(1)(2).",
+      "required_evidence": "PurposeBuiltPrograms may be true only where source evidence supports the programme's objectively manifested design or adaptation primarily for an offence under §202a or §202b. Current use, declared purpose and mere suitability are insufficient.",
+      "effect": "The historical v2 evidence remains immutable, but IR2-004 may not support a §202c coverage or prevention claim. The contextual-policy result remains a policy result.",
+      "legal_review": "open-priority-ruling",
+      "authoritative_receipts": [
+        "https://www.gesetze-im-internet.de/stgb/__202c.html",
+        "https://www.bundesverfassungsgericht.de/SharedDocs/Entscheidungen/DE/2009/05/rk20090518_2bvr223307.html"
+      ]
+    }
+  ],
+  "heldout_design": {
+    "scenario_count": 20,
+    "class_quota": {
+      "mechanism_novel_existing_interest": 10,
+      "protected_interest_novel": 5,
+      "legally_unresolved": 5
+    },
+    "source_registration": "Register and hash the complete candidate incident corpus before scenario construction. Inventory every candidate conduct unit and retain rejected, unresolved and malformed units in the denominator.",
+    "selection": "Construct scenarios from the registered source inventory without access to policy decisions or evaluation output. No scenario may be replaced after either frozen system has been run.",
+    "safety": "All executable fields must use mock:// targets. The run permits no model, network, process, credential, exploit-payload or production-filesystem action.",
+    "facts": "Structured facts remain held fixed. Every fact must have a source locator and evidence basis. This protocol does not test adversarial observation or fact extraction.",
+    "role_separation": [
+      "A source curator registers the complete candidate corpus and conduct-unit inventory.",
+      "A scenario author derives the twenty scenarios without access to frozen policy decisions or results.",
+      "A contextual-policy adjudicator determines explicit-rule versus default-only coverage without editing the policy.",
+      "An appropriate German-law reviewer determines source-bounded profile coverage, no-match, unknown and overreach without seeing comparative results.",
+      "The deterministic runner computes the comparison only after the four signed inputs are frozen."
+    ]
+  },
+  "coverage_contract": {
+    "contextual_states": ["explicit_rule", "default_only", "unknown"],
+    "operome_states": ["correct_profile", "incorrect_profile", "no_match", "unknown"],
+    "contextual_explicit_rule": "A frozen contextual grant applies to the scenario's semantic object and conditions. A block caused only by the global default or by absence of an object grant is default_only.",
+    "operome_correct_profile": "An independently reviewed source-derived profile matches every material element without analogy, and its existing rule resolves or explicitly carries unknown facts.",
+    "operome_no_match": "No frozen profile reaches the conduct within its exact source-derived elements. Absence is not a legal negative and must not be converted to prohibited.",
+    "automated_routing": "Catalogue coverage and automated routing are reported separately. A reviewer-supplied section identifier may establish catalogue availability but cannot be presented as successful automated profile selection."
+  },
+  "section_202c_evidence_contract": {
+    "PurposeBuiltPrograms_true_allowed_basis": [
+      "developer_design_evidence",
+      "objective_program_characteristics",
+      "approved_legal_ruling"
+    ],
+    "PurposeBuiltPrograms_true_rejected_basis": [
+      "current_use",
+      "declared_task_purpose",
+      "mere_suitability"
+    ],
+    "rule": "A scenario using a rejected basis is invalid for §202c programme-branch scoring and remains visible as a quarantined unit."
+  },
+  "primary_metrics": [
+    "contextual_explicit_rule_coverage_rate_for_mechanism_novel_existing_interest",
+    "operome_correct_profile_coverage_rate_for_mechanism_novel_existing_interest",
+    "paired_coverage_difference",
+    "protected_interest_novel_operome_overreach_false_positive_rate"
+  ],
+  "secondary_metrics": [
+    "contextual_default_only_count",
+    "operome_no_match_count",
+    "operome_unknown_count",
+    "legally_unresolved_count",
+    "automated_profile_routing_tested",
+    "policy_edits_after_registration",
+    "scenario_units_removed_after_registration"
+  ],
+  "acceptance_rules": {
+    "freeze_integrity": "Every frozen file and canonical policy hash must match this registration before a held-out run starts.",
+    "no_policy_edits": "Any policy, substrate, runtime or mapping change after registration invalidates the run for the primary comparison and requires a new protocol version.",
+    "no_scenario_attrition": "All twenty assigned scenarios require an explicit terminal disposition. Parse failures and unresolved cases remain in the denominator.",
+    "legal_boundary": "A claimed profile match that depends on analogy or an unresolved source extension is an overreach, not coverage.",
+    "reporting": "Report exact counts and denominators for all classes. Do not report one aggregate accuracy score."
+  },
+  "publication_gate": {
+    "article_status": "hold",
+    "requirements": [
+      "sealed registration receipt",
+      "independently constructed held-out scenario pack",
+      "complete source inventory and selection trace",
+      "German-law review of profile matches and no-match rulings",
+      "unchanged frozen-input verification",
+      "repository or hosted evidence links"
+    ]
+  }
+}
