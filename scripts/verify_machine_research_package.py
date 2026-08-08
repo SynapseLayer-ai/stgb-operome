@@ -18,7 +18,9 @@ def sha256_bytes(data: bytes) -> str:
 
 
 def file_sha256(path: Path) -> str:
-    return sha256_bytes(path.read_bytes())
+    # Git may materialise text files with CRLF on Windows. Hash the repository's
+    # canonical LF representation so the published manifest is cross-platform.
+    return sha256_bytes(path.read_bytes().replace(b"\r\n", b"\n"))
 
 
 def canonical_json(value: Any) -> str:
