@@ -12,6 +12,7 @@ It parses the published schema format only. It is not the extraction
 toolchain and contains nothing about how substrates are produced.
 """
 import re, json, sys, hashlib, html as H
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 CARRIERS = [
@@ -28,18 +29,65 @@ CARRIERS = [
     ("computer", "StGB_DataComputerOffences_v1.xsd"),
 ]
 VERSION = "stgb-operome-2026-06-10"
+XS = "{http://www.w3.org/2001/XMLSchema}"
+
+def local(node):
+    return node.tag.rsplit("}", 1)[-1]
+
+def child_text(node, name):
+    child = next((item for item in node.iter() if local(item) == name), None)
+    return "" if child is None else "".join(child.itertext()).strip()
 
 def parse_carrier(text, chapter):
-    var_at = {}
-    for m in re.finditer(r'<xs:element name="([A-Za-z0-9_]+)"[^>]*>.*?Input: (Boolean|Reference|Computable).*?<SurfaceForm>(.*?)</SurfaceForm>', text, re.S):
-        var_at[m.group(1)] = ("variable" if m.group(2) != "Computable" else "computable",
-                              H.unescape(m.group(3)), m.group(2))
-    comps = {m.group(1): H.unescape(m.group(2)).strip() for m in
-             re.finditer(r'<Computable name="([A-Za-z0-9_]+)"[^>]*><Definition>(.*?)</Definition>', text, re.S)}
+    root = ET.fromstring(text)
+    ordered = list(root.iter())
+    positions = {id(node): position for position, node in enumerate(ordered)}
+
+    # Names repeat legitimately between scopes (for example Conduct and
+    # ProtectedData). Preserve every declaration and resolve each scope
+    # variable to the nearest preceding declaration in document order. The old
+    # global name map let a later scope's computable overwrite an earlier one,
+    # producing undeclared dependencies in otherwise valid source substrates.
+    declarations = {}
+    for node in root.iter(f"{XS}element"):
+        name = node.get("name")
+        if not name:
+            continue
+        documentation = child_text(node, "documentation")
+        input_match = re.search(r"Input:\s*(Boolean|Reference|Computable)", documentation)
+        if not input_match:
+            continue
+        input_type = input_match.group(1)
+        computable = next((item for item in node.iter() if local(item) == "Computable"), None)
+        definition = child_text(computable, "Definition") if computable is not None else ""
+        declarations.setdefault(name, []).append({
+            "position": positions[id(node)],
+            "kind": "computable" if input_type == "Computable" else "variable",
+            "surface": child_text(node, "SurfaceForm"),
+            "type": input_type,
+            "definition": definition,
+        })
+
+    def declaration_at(name, position):
+        candidates = [item for item in declarations.get(name, []) if item["position"] < position]
+        return candidates[-1] if candidates else None
+
     secs = {}
-    for m in re.finditer(r'<Scope id="OUT-([A-Za-z0-9_]+)"[^>]*>.*?<Condition>(.*?)</Condition>.*?<Variables>(.*?)</Variables>', text, re.S):
-        secs[m.group(1)] = {"condition": H.unescape(m.group(2)).strip(),
-                            "varlist": re.findall(r'<Variable>([A-Za-z0-9_]+)</Variable>', m.group(3))}
+    for node in root.iter():
+        if local(node) != "Scope" or not (node.get("id") or "").startswith("OUT-"):
+            continue
+        name = node.get("id")[4:]
+        variables_node = next((item for item in node if local(item) == "Variables"), None)
+        varlist = [] if variables_node is None else [
+            "".join(item.itertext()).strip()
+            for item in variables_node
+            if local(item) == "Variable"
+        ]
+        secs[name] = {
+            "condition": child_text(node, "Condition"),
+            "varlist": varlist,
+            "position": positions[id(node)],
+        }
     rules = [{"id": r.group(1), "actor": r.group(2), "body": H.unescape(r.group(3)).strip()}
              for r in re.finditer(r'<Rule id="([^"]+)"[^>]*actor="([^"]*)">(.*?)</Rule>', text, re.S)]
     pref2scope = {}
@@ -62,12 +110,15 @@ def parse_carrier(text, chapter):
         by_scope.setdefault(sc, []).append(r)
     out = []
     for name, d in secs.items():
+        resolved = {variable: declaration_at(variable, d["position"]) for variable in d["varlist"]}
         out.append({
             "id": name, "chapter": chapter,
-            "variables": [{"name": v, "type": var_at[v][2], "surface": var_at[v][1]}
-                          for v in d["varlist"] if v in var_at and var_at[v][0] == "variable"],
-            "computables": {c: comps[c] for c in d["varlist"] if c in comps},
-            "composite": name if name in comps else d["condition"].replace(" is true", ""),
+            "variables": [{"name": v, "type": resolved[v]["type"], "surface": resolved[v]["surface"]}
+                          for v in d["varlist"] if resolved[v] and resolved[v]["kind"] == "variable"],
+            "computables": {c: resolved[c]["definition"] for c in d["varlist"]
+                            if resolved[c] and resolved[c]["kind"] == "computable"},
+            "composite": name if resolved.get(name) and resolved[name]["kind"] == "computable"
+                         else d["condition"].replace(" is true", ""),
             "condition": d["condition"],
             "rules": by_scope.get(name, []),
         })

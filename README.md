@@ -42,9 +42,13 @@ provision that produced it.
 | `.github/workflows/` | CI that regenerates `corpus.json` from `substrates/` on every commit and fails on any difference |
 | `research/hugging-face-agent-incident/` | Machine-enforcement overlay, controlled incident replay, sealed held-out protocol, frozen inputs and article |
 
-Corpus statistics: 105 scopes across ten chapters, 1,381 rules, 1,359 variables. The
+Corpus statistics: 105 scopes across ten chapters, 1,381 rules, 1,330 scope-local variables. The
 `provenance` block of `corpus.json` embeds the sha256 of every source carrier and the count
 arithmetic, so nothing can be dropped silently.
+
+The generator resolves repeated element and computable names within the scope that declares them.
+It does not use a carrier-wide last-write-wins map: names such as `ProtectedData` and `Conduct`
+legitimately occur in several scopes with different declaration roles and definitions.
 
 ## Quick start
 
