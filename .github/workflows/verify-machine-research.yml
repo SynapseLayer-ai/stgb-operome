@@ -1,0 +1,24 @@
+name: verify-machine-research
+
+on:
+  push:
+    paths:
+      - "research/hugging-face-agent-incident/**"
+      - "scripts/verify_machine_research_package.py"
+      - ".github/workflows/verify-machine-research.yml"
+  pull_request:
+    paths:
+      - "research/hugging-face-agent-incident/**"
+      - "scripts/verify_machine_research_package.py"
+      - ".github/workflows/verify-machine-research.yml"
+
+jobs:
+  verify-evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify hashes, audit chains and frozen inputs
+        run: python scripts/verify_machine_research_package.py

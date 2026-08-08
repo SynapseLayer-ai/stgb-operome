@@ -1,0 +1,15 @@
+{
+  "status": "pass",
+  "passed": 6,
+  "failed": 0,
+  "missing_atoms": 0,
+  "extra_atoms": 0,
+  "checks": {
+    "R0 XSD-only isolation": true,
+    "R1 resolution": true,
+    "R2 ownership": true,
+    "R3 semantic coverage": true,
+    "R4 logical fidelity": true,
+    "R5 readable clause": true
+  }
+}

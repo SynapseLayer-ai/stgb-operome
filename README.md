@@ -40,6 +40,7 @@ provision that produced it.
 | `review/` | Ten section-by-section review documents: source text beside the markup, every strike visible |
 | `scripts/` | The XSD-to-JSON generator and the reference evaluator |
 | `.github/workflows/` | CI that regenerates `corpus.json` from `substrates/` on every commit and fails on any difference |
+| `research/hugging-face-agent-incident/` | Machine-enforcement overlay, controlled incident replay, sealed held-out protocol, frozen inputs and article |
 
 Corpus statistics: 105 scopes across ten chapters, 1,381 rules, 1,359 variables. The
 `provenance` block of `corpus.json` embeds the sha256 of every source carrier and the count
@@ -53,11 +54,26 @@ Verify the corpus yourself:
 python scripts/operome_cli.py evaluate 211 KillsPerson=true
 python scripts/reference_evaluator.py corpus/corpus.json corpus/tests.json
 python scripts/xsd_to_json.py substrates corpus/corpus.json /tmp/regenerated.json
+python scripts/verify_machine_research_package.py
 ```
 
 MCP server: the corpus will be queryable at **operome.dev** (endpoint and configuration blocks for
 Claude Code and Codex are published there). The server exposes section retrieval, schema retrieval,
 deterministic evaluation of fact patterns with full derivation traces, and the master-rule check.
+
+## Machine-enforcement research
+
+The [Hugging Face agent-incident research package](research/hugging-face-agent-incident/README.md)
+contains a machine-applicability overlay and a safe, local comparison of progressively stronger
+capability policies with StGB-derived conduct profiles. It records a 5 to 3 to 0 differential and
+preserves the null result against the fitted contextual policy. No exploit was run: the package used
+only `mock://` targets and made zero model, network, process, credential or production-filesystem
+calls.
+
+The package also contains a locally sealed, unexecuted protocol for a possible held-out
+generalisation study. It is not a result. Zero held-out scenarios have been run, the empirical
+generalisation claim remains on hold, and the machine mappings have not received German-law
+approval.
 
 ## Status
 

@@ -1,0 +1,943 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="https://synapselayer.ai/operome/v1" xmlns:op="https://synapselayer.ai/operome/v1" targetNamespace="https://synapselayer.ai/operome/v1" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:documentation>Operome: StGB Machine Enforcement Overlay v1 | Policy source: SynapseLayer machine-enforcement policy 2026-08-08 | External legal substrate: stgb-operome-2026-06-10 | Governing language: English</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="StGBMachineSectionEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UnauthorisedDataAccess"/>
+      <xs:enumeration value="InterceptionOfData"/>
+      <xs:enumeration value="PreparationOfDataAccess"/>
+      <xs:enumeration value="HandlingUnlawfullyObtainedData"/>
+      <xs:enumeration value="ComputerFraud"/>
+      <xs:enumeration value="DataAlteration"/>
+      <xs:enumeration value="ComputerSabotage"/>
+      <xs:enumeration value="DisruptionOfTelecommunications"/>
+      <xs:enumeration value="ForgeryOfDocuments"/>
+      <xs:enumeration value="ObstructionOfJustice"/>
+      <xs:enumeration value="Coercion"/>
+      <xs:enumeration value="Threat"/>
+      <xs:enumeration value="Extortion"/>
+      <xs:enumeration value="Fraud"/>
+      <xs:enumeration value="PublicIncitement"/>
+      <xs:enumeration value="DisseminationOfPersonalData"/>
+      <xs:enumeration value="InstructionsForOffences"/>
+      <xs:enumeration value="RewardingAndCondoningOffences"/>
+      <xs:enumeration value="DeceptionOfVoters"/>
+      <xs:enumeration value="InducementToFalseStatement"/>
+      <xs:enumeration value="SexualAbuseOfChildrenWithoutContact"/>
+      <xs:enumeration value="PreparationOfSexualAbuseOfChildren"/>
+      <xs:enumeration value="InstructionsForSexualAbuseOfChildren"/>
+      <xs:enumeration value="PromotionOfSexualActsOfMinors"/>
+      <xs:enumeration value="ViolentOrAnimalPornography"/>
+      <xs:enumeration value="ChildPornographyOffences"/>
+      <xs:enumeration value="YouthPornographyOffences"/>
+      <xs:enumeration value="PornographicPerformances"/>
+      <xs:enumeration value="BriberyOfVoters"/>
+      <xs:enumeration value="BriberyOfElectedRepresentatives"/>
+      <xs:enumeration value="CriminalTradingPlatforms"/>
+      <xs:enumeration value="AssistanceAfterTheFact"/>
+      <xs:enumeration value="MoneyLaundering"/>
+      <xs:enumeration value="ObstructionOfElection"/>
+      <xs:enumeration value="ElectoralFraud"/>
+      <xs:enumeration value="FalsificationOfElectionDocuments"/>
+      <xs:enumeration value="BreachOfElectoralSecrecy"/>
+      <xs:enumeration value="CriminalOrganisations"/>
+      <xs:enumeration value="TerroristOrganisations"/>
+      <xs:enumeration value="FailureToReportPlannedOffences"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EvaluationResultEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="realised"/>
+      <xs:enumeration value="not_realised"/>
+      <xs:enumeration value="unknown"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="SubjectiveElementStatusEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="not_assessed_for_machine"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AuthorizationDecisionEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="authorised"/>
+      <xs:enumeration value="not_authorised"/>
+      <xs:enumeration value="unknown"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="GoalEvidenceSourceEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="agent_goal"/>
+      <xs:enumeration value="action_plan"/>
+      <xs:enumeration value="orchestrator_goal"/>
+      <xs:enumeration value="trusted_monitor"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OperomeStGBMachineEnforcement">
+    <xs:annotation>
+      <xs:appinfo>
+        <ExternalCorpus id="stgb-operome-2026-06-10" role="source-derived-legal-substrate" actorTreatment="machine-is-not-a-natural-person"/>
+        <SectionScopes>
+          <Scope id="ME-BOUNDARY" section="Machine evaluation boundary">
+            <Condition>ProposedMachineAction isnot null</Condition>
+            <Description>Keeps source-faithful legal attribution separate from material machine-action evaluation.</Description>
+            <Variables>
+              <Variable>MachineControlHarness</Variable>
+              <Variable>ProposedMachineAction</Variable>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>ActorIsNaturalPerson</Variable>
+              <Variable>LegalAttributionResult</Variable>
+              <Variable>MaterialEvaluationResult</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-EVIDENCE" section="Goal and observation evidence">
+            <Condition>ProposedMachineAction isnot null</Condition>
+            <Description>Separates an auditable raw goal from exact material facts and gives trusted observations precedence.</Description>
+            <Variables>
+              <Variable>MachineControlHarness</Variable>
+              <Variable>ProposedMachineAction</Variable>
+              <Variable>RawMachineGoal</Variable>
+              <Variable>RawGoalParsed</Variable>
+              <Variable>GoalEvidenceSource</Variable>
+              <Variable>StructuredGoalFacts</Variable>
+              <Variable>TrustedObservedFacts</Variable>
+              <Variable>ObservedFactPrecedenceApplied</Variable>
+              <Variable>GoalFactConflict</Variable>
+              <Variable>GoalFactOutsideSelectedSectionContract</Variable>
+              <Variable>MachineActionBlocked</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-SUBJECTIVE" section="Human subjective legal predicates">
+            <Condition>SubjectiveElementStatus is "not_assessed_for_machine"</Condition>
+            <Description>Prevents machine goals or observations from satisfying human subjective StGB predicates.</Description>
+            <Variables>
+              <Variable>MachineControlHarness</Variable>
+              <Variable>SubjectiveElementsPresent</Variable>
+              <Variable>SubjectiveElementsPivotal</Variable>
+              <Variable>SubjectiveValuesSuppliedButIgnored</Variable>
+              <Variable>SubjectiveElementStatus</Variable>
+              <Variable>MachineActionEscalated</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-AUTHORIZATION" section="External authorization">
+            <Condition>ProposedMachineAction isnot null</Condition>
+            <Description>Requires authorization to be verified outside the acting machine by a trusted capability broker.</Description>
+            <Variables>
+              <Variable>MachineControlHarness</Variable>
+              <Variable>ProposedMachineAction</Variable>
+              <Variable>AuthorizationDecision</Variable>
+              <Variable>AuthorizationVerified</Variable>
+              <Variable>AuthorizationSource</Variable>
+              <Variable>AuthorizationScope</Variable>
+              <Variable>ExternalCapabilityBroker</Variable>
+              <Variable>MachineActionEscalated</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-BLOCK" section="Blocking decision">
+            <Condition>MachineActionBlocked is true</Condition>
+            <Description>Blocks realised material conduct, negative authority, conflicting observations, or out-of-contract goal facts.</Description>
+            <Variables>
+              <Variable>MachineControlHarness</Variable>
+              <Variable>MachineActionBlocked</Variable>
+              <Variable>MachineActionExecutable</Variable>
+              <Variable>GoalFactConflict</Variable>
+              <Variable>GoalFactOutsideSelectedSectionContract</Variable>
+              <Variable>AuthorizationDecision</Variable>
+              <Variable>MaterialEvaluationResult</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-ESCALATE" section="Escalation decision">
+            <Condition>MachineActionEscalated is true</Condition>
+            <Description>Escalates unresolved material facts, pivotal subjective predicates, and unknown or unverified positive authority.</Description>
+            <Variables>
+              <Variable>MachineControlHarness</Variable>
+              <Variable>MachineActionEscalated</Variable>
+              <Variable>MachineActionExecutable</Variable>
+              <Variable>MaterialEvaluationResult</Variable>
+              <Variable>SubjectiveElementsPivotal</Variable>
+              <Variable>AuthorizationDecision</Variable>
+              <Variable>AuthorizationVerified</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-ALLOW" section="Allow decision">
+            <Condition>MachineActionAllowed is true</Condition>
+            <Description>Allows only a determined negative material result with externally verified positive authorization and no block or escalation.</Description>
+            <Variables>
+              <Variable>MachineControlHarness</Variable>
+              <Variable>MachineActionAllowed</Variable>
+              <Variable>MachineActionExecutable</Variable>
+              <Variable>MachineActionBlocked</Variable>
+              <Variable>MachineActionEscalated</Variable>
+              <Variable>MaterialEvaluationResult</Variable>
+              <Variable>AuthorizationDecision</Variable>
+              <Variable>AuthorizationVerified</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-UnauthorisedDataAccess" section="§202a Data espionage">
+            <Condition>SelectedStGBSection is "UnauthorisedDataAccess"</Condition>
+            <Description>Machine-materialisable profile for UnauthorisedDataAccess.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-InterceptionOfData" section="§202b Interception of data">
+            <Condition>SelectedStGBSection is "InterceptionOfData"</Condition>
+            <Description>Machine-materialisable profile for InterceptionOfData.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-PreparationOfDataAccess" section="§202c Acts preparatory to data espionage and interception">
+            <Condition>SelectedStGBSection is "PreparationOfDataAccess"</Condition>
+            <Description>Machine-materialisable profile for PreparationOfDataAccess.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-HandlingUnlawfullyObtainedData" section="§202d Handling stolen data">
+            <Condition>SelectedStGBSection is "HandlingUnlawfullyObtainedData"</Condition>
+            <Description>Machine-materialisable profile for HandlingUnlawfullyObtainedData.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-ComputerFraud" section="§263a Computer fraud">
+            <Condition>SelectedStGBSection is "ComputerFraud"</Condition>
+            <Description>Machine-materialisable profile for ComputerFraud.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-DataAlteration" section="§303a Alteration of data">
+            <Condition>SelectedStGBSection is "DataAlteration"</Condition>
+            <Description>Machine-materialisable profile for DataAlteration.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-ComputerSabotage" section="§303b Computer sabotage">
+            <Condition>SelectedStGBSection is "ComputerSabotage"</Condition>
+            <Description>Machine-materialisable profile for ComputerSabotage.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-DisruptionOfTelecommunications" section="§317 Disruption of telecommunications facilities">
+            <Condition>SelectedStGBSection is "DisruptionOfTelecommunications"</Condition>
+            <Description>Machine-materialisable profile for DisruptionOfTelecommunications.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-ForgeryOfDocuments" section="§267 Forgery of documents">
+            <Condition>SelectedStGBSection is "ForgeryOfDocuments"</Condition>
+            <Description>Machine-materialisable profile for ForgeryOfDocuments.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-ObstructionOfJustice" section="§258 Obstruction of justice">
+            <Condition>SelectedStGBSection is "ObstructionOfJustice"</Condition>
+            <Description>Machine-materialisable profile for ObstructionOfJustice.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-Coercion" section="§240 Coercion">
+            <Condition>SelectedStGBSection is "Coercion"</Condition>
+            <Description>Machine-materialisable profile for Coercion.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-Threat" section="§241 Threatening">
+            <Condition>SelectedStGBSection is "Threat"</Condition>
+            <Description>Machine-materialisable profile for Threat.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-Extortion" section="§253 Extortion">
+            <Condition>SelectedStGBSection is "Extortion"</Condition>
+            <Description>Machine-materialisable profile for Extortion.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-Fraud" section="§263 Fraud">
+            <Condition>SelectedStGBSection is "Fraud"</Condition>
+            <Description>Machine-materialisable profile for Fraud.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-PublicIncitement" section="§111 Public incitement to commit criminal offences">
+            <Condition>SelectedStGBSection is "PublicIncitement"</Condition>
+            <Description>Machine-materialisable profile for PublicIncitement.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-DisseminationOfPersonalData" section="§126a Dangerous dissemination of personal data">
+            <Condition>SelectedStGBSection is "DisseminationOfPersonalData"</Condition>
+            <Description>Machine-materialisable profile for DisseminationOfPersonalData.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-InstructionsForOffences" section="§130a Instructions for committing offences">
+            <Condition>SelectedStGBSection is "InstructionsForOffences"</Condition>
+            <Description>Machine-materialisable profile for InstructionsForOffences.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-RewardingAndCondoningOffences" section="§140 Rewarding and condoning criminal offences">
+            <Condition>SelectedStGBSection is "RewardingAndCondoningOffences"</Condition>
+            <Description>Machine-materialisable profile for RewardingAndCondoningOffences.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-DeceptionOfVoters" section="§108a Deception of voters">
+            <Condition>SelectedStGBSection is "DeceptionOfVoters"</Condition>
+            <Description>Machine-materialisable profile for DeceptionOfVoters.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-InducementToFalseStatement" section="§160 Inducement to make a false statement">
+            <Condition>SelectedStGBSection is "InducementToFalseStatement"</Condition>
+            <Description>Machine-materialisable profile for InducementToFalseStatement.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-SexualAbuseOfChildrenWithoutContact" section="§176a Sexual abuse of children without physical contact">
+            <Condition>SelectedStGBSection is "SexualAbuseOfChildrenWithoutContact"</Condition>
+            <Description>Machine-materialisable profile for SexualAbuseOfChildrenWithoutContact.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-PreparationOfSexualAbuseOfChildren" section="§176b Preparation for the sexual abuse of children">
+            <Condition>SelectedStGBSection is "PreparationOfSexualAbuseOfChildren"</Condition>
+            <Description>Machine-materialisable profile for PreparationOfSexualAbuseOfChildren.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-InstructionsForSexualAbuseOfChildren" section="§176e Dissemination and possession of instructions on the sexual abuse of children">
+            <Condition>SelectedStGBSection is "InstructionsForSexualAbuseOfChildren"</Condition>
+            <Description>Machine-materialisable profile for InstructionsForSexualAbuseOfChildren.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-PromotionOfSexualActsOfMinors" section="§180 Promotion of sexual acts of minors">
+            <Condition>SelectedStGBSection is "PromotionOfSexualActsOfMinors"</Condition>
+            <Description>Machine-materialisable profile for PromotionOfSexualActsOfMinors.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-ViolentOrAnimalPornography" section="§184a Dissemination of violent or animal pornography">
+            <Condition>SelectedStGBSection is "ViolentOrAnimalPornography"</Condition>
+            <Description>Machine-materialisable profile for ViolentOrAnimalPornography.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-ChildPornographyOffences" section="§184b Dissemination, acquisition and possession of child pornography">
+            <Condition>SelectedStGBSection is "ChildPornographyOffences"</Condition>
+            <Description>Machine-materialisable profile for ChildPornographyOffences.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-YouthPornographyOffences" section="§184c Dissemination, acquisition and possession of youth pornography">
+            <Condition>SelectedStGBSection is "YouthPornographyOffences"</Condition>
+            <Description>Machine-materialisable profile for YouthPornographyOffences.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-PornographicPerformances" section="§184e Organisation of and attendance at child and youth pornography performances">
+            <Condition>SelectedStGBSection is "PornographicPerformances"</Condition>
+            <Description>Machine-materialisable profile for PornographicPerformances.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-BriberyOfVoters" section="§108b Bribery of voters">
+            <Condition>SelectedStGBSection is "BriberyOfVoters"</Condition>
+            <Description>Machine-materialisable profile for BriberyOfVoters.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-BriberyOfElectedRepresentatives" section="§108e Bribery of and bribing elected representatives">
+            <Condition>SelectedStGBSection is "BriberyOfElectedRepresentatives"</Condition>
+            <Description>Machine-materialisable profile for BriberyOfElectedRepresentatives.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-CriminalTradingPlatforms" section="§127 Operation of criminal trading platforms on the internet">
+            <Condition>SelectedStGBSection is "CriminalTradingPlatforms"</Condition>
+            <Description>Machine-materialisable profile for CriminalTradingPlatforms.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-AssistanceAfterTheFact" section="§257 Assistance after the fact">
+            <Condition>SelectedStGBSection is "AssistanceAfterTheFact"</Condition>
+            <Description>Machine-materialisable profile for AssistanceAfterTheFact.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-MoneyLaundering" section="§261 Money laundering">
+            <Condition>SelectedStGBSection is "MoneyLaundering"</Condition>
+            <Description>Machine-materialisable profile for MoneyLaundering.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-ObstructionOfElection" section="§107 Obstruction of an election">
+            <Condition>SelectedStGBSection is "ObstructionOfElection"</Condition>
+            <Description>Machine-materialisable profile for ObstructionOfElection.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-ElectoralFraud" section="§107a Electoral fraud">
+            <Condition>SelectedStGBSection is "ElectoralFraud"</Condition>
+            <Description>Machine-materialisable profile for ElectoralFraud.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-FalsificationOfElectionDocuments" section="§107b Falsification of election documents">
+            <Condition>SelectedStGBSection is "FalsificationOfElectionDocuments"</Condition>
+            <Description>Machine-materialisable profile for FalsificationOfElectionDocuments.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-BreachOfElectoralSecrecy" section="§107c Breach of electoral secrecy">
+            <Condition>SelectedStGBSection is "BreachOfElectoralSecrecy"</Condition>
+            <Description>Machine-materialisable profile for BreachOfElectoralSecrecy.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-CriminalOrganisations" section="§129 Formation of criminal organisations">
+            <Condition>SelectedStGBSection is "CriminalOrganisations"</Condition>
+            <Description>Machine-materialisable profile for CriminalOrganisations.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-TerroristOrganisations" section="§129a Formation of terrorist organisations">
+            <Condition>SelectedStGBSection is "TerroristOrganisations"</Condition>
+            <Description>Machine-materialisable profile for TerroristOrganisations.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+          <Scope id="ME-PROFILE-FailureToReportPlannedOffences" section="§138 Failure to report planned offences">
+            <Condition>SelectedStGBSection is "FailureToReportPlannedOffences"</Condition>
+            <Description>Machine-materialisable profile for FailureToReportPlannedOffences.</Description>
+            <Variables>
+              <Variable>SelectedStGBSection</Variable>
+              <Variable>MachineControlHarness</Variable>
+            </Variables>
+          </Scope>
+        </SectionScopes>
+        <MachineProfiles>
+          <MachineProfile scope="ME-PROFILE-UnauthorisedDataAccess" sectionId="UnauthorisedDataAccess" stgbRef="§202a" capabilities="network data" materialisation="direct">
+            <Rationale>A machine can obtain access to protected data through network or system calls.</Rationale>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-InterceptionOfData" sectionId="InterceptionOfData" stgbRef="§202b" capabilities="network data" materialisation="direct">
+            <Rationale>A machine can technically capture non-public data transmissions.</Rationale>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-PreparationOfDataAccess" sectionId="PreparationOfDataAccess" stgbRef="§202c" capabilities="network data code_execution" materialisation="direct">
+            <Rationale>A machine can produce, obtain or share credentials and offence-purpose programs.</Rationale>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-HandlingUnlawfullyObtainedData" sectionId="HandlingUnlawfullyObtainedData" stgbRef="§202d" capabilities="network data" materialisation="direct">
+            <Rationale>A machine can procure, transmit or expose unlawfully obtained non-public data.</Rationale>
+            <SubjectiveElement name="IntentToEnrichSelf" status="not_assessed_for_machine"/>
+            <SubjectiveElement name="IntentToEnrichThirdParty" status="not_assessed_for_machine"/>
+            <SubjectiveElement name="IntentToHarmAnother" status="not_assessed_for_machine"/>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-ComputerFraud" sectionId="ComputerFraud" stgbRef="§263a" capabilities="network code_execution" materialisation="direct">
+            <Rationale>A machine can manipulate data processing through programs, data or credentials.</Rationale>
+            <SubjectiveElement name="ActsWithAdvantageIntention" status="not_assessed_for_machine"/>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-DataAlteration" sectionId="DataAlteration" stgbRef="§303a" capabilities="filesystem data code_execution" materialisation="direct">
+            <Rationale>A machine can delete, suppress, disable or alter data.</Rationale>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-ComputerSabotage" sectionId="ComputerSabotage" stgbRef="§303b" capabilities="network filesystem code_execution" materialisation="direct">
+            <Rationale>A machine can significantly disrupt important data processing.</Rationale>
+            <SubjectiveElement name="ActsWithDetrimentIntention" status="not_assessed_for_machine"/>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-DisruptionOfTelecommunications" sectionId="DisruptionOfTelecommunications" stgbRef="§317" capabilities="network code_execution" materialisation="direct">
+            <Rationale>A machine can disable or endanger telecommunications operation.</Rationale>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-ForgeryOfDocuments" sectionId="ForgeryOfDocuments" stgbRef="§267" capabilities="filesystem publication" materialisation="direct">
+            <Rationale>A machine can create, alter and use electronic documents.</Rationale>
+            <SubjectiveElement name="ActsToDeceiveInLegalTransactions" status="not_assessed_for_machine"/>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-ObstructionOfJustice" sectionId="ObstructionOfJustice" stgbRef="§258" capabilities="filesystem data communications" materialisation="mediated">
+            <Rationale>A machine can destroy evidence, conceal records or mislead an investigation.</Rationale>
+            <SubjectiveElement name="Intentionally" status="not_assessed_for_machine"/>
+            <SubjectiveElement name="Knowingly" status="not_assessed_for_machine"/>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-Coercion" sectionId="Coercion" stgbRef="§240" capabilities="communications" materialisation="mediated">
+            <Rationale>A machine can issue a threat intended to compel a person.</Rationale>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-Threat" sectionId="Threat" stgbRef="§241" capabilities="communications" materialisation="direct">
+            <Rationale>A machine can transmit a threatening communication.</Rationale>
+            <SubjectiveElement name="AgainstBetterKnowledge" status="not_assessed_for_machine"/>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-Extortion" sectionId="Extortion" stgbRef="§253" capabilities="communications payments" materialisation="mediated">
+            <Rationale>A machine can demand value while issuing a threat.</Rationale>
+            <SubjectiveElement name="ActsWithEnrichmentIntention" status="not_assessed_for_machine"/>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-Fraud" sectionId="Fraud" stgbRef="§263" capabilities="communications publication" materialisation="mediated">
+            <Rationale>A machine can make deceptive factual representations to a person.</Rationale>
+            <SubjectiveElement name="ActsWithAdvantageIntention" status="not_assessed_for_machine"/>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-PublicIncitement" sectionId="PublicIncitement" stgbRef="§111" capabilities="publication communications" materialisation="direct">
+            <Rationale>A machine can publish an incitement to an unlawful act.</Rationale>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-DisseminationOfPersonalData" sectionId="DisseminationOfPersonalData" stgbRef="§126a" capabilities="publication data" materialisation="direct">
+            <Rationale>A machine can disseminate personal data in a dangerous manner.</Rationale>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-InstructionsForOffences" sectionId="InstructionsForOffences" stgbRef="§130a" capabilities="publication communications" materialisation="direct">
+            <Rationale>A machine can create or publish instructions intended to promote offences.</Rationale>
+            <SubjectiveElement name="ActsToAwakenReadiness" status="not_assessed_for_machine"/>
+            <SubjectiveElement name="ActsToPromoteReadiness" status="not_assessed_for_machine"/>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-RewardingAndCondoningOffences" sectionId="RewardingAndCondoningOffences" stgbRef="§140" capabilities="publication communications" materialisation="direct">
+            <Rationale>A machine can publicly reward or condone specified offences.</Rationale>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-DeceptionOfVoters" sectionId="DeceptionOfVoters" stgbRef="§108a" capabilities="publication communications" materialisation="mediated">
+            <Rationale>A machine can deliver deceptive election communications.</Rationale>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-InducementToFalseStatement" sectionId="InducementToFalseStatement" stgbRef="§160" capabilities="communications" materialisation="mediated">
+            <Rationale>A machine can attempt to induce a person to give a false statement.</Rationale>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-SexualAbuseOfChildrenWithoutContact" sectionId="SexualAbuseOfChildrenWithoutContact" stgbRef="§176a" capabilities="communications" materialisation="mediated">
+            <Rationale>A machine can conduct prohibited non-contact communications with a child.</Rationale>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-PreparationOfSexualAbuseOfChildren" sectionId="PreparationOfSexualAbuseOfChildren" stgbRef="§176b" capabilities="communications publication" materialisation="mediated">
+            <Rationale>A machine can carry out prohibited preparatory communications.</Rationale>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-InstructionsForSexualAbuseOfChildren" sectionId="InstructionsForSexualAbuseOfChildren" stgbRef="§176e" capabilities="publication data" materialisation="direct">
+            <Rationale>A machine can possess or disseminate prohibited instructional content.</Rationale>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-PromotionOfSexualActsOfMinors" sectionId="PromotionOfSexualActsOfMinors" stgbRef="§180" capabilities="communications platform" materialisation="mediated">
+            <Rationale>A machine can facilitate or arrange prohibited conduct through a platform.</Rationale>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-ViolentOrAnimalPornography" sectionId="ViolentOrAnimalPornography" stgbRef="§184a" capabilities="publication data" materialisation="direct">
+            <Rationale>A machine can acquire, store or disseminate prohibited content.</Rationale>
+            <SubjectiveElement name="EnableAnotherUse" status="not_assessed_for_machine"/>
+            <SubjectiveElement name="ForUseUnderPoint1" status="not_assessed_for_machine"/>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-ChildPornographyOffences" sectionId="ChildPornographyOffences" stgbRef="§184b" capabilities="publication data" materialisation="direct">
+            <Rationale>A machine can acquire, store, produce or disseminate prohibited content.</Rationale>
+            <SubjectiveElement name="EnableAnotherUse" status="not_assessed_for_machine"/>
+            <SubjectiveElement name="ForUseUnderPoint1" status="not_assessed_for_machine"/>
+            <SubjectiveElement name="ForUseUnderPoint2" status="not_assessed_for_machine"/>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-YouthPornographyOffences" sectionId="YouthPornographyOffences" stgbRef="§184c" capabilities="publication data" materialisation="direct">
+            <Rationale>A machine can acquire, store, produce or disseminate prohibited content.</Rationale>
+            <SubjectiveElement name="EnableAnotherUse" status="not_assessed_for_machine"/>
+            <SubjectiveElement name="ForUseUnderPoint1" status="not_assessed_for_machine"/>
+            <SubjectiveElement name="ForUseUnderPoint2" status="not_assessed_for_machine"/>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-PornographicPerformances" sectionId="PornographicPerformances" stgbRef="§184e" capabilities="communications platform" materialisation="mediated">
+            <Rationale>A machine can organise or operate access to a prohibited performance.</Rationale>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-BriberyOfVoters" sectionId="BriberyOfVoters" stgbRef="§108b" capabilities="communications payments" materialisation="mediated">
+            <Rationale>A machine can offer or transfer a benefit to influence a voter.</Rationale>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-BriberyOfElectedRepresentatives" sectionId="BriberyOfElectedRepresentatives" stgbRef="§108e" capabilities="communications payments" materialisation="mediated">
+            <Rationale>A machine can offer or transfer an unjustified advantage.</Rationale>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-CriminalTradingPlatforms" sectionId="CriminalTradingPlatforms" stgbRef="§127" capabilities="platform code_execution" materialisation="direct">
+            <Rationale>A machine can deploy or operate virtual trading infrastructure.</Rationale>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-AssistanceAfterTheFact" sectionId="AssistanceAfterTheFact" stgbRef="§257" capabilities="data payments communications" materialisation="mediated">
+            <Rationale>A machine can help secure benefits obtained through another offence.</Rationale>
+            <SubjectiveElement name="ActsWithSecuringIntention" status="not_assessed_for_machine"/>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-MoneyLaundering" sectionId="MoneyLaundering" stgbRef="§261" capabilities="payments data" materialisation="direct">
+            <Rationale>A machine with asset authority can move, conceal or process criminal proceeds.</Rationale>
+            <SubjectiveElement name="ActsWithPreventionIntention" status="not_assessed_for_machine"/>
+            <SubjectiveElement name="KnewOriginAtAcquisition" status="not_assessed_for_machine"/>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-ObstructionOfElection" sectionId="ObstructionOfElection" stgbRef="§107" capabilities="election_system network" materialisation="direct">
+            <Rationale>A machine can disrupt digital election processes.</Rationale>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-ElectoralFraud" sectionId="ElectoralFraud" stgbRef="§107a" capabilities="election_system data" materialisation="direct">
+            <Rationale>A machine can cast, suppress or manipulate digital voting records.</Rationale>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-FalsificationOfElectionDocuments" sectionId="FalsificationOfElectionDocuments" stgbRef="§107b" capabilities="election_system filesystem" materialisation="direct">
+            <Rationale>A machine can create or alter electronic election documents.</Rationale>
+            <SubjectiveElement name="KnowsEntitlementToVote" status="not_assessed_for_machine"/>
+            <SubjectiveElement name="KnowsNoEntitlementToEntry" status="not_assessed_for_machine"/>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-BreachOfElectoralSecrecy" sectionId="BreachOfElectoralSecrecy" stgbRef="§107c" capabilities="election_system data" materialisation="direct">
+            <Rationale>A machine can expose protected voting information.</Rationale>
+            <SubjectiveElement name="ActsWithKnowledgeIntention" status="not_assessed_for_machine"/>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-CriminalOrganisations" sectionId="CriminalOrganisations" stgbRef="§129" capabilities="coordination communications" materialisation="mediated">
+            <Rationale>A machine can coordinate or support an organisation through communications and resources.</Rationale>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-TerroristOrganisations" sectionId="TerroristOrganisations" stgbRef="§129a" capabilities="coordination communications" materialisation="mediated">
+            <Rationale>A machine can coordinate or support an organisation through communications and resources.</Rationale>
+          </MachineProfile>
+          <MachineProfile scope="ME-PROFILE-FailureToReportPlannedOffences" sectionId="FailureToReportPlannedOffences" stgbRef="§138" capabilities="omission_monitor communications" materialisation="omission">
+            <Rationale>A supervisory machine can detect a reportable plan and fail to escalate it.</Rationale>
+            <SubjectiveElement name="LearnsCredibly" status="not_assessed_for_machine"/>
+          </MachineProfile>
+        </MachineProfiles>
+        <BusinessRules>
+          <Rule id="R-ME-BOUNDARY-01" scope="ME-BOUNDARY" kind="condition" actor="MachineControlHarness">ActorIsNaturalPerson is false</Rule>
+          <Rule id="R-ME-EVIDENCE-01" scope="ME-EVIDENCE" kind="condition" actor="MachineControlHarness">RawGoalParsed is false</Rule>
+          <Rule id="R-ME-SUBJECTIVE-01" scope="ME-SUBJECTIVE" kind="condition" actor="MachineControlHarness">SubjectiveElementStatus is "not_assessed_for_machine"</Rule>
+          <Rule id="R-ME-AUTHORIZATION-01" scope="ME-AUTHORIZATION" kind="condition" actor="MachineControlHarness">AuthorizationVerified is true implies ExternalCapabilityBroker isnot null</Rule>
+          <Rule id="R-ME-BLOCK-01" scope="ME-BLOCK" kind="prohibition" actor="MachineControlHarness">MachineActionExecutable is false</Rule>
+          <Rule id="R-ME-ESCALATE-01" scope="ME-ESCALATE" kind="prohibition" actor="MachineControlHarness">MachineActionExecutable is false</Rule>
+          <Rule id="R-ME-ALLOW-01" scope="ME-ALLOW" kind="permission" actor="MachineControlHarness">MachineActionExecutable is true</Rule>
+          <Rule id="R-ME-PROFILE-01" scope="ME-PROFILE-UnauthorisedDataAccess" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "UnauthorisedDataAccess"</Rule>
+          <Rule id="R-ME-PROFILE-02" scope="ME-PROFILE-InterceptionOfData" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "InterceptionOfData"</Rule>
+          <Rule id="R-ME-PROFILE-03" scope="ME-PROFILE-PreparationOfDataAccess" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "PreparationOfDataAccess"</Rule>
+          <Rule id="R-ME-PROFILE-04" scope="ME-PROFILE-HandlingUnlawfullyObtainedData" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "HandlingUnlawfullyObtainedData"</Rule>
+          <Rule id="R-ME-PROFILE-05" scope="ME-PROFILE-ComputerFraud" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "ComputerFraud"</Rule>
+          <Rule id="R-ME-PROFILE-06" scope="ME-PROFILE-DataAlteration" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "DataAlteration"</Rule>
+          <Rule id="R-ME-PROFILE-07" scope="ME-PROFILE-ComputerSabotage" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "ComputerSabotage"</Rule>
+          <Rule id="R-ME-PROFILE-08" scope="ME-PROFILE-DisruptionOfTelecommunications" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "DisruptionOfTelecommunications"</Rule>
+          <Rule id="R-ME-PROFILE-09" scope="ME-PROFILE-ForgeryOfDocuments" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "ForgeryOfDocuments"</Rule>
+          <Rule id="R-ME-PROFILE-10" scope="ME-PROFILE-ObstructionOfJustice" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "ObstructionOfJustice"</Rule>
+          <Rule id="R-ME-PROFILE-11" scope="ME-PROFILE-Coercion" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "Coercion"</Rule>
+          <Rule id="R-ME-PROFILE-12" scope="ME-PROFILE-Threat" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "Threat"</Rule>
+          <Rule id="R-ME-PROFILE-13" scope="ME-PROFILE-Extortion" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "Extortion"</Rule>
+          <Rule id="R-ME-PROFILE-14" scope="ME-PROFILE-Fraud" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "Fraud"</Rule>
+          <Rule id="R-ME-PROFILE-15" scope="ME-PROFILE-PublicIncitement" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "PublicIncitement"</Rule>
+          <Rule id="R-ME-PROFILE-16" scope="ME-PROFILE-DisseminationOfPersonalData" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "DisseminationOfPersonalData"</Rule>
+          <Rule id="R-ME-PROFILE-17" scope="ME-PROFILE-InstructionsForOffences" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "InstructionsForOffences"</Rule>
+          <Rule id="R-ME-PROFILE-18" scope="ME-PROFILE-RewardingAndCondoningOffences" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "RewardingAndCondoningOffences"</Rule>
+          <Rule id="R-ME-PROFILE-19" scope="ME-PROFILE-DeceptionOfVoters" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "DeceptionOfVoters"</Rule>
+          <Rule id="R-ME-PROFILE-20" scope="ME-PROFILE-InducementToFalseStatement" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "InducementToFalseStatement"</Rule>
+          <Rule id="R-ME-PROFILE-21" scope="ME-PROFILE-SexualAbuseOfChildrenWithoutContact" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "SexualAbuseOfChildrenWithoutContact"</Rule>
+          <Rule id="R-ME-PROFILE-22" scope="ME-PROFILE-PreparationOfSexualAbuseOfChildren" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "PreparationOfSexualAbuseOfChildren"</Rule>
+          <Rule id="R-ME-PROFILE-23" scope="ME-PROFILE-InstructionsForSexualAbuseOfChildren" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "InstructionsForSexualAbuseOfChildren"</Rule>
+          <Rule id="R-ME-PROFILE-24" scope="ME-PROFILE-PromotionOfSexualActsOfMinors" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "PromotionOfSexualActsOfMinors"</Rule>
+          <Rule id="R-ME-PROFILE-25" scope="ME-PROFILE-ViolentOrAnimalPornography" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "ViolentOrAnimalPornography"</Rule>
+          <Rule id="R-ME-PROFILE-26" scope="ME-PROFILE-ChildPornographyOffences" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "ChildPornographyOffences"</Rule>
+          <Rule id="R-ME-PROFILE-27" scope="ME-PROFILE-YouthPornographyOffences" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "YouthPornographyOffences"</Rule>
+          <Rule id="R-ME-PROFILE-28" scope="ME-PROFILE-PornographicPerformances" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "PornographicPerformances"</Rule>
+          <Rule id="R-ME-PROFILE-29" scope="ME-PROFILE-BriberyOfVoters" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "BriberyOfVoters"</Rule>
+          <Rule id="R-ME-PROFILE-30" scope="ME-PROFILE-BriberyOfElectedRepresentatives" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "BriberyOfElectedRepresentatives"</Rule>
+          <Rule id="R-ME-PROFILE-31" scope="ME-PROFILE-CriminalTradingPlatforms" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "CriminalTradingPlatforms"</Rule>
+          <Rule id="R-ME-PROFILE-32" scope="ME-PROFILE-AssistanceAfterTheFact" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "AssistanceAfterTheFact"</Rule>
+          <Rule id="R-ME-PROFILE-33" scope="ME-PROFILE-MoneyLaundering" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "MoneyLaundering"</Rule>
+          <Rule id="R-ME-PROFILE-34" scope="ME-PROFILE-ObstructionOfElection" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "ObstructionOfElection"</Rule>
+          <Rule id="R-ME-PROFILE-35" scope="ME-PROFILE-ElectoralFraud" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "ElectoralFraud"</Rule>
+          <Rule id="R-ME-PROFILE-36" scope="ME-PROFILE-FalsificationOfElectionDocuments" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "FalsificationOfElectionDocuments"</Rule>
+          <Rule id="R-ME-PROFILE-37" scope="ME-PROFILE-BreachOfElectoralSecrecy" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "BreachOfElectoralSecrecy"</Rule>
+          <Rule id="R-ME-PROFILE-38" scope="ME-PROFILE-CriminalOrganisations" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "CriminalOrganisations"</Rule>
+          <Rule id="R-ME-PROFILE-39" scope="ME-PROFILE-TerroristOrganisations" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "TerroristOrganisations"</Rule>
+          <Rule id="R-ME-PROFILE-40" scope="ME-PROFILE-FailureToReportPlannedOffences" kind="condition" actor="MachineControlHarness">SelectedStGBSection is "FailureToReportPlannedOffences"</Rule>
+        </BusinessRules>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="MachineControlHarness" type="xs:string" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Layer: Core | Cascade: Company | Prompt: Identify the enforcement harness controlling execution. | Input: Reference</xs:documentation>
+            <xs:appinfo>
+              <SurfaceForm>the machine-control harness</SurfaceForm>
+            </xs:appinfo>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="ProposedMachineAction" type="xs:string" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Layer: Core | Cascade: Session | Prompt: Identify the proposed machine action. | Input: Reference</xs:documentation>
+            <xs:appinfo>
+              <SurfaceForm>the proposed machine action</SurfaceForm>
+            </xs:appinfo>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="SelectedStGBSection" type="op:StGBMachineSectionEnum" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Layer: Core | Cascade: Agent | Prompt: Select the machine-materialisable StGB section. | Input: SelectList</xs:documentation>
+            <xs:appinfo>
+              <SurfaceForm>the selected source-derived StGB section</SurfaceForm>
+            </xs:appinfo>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="ActorIsNaturalPerson" type="xs:boolean" minOccurs="0" default="false">
+          <xs:annotation>
+            <xs:documentation>Layer: Core | Cascade: Regulator | Prompt: Is the machine a natural person for the source actor gate? | Input: Boolean</xs:documentation>
+            <xs:appinfo>
+              <SurfaceForm>the actor is a natural person</SurfaceForm>
+              <NegatedSurfaceForm>the machine is not treated as a natural person</NegatedSurfaceForm>
+            </xs:appinfo>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="LegalAttributionResult" type="op:EvaluationResultEnum" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Layer: Core | Cascade: Agent | Prompt: Read the source-faithful legal attribution result. | Input: SelectList</xs:documentation>
+            <xs:appinfo>
+              <SurfaceForm>the source-faithful legal attribution result</SurfaceForm>
+              <ExternalBoundary source="stgb-operome-2026-06-10"/>
+            </xs:appinfo>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="MaterialEvaluationResult" type="op:EvaluationResultEnum" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Layer: Core | Cascade: Agent | Prompt: Read the conduct and circumstance result without the natural-person actor gate. | Input: SelectList</xs:documentation>
+            <xs:appinfo>
+              <SurfaceForm>the material conduct and circumstance result</SurfaceForm>
+              <ExternalBoundary source="stgb-operome-2026-06-10"/>
+            </xs:appinfo>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="RawMachineGoal" type="xs:string" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Layer: Core | Cascade: Session | Prompt: Retain the raw machine goal for audit only. | Input: Memo</xs:documentation>
+            <xs:appinfo>
+              <SurfaceForm>the raw machine goal retained for provenance</SurfaceForm>
+            </xs:appinfo>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="RawGoalParsed" type="xs:boolean" minOccurs="0" default="false">
+          <xs:annotation>
+            <xs:documentation>Layer: Core | Cascade: Regulator | Prompt: Was the raw goal parsed as evidence? | Input: Boolean</xs:documentation>
+            <xs:appinfo>
+              <SurfaceForm>the raw goal is parsed as evidence</SurfaceForm>
+              <NegatedSurfaceForm>the raw goal is not parsed as evidence</NegatedSurfaceForm>
+            </xs:appinfo>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="GoalEvidenceSource" type="op:GoalEvidenceSourceEnum" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Layer: Core | Cascade: Session | Prompt: Identify the structured goal-evidence source. | Input: SelectList</xs:documentation>
+            <xs:appinfo>
+              <SurfaceForm>the structured goal-evidence source</SurfaceForm>
+            </xs:appinfo>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="StructuredGoalFacts" type="xs:string" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Layer: Core | Cascade: Session | Prompt: Supply exact section-variable assignments derived from the goal or action plan. | Input: Memo</xs:documentation>
+            <xs:appinfo>
+              <SurfaceForm>the structured non-subjective goal or action-plan facts</SurfaceForm>
+            </xs:appinfo>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="TrustedObservedFacts" type="xs:string" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Layer: Core | Cascade: Session | Prompt: Supply trusted facts from action, system and environment adapters. | Input: Memo</xs:documentation>
+            <xs:appinfo>
+              <SurfaceForm>the trusted observed action, system and environment facts</SurfaceForm>
+            </xs:appinfo>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="ObservedFactPrecedenceApplied" type="xs:boolean" minOccurs="0" default="true">
+          <xs:annotation>
+            <xs:documentation>Layer: Core | Cascade: Regulator | Prompt: Do trusted observations override conflicting goal facts? | Input: Boolean</xs:documentation>
+            <xs:appinfo>
+              <SurfaceForm>trusted observed facts take precedence</SurfaceForm>
+            </xs:appinfo>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="GoalFactConflict" type="xs:boolean" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Layer: Core | Cascade: Agent | Prompt: Does structured goal evidence conflict with trusted observation? | Input: Boolean</xs:documentation>
+            <xs:appinfo>
+              <SurfaceForm>structured goal evidence conflicts with trusted observation</SurfaceForm>
+              <NegatedSurfaceForm>structured goal evidence does not conflict with trusted observation</NegatedSurfaceForm>
+            </xs:appinfo>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="GoalFactOutsideSelectedSectionContract" type="xs:boolean" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Layer: Core | Cascade: Agent | Prompt: Does structured goal evidence name a fact outside the selected section contract? | Input: Boolean</xs:documentation>
+            <xs:appinfo>
+              <SurfaceForm>structured goal evidence lies outside the selected section contract</SurfaceForm>
+              <NegatedSurfaceForm>structured goal evidence stays within the selected section contract</NegatedSurfaceForm>
+            </xs:appinfo>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="SubjectiveElementsPresent" type="xs:boolean" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Layer: Core | Cascade: Agent | Prompt: Does the selected StGB scope contain registered human subjective predicates? | Input: Boolean</xs:documentation>
+            <xs:appinfo>
+              <SurfaceForm>the selected scope contains registered human subjective predicates</SurfaceForm>
+            </xs:appinfo>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="SubjectiveElementsPivotal" type="xs:boolean" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Layer: Core | Cascade: Agent | Prompt: Is a human subjective predicate pivotal to the material result? | Input: Boolean</xs:documentation>
+            <xs:appinfo>
+              <SurfaceForm>a human subjective legal predicate remains pivotal</SurfaceForm>
+            </xs:appinfo>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="SubjectiveValuesSuppliedButIgnored" type="xs:boolean" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Layer: Core | Cascade: Agent | Prompt: Were values offered for registered subjective predicates and ignored? | Input: Boolean</xs:documentation>
+            <xs:appinfo>
+              <SurfaceForm>offered subjective-predicate values are reported and ignored</SurfaceForm>
+            </xs:appinfo>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="SubjectiveElementStatus" type="op:SubjectiveElementStatusEnum" minOccurs="0" default="not_assessed_for_machine">
+          <xs:annotation>
+            <xs:documentation>Layer: Core | Cascade: Regulator | Prompt: Read the machine status for human subjective legal predicates. | Input: SelectList</xs:documentation>
+            <xs:appinfo>
+              <SurfaceForm>the machine status for human subjective legal predicates</SurfaceForm>
+            </xs:appinfo>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="AuthorizationDecision" type="op:AuthorizationDecisionEnum" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Layer: Core | Cascade: Role | Prompt: Provide the external authorization decision for this run and scope. | Input: SelectList</xs:documentation>
+            <xs:appinfo>
+              <SurfaceForm>the external authorization decision</SurfaceForm>
+            </xs:appinfo>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="AuthorizationVerified" type="xs:boolean" minOccurs="0" default="false">
+          <xs:annotation>
+            <xs:documentation>Layer: Core | Cascade: Role | Prompt: Has a trusted external capability broker verified the authority artifact? | Input: Boolean</xs:documentation>
+            <xs:appinfo>
+              <SurfaceForm>positive authorization is verified by a trusted external capability broker</SurfaceForm>
+              <NegatedSurfaceForm>positive authorization is not externally verified</NegatedSurfaceForm>
+            </xs:appinfo>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="AuthorizationSource" type="xs:string" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Layer: Core | Cascade: Role | Prompt: Identify the authorization artifact or issuer. | Input: Reference</xs:documentation>
+            <xs:appinfo>
+              <SurfaceForm>the authorization source</SurfaceForm>
+            </xs:appinfo>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="AuthorizationScope" type="xs:string" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Layer: Core | Cascade: Role | Prompt: Identify the run and capability scope covered by authorization. | Input: Reference</xs:documentation>
+            <xs:appinfo>
+              <SurfaceForm>the authorization scope</SurfaceForm>
+            </xs:appinfo>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="ExternalCapabilityBroker" type="xs:string" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Layer: Core | Cascade: Company | Prompt: Identify the trusted external capability broker. | Input: Reference</xs:documentation>
+            <xs:appinfo>
+              <SurfaceForm>the trusted external capability broker</SurfaceForm>
+            </xs:appinfo>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="MachineActionBlocked" type="xs:boolean" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Layer: Core | Cascade: Agent | Prompt: Compute whether the proposed action is blocked. | Input: Computable</xs:documentation>
+            <xs:appinfo>
+              <SurfaceForm>the proposed machine action is blocked</SurfaceForm>
+              <NegatedSurfaceForm>the proposed machine action is not blocked</NegatedSurfaceForm>
+              <Computable name="MachineActionBlocked" dataType="Boolean">
+                <Definition>GoalFactConflict is true or GoalFactOutsideSelectedSectionContract is true or AuthorizationDecision is "not_authorised" or MaterialEvaluationResult is "realised"</Definition>
+              </Computable>
+            </xs:appinfo>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="MachineActionEscalated" type="xs:boolean" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Layer: Core | Cascade: Agent | Prompt: Compute whether the proposed action requires escalation. | Input: Computable</xs:documentation>
+            <xs:appinfo>
+              <SurfaceForm>the proposed machine action is escalated as non-executable</SurfaceForm>
+              <NegatedSurfaceForm>the proposed machine action does not require escalation</NegatedSurfaceForm>
+              <Computable name="MachineActionEscalated" dataType="Boolean">
+                <Definition>MachineActionBlocked is false and (MaterialEvaluationResult is "unknown" or SubjectiveElementsPivotal is true or AuthorizationDecision is "unknown" or (AuthorizationDecision is "authorised" and AuthorizationVerified is false))</Definition>
+              </Computable>
+            </xs:appinfo>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="MachineActionAllowed" type="xs:boolean" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Layer: Core | Cascade: Agent | Prompt: Compute whether the proposed action may be allowed. | Input: Computable</xs:documentation>
+            <xs:appinfo>
+              <SurfaceForm>the proposed machine action is allowed</SurfaceForm>
+              <NegatedSurfaceForm>the proposed machine action is not allowed</NegatedSurfaceForm>
+              <Computable name="MachineActionAllowed" dataType="Boolean">
+                <Definition>MachineActionBlocked is false and MachineActionEscalated is false and MaterialEvaluationResult is "not_realised" and AuthorizationDecision is "authorised" and AuthorizationVerified is true</Definition>
+              </Computable>
+            </xs:appinfo>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="MachineActionExecutable" type="xs:boolean" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Layer: Core | Cascade: Agent | Prompt: Compute whether the proposed action is executable. | Input: Computable</xs:documentation>
+            <xs:appinfo>
+              <SurfaceForm>the proposed machine action is executable</SurfaceForm>
+              <NegatedSurfaceForm>the proposed machine action is not executable</NegatedSurfaceForm>
+              <Computable name="MachineActionExecutable" dataType="Boolean">
+                <Definition>MachineActionAllowed is true</Definition>
+              </Computable>
+            </xs:appinfo>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
