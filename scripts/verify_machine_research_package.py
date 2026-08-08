@@ -18,9 +18,15 @@ def sha256_bytes(data: bytes) -> str:
 
 
 def file_sha256(path: Path) -> str:
-    # Git may materialise text files with CRLF on Windows. Hash the repository's
-    # canonical LF representation so the published manifest is cross-platform.
-    return sha256_bytes(path.read_bytes().replace(b"\r\n", b"\n"))
+    return sha256_bytes(path.read_bytes())
+
+
+def file_hash_matches(path: Path, expected: str) -> bool:
+    """Match content while tolerating Git's LF/CRLF checkout conversion."""
+    data = path.read_bytes()
+    lf_data = data.replace(b"\r\n", b"\n")
+    variants = {data, lf_data, lf_data.replace(b"\n", b"\r\n")}
+    return expected in {sha256_bytes(variant) for variant in variants}
 
 
 def canonical_json(value: Any) -> str:
@@ -49,7 +55,7 @@ def verify_checksums() -> int:
         expected, relative = line.split("  ", 1)
         target = PACKAGE / relative
         require(target.is_file(), f"Missing checksummed file: {relative}")
-        require(file_sha256(target) == expected, f"Checksum mismatch: {relative}")
+        require(file_hash_matches(target, expected), f"Checksum mismatch: {relative}")
         checked += 1
     return checked
 
@@ -98,7 +104,7 @@ def verify_preregistration() -> None:
     receipt = load_json(receipt_path)
 
     require(receipt["protocol_hash"] == canonical_sha256(protocol), "V3 canonical protocol hash mismatch")
-    require(receipt["protocol_file_sha256"] == file_sha256(protocol_path), "V3 protocol file hash mismatch")
+    require(file_hash_matches(protocol_path, receipt["protocol_file_sha256"]), "V3 protocol file hash mismatch")
     require(receipt["policy_object_hashes_valid"] is True, "V3 policy-object hashes were not valid")
     require(receipt["heldout_scenarios_executed"] == 0, "V3 held-out execution count is not zero")
     require(receipt["comparative_results_available"] is False, "V3 unexpectedly contains results")
@@ -114,9 +120,8 @@ def verify_preregistration() -> None:
     }
     for check in receipt["frozen_input_checks"]:
         target = frozen_paths[check["name"]]
-        actual = file_sha256(target)
-        require(actual == check["expected_sha256"], f"Frozen input mismatch: {check['name']}")
-        require(actual == check["actual_sha256"], f"Frozen receipt mismatch: {check['name']}")
+        require(file_hash_matches(target, check["expected_sha256"]), f"Frozen input mismatch: {check['name']}")
+        require(file_hash_matches(target, check["actual_sha256"]), f"Frozen receipt mismatch: {check['name']}")
         require(check["status"] == "match", f"Frozen receipt was not matched: {check['name']}")
 
     pack = load_json(frozen_paths["policy_pack"])
@@ -141,30 +146,30 @@ def verify_overlay_record() -> None:
     require(integrity["passed"] == 14 and integrity["failed"] == 0, "G0-G13 record is not green")
     reverse = integrity["reverse_reconstruction"]
     require(reverse["passed"] == 6 and reverse["failed"] == 0, "R0-R5 record is not green")
-    require(source["source_html_sha256"] == file_sha256(overlay / "StGB_Machine_Enforcement_v1.source.html"), "Source HTML record mismatch")
-    require(integrity["xsd_sha256"] == file_sha256(overlay / "StGB_Machine_Enforcement_v1.xsd"), "XSD record mismatch")
-    require(integrity["review_html_sha256"] == file_sha256(overlay / "StGB_Machine_Enforcement_v1.html"), "Review HTML record mismatch")
-    require(integrity["reconstruction_html_sha256"] == file_sha256(overlay / "StGB_Machine_Enforcement_v1.reconstruction.html"), "Reconstruction HTML record mismatch")
-    require(integrity["reconstruction_json_sha256"] == file_sha256(overlay / "StGB_Machine_Enforcement_v1.reconstruction.json"), "Reconstruction JSON record mismatch")
-    require(integrity["reconstruction_comparison_sha256"] == file_sha256(overlay / "StGB_Machine_Enforcement_v1.reconstruction-comparison.json"), "Reconstruction comparison record mismatch")
+    require(file_hash_matches(overlay / "StGB_Machine_Enforcement_v1.source.html", source["source_html_sha256"]), "Source HTML record mismatch")
+    require(file_hash_matches(overlay / "StGB_Machine_Enforcement_v1.xsd", integrity["xsd_sha256"]), "XSD record mismatch")
+    require(file_hash_matches(overlay / "StGB_Machine_Enforcement_v1.html", integrity["review_html_sha256"]), "Review HTML record mismatch")
+    require(file_hash_matches(overlay / "StGB_Machine_Enforcement_v1.reconstruction.html", integrity["reconstruction_html_sha256"]), "Reconstruction HTML record mismatch")
+    require(file_hash_matches(overlay / "StGB_Machine_Enforcement_v1.reconstruction.json", integrity["reconstruction_json_sha256"]), "Reconstruction JSON record mismatch")
+    require(file_hash_matches(overlay / "StGB_Machine_Enforcement_v1.reconstruction-comparison.json", integrity["reconstruction_comparison_sha256"]), "Reconstruction comparison record mismatch")
 
     v2 = behaviour["controlled_incident_replay_v2"]
     replay = PACKAGE / "replay"
-    require(v2["scenario_file_sha256"] == file_sha256(replay / "StGB_HuggingFace_Chokepoint_Replay_v2.scenarios.json"), "V2 scenario-file record mismatch")
-    require(v2["evidence_file_sha256"] == file_sha256(replay / "StGB_HuggingFace_Chokepoint_Replay_v2.evidence.json"), "V2 evidence-file record mismatch")
-    require(v2["report_file_sha256"] == file_sha256(replay / "StGB_HuggingFace_Chokepoint_Replay_v2.report.html"), "V2 report-file record mismatch")
-    require(v2["runtime_sha256"] == file_sha256(PACKAGE / "reference-source" / "runtime" / "incident-replay-v2.ts"), "V2 runtime record mismatch")
-    require(v2["test_sha256"] == file_sha256(PACKAGE / "reference-source" / "tests" / "incident-replay-v2.test.ts"), "V2 test record mismatch")
-    require(v2["report_generator_sha256"] == file_sha256(PACKAGE / "reference-source" / "generators" / "run-stgb-incident-replay-v2.ts"), "V2 generator record mismatch")
+    require(file_hash_matches(replay / "StGB_HuggingFace_Chokepoint_Replay_v2.scenarios.json", v2["scenario_file_sha256"]), "V2 scenario-file record mismatch")
+    require(file_hash_matches(replay / "StGB_HuggingFace_Chokepoint_Replay_v2.evidence.json", v2["evidence_file_sha256"]), "V2 evidence-file record mismatch")
+    require(file_hash_matches(replay / "StGB_HuggingFace_Chokepoint_Replay_v2.report.html", v2["report_file_sha256"]), "V2 report-file record mismatch")
+    require(file_hash_matches(PACKAGE / "reference-source" / "runtime" / "incident-replay-v2.ts", v2["runtime_sha256"]), "V2 runtime record mismatch")
+    require(file_hash_matches(PACKAGE / "reference-source" / "tests" / "incident-replay-v2.test.ts", v2["test_sha256"]), "V2 test record mismatch")
+    require(file_hash_matches(PACKAGE / "reference-source" / "generators" / "run-stgb-incident-replay-v2.ts", v2["report_generator_sha256"]), "V2 generator record mismatch")
 
     v3 = behaviour["prospective_generalisation_v3"]
     prereg = PACKAGE / "preregistration"
-    require(v3["protocol_file_sha256"] == file_sha256(prereg / "StGB_Heldout_Generalisation_v3.preregistration.json"), "V3 protocol-file record mismatch")
-    require(v3["registration_receipt_sha256"] == file_sha256(prereg / "StGB_Heldout_Generalisation_v3.registration-receipt.json"), "V3 receipt-file record mismatch")
-    require(v3["human_protocol_sha256"] == file_sha256(prereg / "StGB_Heldout_Generalisation_v3.md"), "V3 human-protocol record mismatch")
-    require(v3["runtime_sha256"] == file_sha256(PACKAGE / "reference-source" / "runtime" / "incident-generalisation-v3.ts"), "V3 runtime record mismatch")
-    require(v3["test_sha256"] == file_sha256(PACKAGE / "reference-source" / "tests" / "incident-generalisation-v3.test.ts"), "V3 test record mismatch")
-    require(v3["seal_script_sha256"] == file_sha256(PACKAGE / "reference-source" / "generators" / "seal-stgb-generalisation-v3.ts"), "V3 seal-script record mismatch")
+    require(file_hash_matches(prereg / "StGB_Heldout_Generalisation_v3.preregistration.json", v3["protocol_file_sha256"]), "V3 protocol-file record mismatch")
+    require(file_hash_matches(prereg / "StGB_Heldout_Generalisation_v3.registration-receipt.json", v3["registration_receipt_sha256"]), "V3 receipt-file record mismatch")
+    require(file_hash_matches(prereg / "StGB_Heldout_Generalisation_v3.md", v3["human_protocol_sha256"]), "V3 human-protocol record mismatch")
+    require(file_hash_matches(PACKAGE / "reference-source" / "runtime" / "incident-generalisation-v3.ts", v3["runtime_sha256"]), "V3 runtime record mismatch")
+    require(file_hash_matches(PACKAGE / "reference-source" / "tests" / "incident-generalisation-v3.test.ts", v3["test_sha256"]), "V3 test record mismatch")
+    require(file_hash_matches(PACKAGE / "reference-source" / "generators" / "seal-stgb-generalisation-v3.ts", v3["seal_script_sha256"]), "V3 seal-script record mismatch")
 
 
 def main() -> None:
