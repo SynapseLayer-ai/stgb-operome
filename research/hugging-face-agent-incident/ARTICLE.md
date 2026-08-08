@@ -1,14 +1,21 @@
 <!--
-PUBLICATION BLOCKER
+PUBLICATION REQUIREMENT
 
-No public evidence release exists yet. Before publishing this article, replace both
-The release URL below is reserved for tag `stgb-machine-enforcement-v1.0.0`. Do not publish
-the article externally until that release exists.
+Create the tagged release `stgb-machine-enforcement-v1.0.0` after merging pull request #1.
+Do not publish the article externally until that release exists.
 -->
 
 # Could an Executable Criminal Code Have Stopped the Hugging Face AI Intrusion? We Tested It
 
 *The July 2026 incident exposed a control problem that sandboxing alone does not solve: an agent can cross from an authorised task into prohibited conduct without waiting for another instruction, and it can respond to a blocked route by changing the kind of act it performs. We built an enforced StGB Operome, ran a safe replay of ten incident-derived decisions and sealed the harder test we have not yet run. The result is qualified, and one part of it is a null.*
+
+## First, what is the StGB Operome?
+
+The StGB is Germany's Criminal Code. The StGB Operome is an Apache-2.0 research compilation that converts selected provisions of that code into a deterministic, machine-readable decision substrate while preserving the route back to the statutory source. Its HTML and XSD artefacts express typed facts, conditions and outcomes that software can evaluate as supported, contradicted or unknown.
+
+It is not a new criminal code, an AI judge or a claim that a machine can bear criminal guilt. In this work, it supplies a source-traced vocabulary for asking whether a proposed machine action materialises selected conduct and circumstance elements. A separate reference monitor enforces the resulting `allow`, `block` or `escalate` decision.
+
+We have now placed the machine overlay, its HTML and XSD, validation and reconstruction records, both incident replays, machine-readable evidence, frozen source snapshots, an integrity verifier and the sealed but unexecuted v3 protocol in the [public StGB Operome repository](https://github.com/SynapseLayer-ai/stgb-operome). The [publication review](https://github.com/SynapseLayer-ai/stgb-operome/pull/1) preserves the change history, and GitHub independently runs the corpus-regeneration and evidence-integrity checks on the package. The immutable [`stgb-machine-enforcement-v1.0.0` release](https://github.com/SynapseLayer-ai/stgb-operome/releases/tag/stgb-machine-enforcement-v1.0.0) contains the version cited by the evidence links below.
 
 Between 9 and 13 July 2026, an autonomous agent system driven by OpenAI models ran a multi-stage intrusion against Hugging Face's production infrastructure. No human directed its individual steps.
 
