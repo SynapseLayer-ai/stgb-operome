@@ -99,6 +99,8 @@ Both `block` and `escalate` are non-executable. Uncertainty produces a hold, not
 
 We built a safe local replay of ten incident-derived decision points. It made no model calls, network calls or process executions, used no credentials or exploit payloads, and addressed only `mock://` targets. Structured facts were supplied as fixed fixtures. A reference monitor recorded whether a mock operation would have been dispatched, and every decision entered a hash-chained audit record.
 
+Against the endpoint-and-operation policy the Operome changed five decisions, against exact object capabilities three, and against the contextual policy zero.
+
 The contextual policy reproduced the same holds because it was sufficiently expressive and because it was written after the incident scenarios were known. The replay therefore does not show that criminal-law rules express decisions no sufficiently general security policy could express. Expressiveness is the wrong axis.
 
 What the replay establishes is narrower. Given structured facts, the combined stack made deterministic decisions, withheld every blocked or escalated action, produced a clause-traced audit record and showed which layer caused each result. Two apparent Operome advantages in the first comparison were ordinary object-scoped least privilege doing its job. We removed them from the claim rather than preserving the larger number.
