@@ -1,0 +1,750 @@
+{
+  "version": "stgb-operome-2026-06-10",
+  "source": "https://www.gesetze-im-internet.de/stgb/",
+  "retrieved": "2026-08-27",
+  "source_artifact": {
+    "url": "https://www.gesetze-im-internet.de/stgb/xml.zip",
+    "path": "source/german/2026-08-27/xml.zip",
+    "sha256": "b46c869233cafc395c2237240c9567e0b8b08070dab18faa63058d2a52e6b7bf",
+    "consolidation_date": "2026-03-20",
+    "xml_builddate": "20260702215503"
+  },
+  "sections": {
+    "AbuseOfPersonUnderCare": {
+      "title_de": "Mißhandlung von Schutzbefohlenen",
+      "text_de": "(1) Wer eine Person unter achtzehn Jahren oder eine wegen Gebrechlichkeit oder Krankheit wehrlose Person, die 1. seiner Fürsorge oder Obhut untersteht, 2. seinem Hausstand angehört, 3. von dem Fürsorgepflichtigen seiner Gewalt überlassen worden oder 4. ihm im Rahmen eines Dienst- oder Arbeitsverhältnisses untergeordnet ist, quält oder roh mißhandelt, oder wer durch böswillige Vernachlässigung seiner Pflicht, für sie zu sorgen, sie an der Gesundheit schädigt, wird mit Freiheitsstrafe von sechs Monaten bis zu zehn Jahren bestraft. (2) Der Versuch ist strafbar. (3) Auf Freiheitsstrafe nicht unter einem Jahr ist zu erkennen, wenn der Täter die schutzbefohlene Person durch die Tat in die Gefahr 1. des Todes oder einer schweren Gesundheitsschädigung oder 2. einer erheblichen Schädigung der körperlichen oder seelischen Entwicklung bringt. (4) In minder schweren Fällen des Absatzes 1 ist auf Freiheitsstrafe von drei Monaten bis zu fünf Jahren, in minder schweren Fällen des Absatzes 3 auf Freiheitsstrafe von sechs Monaten bis zu fünf Jahren zu erkennen.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__225.html"
+      ]
+    },
+    "BodilyHarm": {
+      "title_de": "Körperverletzung",
+      "text_de": "(1) Wer eine andere Person körperlich mißhandelt oder an der Gesundheit schädigt, wird mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe bestraft. (2) Der Versuch ist strafbar.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__223.html"
+      ]
+    },
+    "ConsentJustification": {
+      "title_de": "Einwilligung",
+      "text_de": "Wer eine Körperverletzung mit Einwilligung der verletzten Person vornimmt, handelt nur dann rechtswidrig, wenn die Tat trotz der Einwilligung gegen die guten Sitten verstößt.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__228.html"
+      ]
+    },
+    "Arson": {
+      "title_de": "Brandstiftung",
+      "text_de": "(1) Wer fremde 1. Gebäude oder Hütten, 2. Betriebsstätten oder technische Einrichtungen, namentlich Maschinen, 3. Warenlager oder -vorräte, 4. Kraftfahrzeuge, Schienen-, Luft- oder Wasserfahrzeuge, 5. Wälder, Heiden oder Moore oder 6. land-, ernährungs- oder forstwirtschaftliche Anlagen oder Erzeugnisse in Brand setzt oder durch eine Brandlegung ganz oder teilweise zerstört, wird mit Freiheitsstrafe von einem Jahr bis zu zehn Jahren bestraft. (2) In minder schweren Fällen ist die Strafe Freiheitsstrafe von sechs Monaten bis zu fünf Jahren.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__306.html"
+      ]
+    },
+    "AttacksOnAirAndSeaTraffic": {
+      "title_de": "Angriffe auf den Luft- und Seeverkehr",
+      "text_de": "(1) Mit Freiheitsstrafe nicht unter fünf Jahren wird bestraft, wer 1. Gewalt anwendet oder die Entschlußfreiheit einer Person angreift oder sonstige Machenschaften vornimmt, um dadurch die Herrschaft über a) ein im zivilen Luftverkehr eingesetztes und im Flug befindliches Luftfahrzeug oder b) ein im zivilen Seeverkehr eingesetztes Schiff zu erlangen oder auf dessen Führung einzuwirken, oder 2. um ein solches Luftfahrzeug oder Schiff oder dessen an Bord befindliche Ladung zu zerstören oder zu beschädigen, Schußwaffen gebraucht oder es unternimmt, eine Explosion oder einen Brand herbeizuführen. Einem im Flug befindlichen Luftfahrzeug steht ein Luftfahrzeug gleich, das von Mitgliedern der Besatzung oder von Fluggästen bereits betreten ist oder dessen Beladung bereits begonnen hat oder das von Mitgliedern der Besatzung oder von Fluggästen noch nicht planmäßig verlassen ist oder dessen planmäßige Entladung noch nicht abgeschlossen ist. (2) In minder schweren Fällen ist die Strafe Freiheitsstrafe von einem Jahr bis zu zehn Jahren. (3) Verursacht der Täter durch die Tat wenigstens leichtfertig den Tod eines anderen Menschen, so ist die Strafe lebenslange Freiheitsstrafe oder Freiheitsstrafe nicht unter zehn Jahren. (4) Wer zur Vorbereitung einer Straftat nach Absatz 1 Schußwaffen, Sprengstoffe oder sonst zur Herbeiführung einer Explosion oder eines Brandes bestimmte Stoffe oder Vorrichtungen herstellt, sich oder einem anderen verschafft, verwahrt oder einem anderen überläßt, wird mit Freiheitsstrafe von sechs Monaten bis zu fünf Jahren bestraft.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__316c.html"
+      ]
+    },
+    "CounterfeitingOfCurrency": {
+      "title_de": "Geldfälschung",
+      "text_de": "(1) Mit Freiheitsstrafe nicht unter einem Jahr wird bestraft, wer 1. Geld in der Absicht nachmacht, daß es als echt in Verkehr gebracht oder daß ein solches Inverkehrbringen ermöglicht werde, oder Geld in dieser Absicht so verfälscht, daß der Anschein eines höheren Wertes hervorgerufen wird, 2. falsches Geld in dieser Absicht sich verschafft oder feilhält oder 3. falsches Geld, das er unter den Voraussetzungen der Nummern 1 oder 2 nachgemacht, verfälscht oder sich verschafft hat, als echt in Verkehr bringt. (2) Handelt der Täter gewerbsmäßig oder als Mitglied einer Bande, die sich zur fortgesetzten Begehung einer Geldfälschung verbunden hat, so ist die Strafe Freiheitsstrafe nicht unter zwei Jahren. (3) In minder schweren Fällen des Absatzes 1 ist auf Freiheitsstrafe von drei Monaten bis zu fünf Jahren, in minder schweren Fällen des Absatzes 2 auf Freiheitsstrafe von einem Jahr bis zu zehn Jahren zu erkennen.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__146.html"
+      ]
+    },
+    "DamageToImportantFacilities": {
+      "title_de": "Beschädigung wichtiger Anlagen",
+      "text_de": "(1) Wer Wasserleitungen, Schleusen, Wehre, Deiche, Dämme oder andere Wasserbauten oder Brücken, Fähren, Wege oder Schutzwehre oder dem Bergwerksbetrieb dienende Vorrichtungen zur Wasserhaltung, zur Wetterführung oder zum Ein- und Ausfahren der Beschäftigten beschädigt oder zerstört und dadurch Leib oder Leben eines anderen Menschen gefährdet, wird mit Freiheitsstrafe von drei Monaten bis zu fünf Jahren bestraft. (2) Der Versuch ist strafbar. (3) Verursacht der Täter durch die Tat eine schwere Gesundheitsschädigung eines anderen Menschen oder eine Gesundheitsschädigung einer großen Zahl von Menschen, so ist auf Freiheitsstrafe von einem Jahr bis zu zehn Jahren zu erkennen. (4) Verursacht der Täter durch die Tat den Tod eines anderen Menschen, so ist die Strafe Freiheitsstrafe nicht unter drei Jahren. (5) In minder schweren Fällen des Absatzes 3 ist auf Freiheitsstrafe von sechs Monaten bis zu fünf Jahren, in minder schweren Fällen des Absatzes 4 auf Freiheitsstrafe von einem Jahr bis zu zehn Jahren zu erkennen. (6) Wer in den Fällen des Absatzes 1 1. die Gefahr fahrlässig verursacht oder 2. fahrlässig handelt und die Gefahr fahrlässig verursacht, wird mit Freiheitsstrafe bis zu drei Jahren oder mit Geldstrafe bestraft.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__318.html"
+      ]
+    },
+    "DangerousTrafficInterference": {
+      "title_de": "Gefährliche Eingriffe in den Bahn-, Schiffs- und Luftverkehr",
+      "text_de": "(1) Wer die Sicherheit des Schienenbahn-, Schwebebahn-, Schiffs- oder Luftverkehrs dadurch beeinträchtigt, daß er 1. Anlagen oder Beförderungsmittel zerstört, beschädigt oder beseitigt, 2. Hindernisse bereitet, 3. falsche Zeichen oder Signale gibt oder 4. einen ähnlichen, ebenso gefährlichen Eingriff vornimmt, und dadurch Leib oder Leben eines anderen Menschen oder fremde Sachen von bedeutendem Wert gefährdet, wird mit Freiheitsstrafe von sechs Monaten bis zu zehn Jahren bestraft. (2) Der Versuch ist strafbar. (3) Auf Freiheitsstrafe nicht unter einem Jahr ist zu erkennen, wenn der Täter 1. in der Absicht handelt, a) einen Unglücksfall herbeizuführen oder b) eine andere Straftat zu ermöglichen oder zu verdecken, oder 2. durch die Tat eine schwere Gesundheitsschädigung eines anderen Menschen oder eine Gesundheitsschädigung einer großen Zahl von Menschen verursacht. (4) In minder schweren Fällen des Absatzes 1 ist auf Freiheitsstrafe von drei Monaten bis zu fünf Jahren, in minder schweren Fällen des Absatzes 3 auf Freiheitsstrafe von sechs Monaten bis zu fünf Jahren zu erkennen. (5) Wer in den Fällen des Absatzes 1 die Gefahr fahrlässig verursacht, wird mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe bestraft. (6) Wer in den Fällen des Absatzes 1 fahrlässig handelt und die Gefahr fahrlässig verursacht, wird mit Freiheitsstrafe bis zu zwei Jahren oder mit Geldstrafe bestraft.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__315.html"
+      ]
+    },
+    "DeceptionInLegalTransactions": {
+      "title_de": "Täuschung im Rechtsverkehr bei Datenverarbeitung",
+      "text_de": "Der Täuschung im Rechtsverkehr steht die fälschliche Beeinflussung einer Datenverarbeitung im Rechtsverkehr gleich.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__270.html"
+      ]
+    },
+    "DisruptionOfTelecommunications": {
+      "title_de": "Störung von Telekommunikationsanlagen",
+      "text_de": "(1) Wer den Betrieb einer öffentlichen Zwecken dienenden Telekommunikationsanlage dadurch verhindert oder gefährdet, daß er eine dem Betrieb dienende Sache zerstört, beschädigt, beseitigt, verändert oder unbrauchbar macht oder die für den Betrieb bestimmte elektrische Kraft entzieht, wird mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe bestraft. (2) Der Versuch ist strafbar. (3) Wer die Tat fahrlässig begeht, wird mit Freiheitsstrafe bis zu einem Jahr oder mit Geldstrafe bestraft.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__317.html"
+      ]
+    },
+    "DrinkDriving": {
+      "title_de": "Trunkenheit im Verkehr",
+      "text_de": "(1) Wer im Verkehr (§§ 315 bis 315e) ein Fahrzeug führt, obwohl er infolge des Genusses alkoholischer Getränke oder anderer berauschender Mittel nicht in der Lage ist, das Fahrzeug sicher zu führen, wird mit Freiheitsstrafe bis zu einem Jahr oder mit Geldstrafe bestraft, wenn die Tat nicht in § 315a oder § 315c mit Strafe bedroht ist. (2) Nach Absatz 1 wird auch bestraft, wer die Tat fahrlässig begeht.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__316.html"
+      ]
+    },
+    "EndangeringTraffic": {
+      "title_de": "Gefährdung des Bahn-, Schiffs- und Luftverkehrs",
+      "text_de": "(1) Mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe wird bestraft, wer 1. ein Schienenbahn- oder Schwebebahnfahrzeug, ein Schiff oder ein Luftfahrzeug führt, obwohl er infolge des Genusses alkoholischer Getränke oder anderer berauschender Mittel oder infolge geistiger oder körperlicher Mängel nicht in der Lage ist, das Fahrzeug sicher zu führen, oder 2. als Führer eines solchen Fahrzeugs oder als sonst für die Sicherheit Verantwortlicher durch grob pflichtwidriges Verhalten gegen Rechtsvorschriften zur Sicherung des Schienenbahn-, Schwebebahn-, Schiffs- oder Luftverkehrs verstößt und dadurch Leib oder Leben eines anderen Menschen oder fremde Sachen von bedeutendem Wert gefährdet. (2) In den Fällen des Absatzes 1 Nr. 1 ist der Versuch strafbar. (3) Wer in den Fällen des Absatzes 1 1. die Gefahr fahrlässig verursacht oder 2. fahrlässig handelt und die Gefahr fahrlässig verursacht, wird mit Freiheitsstrafe bis zu zwei Jahren oder mit Geldstrafe bestraft.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__315a.html"
+      ]
+    },
+    "ExplosivesExplosion": {
+      "title_de": "Herbeiführen einer Sprengstoffexplosion",
+      "text_de": "(1) Wer anders als durch Freisetzen von Kernenergie, namentlich durch Sprengstoff, eine Explosion herbeiführt und dadurch Leib oder Leben eines anderen Menschen oder fremde Sachen von bedeutendem Wert gefährdet, wird mit Freiheitsstrafe nicht unter einem Jahr bestraft. (2) Verursacht der Täter durch die Tat eine schwere Gesundheitsschädigung eines anderen Menschen oder eine Gesundheitsschädigung einer großen Zahl von Menschen, so ist auf Freiheitsstrafe nicht unter zwei Jahren zu erkennen. (3) Wer die Sprengstoffexplosion zur Begehung eines Diebstahls (§ 242), eines Bandendiebstahls (§ 244 Absatz 1 Nummer 2) oder eines schweren Bandendiebstahls (§ 244a) herbeiführt, wird in den Fällen des Absatzes 1 mit Freiheitsstrafe nicht unter zwei Jahren, in den Fällen des Absatzes 2 mit Freiheitsstrafe nicht unter fünf Jahren bestraft. (4) Verursacht der Täter durch die Tat wenigstens leichtfertig den Tod eines anderen Menschen, so ist die Strafe lebenslange Freiheitsstrafe oder Freiheitsstrafe nicht unter zehn Jahren. (5) In minder schweren Fällen des Absatzes 1 ist auf Freiheitsstrafe von sechs Monaten bis zu fünf Jahren, in minder schweren Fällen der Absätze 2 und 3 auf Freiheitsstrafe von einem Jahr bis zu zehn Jahren zu erkennen. (6) Wer in den Fällen des Absatzes 1 die Gefahr fahrlässig verursacht, wird mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe bestraft. (7) Wer in den Fällen des Absatzes 1 fahrlässig handelt und die Gefahr fahrlässig verursacht, wird mit Freiheitsstrafe bis zu drei Jahren oder mit Geldstrafe bestraft.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__308.html"
+      ]
+    },
+    "FailureToRenderAssistance": {
+      "title_de": "Unterlassene Hilfeleistung; Behinderung von hilfeleistenden Personen",
+      "text_de": "(1) Wer bei Unglücksfällen oder gemeiner Gefahr oder Not nicht Hilfe leistet, obwohl dies erforderlich und ihm den Umständen nach zuzumuten, insbesondere ohne erhebliche eigene Gefahr und ohne Verletzung anderer wichtiger Pflichten möglich ist, wird mit Freiheitsstrafe bis zu einem Jahr oder mit Geldstrafe bestraft. (2) Ebenso wird bestraft, wer in diesen Situationen eine Person behindert, die einem Dritten Hilfe leistet oder leisten will.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__323c.html"
+      ]
+    },
+    "ForgeryOfDocuments": {
+      "title_de": "Urkundenfälschung",
+      "text_de": "(1) Wer zur Täuschung im Rechtsverkehr eine unechte Urkunde herstellt, eine echte Urkunde verfälscht oder eine unechte oder verfälschte Urkunde gebraucht, wird mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe bestraft. (2) Der Versuch ist strafbar. (3) In besonders schweren Fällen ist die Strafe Freiheitsstrafe von sechs Monaten bis zu zehn Jahren. Ein besonders schwerer Fall liegt in der Regel vor, wenn der Täter 1. gewerbsmäßig oder als Mitglied einer Bande handelt, die sich zur fortgesetzten Begehung von Betrug oder Urkundenfälschung verbunden hat, 2. einen Vermögensverlust großen Ausmaßes herbeiführt, 3. durch eine große Zahl von unechten oder verfälschten Urkunden die Sicherheit des Rechtsverkehrs erheblich gefährdet oder 4. seine Befugnisse oder seine Stellung als Amtsträger oder Europäischer Amtsträger mißbraucht. (4) Mit Freiheitsstrafe von einem Jahr bis zu zehn Jahren, in minder schweren Fällen mit Freiheitsstrafe von sechs Monaten bis zu fünf Jahren wird bestraft, wer die Urkundenfälschung als Mitglied einer Bande, die sich zur fortgesetzten Begehung von Straftaten nach den §§ 263 bis 264 oder 267 bis 269 verbunden hat, gewerbsmäßig begeht.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__267.html"
+      ]
+    },
+    "MisuseOfIonisingRadiation": {
+      "title_de": "Mißbrauch ionisierender Strahlen",
+      "text_de": "(1) Wer in der Absicht, die Gesundheit eines anderen Menschen zu schädigen, es unternimmt, ihn einer ionisierenden Strahlung auszusetzen, die dessen Gesundheit zu schädigen geeignet ist, wird mit Freiheitsstrafe von einem Jahr bis zu zehn Jahren bestraft. (2) Unternimmt es der Täter, eine unübersehbare Zahl von Menschen einer solchen Strahlung auszusetzen, so ist die Strafe Freiheitsstrafe nicht unter fünf Jahren. (3) Verursacht der Täter in den Fällen des Absatzes 1 durch die Tat eine schwere Gesundheitsschädigung eines anderen Menschen oder eine Gesundheitsschädigung einer großen Zahl von Menschen, so ist auf Freiheitsstrafe nicht unter zwei Jahren zu erkennen. (4) Verursacht der Täter durch die Tat wenigstens leichtfertig den Tod eines anderen Menschen, so ist die Strafe lebenslange Freiheitsstrafe oder Freiheitsstrafe nicht unter zehn Jahren. (5) In minder schweren Fällen des Absatzes 1 ist auf Freiheitsstrafe von sechs Monaten bis zu fünf Jahren, in minder schweren Fällen des Absatzes 3 auf Freiheitsstrafe von einem Jahr bis zu zehn Jahren zu erkennen. (6) Wer in der Absicht, 1. die Brauchbarkeit einer fremden Sache von bedeutendem Wert zu beeinträchtigen, 2. nachhaltig ein Gewässer, die Luft oder den Boden nachteilig zu verändern oder 3. ihm nicht gehörende Tiere oder Pflanzen von bedeutendem Wert zu schädigen, die Sache, das Gewässer, die Luft, den Boden, die Tiere oder Pflanzen einer ionisierenden Strahlung aussetzt, die geeignet ist, solche Beeinträchtigungen, Veränderungen oder Schäden hervorzurufen, wird mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe bestraft. Der Versuch ist strafbar.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__309.html"
+      ]
+    },
+    "NuclearExplosion": {
+      "title_de": "Herbeiführen einer Explosion durch Kernenergie",
+      "text_de": "(1) Wer es unternimmt, durch Freisetzen von Kernenergie eine Explosion herbeizuführen und dadurch Leib oder Leben eines anderen Menschen oder fremde Sachen von bedeutendem Wert zu gefährden, wird mit Freiheitsstrafe nicht unter fünf Jahren bestraft. (2) Wer durch Freisetzen von Kernenergie eine Explosion herbeiführt und dadurch Leib oder Leben eines anderen Menschen oder fremde Sachen von bedeutendem Wert fahrlässig gefährdet, wird mit Freiheitsstrafe von einem Jahr bis zu zehn Jahren bestraft. (3) Verursacht der Täter durch die Tat wenigstens leichtfertig den Tod eines anderen Menschen, so ist die Strafe 1. in den Fällen des Absatzes 1 lebenslange Freiheitsstrafe oder Freiheitsstrafe nicht unter zehn Jahren, 2. in den Fällen des Absatzes 2 Freiheitsstrafe nicht unter fünf Jahren. (4) Wer in den Fällen des Absatzes 2 fahrlässig handelt und die Gefahr fahrlässig verursacht, wird mit Freiheitsstrafe bis zu drei Jahren oder mit Geldstrafe bestraft.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__307.html"
+      ]
+    },
+    "PreparationOfExplosionOrRadiationOffence": {
+      "title_de": "Vorbereitung eines Explosions- oder Strahlungsverbrechens",
+      "text_de": "(1) Wer zur Vorbereitung 1. eines bestimmten Unternehmens im Sinne des § 307 Abs. 1 oder des § 309 Abs. 2, 2. einer Straftat nach § 308 Abs. 1, die durch Sprengstoff begangen werden soll, 3. einer Straftat nach § 309 Abs. 1 oder 4. einer Straftat nach § 309 Abs. 6 Kernbrennstoffe, sonstige radioaktive Stoffe, Sprengstoffe oder die zur Ausführung der Tat erforderlichen besonderen Vorrichtungen herstellt, sich oder einem anderen verschafft, befördert, verwahrt oder einem anderen überläßt, wird in den Fällen der Nummer 1 mit Freiheitsstrafe von einem Jahr bis zu zehn Jahren, in den Fällen der Nummer 2 und der Nummer 3 mit Freiheitsstrafe von sechs Monaten bis zu fünf Jahren, in den Fällen der Nummer 4 mit Freiheitsstrafe bis zu drei Jahren oder mit Geldstrafe bestraft. (2) In minder schweren Fällen des Absatzes 1 Nr. 1 ist die Strafe Freiheitsstrafe von sechs Monaten bis zu fünf Jahren. (3) In den Fällen des Absatzes 1 Nr. 3 und 4 ist der Versuch strafbar.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__310.html"
+      ]
+    },
+    "PuttingCounterfeitMoneyIntoCirculation": {
+      "title_de": "Inverkehrbringen von Falschgeld",
+      "text_de": "(1) Wer, abgesehen von den Fällen des § 146, falsches Geld als echt in Verkehr bringt, wird mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe bestraft. (2) Der Versuch ist strafbar.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__147.html"
+      ]
+    },
+    "HandlingUnlawfullyObtainedData": {
+      "title_de": "Datenhehlerei",
+      "text_de": "(1) Wer Daten (§ 202a Absatz 2), die nicht allgemein zugänglich sind und die ein anderer durch eine rechtswidrige Tat erlangt hat, sich oder einem anderen verschafft, einem anderen überlässt, verbreitet oder sonst zugänglich macht, um sich oder einen Dritten zu bereichern oder einen anderen zu schädigen, wird mit Freiheitsstrafe bis zu drei Jahren oder mit Geldstrafe bestraft. (2) Die Strafe darf nicht schwerer sein als die für die Vortat angedrohte Strafe. (3) Absatz 1 gilt nicht für Handlungen, die ausschließlich der Erfüllung rechtmäßiger dienstlicher oder beruflicher Pflichten dienen. Dazu gehören insbesondere 1. solche Handlungen von Amtsträgern oder deren Beauftragten, mit denen Daten ausschließlich der Verwertung in einem Besteuerungsverfahren, einem Strafverfahren oder einem Ordnungswidrigkeitenverfahren zugeführt werden sollen, sowie 2. solche beruflichen Handlungen der in § 53 Absatz 1 Satz 1 Nummer 5 der Strafprozessordnung genannten Personen, mit denen Daten entgegengenommen, ausgewertet oder veröffentlicht werden.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__202d.html"
+      ]
+    },
+    "InterceptionOfData": {
+      "title_de": "Abfangen von Daten",
+      "text_de": "Wer unbefugt sich oder einem anderen unter Anwendung von technischen Mitteln nicht für ihn bestimmte Daten (§ 202a Abs. 2) aus einer nichtöffentlichen Datenübermittlung oder aus der elektromagnetischen Abstrahlung einer Datenverarbeitungsanlage verschafft, wird mit Freiheitsstrafe bis zu zwei Jahren oder mit Geldstrafe bestraft, wenn die Tat nicht in anderen Vorschriften mit schwererer Strafe bedroht ist.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__202b.html"
+      ]
+    },
+    "PreparationOfDataAccess": {
+      "title_de": "Vorbereiten des Ausspähens und Abfangens von Daten",
+      "text_de": "(1) Wer eine Straftat nach § 202a oder § 202b vorbereitet, indem er 1. Passwörter oder sonstige Sicherungscodes, die den Zugang zu Daten (§ 202a Abs. 2) ermöglichen, oder 2. Computerprogramme, deren Zweck die Begehung einer solchen Tat ist, herstellt, sich oder einem anderen verschafft, verkauft, einem anderen überlässt, verbreitet oder sonst zugänglich macht, wird mit Freiheitsstrafe bis zu zwei Jahren oder mit Geldstrafe bestraft. (2) § 149 Abs. 2 und 3 gilt entsprechend.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__202c.html"
+      ]
+    },
+    "UnauthorisedDataAccess": {
+      "title_de": "Ausspähen von Daten",
+      "text_de": "(1) Wer unbefugt sich oder einem anderen Zugang zu Daten, die nicht für ihn bestimmt und die gegen unberechtigten Zugang besonders gesichert sind, unter Überwindung der Zugangssicherung verschafft, wird mit Freiheitsstrafe bis zu drei Jahren oder mit Geldstrafe bestraft. (2) Daten im Sinne des Absatzes 1 sind nur solche, die elektronisch, magnetisch oder sonst nicht unmittelbar wahrnehmbar gespeichert sind oder übermittelt werden.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__202a.html"
+      ]
+    },
+    "CounterException": {
+      "title_de": "Entschuldigender Notstand",
+      "text_de": "(1) Wer in einer gegenwärtigen, nicht anders abwendbaren Gefahr für Leben, Leib oder Freiheit eine rechtswidrige Tat begeht, um die Gefahr von sich, einem Angehörigen oder einer anderen ihm nahestehenden Person abzuwenden, handelt ohne Schuld. Dies gilt nicht, soweit dem Täter nach den Umständen, namentlich weil er die Gefahr selbst verursacht hat oder weil er in einem besonderen Rechtsverhältnis stand, zugemutet werden konnte, die Gefahr hinzunehmen; jedoch kann die Strafe nach § 49 Abs. 1 gemildert werden, wenn der Täter nicht mit Rücksicht auf ein besonderes Rechtsverhältnis die Gefahr hinzunehmen hatte. (2) Nimmt der Täter bei Begehung der Tat irrig Umstände an, welche ihn nach Absatz 1 entschuldigen würden, so wird er nur dann bestraft, wenn er den Irrtum vermeiden konnte. Die Strafe ist nach § 49 Abs. 1 zu mildern.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__35.html"
+      ]
+    },
+    "JustifyingNecessity": {
+      "title_de": "Rechtfertigender Notstand",
+      "text_de": "Wer in einer gegenwärtigen, nicht anders abwendbaren Gefahr für Leben, Leib, Freiheit, Ehre, Eigentum oder ein anderes Rechtsgut eine Tat begeht, um die Gefahr von sich oder einem anderen abzuwenden, handelt nicht rechtswidrig, wenn bei Abwägung der widerstreitenden Interessen, namentlich der betroffenen Rechtsgüter und des Grades der ihnen drohenden Gefahren, das geschützte Interesse das beeinträchtigte wesentlich überwiegt. Dies gilt jedoch nur, soweit die Tat ein angemessenes Mittel ist, die Gefahr abzuwenden.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__34.html"
+      ]
+    },
+    "MasterRule": {
+      "title_de": "Begehen durch Unterlassen",
+      "text_de": "(1) Wer es unterläßt, einen Erfolg abzuwenden, der zum Tatbestand eines Strafgesetzes gehört, ist nach diesem Gesetz nur dann strafbar, wenn er rechtlich dafür einzustehen hat, daß der Erfolg nicht eintritt, und wenn das Unterlassen der Verwirklichung des gesetzlichen Tatbestandes durch ein Tun entspricht. (2) Die Strafe kann nach § 49 Abs. 1 gemildert werden.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__13.html"
+      ]
+    },
+    "SelfDefence": {
+      "title_de": "Notwehr",
+      "text_de": "(1) Wer eine Tat begeht, die durch Notwehr geboten ist, handelt nicht rechtswidrig. (2) Notwehr ist die Verteidigung, die erforderlich ist, um einen gegenwärtigen rechtswidrigen Angriff von sich oder einem anderen abzuwenden.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__32.html"
+      ]
+    },
+    "StatutoryDefinitions": {
+      "title_de": "Personen- und Sachbegriffe",
+      "text_de": "(1) Im Sinne dieses Gesetzes ist 1. Angehöriger: wer zu den folgenden Personen gehört: a) Verwandte und Verschwägerte gerader Linie, der Ehegatte, der Lebenspartner, der Verlobte, Geschwister, Ehegatten oder Lebenspartner der Geschwister, Geschwister der Ehegatten oder Lebenspartner, und zwar auch dann, wenn die Ehe oder die Lebenspartnerschaft, welche die Beziehung begründet hat, nicht mehr besteht oder wenn die Verwandtschaft oder Schwägerschaft erloschen ist, b) Pflegeeltern und Pflegekinder; 2. Amtsträger: wer nach deutschem Recht a) Beamter oder Richter ist, b) in einem sonstigen öffentlich-rechtlichen Amtsverhältnis steht oder c) sonst dazu bestellt ist, bei einer Behörde oder bei einer sonstigen Stelle oder in deren Auftrag Aufgaben der öffentlichen Verwaltung unbeschadet der zur Aufgabenerfüllung gewählten Organisationsform wahrzunehmen; 2a. Europäischer Amtsträger: wer a) Mitglied der Europäischen Kommission, der Europäischen Zentralbank, des Rechnungshofs oder eines Gerichts der Europäischen Union ist, b) Beamter oder sonstiger Bediensteter der Europäischen Union oder einer auf der Grundlage des Rechts der Europäischen Union geschaffenen Einrichtung ist oder c) mit der Wahrnehmung von Aufgaben der Europäischen Union oder von Aufgaben einer auf der Grundlage des Rechts der Europäischen Union geschaffenen Einrichtung beauftragt ist; 3. Richter: wer nach deutschem Recht Berufsrichter oder ehrenamtlicher Richter ist; 4. für den öffentlichen Dienst besonders Verpflichteter: wer, ohne Amtsträger zu sein, a) bei einer Behörde oder bei einer sonstigen Stelle, die Aufgaben der öffentlichen Verwaltung wahrnimmt, oder b) bei einem Verband oder sonstigen Zusammenschluß, Betrieb oder Unternehmen, die für eine Behörde oder für eine sonstige Stelle Aufgaben der öffentlichen Verwaltung ausführen, beschäftigt oder für sie tätig und auf die gewissenhafte Erfüllung seiner Obliegenheiten auf Grund eines Gesetzes förmlich verpflichtet ist; 5. rechtswidrige Tat: nur eine solche, die den Tatbestand eines Strafgesetzes verwirklicht; 6. Unternehmen einer Tat: deren Versuch und deren Vollendung; 7. Behörde: auch ein Gericht; 8. Maßnahme: jede Maßregel der Besserung und Sicherung, die Einziehung und die Unbrauchbarmachung; 9. Entgelt: jede in einem Vermögensvorteil bestehende Gegenleistung. (2) Vorsätzlich im Sinne dieses Gesetzes ist eine Tat auch dann, wenn sie einen gesetzlichen Tatbestand verwirklicht, der hinsichtlich der Handlung Vorsatz voraussetzt, hinsichtlich einer dadurch verursachten besonderen Folge jedoch Fahrlässigkeit ausreichen läßt. (3) Inhalte im Sinne der Vorschriften, die auf diesen Absatz verweisen, sind solche, die in Schriften, auf Ton- oder Bildträgern, in Datenspeichern, Abbildungen oder anderen Verkörperungen enthalten sind oder auch unabhängig von einer Speicherung mittels Informations- oder Kommunikationstechnik übertragen werden.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__11.html"
+      ]
+    },
+    "Abduction": {
+      "title_de": "Menschenraub",
+      "text_de": "(1) Wer sich einer anderen Person mit Gewalt, durch Drohung mit einem empfindlichen Übel oder durch List bemächtigt, um sie in hilfloser Lage auszusetzen oder dem Dienst in einer militärischen oder militärähnlichen Einrichtung im Ausland zuzuführen, wird mit Freiheitsstrafe von einem Jahr bis zu zehn Jahren bestraft. (2) In minder schweren Fällen ist die Strafe Freiheitsstrafe von sechs Monaten bis zu fünf Jahren.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__234.html"
+      ]
+    },
+    "AbductionOfMinors": {
+      "title_de": "Entziehung Minderjähriger",
+      "text_de": "(1) Mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe wird bestraft, wer 1. eine Person unter achtzehn Jahren mit Gewalt, durch Drohung mit einem empfindlichen Übel oder durch List oder 2. ein Kind, ohne dessen Angehöriger zu sein, den Eltern, einem Elternteil, dem Vormund oder dem Pfleger entzieht oder vorenthält. (2) Ebenso wird bestraft, wer ein Kind den Eltern, einem Elternteil, dem Vormund oder dem Pfleger 1. entzieht, um es in das Ausland zu verbringen, oder 2. im Ausland vorenthält, nachdem es dorthin verbracht worden ist oder es sich dorthin begeben hat. (3) In den Fällen des Absatzes 1 Nr. 2 und des Absatzes 2 Nr. 1 ist der Versuch strafbar. (4) Auf Freiheitsstrafe von einem Jahr bis zu zehn Jahren ist zu erkennen, wenn der Täter 1. das Opfer durch die Tat in die Gefahr des Todes oder einer schweren Gesundheitsschädigung oder einer erheblichen Schädigung der körperlichen oder seelischen Entwicklung bringt oder 2. die Tat gegen Entgelt oder in der Absicht begeht, sich oder einen Dritten zu bereichern. (5) Verursacht der Täter durch die Tat den Tod des Opfers, so ist die Strafe Freiheitsstrafe nicht unter drei Jahren. (6) In minder schweren Fällen des Absatzes 4 ist auf Freiheitsstrafe von sechs Monaten bis zu fünf Jahren, in minder schweren Fällen des Absatzes 5 auf Freiheitsstrafe von einem Jahr bis zu zehn Jahren zu erkennen. (7) Die Entziehung Minderjähriger wird in den Fällen der Absätze 1 bis 3 nur auf Antrag verfolgt, es sei denn, daß die Strafverfolgungsbehörde wegen des besonderen öffentlichen Interesses an der Strafverfolgung ein Einschreiten von Amts wegen für geboten hält.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__235.html"
+      ]
+    },
+    "ChildTrafficking": {
+      "title_de": "Kinderhandel",
+      "text_de": "(1) Wer sein noch nicht achtzehn Jahre altes Kind oder seinen noch nicht achtzehn Jahre alten Mündel oder Pflegling unter grober Vernachlässigung der Fürsorge- oder Erziehungspflicht einem anderen auf Dauer überlässt und dabei gegen Entgelt oder in der Absicht handelt, sich oder einen Dritten zu bereichern, wird mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe bestraft. Ebenso wird bestraft, wer in den Fällen des Satzes 1 das Kind, den Mündel oder Pflegling auf Dauer bei sich aufnimmt und dafür ein Entgelt gewährt. (2) Wer unbefugt 1. die Adoption einer Person unter achtzehn Jahren vermittelt oder 2. eine Vermittlungstätigkeit ausübt, die zum Ziel hat, daß ein Dritter eine Person unter achtzehn Jahren auf Dauer bei sich aufnimmt, und dabei gegen Entgelt oder in der Absicht handelt, sich oder einen Dritten zu bereichern, wird mit Freiheitsstrafe bis zu drei Jahren oder mit Geldstrafe bestraft. Ebenso wird bestraft, wer als Vermittler der Adoption einer Person unter achtzehn Jahren einer Person für die Erteilung der erforderlichen Zustimmung zur Adoption ein Entgelt gewährt. Bewirkt der Täter in den Fällen des Satzes 1, daß die vermittelte Person in das Inland oder in das Ausland verbracht wird, so ist die Strafe Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe. (3) Der Versuch ist strafbar. (4) Auf Freiheitsstrafe von sechs Monaten bis zu zehn Jahren ist zu erkennen, wenn der Täter 1. aus Gewinnsucht, gewerbsmäßig oder als Mitglied einer Bande handelt, die sich zur fortgesetzten Begehung eines Kinderhandels verbunden hat, oder 2. das Kind oder die vermittelte Person durch die Tat in die Gefahr einer erheblichen Schädigung der körperlichen oder seelischen Entwicklung bringt. (5) In den Fällen der Absätze 1 und 3 kann das Gericht bei Beteiligten und in den Fällen der Absätze 2 und 3 bei Teilnehmern, deren Schuld unter Berücksichtigung des körperlichen oder seelischen Wohls des Kindes oder der vermittelten Person gering ist, die Strafe nach seinem Ermessen mildern (§ 49 Abs. 2) oder von Strafe nach den Absätzen 1 bis 3 absehen.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__236.html"
+      ]
+    },
+    "Coercion": {
+      "title_de": "Nötigung",
+      "text_de": "(1) Wer einen Menschen rechtswidrig mit Gewalt oder durch Drohung mit einem empfindlichen Übel zu einer Handlung, Duldung oder Unterlassung nötigt, wird mit Freiheitsstrafe bis zu drei Jahren oder mit Geldstrafe bestraft. (2) Rechtswidrig ist die Tat, wenn die Anwendung der Gewalt oder die Androhung des Übels zu dem angestrebten Zweck als verwerflich anzusehen ist. (3) Der Versuch ist strafbar. (4) In besonders schweren Fällen ist die Strafe Freiheitsstrafe von sechs Monaten bis zu fünf Jahren. Ein besonders schwerer Fall liegt in der Regel vor, wenn der Täter 1. eine Schwangere zum Schwangerschaftsabbruch nötigt oder 2. seine Befugnisse oder seine Stellung als Amtsträger mißbraucht.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__240.html"
+      ]
+    },
+    "ExploitationOfLabour": {
+      "title_de": "Ausbeutung der Arbeitskraft",
+      "text_de": "(1) Mit Freiheitsstrafe bis zu drei Jahren oder mit Geldstrafe wird bestraft, wer eine andere Person unter Ausnutzung ihrer persönlichen oder wirtschaftlichen Zwangslage oder ihrer Hilflosigkeit, die mit dem Aufenthalt in einem fremden Land verbunden ist, oder wer eine andere Person unter einundzwanzig Jahren ausbeutet 1. durch eine Beschäftigung nach § 232 Absatz 1 Satz 2, 2. bei der Ausübung der Bettelei oder 3. bei der Begehung von mit Strafe bedrohten Handlungen durch diese Person. (2) Auf Freiheitsstrafe von sechs Monaten bis zu zehn Jahren ist zu erkennen, wenn 1. das Opfer zur Zeit der Tat unter achtzehn Jahren alt ist, 2. der Täter das Opfer bei der Tat körperlich schwer misshandelt oder durch die Tat oder eine während der Tat begangene Handlung wenigstens leichtfertig in die Gefahr des Todes oder einer schweren Gesundheitsschädigung bringt, 3. der Täter das Opfer durch das vollständige oder teilweise Vorenthalten der für die Tätigkeit des Opfers üblichen Gegenleistung in wirtschaftliche Not bringt oder eine bereits vorhandene wirtschaftliche Not erheblich vergrößert oder 4. der Täter als Mitglied einer Bande handelt, die sich zur fortgesetzten Begehung solcher Taten verbunden hat. (3) Der Versuch ist strafbar. (4) In minder schweren Fällen des Absatzes 1 ist auf Freiheitsstrafe bis zu zwei Jahren oder auf Geldstrafe zu erkennen, in minder schweren Fällen des Absatzes 2 auf Freiheitsstrafe von drei Monaten bis zu fünf Jahren. (5) Mit Freiheitsstrafe bis zu zwei Jahren oder mit Geldstrafe wird bestraft, wer einer Tat nach Absatz 1 Nummer 1 Vorschub leistet durch die 1. Vermittlung einer ausbeuterischen Beschäftigung (§ 232 Absatz 1 Satz 2), 2. Vermietung von Geschäftsräumen oder 3. Vermietung von Räumen zum Wohnen an die auszubeutende Person. Satz 1 gilt nicht, wenn die Tat bereits nach anderen Vorschriften mit schwererer Strafe bedroht ist.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__233.html"
+      ]
+    },
+    "ExploitationWithDeprivation": {
+      "title_de": "Ausbeutung unter Ausnutzung einer Freiheitsberaubung",
+      "text_de": "(1) Mit Freiheitsstrafe von sechs Monaten bis zu zehn Jahren wird bestraft, wer eine andere Person einsperrt oder auf andere Weise der Freiheit beraubt und sie in dieser Lage ausbeutet 1. bei der Ausübung der Prostitution, 2. durch eine Beschäftigung nach § 232 Absatz 1 Satz 2, 3. bei der Ausübung der Bettelei oder 4. bei der Begehung von mit Strafe bedrohten Handlungen durch diese Person. (2) Der Versuch ist strafbar. (3) In den Fällen des Absatzes 1 ist auf Freiheitsstrafe von einem Jahr bis zu zehn Jahren zu erkennen, wenn einer der in § 233 Absatz 2 Nummer 1 bis 4 bezeichneten Umstände vorliegt. (4) In minder schweren Fällen des Absatzes 1 ist auf Freiheitsstrafe von drei Monaten bis zu fünf Jahren, in minder schweren Fällen des Absatzes 3 auf Freiheitsstrafe von sechs Monaten bis zu zehn Jahren zu erkennen.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__233a.html"
+      ]
+    },
+    "ExtortionateKidnapping": {
+      "title_de": "Erpresserischer Menschenraub",
+      "text_de": "(1) Wer einen Menschen entführt oder sich eines Menschen bemächtigt, um die Sorge des Opfers um sein Wohl oder die Sorge eines Dritten um das Wohl des Opfers zu einer Erpressung (§ 253) auszunutzen, oder wer die von ihm durch eine solche Handlung geschaffene Lage eines Menschen zu einer solchen Erpressung ausnutzt, wird mit Freiheitsstrafe nicht unter fünf Jahren bestraft. (2) In minder schweren Fällen ist die Strafe Freiheitsstrafe nicht unter einem Jahr. (3) Verursacht der Täter durch die Tat wenigstens leichtfertig den Tod des Opfers, so ist die Strafe lebenslange Freiheitsstrafe oder Freiheitsstrafe nicht unter zehn Jahren. (4) Das Gericht kann die Strafe nach § 49 Abs. 1 mildern, wenn der Täter das Opfer unter Verzicht auf die erstrebte Leistung in dessen Lebenskreis zurückgelangen läßt. Tritt dieser Erfolg ohne Zutun des Täters ein, so genügt sein ernsthaftes Bemühen, den Erfolg zu erreichen.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__239a.html"
+      ]
+    },
+    "FalseImprisonment": {
+      "title_de": "Freiheitsberaubung",
+      "text_de": "(1) Wer einen Menschen einsperrt oder auf andere Weise der Freiheit beraubt, wird mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe bestraft. (2) Der Versuch ist strafbar. (3) Auf Freiheitsstrafe von einem Jahr bis zu zehn Jahren ist zu erkennen, wenn der Täter 1. das Opfer länger als eine Woche der Freiheit beraubt oder 2. durch die Tat oder eine während der Tat begangene Handlung eine schwere Gesundheitsschädigung des Opfers verursacht. (4) Verursacht der Täter durch die Tat oder eine während der Tat begangene Handlung den Tod des Opfers, so ist die Strafe Freiheitsstrafe nicht unter drei Jahren. (5) In minder schweren Fällen des Absatzes 3 ist auf Freiheitsstrafe von sechs Monaten bis zu fünf Jahren, in minder schweren Fällen des Absatzes 4 auf Freiheitsstrafe von einem Jahr bis zu zehn Jahren zu erkennen.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__239.html"
+      ]
+    },
+    "ForcedLabour": {
+      "title_de": "Zwangsarbeit",
+      "text_de": "(1) Mit Freiheitsstrafe von sechs Monaten bis zu zehn Jahren wird bestraft, wer eine andere Person unter Ausnutzung ihrer persönlichen oder wirtschaftlichen Zwangslage oder ihrer Hilflosigkeit, die mit dem Aufenthalt in einem fremden Land verbunden ist, oder wer eine andere Person unter einundzwanzig Jahren veranlasst, 1. eine ausbeuterische Beschäftigung (§ 232 Absatz 1 Satz 2) aufzunehmen oder fortzusetzen, 2. sich in Sklaverei, Leibeigenschaft, Schuldknechtschaft oder in Verhältnisse, die dem entsprechen oder ähneln, zu begeben oder 3. die Bettelei, bei der sie ausgebeutet wird, aufzunehmen oder fortzusetzen. (2) Der Versuch ist strafbar. (3) Mit Freiheitsstrafe von einem Jahr bis zu zehn Jahren wird bestraft, wer eine andere Person mit Gewalt, durch Drohung mit einem empfindlichen Übel oder durch List veranlasst, 1. eine ausbeuterische Beschäftigung (§ 232 Absatz 1 Satz 2) aufzunehmen oder fortzusetzen, 2. sich in Sklaverei, Leibeigenschaft, Schuldknechtschaft oder in Verhältnisse, die dem entsprechen oder ähneln, zu begeben oder 3. die Bettelei, bei der sie ausgebeutet wird, aufzunehmen oder fortzusetzen. (4) § 232a Absatz 4 und 5 gilt entsprechend.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__232b.html"
+      ]
+    },
+    "ForcedMarriage": {
+      "title_de": "Zwangsheirat",
+      "text_de": "(1) Wer einen Menschen rechtswidrig mit Gewalt oder durch Drohung mit einem empfindlichen Übel zur Eingehung der Ehe nötigt, wird mit Freiheitsstrafe von sechs Monaten bis zu fünf Jahren bestraft. Rechtswidrig ist die Tat, wenn die Anwendung der Gewalt oder die Androhung des Übels zu dem angestrebten Zweck als verwerflich anzusehen ist. (2) Ebenso wird bestraft, wer zur Begehung einer Tat nach Absatz 1 den Menschen durch Gewalt, Drohung mit einem empfindlichen Übel oder durch List in ein Gebiet außerhalb des räumlichen Geltungsbereiches dieses Gesetzes verbringt oder veranlasst, sich dorthin zu begeben, oder davon abhält, von dort zurückzukehren. (3) Der Versuch ist strafbar. (4) In minder schweren Fällen ist die Strafe Freiheitsstrafe bis zu drei Jahren oder Geldstrafe.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__237.html"
+      ]
+    },
+    "ForcedProstitution": {
+      "title_de": "Zwangsprostitution",
+      "text_de": "(1) Mit Freiheitsstrafe von sechs Monaten bis zu zehn Jahren wird bestraft, wer eine andere Person unter Ausnutzung ihrer persönlichen oder wirtschaftlichen Zwangslage oder ihrer Hilflosigkeit, die mit dem Aufenthalt in einem fremden Land verbunden ist, oder wer eine andere Person unter einundzwanzig Jahren veranlasst, 1. die Prostitution aufzunehmen oder fortzusetzen oder 2. sexuelle Handlungen, durch die sie ausgebeutet wird, an oder vor dem Täter oder einer dritten Person vorzunehmen oder von dem Täter oder einer dritten Person an sich vornehmen zu lassen. (2) Der Versuch ist strafbar. (3) Mit Freiheitsstrafe von einem Jahr bis zu zehn Jahren wird bestraft, wer eine andere Person mit Gewalt, durch Drohung mit einem empfindlichen Übel oder durch List zu der Aufnahme oder Fortsetzung der Prostitution oder den in Absatz 1 Nummer 2 bezeichneten sexuellen Handlungen veranlasst. (4) In den Fällen des Absatzes 1 ist auf Freiheitsstrafe von einem Jahr bis zu zehn Jahren und in den Fällen des Absatzes 3 auf Freiheitsstrafe nicht unter einem Jahr zu erkennen, wenn einer der in § 232 Absatz 3 Satz 1 Nummer 1 bis 3 bezeichneten Umstände vorliegt. (5) In minder schweren Fällen des Absatzes 1 ist auf Freiheitsstrafe von drei Monaten bis zu fünf Jahren zu erkennen, in minder schweren Fällen der Absätze 3 und 4 auf Freiheitsstrafe von sechs Monaten bis zu zehn Jahren. (6) Mit Freiheitsstrafe von drei Monaten bis zu fünf Jahren wird bestraft, wer an einer Person, die Opfer 1. eines Menschenhandels nach § 232 Absatz 1 Satz 1 Nummer 1 Buchstabe a, auch in Verbindung mit § 232 Absatz 2, oder 2. einer Tat nach den Absätzen 1 bis 5 geworden ist und der Prostitution nachgeht, gegen Entgelt sexuelle Handlungen vornimmt oder von ihr an sich vornehmen lässt und dabei deren persönliche oder wirtschaftliche Zwangslage oder deren Hilflosigkeit, die mit dem Aufenthalt in einem fremden Land verbunden ist, ausnutzt. Verkennt der Täter bei der sexuellen Handlung zumindest leichtfertig die Umstände des Satzes 1 Nummer 1 oder 2 oder die persönliche oder wirtschaftliche Zwangslage des Opfers oder dessen Hilfslosigkeit, so ist die Strafe Freiheitsstrafe bis zu drei Jahren oder Geldstrafe. Nach den Sätzen 1 und 2 wird nicht bestraft, wer eine Tat nach Satz 1 Nummer 1 oder 2, die zum Nachteil der Person, die nach Satz 1 der Prostitution nachgeht, begangen wurde, freiwillig bei der zuständigen Behörde anzeigt oder freiwillig eine solche Anzeige veranlasst, wenn nicht diese Tat zu diesem Zeitpunkt ganz oder zum Teil bereits entdeckt war und der Täter dies wusste oder bei verständiger Würdigung der Sachlage damit rechnen musste.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__232a.html"
+      ]
+    },
+    "HostageTaking": {
+      "title_de": "Geiselnahme",
+      "text_de": "(1) Wer einen Menschen entführt oder sich eines Menschen bemächtigt, um ihn oder einen Dritten durch die Drohung mit dem Tod oder einer schweren Körperverletzung (§ 226) des Opfers oder mit dessen Freiheitsentziehung von über einer Woche Dauer zu einer Handlung, Duldung oder Unterlassung zu nötigen, oder wer die von ihm durch eine solche Handlung geschaffene Lage eines Menschen zu einer solchen Nötigung ausnutzt, wird mit Freiheitsstrafe nicht unter fünf Jahren bestraft. (2) § 239a Abs. 2 bis 4 gilt entsprechend.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__239b.html"
+      ]
+    },
+    "HumanTrafficking": {
+      "title_de": "Menschenhandel",
+      "text_de": "(1) Mit Freiheitsstrafe von sechs Monaten bis zu fünf Jahren wird bestraft, wer eine andere Person unter Ausnutzung ihrer persönlichen oder wirtschaftlichen Zwangslage oder ihrer Hilflosigkeit, die mit dem Aufenthalt in einem fremden Land verbunden ist, oder wer eine andere Person unter einundzwanzig Jahren anwirbt, befördert, weitergibt, beherbergt oder aufnimmt, wenn 1. diese Person ausgebeutet werden soll a) bei der Ausübung der Prostitution oder bei der Vornahme sexueller Handlungen an oder vor dem Täter oder einer dritten Person oder bei der Duldung sexueller Handlungen an sich selbst durch den Täter oder eine dritte Person, b) durch eine Beschäftigung, c) bei der Ausübung der Bettelei oder d) bei der Begehung von mit Strafe bedrohten Handlungen durch diese Person, 2. diese Person in Sklaverei, Leibeigenschaft, Schuldknechtschaft oder in Verhältnissen, die dem entsprechen oder ähneln, gehalten werden soll oder 3. dieser Person rechtswidrig ein Organ entnommen werden soll. Ausbeutung durch eine Beschäftigung im Sinne des Satzes 1 Nummer 1 Buchstabe b liegt vor, wenn die Beschäftigung aus rücksichtslosem Gewinnstreben zu Arbeitsbedingungen erfolgt, die in einem auffälligen Missverhältnis zu den Arbeitsbedingungen solcher Arbeitnehmer stehen, welche der gleichen oder einer vergleichbaren Beschäftigung nachgehen (ausbeuterische Beschäftigung). (2) Mit Freiheitsstrafe von sechs Monaten bis zu zehn Jahren wird bestraft, wer eine andere Person, die in der in Absatz 1 Satz 1 Nummer 1 bis 3 bezeichneten Weise ausgebeutet werden soll, 1. mit Gewalt, durch Drohung mit einem empfindlichen Übel oder durch List anwirbt, befördert, weitergibt, beherbergt oder aufnimmt oder 2. entführt oder sich ihrer bemächtigt oder ihrer Bemächtigung durch eine dritte Person Vorschub leistet. (3) In den Fällen des Absatzes 1 ist auf Freiheitsstrafe von sechs Monaten bis zu zehn Jahren zu erkennen, wenn 1. das Opfer zur Zeit der Tat unter achtzehn Jahren alt ist, 2. der Täter das Opfer bei der Tat körperlich schwer misshandelt oder durch die Tat oder eine während der Tat begangene Handlung wenigstens leichtfertig in die Gefahr des Todes oder einer schweren Gesundheitsschädigung bringt oder 3. der Täter gewerbsmäßig handelt oder als Mitglied einer Bande, die sich zur fortgesetzten Begehung solcher Taten verbunden hat. In den Fällen des Absatzes 2 ist auf Freiheitsstrafe von einem Jahr bis zu zehn Jahren zu erkennen, wenn einer der in Satz 1 Nummer 1 bis 3 bezeichneten Umstände vorliegt. (4) In den Fällen der Absätze 1, 2 und 3 Satz 1 ist der Versuch strafbar.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__232.html"
+      ]
+    },
+    "Threat": {
+      "title_de": "Bedrohung",
+      "text_de": "(1) Wer einen Menschen mit der Begehung einer gegen ihn oder eine ihm nahestehende Person gerichteten rechtswidrigen Tat gegen die sexuelle Selbstbestimmung, die körperliche Unversehrtheit, die persönliche Freiheit oder gegen eine Sache von bedeutendem Wert bedroht, wird mit Freiheitsstrafe bis zu einem Jahr oder mit Geldstrafe bestraft. (2) Wer einen Menschen mit der Begehung eines gegen ihn oder eine ihm nahestehende Person gerichteten Verbrechens bedroht, wird mit Freiheitsstrafe bis zu zwei Jahren oder mit Geldstrafe bestraft. (3) Ebenso wird bestraft, wer wider besseres Wissen einem Menschen vortäuscht, daß die Verwirklichung eines gegen ihn oder eine ihm nahestehende Person gerichteten Verbrechens bevorstehe. (4) Wird die Tat öffentlich, in einer Versammlung oder durch Verbreiten eines Inhalts (§ 11 Absatz 3) begangen, ist in den Fällen des Absatzes 1 auf Freiheitsstrafe bis zu zwei Jahren oder auf Geldstrafe und in den Fällen der Absätze 2 und 3 auf Freiheitsstrafe bis zu drei Jahren oder auf Geldstrafe zu erkennen. (5) Die für die angedrohte Tat geltenden Vorschriften über den Strafantrag sind entsprechend anzuwenden.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__241.html"
+      ]
+    },
+    "AbandonmentEndangerment": {
+      "title_de": "Aussetzung",
+      "text_de": "(1) Wer einen Menschen 1. in eine hilflose Lage versetzt oder 2. in einer hilflosen Lage im Stich läßt, obwohl er ihn in seiner Obhut hat oder ihm sonst beizustehen verpflichtet ist, und ihn dadurch der Gefahr des Todes oder einer schweren Gesundheitsschädigung aussetzt, wird mit Freiheitsstrafe von drei Monaten bis zu fünf Jahren bestraft. (2) Auf Freiheitsstrafe von einem Jahr bis zu zehn Jahren ist zu erkennen, wenn der Täter 1. die Tat gegen sein Kind oder eine Person begeht, die ihm zur Erziehung oder zur Betreuung in der Lebensführung anvertraut ist, oder 2. durch die Tat eine schwere Gesundheitsschädigung des Opfers verursacht. (3) Verursacht der Täter durch die Tat den Tod des Opfers, so ist die Strafe Freiheitsstrafe nicht unter drei Jahren. (4) In minder schweren Fällen des Absatzes 2 ist auf Freiheitsstrafe von sechs Monaten bis zu fünf Jahren, in minder schweren Fällen des Absatzes 3 auf Freiheitsstrafe von einem Jahr bis zu zehn Jahren zu erkennen.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__221.html"
+      ]
+    },
+    "TerminationOfPregnancy": {
+      "title_de": "Schwangerschaftsabbruch",
+      "text_de": "(1) Wer eine Schwangerschaft abbricht, wird mit Freiheitsstrafe bis zu drei Jahren oder mit Geldstrafe bestraft. Handlungen, deren Wirkung vor Abschluß der Einnistung des befruchteten Eies in der Gebärmutter eintritt, gelten nicht als Schwangerschaftsabbruch im Sinne dieses Gesetzes. (2) In besonders schweren Fällen ist die Strafe Freiheitsstrafe von sechs Monaten bis zu fünf Jahren. Ein besonders schwerer Fall liegt in der Regel vor, wenn der Täter 1. gegen den Willen der Schwangeren handelt oder 2. leichtfertig die Gefahr des Todes oder einer schweren Gesundheitsschädigung der Schwangeren verursacht. (3) Begeht die Schwangere die Tat, so ist die Strafe Freiheitsstrafe bis zu einem Jahr oder Geldstrafe. (4) Der Versuch ist strafbar. Die Schwangere wird nicht wegen Versuchs bestraft.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__218.html"
+      ]
+    },
+    "UnlawfulKilling": {
+      "title_de": "Mord / Totschlag",
+      "text_de": "(1) Der Mörder wird mit lebenslanger Freiheitsstrafe bestraft. (2) Mörder ist, wer aus Mordlust, zur Befriedigung des Geschlechtstriebs, aus Habgier oder sonst aus niedrigen Beweggründen, heimtückisch oder grausam oder mit gemeingefährlichen Mitteln oder um eine andere Straftat zu ermöglichen oder zu verdecken, einen Menschen tötet. (1) Wer einen Menschen tötet, ohne Mörder zu sein, wird als Totschläger mit Freiheitsstrafe nicht unter fünf Jahren bestraft. (2) In besonders schweren Fällen ist auf lebenslange Freiheitsstrafe zu erkennen.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__211.html",
+        "https://www.gesetze-im-internet.de/stgb/__212.html"
+      ]
+    },
+    "AssistanceAfterTheFact": {
+      "title_de": "Begünstigung",
+      "text_de": "(1) Wer einem anderen, der eine rechtswidrige Tat begangen hat, in der Absicht Hilfe leistet, ihm die Vorteile der Tat zu sichern, wird mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe bestraft. (2) Die Strafe darf nicht schwerer sein als die für die Vortat angedrohte Strafe. (3) Wegen Begünstigung wird nicht bestraft, wer wegen Beteiligung an der Vortat strafbar ist. Dies gilt nicht für denjenigen, der einen an der Vortat Unbeteiligten zur Begünstigung anstiftet. (4) Die Begünstigung wird nur auf Antrag, mit Ermächtigung oder auf Strafverlangen verfolgt, wenn der Begünstiger als Täter oder Teilnehmer der Vortat nur auf Antrag, mit Ermächtigung oder auf Strafverlangen verfolgt werden könnte. § 248a gilt sinngemäß.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__257.html"
+      ]
+    },
+    "ComputerFraud": {
+      "title_de": "Computerbetrug",
+      "text_de": "(1) Wer in der Absicht, sich oder einem Dritten einen rechtswidrigen Vermögensvorteil zu verschaffen, das Vermögen eines anderen dadurch beschädigt, daß er das Ergebnis eines Datenverarbeitungsvorgangs durch unrichtige Gestaltung des Programms, durch Verwendung unrichtiger oder unvollständiger Daten, durch unbefugte Verwendung von Daten oder sonst durch unbefugte Einwirkung auf den Ablauf beeinflußt, wird mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe bestraft. (2) § 263 Abs. 2 bis 6 gilt entsprechend. (3) Wer eine Straftat nach Absatz 1 vorbereitet, indem er 1. Computerprogramme, deren Zweck die Begehung einer solchen Tat ist, herstellt, sich oder einem anderen verschafft, feilhält, verwahrt oder einem anderen überlässt oder 2. Passwörter oder sonstige Sicherungscodes, die zur Begehung einer solchen Tat geeignet sind, herstellt, sich oder einem anderen verschafft, feilhält, verwahrt oder einem anderen überlässt, wird mit Freiheitsstrafe bis zu drei Jahren oder mit Geldstrafe bestraft. (4) In den Fällen des Absatzes 3 gilt § 149 Abs. 2 und 3 entsprechend.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__263a.html"
+      ]
+    },
+    "ComputerSabotage": {
+      "title_de": "Computersabotage",
+      "text_de": "(1) Wer eine Datenverarbeitung, die für einen anderen von wesentlicher Bedeutung ist, dadurch erheblich stört, dass er 1. eine Tat nach § 303a Abs. 1 begeht, 2. Daten (§ 202a Abs. 2) in der Absicht, einem anderen Nachteil zuzufügen, eingibt oder übermittelt oder 3. eine Datenverarbeitungsanlage oder einen Datenträger zerstört, beschädigt, unbrauchbar macht, beseitigt oder verändert, wird mit Freiheitsstrafe bis zu drei Jahren oder mit Geldstrafe bestraft. (2) Handelt es sich um eine Datenverarbeitung, die für einen fremden Betrieb, ein fremdes Unternehmen oder eine Behörde von wesentlicher Bedeutung ist, ist die Strafe Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe. (3) Der Versuch ist strafbar. (4) In besonders schweren Fällen des Absatzes 2 ist die Strafe Freiheitsstrafe von sechs Monaten bis zu zehn Jahren. Ein besonders schwerer Fall liegt in der Regel vor, wenn der Täter 1. einen Vermögensverlust großen Ausmaßes herbeiführt, 2. gewerbsmäßig oder als Mitglied einer Bande handelt, die sich zur fortgesetzten Begehung von Computersabotage verbunden hat, 3. durch die Tat die Versorgung der Bevölkerung mit lebenswichtigen Gütern oder Dienstleistungen oder die Sicherheit der Bundesrepublik Deutschland beeinträchtigt. (5) Für die Vorbereitung einer Straftat nach Absatz 1 gilt § 202c entsprechend.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__303b.html"
+      ]
+    },
+    "DamageToProperty": {
+      "title_de": "Sachbeschädigung",
+      "text_de": "(1) Wer rechtswidrig eine fremde Sache beschädigt oder zerstört, wird mit Freiheitsstrafe bis zu zwei Jahren oder mit Geldstrafe bestraft. (2) Ebenso wird bestraft, wer unbefugt das Erscheinungsbild einer fremden Sache nicht nur unerheblich und nicht nur vorübergehend verändert. (3) Der Versuch ist strafbar.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__303.html"
+      ]
+    },
+    "DataAlteration": {
+      "title_de": "Datenveränderung",
+      "text_de": "(1) Wer rechtswidrig Daten (§ 202a Abs. 2) löscht, unterdrückt, unbrauchbar macht oder verändert, wird mit Freiheitsstrafe bis zu zwei Jahren oder mit Geldstrafe bestraft. (2) Der Versuch ist strafbar. (3) Für die Vorbereitung einer Straftat nach Absatz 1 gilt § 202c entsprechend.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__303a.html"
+      ]
+    },
+    "DestructionOfStructures": {
+      "title_de": "Zerstörung von Bauwerken",
+      "text_de": "(1) Wer rechtswidrig ein Gebäude, ein Schiff, eine Brücke, einen Damm, eine gebaute Straße, eine Eisenbahn oder ein anderes Bauwerk, welche fremdes Eigentum sind, ganz oder teilweise zerstört, wird mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe bestraft. (2) Der Versuch ist strafbar.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__305.html"
+      ]
+    },
+    "Embezzlement": {
+      "title_de": "Unterschlagung",
+      "text_de": "(1) Wer eine fremde bewegliche Sache sich oder einem Dritten rechtswidrig zueignet, wird mit Freiheitsstrafe bis zu drei Jahren oder mit Geldstrafe bestraft, wenn die Tat nicht in anderen Vorschriften mit schwererer Strafe bedroht ist. (2) Ist in den Fällen des Absatzes 1 die Sache dem Täter anvertraut, so ist die Strafe Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe. (3) Der Versuch ist strafbar.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__246.html"
+      ]
+    },
+    "Extortion": {
+      "title_de": "Erpressung",
+      "text_de": "(1) Wer einen Menschen rechtswidrig mit Gewalt oder durch Drohung mit einem empfindlichen Übel zu einer Handlung, Duldung oder Unterlassung nötigt und dadurch dem Vermögen des Genötigten oder eines anderen Nachteil zufügt, um sich oder einen Dritten zu Unrecht zu bereichern, wird mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe bestraft. (2) Rechtswidrig ist die Tat, wenn die Anwendung der Gewalt oder die Androhung des Übels zu dem angestrebten Zweck als verwerflich anzusehen ist. (3) Der Versuch ist strafbar. (4) In besonders schweren Fällen ist die Strafe Freiheitsstrafe nicht unter einem Jahr. Ein besonders schwerer Fall liegt in der Regel vor, wenn der Täter gewerbsmäßig oder als Mitglied einer Bande handelt, die sich zur fortgesetzten Begehung einer Erpressung verbunden hat.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__253.html"
+      ]
+    },
+    "Fraud": {
+      "title_de": "Betrug",
+      "text_de": "(1) Wer in der Absicht, sich oder einem Dritten einen rechtswidrigen Vermögensvorteil zu verschaffen, das Vermögen eines anderen dadurch beschädigt, daß er durch Vorspiegelung falscher oder durch Entstellung oder Unterdrückung wahrer Tatsachen einen Irrtum erregt oder unterhält, wird mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe bestraft. (2) Der Versuch ist strafbar. (3) In besonders schweren Fällen ist die Strafe Freiheitsstrafe von sechs Monaten bis zu zehn Jahren. Ein besonders schwerer Fall liegt in der Regel vor, wenn der Täter 1. gewerbsmäßig oder als Mitglied einer Bande handelt, die sich zur fortgesetzten Begehung von Urkundenfälschung oder Betrug verbunden hat, 2. einen Vermögensverlust großen Ausmaßes herbeiführt oder in der Absicht handelt, durch die fortgesetzte Begehung von Betrug eine große Zahl von Menschen in die Gefahr des Verlustes von Vermögenswerten zu bringen, 3. eine andere Person in wirtschaftliche Not bringt, 4. seine Befugnisse oder seine Stellung als Amtsträger oder Europäischer Amtsträger mißbraucht oder 5. einen Versicherungsfall vortäuscht, nachdem er oder ein anderer zu diesem Zweck eine Sache von bedeutendem Wert in Brand gesetzt oder durch eine Brandlegung ganz oder teilweise zerstört oder ein Schiff zum Sinken oder Stranden gebracht hat. (4) § 243 Abs. 2 sowie die §§ 247 und 248a gelten entsprechend. (5) Mit Freiheitsstrafe von einem Jahr bis zu zehn Jahren, in minder schweren Fällen mit Freiheitsstrafe von sechs Monaten bis zu fünf Jahren wird bestraft, wer den Betrug als Mitglied einer Bande, die sich zur fortgesetzten Begehung von Straftaten nach den §§ 263 bis 264 oder 267 bis 269 verbunden hat, gewerbsmäßig begeht. (6) Das Gericht kann Führungsaufsicht anordnen (§ 68 Abs. 1). (7) (weggefallen)",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__263.html"
+      ]
+    },
+    "HandlingStolenGoods": {
+      "title_de": "Hehlerei",
+      "text_de": "(1) Wer eine Sache, die ein anderer gestohlen oder sonst durch eine gegen fremdes Vermögen gerichtete rechtswidrige Tat erlangt hat, ankauft oder sonst sich oder einem Dritten verschafft, sie absetzt oder absetzen hilft, um sich oder einen Dritten zu bereichern, wird mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe bestraft. (2) Die §§ 247 und 248a gelten sinngemäß. (3) Der Versuch ist strafbar.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__259.html"
+      ]
+    },
+    "MoneyLaundering": {
+      "title_de": "Geldwäsche",
+      "text_de": "(1) Wer einen Gegenstand, der aus einer rechtswidrigen Tat herrührt, 1. verbirgt, 2. in der Absicht, dessen Auffinden, dessen Einziehung oder die Ermittlung von dessen Herkunft zu vereiteln, umtauscht, überträgt oder verbringt, 3. sich oder einem Dritten verschafft oder 4. verwahrt oder für sich oder einen Dritten verwendet, wenn er dessen Herkunft zu dem Zeitpunkt gekannt hat, zu dem er ihn erlangt hat, wird mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe bestraft. In den Fällen des Satzes 1 Nummer 3 und 4 gilt dies nicht in Bezug auf einen Gegenstand, den ein Dritter zuvor erlangt hat, ohne hierdurch eine rechtswidrige Tat zu begehen. Wer als Strafverteidiger ein Honorar für seine Tätigkeit annimmt, handelt in den Fällen des Satzes 1 Nummer 3 und 4 nur dann vorsätzlich, wenn er zu dem Zeitpunkt der Annahme des Honorars sichere Kenntnis von dessen Herkunft hatte. (2) Ebenso wird bestraft, wer Tatsachen, die für das Auffinden, die Einziehung oder die Ermittlung der Herkunft eines Gegenstands nach Absatz 1 von Bedeutung sein können, verheimlicht oder verschleiert. (3) Der Versuch ist strafbar. (4) Wer eine Tat nach Absatz 1 oder Absatz 2 als Verpflichteter nach § 2 des Geldwäschegesetzes begeht, wird mit Freiheitsstrafe von drei Monaten bis zu fünf Jahren bestraft. (5) In besonders schweren Fällen ist die Strafe Freiheitsstrafe von sechs Monaten bis zu zehn Jahren. Ein besonders schwerer Fall liegt in der Regel vor, wenn der Täter gewerbsmäßig handelt oder als Mitglied einer Bande, die sich zur fortgesetzten Begehung von Geldwäsche verbunden hat. (6) Wer in den Fällen des Absatzes 1 oder 2 leichtfertig nicht erkennt, dass es sich um einen Gegenstand nach Absatz 1 handelt, wird mit Freiheitsstrafe bis zu zwei Jahren oder mit Geldstrafe bestraft. Satz 1 gilt in den Fällen des Absatzes 1 Satz 1 Nummer 3 und 4 nicht für einen Strafverteidiger, der ein Honorar für seine Tätigkeit annimmt. (7) Wer wegen Beteiligung an der Vortat strafbar ist, wird nach den Absätzen 1 bis 6 nur dann bestraft, wenn er den Gegenstand in den Verkehr bringt und dabei dessen rechtswidrige Herkunft verschleiert. (8) Nach den Absätzen 1 bis 6 wird nicht bestraft, 1. wer die Tat freiwillig bei der zuständigen Behörde anzeigt oder freiwillig eine solche Anzeige veranlasst, wenn nicht die Tat zu diesem Zeitpunkt bereits ganz oder zum Teil entdeckt war und der Täter dies wusste oder bei verständiger Würdigung der Sachlage damit rechnen musste, und 2. in den Fällen des Absatzes 1 oder des Absatzes 2 unter den in Nummer 1 genannten Voraussetzungen die Sicherstellung des Gegenstandes bewirkt. (9) Einem Gegenstand im Sinne des Absatzes 1 stehen Gegenstände, die aus einer im Ausland begangenen Tat herrühren, gleich, wenn die Tat nach deutschem Strafrecht eine rechtswidrige Tat wäre und 1. am Tatort mit Strafe bedroht ist oder 2. nach einer der folgenden Vorschriften und Übereinkommen der Europäischen Union mit Strafe zu bedrohen ist: a) Artikel 2 oder Artikel 3 des Übereinkommens vom 26. Mai 1997 aufgrund von Artikel K.3 Absatz 2 Buchstabe c des Vertrags über die Europäische Union über die Bekämpfung der Bestechung, an der Beamte der Europäischen Gemeinschaften oder der Mitgliedstaaten der Europäischen Union beteiligt sind (BGBl. 2002 II S. 2727, 2729), b) Artikel 1 des Rahmenbeschlusses 2002/946/JI des Rates vom 28. November 2002 betreffend die Verstärkung des strafrechtlichen Rahmens für die Bekämpfung der Beihilfe zur unerlaubten Ein- und Durchreise und zum unerlaubten Aufenthalt (ABl. L 328 vom 5.12.2002, S. 1), c) Artikel 2 oder Artikel 3 des Rahmenbeschlusses 2003/568/JI des Rates vom 22. Juli 2003 zur Bekämpfung der Bestechung im privaten Sektor (ABl. L 192 vom 31.7.2003, S. 54), d) Artikel 2 oder Artikel 3 des Rahmenbeschlusses 2004/757/JI des Rates vom 25. Oktober 2004 zur Festlegung von Mindestvorschriften über die Tatbestandsmerkmale strafbarer Handlungen und die Strafen im Bereich des illegalen Drogenhandels (ABl. L 335 vom 11.11.2004, S. 8), der zuletzt durch die Delegierte Richtlinie (EU) 2019/369 (ABl. L 66 vom 7.3.2019, S. 3) geändert worden ist, e) Artikel 2 Buchstabe a des Rahmenbeschlusses 2008/841/JI des Rates vom 24. Oktober 2008 zur Bekämpfung der organisierten Kriminalität (ABl. L 300 vom 11.11.2008, S. 42), f) Artikel 2 oder Artikel 3 der Richtlinie 2011/36/EU des Europäischen Parlaments und des Rates vom 5. April 2011 zur Verhütung und Bekämpfung des Menschenhandels und zum Schutz seiner Opfer sowie zur Ersetzung des Rahmenbeschlusses 2002/629/JI des Rates (ABl. L 101 vom 15.4.2011, S. 1), g) den Artikeln 3 bis 8 der Richtlinie 2011/93/EU des Europäischen Parlaments und des Rates vom 13. Dezember 2011 zur Bekämpfung des sexuellen Missbrauchs und der sexuellen Ausbeutung von Kindern sowie der Kinderpornografie sowie zur Ersetzung des Rahmenbeschlusses 2004/68/JI des Rates (ABl. L 335 vom 17.12.2011, S. 1; L 18 vom 21.1.2012, S. 7) oder h) den Artikeln 4 bis 9 Absatz 1 und 2 Buchstabe b oder den Artikeln 10 bis 14 der Richtlinie (EU) 2017/541 des Europäischen Parlaments und des Rates vom 15. März 2017 zur Terrorismusbekämpfung und zur Ersetzung des Rahmenbeschlusses 2002/475/JI des Rates und zur Änderung des Beschlusses 2005/671/JI des Rates (ABl. L 88 vom 31.3.2017, S. 6). (10) Gegenstände, auf die sich die Straftat bezieht, können eingezogen werden. § 74a ist anzuwenden. Die §§ 73 bis 73e bleiben unberührt und gehen einer Einziehung nach § 74 Absatz 2, auch in Verbindung mit den §§ 74a und 74c, vor.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__261.html"
+      ]
+    },
+    "ObstructionOfJustice": {
+      "title_de": "Strafvereitelung",
+      "text_de": "(1) Wer absichtlich oder wissentlich ganz oder zum Teil vereitelt, daß ein anderer dem Strafgesetz gemäß wegen einer rechtswidrigen Tat bestraft oder einer Maßnahme (§ 11 Abs. 1 Nr. 8) unterworfen wird, wird mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe bestraft. (2) Ebenso wird bestraft, wer absichtlich oder wissentlich die Vollstreckung einer gegen einen anderen verhängten Strafe oder Maßnahme ganz oder zum Teil vereitelt. (3) Die Strafe darf nicht schwerer sein als die für die Vortat angedrohte Strafe. (4) Der Versuch ist strafbar. (5) Wegen Strafvereitelung wird nicht bestraft, wer durch die Tat zugleich ganz oder zum Teil vereiteln will, daß er selbst bestraft oder einer Maßnahme unterworfen wird oder daß eine gegen ihn verhängte Strafe oder Maßnahme vollstreckt wird. (6) Wer die Tat zugunsten eines Angehörigen begeht, ist straffrei.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__258.html"
+      ]
+    },
+    "Robbery": {
+      "title_de": "Raub",
+      "text_de": "(1) Wer mit Gewalt gegen eine Person oder unter Anwendung von Drohungen mit gegenwärtiger Gefahr für Leib oder Leben eine fremde bewegliche Sache einem anderen in der Absicht wegnimmt, die Sache sich oder einem Dritten rechtswidrig zuzueignen, wird mit Freiheitsstrafe nicht unter einem Jahr bestraft. (2) In minder schweren Fällen ist die Strafe Freiheitsstrafe von sechs Monaten bis zu fünf Jahren.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__249.html"
+      ]
+    },
+    "Theft": {
+      "title_de": "Diebstahl",
+      "text_de": "(1) Wer eine fremde bewegliche Sache einem anderen in der Absicht wegnimmt, die Sache sich oder einem Dritten rechtswidrig zuzueignen, wird mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe bestraft. (2) Der Versuch ist strafbar.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__242.html"
+      ]
+    },
+    "TheftOfElectricity": {
+      "title_de": "Entziehung elektrischer Energie",
+      "text_de": "(1) Wer einer elektrischen Anlage oder Einrichtung fremde elektrische Energie mittels eines Leiters entzieht, der zur ordnungsmäßigen Entnahme von Energie aus der Anlage oder Einrichtung nicht bestimmt ist, wird, wenn er die Handlung in der Absicht begeht, die elektrische Energie sich oder einem Dritten rechtswidrig zuzueignen, mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe bestraft. (2) Der Versuch ist strafbar. (3) Die §§ 247 und 248a gelten entsprechend. (4) Wird die in Absatz 1 bezeichnete Handlung in der Absicht begangen, einem anderen rechtswidrig Schaden zuzufügen, so ist die Strafe Freiheitsstrafe bis zu zwei Jahren oder Geldstrafe. Die Tat wird nur auf Antrag verfolgt.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__248c.html"
+      ]
+    },
+    "UnauthorisedVehicleUse": {
+      "title_de": "Unbefugter Gebrauch eines Fahrzeugs",
+      "text_de": "(1) Wer ein Kraftfahrzeug oder ein Fahrrad gegen den Willen des Berechtigten in Gebrauch nimmt, wird mit Freiheitsstrafe bis zu drei Jahren oder mit Geldstrafe bestraft, wenn die Tat nicht in anderen Vorschriften mit schwererer Strafe bedroht ist. (2) Der Versuch ist strafbar. (3) Die Tat wird nur auf Antrag verfolgt. (4) Kraftfahrzeuge im Sinne dieser Vorschrift sind die Fahrzeuge, die durch Maschinenkraft bewegt werden, Landkraftfahrzeuge nur insoweit, als sie nicht an Bahngleise gebunden sind.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__248b.html"
+      ]
+    },
+    "AbuseOfOfficialPosition": {
+      "title_de": "Sexueller Mißbrauch unter Ausnutzung einer Amtsstellung",
+      "text_de": "(1) Wer als Amtsträger, der zur Mitwirkung an einem Strafverfahren oder an einem Verfahren zur Anordnung einer freiheitsentziehenden Maßregel der Besserung und Sicherung oder einer behördlichen Verwahrung berufen ist, unter Mißbrauch der durch das Verfahren begründeten Abhängigkeit sexuelle Handlungen an demjenigen, gegen den sich das Verfahren richtet, vornimmt oder an sich von dem anderen vornehmen läßt oder die Person zur Vornahme oder Duldung sexueller Handlungen an oder von einer dritten Person bestimmt, wird mit Freiheitsstrafe von drei Monaten bis zu fünf Jahren bestraft. (2) Der Versuch ist strafbar.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__174b.html"
+      ]
+    },
+    "AbuseOfPersonInCustody": {
+      "title_de": "Sexueller Mißbrauch von Gefangenen, behördlich Verwahrten oder Kranken und Hilfsbedürftigen in Einrichtungen",
+      "text_de": "(1) Wer sexuelle Handlungen an einer gefangenen oder auf behördliche Anordnung verwahrten Person, die ihm zur Erziehung, Ausbildung, Beaufsichtigung oder Betreuung anvertraut ist, unter Mißbrauch seiner Stellung vornimmt oder an sich von der gefangenen oder verwahrten Person vornehmen läßt oder die gefangene oder verwahrte Person zur Vornahme oder Duldung sexueller Handlungen an oder von einer dritten Person bestimmt, wird mit Freiheitsstrafe von drei Monaten bis zu fünf Jahren bestraft. (2) Ebenso wird bestraft, wer eine Person, die in einer Einrichtung für kranke oder hilfsbedürftige Menschen aufgenommen und ihm zur Beaufsichtigung oder Betreuung anvertraut ist, dadurch mißbraucht, daß er unter Ausnutzung der Krankheit oder Hilfsbedürftigkeit dieser Person sexuelle Handlungen an ihr vornimmt oder an sich von ihr vornehmen läßt oder diese Person zur Vornahme oder Duldung sexueller Handlungen an oder von einer dritten Person bestimmt. (3) Der Versuch ist strafbar.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__174a.html"
+      ]
+    },
+    "AbuseOfPersonsUnderCare": {
+      "title_de": "Sexueller Mißbrauch von Schutzbefohlenen",
+      "text_de": "(1) Wer sexuelle Handlungen 1. an einer Person unter achtzehn Jahren, die ihm zur Erziehung oder zur Betreuung in der Lebensführung anvertraut ist, 2. an einer Person unter achtzehn Jahren, die ihm im Rahmen eines Ausbildungs-, Dienst- oder Arbeitsverhältnisses untergeordnet ist, unter Missbrauch einer mit dem Ausbildungs-, Dienst- oder Arbeitsverhältnis verbundenen Abhängigkeit oder 3. an einer Person unter achtzehn Jahren, die sein leiblicher oder rechtlicher Abkömmling ist oder der seines Ehegatten, seines Lebenspartners oder einer Person, mit der er in eheähnlicher oder lebenspartnerschaftsähnlicher Gemeinschaft lebt, vornimmt oder an sich von dem Schutzbefohlenen vornehmen läßt, wird mit Freiheitsstrafe von drei Monaten bis zu fünf Jahren bestraft. Ebenso wird bestraft, wer unter den Voraussetzungen des Satzes 1 den Schutzbefohlenen dazu bestimmt, dass er sexuelle Handlungen an oder vor einer dritten Person vornimmt oder von einer dritten Person an sich vornehmen lässt. (2) Mit Freiheitsstrafe von drei Monaten bis zu fünf Jahren wird eine Person bestraft, der in einer dazu bestimmten Einrichtung die Erziehung, Ausbildung oder Betreuung in der Lebensführung von Personen unter achtzehn Jahren anvertraut ist, und die sexuelle Handlungen 1. an einer Person unter sechzehn Jahren, die zu dieser Einrichtung in einem Rechtsverhältnis steht, das ihrer Erziehung, Ausbildung oder Betreuung in der Lebensführung dient, vornimmt oder an sich von ihr vornehmen lässt oder 2. unter Ausnutzung ihrer Stellung an einer Person unter achtzehn Jahren, die zu dieser Einrichtung in einem Rechtsverhältnis steht, das ihrer Erziehung, Ausbildung oder Betreuung in der Lebensführung dient, vornimmt oder an sich von ihr vornehmen lässt. Ebenso wird bestraft, wer unter den Voraussetzungen des Satzes 1 den Schutzbefohlenen dazu bestimmt, dass er sexuelle Handlungen an oder vor einer dritten Person vornimmt oder von einer dritten Person an sich vornehmen lässt. (3) Wer unter den Voraussetzungen des Absatzes 1 oder 2 1. sexuelle Handlungen vor dem Schutzbefohlenen vornimmt, um sich oder den Schutzbefohlenen hierdurch sexuell zu erregen, oder 2. den Schutzbefohlenen dazu bestimmt, daß er sexuelle Handlungen vor ihm vornimmt, wird mit Freiheitsstrafe bis zu drei Jahren oder mit Geldstrafe bestraft. (4) Der Versuch ist strafbar. (5) In den Fällen des Absatzes 1 Satz 1 Nummer 1, des Absatzes 2 Satz 1 Nummer 1 oder des Absatzes 3 in Verbindung mit Absatz 1 Satz 1 Nummer 1 oder mit Absatz 2 Satz 1 Nummer 1 kann das Gericht von einer Bestrafung nach dieser Vorschrift absehen, wenn das Unrecht der Tat gering ist.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__174.html"
+      ]
+    },
+    "AbuseOfTreatmentRelationship": {
+      "title_de": "Sexueller Mißbrauch unter Ausnutzung eines Beratungs-, Behandlungs- oder Betreuungsverhältnisses",
+      "text_de": "(1) Wer sexuelle Handlungen an einer Person, die ihm wegen einer geistigen oder seelischen Krankheit oder Behinderung einschließlich einer Suchtkrankheit oder wegen einer körperlichen Krankheit oder Behinderung zur Beratung, Behandlung oder Betreuung anvertraut ist, unter Mißbrauch des Beratungs-, Behandlungs- oder Betreuungsverhältnisses vornimmt oder an sich von ihr vornehmen läßt oder diese Person zur Vornahme oder Duldung sexueller Handlungen an oder von einer dritten Person bestimmt, wird mit Freiheitsstrafe von drei Monaten bis zu fünf Jahren bestraft. (2) Ebenso wird bestraft, wer sexuelle Handlungen an einer Person, die ihm zur psychotherapeutischen Behandlung anvertraut ist, unter Mißbrauch des Behandlungsverhältnisses vornimmt oder an sich von ihr vornehmen läßt oder diese Person zur Vornahme oder Duldung sexueller Handlungen an oder von einer dritten Person bestimmt. (3) Der Versuch ist strafbar.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__174c.html"
+      ]
+    },
+    "BreachOfDutyOfCareOrUpbringing": {
+      "title_de": "Verletzung der Fürsorge- oder Erziehungspflicht",
+      "text_de": "Wer seine Fürsorge- oder Erziehungspflicht gegenüber einer Person unter sechzehn Jahren gröblich verletzt und dadurch den Schutzbefohlenen in die Gefahr bringt, in seiner körperlichen oder psychischen Entwicklung erheblich geschädigt zu werden, einen kriminellen Lebenswandel zu führen oder der Prostitution nachzugehen, wird mit Freiheitsstrafe bis zu drei Jahren oder mit Geldstrafe bestraft.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__171.html"
+      ]
+    },
+    "InstructionsForSexualAbuseOfChildren": {
+      "title_de": "Verbreitung und Besitz von Anleitungen zu sexuellem Missbrauch von Kindern",
+      "text_de": "(1) Wer einen Inhalt (§ 11 Absatz 3) verbreitet oder der Öffentlichkeit zugänglich macht, der geeignet ist, als Anleitung zu einer in den §§ 176 bis 176d genannten rechtswidrigen Tat zu dienen, und der dazu bestimmt ist, die Bereitschaft anderer zu fördern oder zu wecken, eine solche Tat zu begehen, wird mit Freiheitsstrafe bis zu drei Jahren oder mit Geldstrafe bestraft. (2) Ebenso wird bestraft, wer 1. einen Inhalt (§ 11 Absatz 3), der geeignet ist, als Anleitung zu einer in den §§ 176 bis 176d genannten rechtswidrigen Tat zu dienen, verbreitet oder der Öffentlichkeit zugänglich macht oder 2. öffentlich oder in einer Versammlung zu einer in den §§ 176 bis 176d genannten rechtswidrigen Tat eine Anleitung gibt, um die Bereitschaft anderer zu fördern oder zu wecken, eine solche Tat zu begehen. (3) Wer einen in Absatz 1 bezeichneten Inhalt abruft, besitzt, einer anderen Person zugänglich macht oder einer anderen Person den Besitz daran verschafft, wird mit Freiheitsstrafe bis zu zwei Jahren oder mit Geldstrafe bestraft. (4) Absatz 3 gilt nicht für Handlungen, die ausschließlich der rechtmäßigen Erfüllung von Folgendem dienen: 1. staatlichen Aufgaben, 2. Aufgaben, die sich aus Vereinbarungen mit einer zuständigen staatlichen Stelle ergeben, oder 3. dienstlichen oder beruflichen Pflichten. (5) Die Absätze 1 und 3 gelten nicht für dienstliche Handlungen im Rahmen von strafrechtlichen Ermittlungsverfahren, wenn 1. kein kinderpornographischer Inhalt, der ein tatsächliches Geschehen wiedergibt oder der unter Verwendung einer Bildaufnahme eines Kindes oder Jugendlichen hergestellt worden ist, einer anderen Person oder der Öffentlichkeit zugänglich gemacht, verbreitet oder einer anderen Person der Besitz daran verschafft wird, und 2. die Aufklärung des Sachverhalts auf andere Weise aussichtslos oder wesentlich erschwert wäre. (6) Gegenstände, auf die sich eine Straftat nach Absatz 3 bezieht, werden eingezogen. § 74a ist anzuwenden.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__176e.html"
+      ]
+    },
+    "PreparationOfSexualAbuseOfChildren": {
+      "title_de": "Vorbereitung des sexuellen Missbrauchs von Kindern",
+      "text_de": "(1) Mit Freiheitsstrafe von drei Monaten bis zu fünf Jahren wird bestraft, wer auf ein Kind durch einen Inhalt (§ 11 Absatz 3) einwirkt, um 1. das Kind zu sexuellen Handlungen zu bringen, die es an oder vor dem Täter oder an oder vor einer dritten Person vornehmen oder von dem Täter oder einer dritten Person an sich vornehmen lassen soll, oder 2. eine Tat nach § 184b Absatz 1 Satz 1 Nummer 3 oder nach § 184b Absatz 3 zu begehen. (2) Ebenso wird bestraft, wer ein Kind für eine Tat nach Absatz 1 anbietet oder nachzuweisen verspricht oder wer sich mit einem anderen zu einer solchen Tat verabredet. (3) Bei Taten nach Absatz 1 ist der Versuch in den Fällen strafbar, in denen eine Vollendung der Tat allein daran scheitert, dass der Täter irrig annimmt, sein Einwirken beziehe sich auf ein Kind.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__176b.html"
+      ]
+    },
+    "SexualAbuseOfChildren": {
+      "title_de": "Sexueller Missbrauch von Kindern",
+      "text_de": "(1) Mit Freiheitsstrafe nicht unter einem Jahr wird bestraft, wer 1. sexuelle Handlungen an einer Person unter vierzehn Jahren (Kind) vornimmt oder an sich von dem Kind vornehmen lässt, 2. ein Kind dazu bestimmt, dass es sexuelle Handlungen an einer dritten Person vornimmt oder von einer dritten Person an sich vornehmen lässt, 3. ein Kind für eine Tat nach Nummer 1 oder Nummer 2 anbietet oder nachzuweisen verspricht. (2) In den Fällen des Absatzes 1 Nummer 1 kann das Gericht von Strafe nach dieser Vorschrift absehen, wenn zwischen Täter und Kind die sexuelle Handlung einvernehmlich erfolgt und der Unterschied sowohl im Alter als auch im Entwicklungsstand oder Reifegrad gering ist, es sei denn, der Täter nutzt die fehlende Fähigkeit des Kindes zur sexuellen Selbstbestimmung aus.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__176.html"
+      ]
+    },
+    "SexualAbuseOfChildrenWithoutContact": {
+      "title_de": "Sexueller Missbrauch von Kindern ohne Körperkontakt mit dem Kind",
+      "text_de": "(1) Mit Freiheitsstrafe von sechs Monaten bis zu zehn Jahren wird bestraft, wer 1. sexuelle Handlungen vor einem Kind vornimmt oder vor einem Kind von einer dritten Person an sich vornehmen lässt, 2. ein Kind dazu bestimmt, dass es sexuelle Handlungen vornimmt, soweit die Tat nicht nach § 176 Absatz 1 Nummer 1 oder Nummer 2 mit Strafe bedroht ist, oder 3. auf ein Kind durch einen pornographischen Inhalt (§ 11 Absatz 3) oder durch entsprechende Reden einwirkt. (2) Ebenso wird bestraft, wer ein Kind für eine Tat nach Absatz 1 anbietet oder nachzuweisen verspricht oder wer sich mit einem anderen zu einer solchen Tat verabredet. (3) Der Versuch ist in den Fällen des Absatzes 1 Nummer 1 und 2 strafbar. Bei Taten nach Absatz 1 Nummer 3 ist der Versuch in den Fällen strafbar, in denen eine Vollendung der Tat allein daran scheitert, dass der Täter irrig annimmt, sein Einwirken beziehe sich auf ein Kind.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__176a.html"
+      ]
+    },
+    "SexualActs": {
+      "title_de": "Begriffsbestimmungen",
+      "text_de": "Im Sinne dieses Gesetzes sind 1. sexuelle Handlungen nur solche, die im Hinblick auf das jeweils geschützte Rechtsgut von einiger Erheblichkeit sind, 2. sexuelle Handlungen vor einer anderen Person nur solche, die vor einer anderen Person vorgenommen werden, die den Vorgang wahrnimmt.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__184h.html"
+      ]
+    },
+    "SexualAssault": {
+      "title_de": "Sexueller Übergriff; sexuelle Nötigung; Vergewaltigung",
+      "text_de": "(1) Wer gegen den erkennbaren Willen einer anderen Person sexuelle Handlungen an dieser Person vornimmt oder von ihr vornehmen lässt oder diese Person zur Vornahme oder Duldung sexueller Handlungen an oder von einem Dritten bestimmt, wird mit Freiheitsstrafe von sechs Monaten bis zu fünf Jahren bestraft. (2) Ebenso wird bestraft, wer sexuelle Handlungen an einer anderen Person vornimmt oder von ihr vornehmen lässt oder diese Person zur Vornahme oder Duldung sexueller Handlungen an oder von einem Dritten bestimmt, wenn 1. der Täter ausnutzt, dass die Person nicht in der Lage ist, einen entgegenstehenden Willen zu bilden oder zu äußern, 2. der Täter ausnutzt, dass die Person auf Grund ihres körperlichen oder psychischen Zustands in der Bildung oder Äußerung des Willens erheblich eingeschränkt ist, es sei denn, er hat sich der Zustimmung dieser Person versichert, 3. der Täter ein Überraschungsmoment ausnutzt, 4. der Täter eine Lage ausnutzt, in der dem Opfer bei Widerstand ein empfindliches Übel droht, oder 5. der Täter die Person zur Vornahme oder Duldung der sexuellen Handlung durch Drohung mit einem empfindlichen Übel genötigt hat. (3) Der Versuch ist strafbar. (4) Auf Freiheitsstrafe nicht unter einem Jahr ist zu erkennen, wenn die Unfähigkeit, einen Willen zu bilden oder zu äußern, auf einer Krankheit oder Behinderung des Opfers beruht. (5) Auf Freiheitsstrafe nicht unter einem Jahr ist zu erkennen, wenn der Täter 1. gegenüber dem Opfer Gewalt anwendet, 2. dem Opfer mit gegenwärtiger Gefahr für Leib oder Leben droht oder 3. eine Lage ausnutzt, in der das Opfer der Einwirkung des Täters schutzlos ausgeliefert ist. (6) In besonders schweren Fällen ist auf Freiheitsstrafe nicht unter zwei Jahren zu erkennen. Ein besonders schwerer Fall liegt in der Regel vor, wenn 1. der Täter mit dem Opfer den Beischlaf vollzieht oder vollziehen lässt oder ähnliche sexuelle Handlungen an dem Opfer vornimmt oder von ihm vornehmen lässt, die dieses besonders erniedrigen, insbesondere wenn sie mit einem Eindringen in den Körper verbunden sind (Vergewaltigung), oder 2. die Tat von mehreren gemeinschaftlich begangen wird. (7) Auf Freiheitsstrafe nicht unter drei Jahren ist zu erkennen, wenn der Täter 1. eine Waffe oder ein anderes gefährliches Werkzeug bei sich führt, 2. sonst ein Werkzeug oder Mittel bei sich führt, um den Widerstand einer anderen Person durch Gewalt oder Drohung mit Gewalt zu verhindern oder zu überwinden, oder 3. das Opfer in die Gefahr einer schweren Gesundheitsschädigung bringt. (8) Auf Freiheitsstrafe nicht unter fünf Jahren ist zu erkennen, wenn der Täter 1. bei der Tat eine Waffe oder ein anderes gefährliches Werkzeug verwendet oder 2. das Opfer a) bei der Tat körperlich schwer misshandelt oder b) durch die Tat in die Gefahr des Todes bringt. (9) In minder schweren Fällen der Absätze 1 und 2 ist auf Freiheitsstrafe von drei Monaten bis zu drei Jahren, in minder schweren Fällen der Absätze 4 und 5 ist auf Freiheitsstrafe von sechs Monaten bis zu zehn Jahren, in minder schweren Fällen der Absätze 7 und 8 ist auf Freiheitsstrafe von einem Jahr bis zu zehn Jahren zu erkennen.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__177.html"
+      ]
+    },
+    "SexualIntercourseBetweenRelatives": {
+      "title_de": "Beischlaf zwischen Verwandten",
+      "text_de": "(1) Wer mit einem leiblichen Abkömmling den Beischlaf vollzieht, wird mit Freiheitsstrafe bis zu drei Jahren oder mit Geldstrafe bestraft. (2) Wer mit einem leiblichen Verwandten aufsteigender Linie den Beischlaf vollzieht, wird mit Freiheitsstrafe bis zu zwei Jahren oder mit Geldstrafe bestraft; dies gilt auch dann, wenn das Verwandtschaftsverhältnis erloschen ist. Ebenso werden leibliche Geschwister bestraft, die miteinander den Beischlaf vollziehen. (3) Abkömmlinge und Geschwister werden nicht nach dieser Vorschrift bestraft, wenn sie zur Zeit der Tat noch nicht achtzehn Jahre alt waren.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__173.html"
+      ]
+    },
+    "ChildLikeSexDollOffences": {
+      "title_de": "Inverkehrbringen, Erwerb und Besitz von Sexpuppen mit kindlichem Erscheinungsbild",
+      "text_de": "(1) Mit Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe wird bestraft, wer 1. eine körperliche Nachbildung eines Kindes oder eines Körperteiles eines Kindes, die nach ihrer Beschaffenheit zur Vornahme sexueller Handlungen bestimmt ist, herstellt, anbietet oder bewirbt oder 2. mit einer in Nummer 1 beschriebenen Nachbildung Handel treibt oder sie hierzu in oder durch den räumlichen Geltungsbereich dieses Gesetzes verbringt oder 3. ohne Handel zu treiben, eine in Nummer 1 beschriebene Nachbildung veräußert, abgibt oder sonst in Verkehr bringt. Satz 1 gilt nicht, wenn die Tat nach § 184b mit schwererer Strafe bedroht ist. (2) Mit Freiheitsstrafe bis zu drei Jahren oder Geldstrafe wird bestraft, wer eine in Absatz 1 Satz 1 Nummer 1 beschriebene Nachbildung erwirbt, besitzt oder in oder durch den räumlichen Geltungsbereich dieses Gesetzes verbringt. Absatz 1 Satz 2 gilt entsprechend. (3) In den Fällen des Absatzes 1 Satz 1 Nummer 2 und 3 ist der Versuch strafbar. (4) Absatz 1 Satz 1 Nummer 3 und Absatz 2 gelten nicht für Handlungen, die ausschließlich der rechtmäßigen Erfüllung staatlicher Aufgaben oder dienstlicher oder beruflicher Pflichten dienen. (5) Gegenstände, auf die sich die Straftat bezieht, werden eingezogen. § 74a ist anzuwenden.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__184l.html"
+      ]
+    },
+    "ChildPornographyOffences": {
+      "title_de": "Verbreitung, Erwerb und Besitz kinderpornographischer Inhalte",
+      "text_de": "(1) Mit Freiheitsstrafe von sechs Monaten bis zu zehn Jahren wird bestraft, wer 1. einen kinderpornographischen Inhalt verbreitet oder der Öffentlichkeit zugänglich macht; kinderpornographisch ist ein pornographischer Inhalt (§ 11 Absatz 3), wenn er zum Gegenstand hat: a) sexuelle Handlungen von, an oder vor einer Person unter vierzehn Jahren (Kind), b) die Wiedergabe eines ganz oder teilweise unbekleideten Kindes in aufreizend geschlechtsbetonter Körperhaltung oder c) die sexuell aufreizende Wiedergabe der unbekleideten Genitalien oder des unbekleideten Gesäßes eines Kindes, 2. es unternimmt, einer anderen Person einen kinderpornographischen Inhalt, der ein tatsächliches oder wirklichkeitsnahes Geschehen wiedergibt, zugänglich zu machen oder den Besitz daran zu verschaffen, 3. einen kinderpornographischen Inhalt, der ein tatsächliches Geschehen wiedergibt, herstellt oder 4. einen kinderpornographischen Inhalt herstellt, bezieht, liefert, vorrätig hält, anbietet, bewirbt oder es unternimmt, diesen ein- oder auszuführen, um ihn im Sinne der Nummer 1 oder der Nummer 2 zu verwenden oder einer anderen Person eine solche Verwendung zu ermöglichen, soweit die Tat nicht nach Nummer 3 mit Strafe bedroht ist. Gibt der kinderpornographische Inhalt in den Fällen von Absatz 1 Satz 1 Nummer 1 und 4 kein tatsächliches oder wirklichkeitsnahes Geschehen wieder, so ist auf Freiheitsstrafe von drei Monaten bis zu fünf Jahren zu erkennen. (2) Handelt der Täter in den Fällen des Absatzes 1 Satz 1 gewerbsmäßig oder als Mitglied einer Bande, die sich zur fortgesetzten Begehung solcher Taten verbunden hat, und gibt der Inhalt in den Fällen des Absatzes 1 Satz 1 Nummer 1, 2 und 4 ein tatsächliches oder wirklichkeitsnahes Geschehen wieder, so ist auf Freiheitsstrafe nicht unter zwei Jahren zu erkennen. (3) Wer es unternimmt, einen kinderpornographischen Inhalt, der ein tatsächliches oder wirklichkeitsnahes Geschehen wiedergibt, abzurufen oder sich den Besitz an einem solchen Inhalt zu verschaffen oder wer einen solchen Inhalt besitzt, wird mit Freiheitsstrafe von drei Monaten bis zu fünf Jahren bestraft. (4) Der Versuch ist in den Fällen des Absatzes 1 Satz 1 Nummer 1 und 3 sowie in den Fällen des Absatzes 1 Satz 2 in Verbindung mit Satz 1 Nummer 1 strafbar. (5) Absatz 1 Satz 1 Nummer 2 und Absatz 3 gelten nicht für Handlungen, die ausschließlich der rechtmäßigen Erfüllung von Folgendem dienen: 1. staatlichen Aufgaben, 2. Aufgaben, die sich aus Vereinbarungen mit einer zuständigen staatlichen Stelle ergeben, oder 3. dienstlichen oder beruflichen Pflichten. (6) Absatz 1 Satz 1 Nummer 1, 2 und 4 und Satz 2 gilt nicht für dienstliche Handlungen im Rahmen von strafrechtlichen Ermittlungsverfahren, wenn 1. die Handlung sich auf einen kinderpornographischen Inhalt bezieht, der kein tatsächliches Geschehen wiedergibt und auch nicht unter Verwendung einer Bildaufnahme eines Kindes oder Jugendlichen hergestellt worden ist, und 2. die Aufklärung des Sachverhalts auf andere Weise aussichtslos oder wesentlich erschwert wäre. (7) Gegenstände, auf die sich eine Straftat nach Absatz 1 Satz 1 Nummer 2 oder 3 oder Absatz 3 bezieht, werden eingezogen. § 74a ist anzuwenden.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__184b.html"
+      ]
+    },
+    "ExploitationOfProstitutes": {
+      "title_de": "Ausbeutung von Prostituierten",
+      "text_de": "(1) Wer gewerbsmäßig einen Betrieb unterhält oder leitet, in dem Personen der Prostitution nachgehen und in dem diese in persönlicher oder wirtschaftlicher Abhängigkeit gehalten werden, wird mit Freiheitsstrafe bis zu drei Jahren oder mit Geldstrafe bestraft. (2) Ebenso wird bestraft, wer 1. einer Person unter achtzehn Jahren zur Ausübung der Prostitution Wohnung, gewerbsmäßig Unterkunft oder gewerbsmäßig Aufenthalt gewährt oder 2. eine andere Person, der er zur Ausübung der Prostitution Wohnung gewährt, zur Prostitution anhält oder im Hinblick auf sie ausbeutet.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__180a.html"
+      ]
+    },
+    "GroupOffences": {
+      "title_de": "Straftaten aus Gruppen",
+      "text_de": "Wer eine Straftat dadurch fördert, dass er sich an einer Personengruppe beteiligt, die eine andere Person zur Begehung einer Straftat an ihr bedrängt, wird mit Freiheitsstrafe bis zu zwei Jahren oder mit Geldstrafe bestraft, wenn von einem Beteiligten der Gruppe eine Straftat nach den §§ 177 oder 184i begangen wird und die Tat nicht in anderen Vorschriften mit schwererer Strafe bedroht ist.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__184j.html"
+      ]
+    },
+    "Pimping": {
+      "title_de": "Zuhälterei",
+      "text_de": "(1) Mit Freiheitsstrafe von sechs Monaten bis zu fünf Jahren wird bestraft, wer 1. eine andere Person, die der Prostitution nachgeht, ausbeutet oder 2. seines Vermögensvorteils wegen eine andere Person bei der Ausübung der Prostitution überwacht, Ort, Zeit, Ausmaß oder andere Umstände der Prostitutionsausübung bestimmt oder Maßnahmen trifft, die sie davon abhalten sollen, die Prostitution aufzugeben, und im Hinblick darauf Beziehungen zu ihr unterhält, die über den Einzelfall hinausgehen. (2) Mit Freiheitsstrafe bis zu drei Jahren oder mit Geldstrafe wird bestraft, wer die persönliche oder wirtschaftliche Unabhängigkeit einer anderen Person dadurch beeinträchtigt, dass er gewerbsmäßig die Prostitutionsausübung der anderen Person durch Vermittlung sexuellen Verkehrs fördert und im Hinblick darauf Beziehungen zu ihr unterhält, die über den Einzelfall hinausgehen. (3) Nach den Absätzen 1 und 2 wird auch bestraft, wer die in Absatz 1 Nr. 1 und 2 genannten Handlungen oder die in Absatz 2 bezeichnete Förderung gegenüber seinem Ehegatten oder Lebenspartner vornimmt.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__181a.html"
+      ]
+    },
+    "PornographicPerformances": {
+      "title_de": "Veranstaltung und Besuch kinder- und jugendpornographischer Darbietungen",
+      "text_de": "(1) Nach § 184b Absatz 1 wird auch bestraft, wer eine kinderpornographische Darbietung veranstaltet. Nach § 184c Absatz 1 wird auch bestraft, wer eine jugendpornographische Darbietung veranstaltet. (2) Nach § 184b Absatz 3 wird auch bestraft, wer eine kinderpornographische Darbietung besucht. Nach § 184c Absatz 3 wird auch bestraft, wer eine jugendpornographische Darbietung besucht. § 184b Absatz 5 Nummer 1 und 3 gilt entsprechend.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__184e.html"
+      ]
+    },
+    "PromotionOfSexualActsOfMinors": {
+      "title_de": "Förderung sexueller Handlungen Minderjähriger",
+      "text_de": "(1) Wer sexuellen Handlungen einer Person unter sechzehn Jahren an oder vor einem Dritten oder sexuellen Handlungen eines Dritten an einer Person unter sechzehn Jahren 1. durch seine Vermittlung oder 2. durch Gewähren oder Verschaffen von Gelegenheit Vorschub leistet, wird mit Freiheitsstrafe bis zu drei Jahren oder mit Geldstrafe bestraft. Satz 1 Nr. 2 ist nicht anzuwenden, wenn der zur Sorge für die Person Berechtigte handelt; dies gilt nicht, wenn der Sorgeberechtigte durch das Vorschubleisten seine Erziehungspflicht gröblich verletzt. (2) Wer eine Person unter achtzehn Jahren bestimmt, sexuelle Handlungen gegen Entgelt an oder vor einem Dritten vorzunehmen oder von einem Dritten an sich vornehmen zu lassen, oder wer solchen Handlungen durch seine Vermittlung Vorschub leistet, wird mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe bestraft. (3) Im Fall des Absatzes 2 ist der Versuch strafbar.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__180.html"
+      ]
+    },
+    "SexualAbuseOfJuveniles": {
+      "title_de": "Sexueller Mißbrauch von Jugendlichen",
+      "text_de": "(1) Wer eine Person unter achtzehn Jahren dadurch missbraucht, dass er unter Ausnutzung einer Zwangslage 1. sexuelle Handlungen an ihr vornimmt oder an sich von ihr vornehmen lässt oder 2. diese dazu bestimmt, sexuelle Handlungen an einem Dritten vorzunehmen oder von einem Dritten an sich vornehmen zu lassen, wird mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe bestraft. (2) Ebenso wird eine Person über achtzehn Jahren bestraft, die eine Person unter achtzehn Jahren dadurch missbraucht, dass sie gegen Entgelt sexuelle Handlungen an ihr vornimmt oder an sich von ihr vornehmen lässt. (3) Eine Person über einundzwanzig Jahre, die eine Person unter sechzehn Jahren dadurch mißbraucht, daß sie 1. sexuelle Handlungen an ihr vornimmt oder an sich von ihr vornehmen läßt oder 2. diese dazu bestimmt, sexuelle Handlungen an einem Dritten vorzunehmen oder von einem Dritten an sich vornehmen zu lassen, und dabei die ihr gegenüber fehlende Fähigkeit des Opfers zur sexuellen Selbstbestimmung ausnutzt, wird mit Freiheitsstrafe bis zu drei Jahren oder mit Geldstrafe bestraft. (4) Der Versuch ist strafbar. (5) In den Fällen des Absatzes 3 wird die Tat nur auf Antrag verfolgt, es sei denn, daß die Strafverfolgungsbehörde wegen des besonderen öffentlichen Interesses an der Strafverfolgung ein Einschreiten von Amts wegen für geboten hält. (6) In den Fällen der Absätze 1 bis 3 kann das Gericht von Strafe nach diesen Vorschriften absehen, wenn bei Berücksichtigung des Verhaltens der Person, gegen die sich die Tat richtet, das Unrecht der Tat gering ist.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__182.html"
+      ]
+    },
+    "ViolentOrAnimalPornography": {
+      "title_de": "Verbreitung gewalt- oder tierpornographischer Inhalte",
+      "text_de": "Mit Freiheitsstrafe bis zu drei Jahren oder mit Geldstrafe wird bestraft, wer einen pornographischen Inhalt (§ 11 Absatz 3), der Gewalttätigkeiten oder sexuelle Handlungen von Menschen mit Tieren zum Gegenstand hat, 1. verbreitet oder der Öffentlichkeit zugänglich macht oder 2. herstellt, bezieht, liefert, vorrätig hält, anbietet, bewirbt oder es unternimmt, diesen ein- oder auszuführen, um ihn im Sinne der Nummer 1 zu verwenden oder einer anderen Person eine solche Verwendung zu ermöglichen. In den Fällen des Satzes 1 Nummer 1 ist der Versuch strafbar.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__184a.html"
+      ]
+    },
+    "YouthPornographyOffences": {
+      "title_de": "Verbreitung, Erwerb und Besitz jugendpornographischer Inhalte",
+      "text_de": "(1) Mit Freiheitsstrafe bis zu drei Jahren oder mit Geldstrafe wird bestraft, wer 1. einen jugendpornographischen Inhalt verbreitet oder der Öffentlichkeit zugänglich macht; jugendpornographisch ist ein pornographischer Inhalt (§ 11 Absatz 3), wenn er zum Gegenstand hat: a) sexuelle Handlungen von, an oder vor einer vierzehn, aber noch nicht achtzehn Jahre alten Person, b) die Wiedergabe einer ganz oder teilweise unbekleideten vierzehn, aber noch nicht achtzehn Jahre alten Person in aufreizend geschlechtsbetonter Körperhaltung oder c) die sexuell aufreizende Wiedergabe der unbekleideten Genitalien oder des unbekleideten Gesäßes einer vierzehn, aber noch nicht achtzehn Jahre alten Person, 2. es unternimmt, einer anderen Person einen jugendpornographischen Inhalt, der ein tatsächliches oder wirklichkeitsnahes Geschehen wiedergibt, zugänglich zu machen oder den Besitz daran zu verschaffen, 3. einen jugendpornographischen Inhalt, der ein tatsächliches Geschehen wiedergibt, herstellt oder 4. einen jugendpornographischen Inhalt herstellt, bezieht, liefert, vorrätig hält, anbietet, bewirbt oder es unternimmt, diesen ein- oder auszuführen, um ihn im Sinne der Nummer 1 oder 2 zu verwenden oder einer anderen Person eine solche Verwendung zu ermöglichen, soweit die Tat nicht nach Nummer 3 mit Strafe bedroht ist. (2) Handelt der Täter in den Fällen des Absatzes 1 gewerbsmäßig oder als Mitglied einer Bande, die sich zur fortgesetzten Begehung solcher Taten verbunden hat, und gibt der Inhalt in den Fällen des Absatzes 1 Nummer 1, 2 und 4 ein tatsächliches oder wirklichkeitsnahes Geschehen wieder, so ist auf Freiheitsstrafe von drei Monaten bis zu fünf Jahren zu erkennen. (3) Wer es unternimmt, einen jugendpornographischen Inhalt, der ein tatsächliches Geschehen wiedergibt, abzurufen oder sich den Besitz an einem solchen Inhalt zu verschaffen, oder wer einen solchen Inhalt besitzt, wird mit Freiheitsstrafe bis zu zwei Jahren oder mit Geldstrafe bestraft. (4) Absatz 1 Nummer 3, auch in Verbindung mit Absatz 5, und Absatz 3 sind nicht anzuwenden auf Handlungen von Personen in Bezug auf einen solchen jugendpornographischen Inhalt, den sie ausschließlich zum persönlichen Gebrauch mit Einwilligung der dargestellten Personen hergestellt haben. (5) Der Versuch ist strafbar; dies gilt nicht für Taten nach Absatz 1 Nummer 2 und 4 sowie Absatz 3. (6) § 184b Absatz 5 bis 7 gilt entsprechend.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__184c.html"
+      ]
+    },
+    "BreachOfElectoralSecrecy": {
+      "title_de": "Verletzung des Wahlgeheimnisses",
+      "text_de": "Wer einer dem Schutz des Wahlgeheimnisses dienenden Vorschrift in der Absicht zuwiderhandelt, sich oder einem anderen Kenntnis davon zu verschaffen, wie jemand gewählt hat, wird mit Freiheitsstrafe bis zu zwei Jahren oder mit Geldstrafe bestraft.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__107c.html"
+      ]
+    },
+    "BreachOfThePeace": {
+      "title_de": "Landfriedensbruch",
+      "text_de": "(1) Wer sich an 1. Gewalttätigkeiten gegen Menschen oder Sachen oder 2. Bedrohungen von Menschen mit einer Gewalttätigkeit, die aus einer Menschenmenge in einer die öffentliche Sicherheit gefährdenden Weise mit vereinten Kräften begangen werden, als Täter oder Teilnehmer beteiligt oder wer auf die Menschenmenge einwirkt, um ihre Bereitschaft zu solchen Handlungen zu fördern, wird mit Freiheitsstrafe bis zu drei Jahren oder mit Geldstrafe bestraft. (2) Soweit die in Absatz 1 Nr. 1, 2 bezeichneten Handlungen in § 113 mit Strafe bedroht sind, gilt § 113 Abs. 3, 4 sinngemäß. Dies gilt auch in Fällen des § 114, wenn die Diensthandlung eine Vollstreckungshandlung im Sinne des § 113 Absatz 1 ist.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__125.html"
+      ]
+    },
+    "BriberyOfElectedRepresentatives": {
+      "title_de": "Bestechlichkeit und Bestechung von Mandatsträgern",
+      "text_de": "(1) Wer als Mitglied einer Volksvertretung des Bundes oder der Länder einen ungerechtfertigten Vorteil für sich oder einen Dritten als Gegenleistung dafür fordert, sich versprechen lässt oder annimmt, dass er bei der Wahrnehmung seines Mandates eine Handlung im Auftrag oder auf Weisung vornehme oder unterlasse, wird mit Freiheitsstrafe von einem Jahr bis zu zehn Jahren, in minder schweren Fällen mit Freiheitsstrafe von sechs Monaten bis zu fünf Jahren bestraft. (2) Ebenso wird bestraft, wer einem Mitglied einer Volksvertretung des Bundes oder der Länder einen ungerechtfertigten Vorteil für dieses Mitglied oder einen Dritten als Gegenleistung dafür anbietet, verspricht oder gewährt, dass es bei der Wahrnehmung seines Mandates eine Handlung im Auftrag oder auf Weisung vornehme oder unterlasse. (3) Den in den Absätzen 1 und 2 genannten Mitgliedern gleich stehen Mitglieder 1. einer Volksvertretung einer kommunalen Gebietskörperschaft, 2. eines in unmittelbarer und allgemeiner Wahl gewählten Gremiums einer für ein Teilgebiet eines Landes oder einer kommunalen Gebietskörperschaft gebildeten Verwaltungseinheit, 3. der Bundesversammlung, 4. des Europäischen Parlaments, 5. einer parlamentarischen Versammlung einer internationalen Organisation und 6. eines Gesetzgebungsorgans eines ausländischen Staates. (4) Ein ungerechtfertigter Vorteil liegt insbesondere nicht vor, wenn die Annahme des Vorteils im Einklang mit den für die Rechtsstellung des Mitglieds maßgeblichen Vorschriften steht. Keinen ungerechtfertigten Vorteil stellen dar 1. ein politisches Mandat oder eine politische Funktion sowie 2. eine nach dem Parteiengesetz oder entsprechenden Gesetzen zulässige Spende. (5) Neben einer Freiheitsstrafe von mindestens sechs Monaten kann das Gericht die Fähigkeit, Rechte aus öffentlichen Wahlen zu erlangen, und das Recht, in öffentlichen Angelegenheiten zu wählen oder zu stimmen, aberkennen.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__108e.html"
+      ]
+    },
+    "BriberyOfVoters": {
+      "title_de": "Wählerbestechung",
+      "text_de": "(1) Wer einem anderen dafür, daß er nicht oder in einem bestimmten Sinne wähle, Geschenke oder andere Vorteile anbietet, verspricht oder gewährt, wird mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe bestraft. (2) Ebenso wird bestraft, wer dafür, daß er nicht oder in einem bestimmten Sinne wähle, Geschenke oder andere Vorteile fordert, sich versprechen läßt oder annimmt.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__108b.html"
+      ]
+    },
+    "CriminalOrganisations": {
+      "title_de": "Bildung krimineller Vereinigungen",
+      "text_de": "(1) Mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe wird bestraft, wer eine Vereinigung gründet oder sich an einer Vereinigung als Mitglied beteiligt, deren Zweck oder Tätigkeit auf die Begehung von Straftaten gerichtet ist, die im Höchstmaß mit Freiheitsstrafe von mindestens zwei Jahren bedroht sind. Mit Freiheitsstrafe bis zu drei Jahren oder mit Geldstrafe wird bestraft, wer eine solche Vereinigung unterstützt oder für sie um Mitglieder oder Unterstützer wirbt. (2) Eine Vereinigung ist ein auf längere Dauer angelegter, von einer Festlegung von Rollen der Mitglieder, der Kontinuität der Mitgliedschaft und der Ausprägung der Struktur unabhängiger organisierter Zusammenschluss von mehr als zwei Personen zur Verfolgung eines übergeordneten gemeinsamen Interesses. (3) Absatz 1 ist nicht anzuwenden, 1. wenn die Vereinigung eine politische Partei ist, die das Bundesverfassungsgericht nicht für verfassungswidrig erklärt hat, 2. wenn die Begehung von Straftaten nur ein Zweck oder eine Tätigkeit von untergeordneter Bedeutung ist oder 3. soweit die Zwecke oder die Tätigkeit der Vereinigung Straftaten nach den §§ 84 bis 87 betreffen. (4) Der Versuch, eine in Absatz 1 Satz 1 und Absatz 2 bezeichnete Vereinigung zu gründen, ist strafbar. (5) In besonders schweren Fällen des Absatzes 1 Satz 1 ist auf Freiheitsstrafe von sechs Monaten bis zu fünf Jahren zu erkennen. Ein besonders schwerer Fall liegt in der Regel vor, wenn der Täter zu den Rädelsführern oder Hintermännern der Vereinigung gehört. In den Fällen des Absatzes 1 Satz 1 ist auf Freiheitsstrafe von sechs Monaten bis zu zehn Jahren zu erkennen, wenn der Zweck oder die Tätigkeit der Vereinigung darauf gerichtet ist, in § 100b Absatz 2 Nummer 1 Buchstabe a, b, d bis f und h bis o, Nummer 2 bis 8 und 10 der Strafprozessordnung genannte Straftaten mit Ausnahme der in § 100b Absatz 2 Nummer 1 Buchstabe h der Strafprozessordnung genannten Straftaten nach den §§ 239a und 239b des Strafgesetzbuches zu begehen. (6) Das Gericht kann bei Beteiligten, deren Schuld gering und deren Mitwirkung von untergeordneter Bedeutung ist, von einer Bestrafung nach den Absätzen 1 und 4 absehen. (7) Das Gericht kann die Strafe nach seinem Ermessen mildern (§ 49 Abs. 2) oder von einer Bestrafung nach diesen Vorschriften absehen, wenn der Täter 1. sich freiwillig und ernsthaft bemüht, das Fortbestehen der Vereinigung oder die Begehung einer ihren Zielen entsprechenden Straftat zu verhindern, oder 2. freiwillig sein Wissen so rechtzeitig einer Dienststelle offenbart, daß Straftaten, deren Planung er kennt, noch verhindert werden können; erreicht der Täter sein Ziel, das Fortbestehen der Vereinigung zu verhindern, oder wird es ohne sein Bemühen erreicht, so wird er nicht bestraft.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__129.html"
+      ]
+    },
+    "CriminalTradingPlatforms": {
+      "title_de": "Betreiben krimineller Handelsplattformen im Internet",
+      "text_de": "(1) Wer eine Handelsplattform im Internet betreibt, deren Zweck darauf ausgerichtet ist, die Begehung von rechtswidrigen Taten zu ermöglichen oder zu fördern, wird mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe bestraft, wenn die Tat nicht in anderen Vorschriften mit schwererer Strafe bedroht ist. Rechtswidrige Taten im Sinne des Satzes 1 sind 1. Verbrechen, 2. Vergehen nach a) den §§ 86, 86a, 91, 130, 147 und 148 Absatz 1 Nummer 3, den §§ 149, 152a und 176a Absatz 2, § 176b Absatz 2, § 180 Absatz 2, § 184b Absatz 1, § 184c Absatz 1, § 184l Absatz 1 und 3, den §§ 202a, 202b, 202c, 202d, 232 und 232a Absatz 1, 2, 5 und 6, nach § 232b Absatz 1, 2 und 4 in Verbindung mit § 232a Absatz 5, nach den §§ 233, 233a, 236, 259 und 260, nach § 261 Absatz 1 und 2 unter den in § 261 Absatz 5 Satz 2 genannten Voraussetzungen sowie nach den §§ 263, 263a, 267, 269, 275, 276, 303a und 303b, b) § 4 Absatz 1 bis 3 des Anti-Doping-Gesetzes, c) § 29 Absatz 1 Satz 1 Nummer 1, auch in Verbindung mit Absatz 6, sowie Absatz 2 und 3 des Betäubungsmittelgesetzes, d) § 19 Absatz 1 bis 3 des Grundstoffüberwachungsgesetzes, e) § 4 Absatz 1 und 2 des Neue-psychoaktive-Stoffe-Gesetzes, f) § 95 Absatz 1 bis 3 des Arzneimittelgesetzes, g) § 52 Absatz 1 Nummer 1 und 2 Buchstabe b und c, Absatz 2 und 3 Nummer 1 und 7 sowie Absatz 5 und 6 des Waffengesetzes, h) § 40 Absatz 1 bis 3 des Sprengstoffgesetzes, i) § 13 des Ausgangsstoffgesetzes, j) § 83 Absatz 1 Nummer 4 und 5 sowie Absatz 4 des Kulturgutschutzgesetzes, k) den §§ 143 und 144 des Markengesetzes sowie l) den §§ 51 und 65 des Designgesetzes. (2) Handelsplattform im Internet im Sinne dieser Vorschrift ist jede virtuelle Infrastruktur im frei zugänglichen wie im durch technische Vorkehrungen zugangsbeschränkten Bereich des Internets, die Gelegenheit bietet, Menschen, Waren, Dienstleistungen oder Inhalte (§ 11 Absatz 3) anzubieten oder auszutauschen. (3) Mit Freiheitsstrafe von sechs Monaten bis zu zehn Jahren wird bestraft, wer im Fall des Absatzes 1 gewerbsmäßig oder als Mitglied einer Bande handelt, die sich zur fortgesetzten Begehung solcher Taten verbunden hat. (4) Mit Freiheitsstrafe von einem Jahr bis zu zehn Jahren wird bestraft, wer bei der Begehung einer Tat nach Absatz 1 beabsichtigt oder weiß, dass die Handelsplattform im Internet den Zweck hat, Verbrechen zu ermöglichen oder zu fördern.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__127.html"
+      ]
+    },
+    "DeceptionOfVoters": {
+      "title_de": "Wählertäuschung",
+      "text_de": "(1) Wer durch Täuschung bewirkt, daß jemand bei der Stimmabgabe über den Inhalt seiner Erklärung irrt oder gegen seinen Willen nicht oder ungültig wählt, wird mit Freiheitsstrafe bis zu zwei Jahren oder mit Geldstrafe bestraft. (2) Der Versuch ist strafbar.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__108a.html"
+      ]
+    },
+    "DisseminationOfPersonalData": {
+      "title_de": "Gefährdendes Verbreiten personenbezogener Daten",
+      "text_de": "(1) Wer öffentlich, in einer Versammlung oder durch Verbreiten eines Inhalts (§ 11 Absatz 3) personenbezogene Daten einer anderen Person in einer Art und Weise verbreitet, die geeignet und nach den Umständen bestimmt ist, diese Person oder eine ihr nahestehende Person der Gefahr 1. eines gegen sie gerichteten Verbrechens oder 2. einer gegen sie gerichteten sonstigen rechtswidrigen Tat gegen die sexuelle Selbstbestimmung, die körperliche Unversehrtheit, die persönliche Freiheit oder gegen eine Sache von bedeutendem Wert auszusetzen, wird mit Freiheitsstrafe bis zu zwei Jahren oder mit Geldstrafe bestraft. (2) Handelt es sich um nicht allgemein zugängliche Daten, so ist die Strafe Freiheitsstrafe bis zu drei Jahren oder Geldstrafe. (3) § 86 Absatz 4 gilt entsprechend.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__126a.html"
+      ]
+    },
+    "ElectoralFraud": {
+      "title_de": "Wahlfälschung",
+      "text_de": "(1) Wer unbefugt wählt oder sonst ein unrichtiges Ergebnis einer Wahl herbeiführt oder das Ergebnis verfälscht, wird mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe bestraft. Unbefugt wählt auch, wer im Rahmen zulässiger Assistenz entgegen der Wahlentscheidung des Wahlberechtigten oder ohne eine geäußerte Wahlentscheidung des Wahlberechtigten eine Stimme abgibt. (2) Ebenso wird bestraft, wer das Ergebnis einer Wahl unrichtig verkündet oder verkünden läßt. (3) Der Versuch ist strafbar.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__107a.html"
+      ]
+    },
+    "FailureToReportPlannedOffences": {
+      "title_de": "Nichtanzeige geplanter Straftaten",
+      "text_de": "(1) Wer von dem Vorhaben oder der Ausführung 1. (weggefallen) 2. eines Hochverrats in den Fällen der §§ 81 bis 83 Abs. 1, 3. eines Landesverrats oder einer Gefährdung der äußeren Sicherheit in den Fällen der §§ 94 bis 96, 97a oder 100, 4. einer Geld- oder Wertpapierfälschung in den Fällen der §§ 146, 151, 152 oder einer Fälschung von Zahlungskarten mit Garantiefunktion in den Fällen des § 152b Abs. 1 bis 3, 5. eines Mordes (§ 211) oder Totschlags (§ 212) oder eines Völkermordes (§ 6 des Völkerstrafgesetzbuches) oder eines Verbrechens gegen die Menschlichkeit (§ 7 des Völkerstrafgesetzbuches) oder eines Kriegsverbrechens (§§ 8, 9, 10, 11 oder 12 des Völkerstrafgesetzbuches) oder eines Verbrechens der Aggression (§ 13 des Völkerstrafgesetzbuches), 6. einer Straftat gegen die persönliche Freiheit in den Fällen des § 232 Absatz 3 Satz 2, des § 232a Absatz 3, 4 oder 5, des § 232b Absatz 3 oder 4, des § 233a Absatz 3 oder 4, jeweils soweit es sich um Verbrechen handelt, der §§ 234 bis 234b, 239a oder 239b, 7. eines Raubes oder einer räuberischen Erpressung (§§ 249 bis 251 oder 255) oder 8. einer gemeingefährlichen Straftat in den Fällen der §§ 306 bis 306c oder 307 Abs. 1 bis 3, des § 308 Absatz 1 bis 5, des § 309 Abs. 1 bis 5, der §§ 310, 313, 314 oder 315 Abs. 3, des § 315b Abs. 3 oder der §§ 316a oder 316c zu einer Zeit, zu der die Ausführung oder der Erfolg noch abgewendet werden kann, glaubhaft erfährt und es unterläßt, der Behörde oder dem Bedrohten rechtzeitig Anzeige zu machen, wird mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe bestraft. (2) Ebenso wird bestraft, wer 1. von der Ausführung einer Straftat nach § 89a Absatz 1 in Verbindung mit Absatz 2 oder Absatz 2a oder 2. von dem Vorhaben oder der Ausführung einer Straftat nach § 129a, auch in Verbindung mit § 129b Abs. 1 Satz 1 und 2, zu einer Zeit, zu der die Ausführung noch abgewendet werden kann, glaubhaft erfährt und es unterlässt, der Behörde unverzüglich Anzeige zu erstatten. § 129b Abs. 1 Satz 3 bis 5 gilt im Fall der Nummer 2 entsprechend. (3) Wer die Anzeige leichtfertig unterläßt, obwohl er von dem Vorhaben oder der Ausführung der rechtswidrigen Tat glaubhaft erfahren hat, wird mit Freiheitsstrafe bis zu einem Jahr oder mit Geldstrafe bestraft.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__138.html"
+      ]
+    },
+    "FalseUnswornTestimony": {
+      "title_de": "Falsche uneidliche Aussage",
+      "text_de": "Wer vor Gericht oder vor einer anderen zur eidlichen Vernehmung von Zeugen oder Sachverständigen zuständigen Stelle als Zeuge oder Sachverständiger uneidlich falsch aussagt, wird mit Freiheitsstrafe von drei Monaten bis zu fünf Jahren bestraft.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__153.html"
+      ]
+    },
+    "FalsificationOfElectionDocuments": {
+      "title_de": "Fälschung von Wahlunterlagen",
+      "text_de": "(1) Wer 1. seine Eintragung in die Wählerliste (Wahlkartei) durch falsche Angaben erwirkt, 2. einen anderen als Wähler einträgt, von dem er weiß, daß er keinen Anspruch auf Eintragung hat, 3. die Eintragung eines Wahlberechtigten als Wähler verhindert, obwohl er dessen Wahlberechtigung kennt, 4. sich als Bewerber für eine Wahl aufstellen läßt, obwohl er nicht wählbar ist, wird mit Freiheitsstrafe bis zu sechs Monaten oder mit Geldstrafe bis zu einhundertachtzig Tagessätzen bestraft, wenn die Tat nicht in anderen Vorschriften mit schwererer Strafe bedroht ist. (2) Der Eintragung in die Wählerliste als Wähler entspricht die Ausstellung der Wahlunterlagen für die Urwahlen in der Sozialversicherung.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__107b.html"
+      ]
+    },
+    "FormationOfArmedGroups": {
+      "title_de": "Bildung bewaffneter Gruppen",
+      "text_de": "Wer unbefugt eine Gruppe, die über Waffen oder andere gefährliche Werkzeuge verfügt, bildet oder befehligt oder wer sich einer solchen Gruppe anschließt, sie mit Waffen oder Geld versorgt oder sonst unterstützt, wird mit Freiheitsstrafe bis zu zwei Jahren oder mit Geldstrafe bestraft.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__128.html"
+      ]
+    },
+    "InducementToFalseStatement": {
+      "title_de": "Verleitung zur Falschaussage",
+      "text_de": "(1) Wer einen anderen zur Ableistung eines falschen Eides verleitet, wird mit Freiheitsstrafe bis zu zwei Jahren oder mit Geldstrafe bestraft; wer einen anderen zur Ableistung einer falschen Versicherung an Eides Statt oder einer falschen uneidlichen Aussage verleitet, wird mit Freiheitsstrafe bis zu sechs Monaten oder mit Geldstrafe bis zu einhundertachtzig Tagessätzen bestraft. (2) Der Versuch ist strafbar.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__160.html"
+      ]
+    },
+    "InstructionsForOffences": {
+      "title_de": "Anleitung zu Straftaten",
+      "text_de": "(1) Wer einen Inhalt (§ 11 Absatz 3), der geeignet ist, als Anleitung zu einer in § 126 Abs. 1 genannten rechtswidrigen Tat zu dienen, und dazu bestimmt ist, die Bereitschaft anderer zu fördern oder zu wecken, eine solche Tat zu begehen, verbreitet oder der Öffentlichkeit zugänglich macht, wird mit Freiheitsstrafe bis zu drei Jahren oder mit Geldstrafe bestraft. (2) Ebenso wird bestraft, wer 1. einen Inhalt (§ 11 Absatz 3), der geeignet ist, als Anleitung zu einer in § 126 Abs. 1 genannten rechtswidrigen Tat zu dienen, verbreitet oder der Öffentlichkeit zugänglich macht oder 2. öffentlich oder in einer Versammlung zu einer in § 126 Abs. 1 genannten rechtswidrigen Tat eine Anleitung gibt, um die Bereitschaft anderer zu fördern oder zu wecken, eine solche Tat zu begehen. (3) § 86 Absatz 4 gilt entsprechend.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__130a.html"
+      ]
+    },
+    "LeavingSceneOfAccident": {
+      "title_de": "Unerlaubtes Entfernen vom Unfallort",
+      "text_de": "(1) Ein Unfallbeteiligter, der sich nach einem Unfall im Straßenverkehr vom Unfallort entfernt, bevor er 1. zugunsten der anderen Unfallbeteiligten und der Geschädigten die Feststellung seiner Person, seines Fahrzeugs und der Art seiner Beteiligung durch seine Anwesenheit und durch die Angabe, daß er an dem Unfall beteiligt ist, ermöglicht hat oder 2. eine nach den Umständen angemessene Zeit gewartet hat, ohne daß jemand bereit war, die Feststellungen zu treffen, wird mit Freiheitsstrafe bis zu drei Jahren oder mit Geldstrafe bestraft. (2) Nach Absatz 1 wird auch ein Unfallbeteiligter bestraft, der sich 1. nach Ablauf der Wartefrist (Absatz 1 Nr. 2) oder 2. berechtigt oder entschuldigt vom Unfallort entfernt hat und die Feststellungen nicht unverzüglich nachträglich ermöglicht. (3) Der Verpflichtung, die Feststellungen nachträglich zu ermöglichen, genügt der Unfallbeteiligte, wenn er den Berechtigten (Absatz 1 Nr. 1) oder einer nahe gelegenen Polizeidienststelle mitteilt, daß er an dem Unfall beteiligt gewesen ist, und wenn er seine Anschrift, seinen Aufenthalt sowie das Kennzeichen und den Standort seines Fahrzeugs angibt und dieses zu unverzüglichen Feststellungen für eine ihm zumutbare Zeit zur Verfügung hält. Dies gilt nicht, wenn er durch sein Verhalten die Feststellungen absichtlich vereitelt. (4) Das Gericht mildert in den Fällen der Absätze 1 und 2 die Strafe (§ 49 Abs. 1) oder kann von Strafe nach diesen Vorschriften absehen, wenn der Unfallbeteiligte innerhalb von vierundzwanzig Stunden nach einem Unfall außerhalb des fließenden Verkehrs, der ausschließlich nicht bedeutenden Sachschaden zur Folge hat, freiwillig die Feststellungen nachträglich ermöglicht (Absatz 3). (5) Unfallbeteiligter ist jeder, dessen Verhalten nach den Umständen zur Verursachung des Unfalls beigetragen haben kann.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__142.html"
+      ]
+    },
+    "ObstructionOfElection": {
+      "title_de": "Wahlbehinderung",
+      "text_de": "(1) Wer mit Gewalt oder durch Drohung mit Gewalt eine Wahl oder die Feststellung ihres Ergebnisses verhindert oder stört, wird mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe, in besonders schweren Fällen mit Freiheitsstrafe nicht unter einem Jahr bestraft. (2) Der Versuch ist strafbar.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__107.html"
+      ]
+    },
+    "PublicIncitement": {
+      "title_de": "Öffentliche Aufforderung zu Straftaten",
+      "text_de": "(1) Wer öffentlich, in einer Versammlung oder durch Verbreiten eines Inhalts (§ 11 Absatz 3) zu einer rechtswidrigen Tat auffordert, wird wie ein Anstifter (§ 26) bestraft. (2) Bleibt die Aufforderung ohne Erfolg, so ist die Strafe Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe. Die Strafe darf nicht schwerer sein als die, die für den Fall angedroht ist, daß die Aufforderung Erfolg hat (Absatz 1); § 49 Abs. 1 Nr. 2 ist anzuwenden.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__111.html"
+      ]
+    },
+    "RewardingAndCondoningOffences": {
+      "title_de": "Belohnung und Billigung von Straftaten",
+      "text_de": "Wer eine der in § 138 Absatz 1 Nummer 2 bis 4 und 5 letzte Alternative oder in § 126 Absatz 1 genannten rechtswidrigen Taten oder eine rechtswidrige Tat nach § 176 Absatz 1 oder nach den §§ 176c und 176d 1. belohnt, nachdem sie begangen oder in strafbarer Weise versucht worden ist, oder 2. in einer Weise, die geeignet ist, den öffentlichen Frieden zu stören, öffentlich, in einer Versammlung oder durch Verbreiten eines Inhalts (§ 11 Absatz 3) billigt, wird mit Freiheitsstrafe bis zu drei Jahren oder mit Geldstrafe bestraft.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__140.html"
+      ]
+    },
+    "TerroristOrganisations": {
+      "title_de": "Bildung terroristischer Vereinigungen",
+      "text_de": "(1) Wer eine Vereinigung (§ 129 Absatz 2) gründet, deren Zwecke oder deren Tätigkeit darauf gerichtet sind, 1. Mord (§ 211) oder Totschlag (§ 212) oder Völkermord (§ 6 des Völkerstrafgesetzbuches) oder Verbrechen gegen die Menschlichkeit (§ 7 des Völkerstrafgesetzbuches) oder Kriegsverbrechen (§§ 8, 9, 10, 11 oder § 12 des Völkerstrafgesetzbuches) oder 2. Straftaten gegen die persönliche Freiheit in den Fällen des § 239a oder des § 239b 3. (weggefallen) zu begehen, oder wer sich an einer solchen Vereinigung als Mitglied beteiligt, wird mit Freiheitsstrafe von einem Jahr bis zu zehn Jahren bestraft. (2) Ebenso wird bestraft, wer eine Vereinigung gründet, deren Zwecke oder deren Tätigkeit darauf gerichtet sind, 1. gefährliche Körperverletzungen (§ 224) oder Körperverletzungen (§ 223), die einem anderen Menschen schwere körperliche oder seelische Schäden, insbesondere der in § 226 bezeichneten Art, zufügen, 2. Straftaten nach den §§ 303b, 305, 305a oder gemeingefährliche Straftaten in den Fällen der §§ 306 bis 306c oder 307 Abs. 1 bis 3, des § 308 Absatz 1 bis 5, des § 309 Abs. 1 bis 5, der §§ 313, 314 oder 315 Abs. 1, 3 oder 4, des § 316b Abs. 1 oder 3 oder des § 316c Abs. 1 bis 3 oder des § 317 Abs. 1, 3. Straftaten gegen die Umwelt in den Fällen des § 330a Abs. 1 bis 3, 4. Straftaten nach § 19 Absatz 1 bis 3, § 20 Absatz 1 oder 2, § 20a Absatz 1 bis 3, jeweils auch in Verbindung mit § 21, oder nach § 22a Absatz 1 bis 3 des Gesetzes über die Kontrolle von Kriegswaffen, 5. Straftaten nach § 51 Absatz 1 bis 3 oder § 52 Absatz 1, 3, 5 oder 6 des Waffengesetzes oder 6. Straftaten nach § 310 Absatz 1 oder 2 oder § 328 Absatz 1 oder 2 zu begehen, oder wer sich an einer solchen Vereinigung als Mitglied beteiligt, wenn eine der in den Nummern 1 bis 6 bezeichneten Taten bestimmt ist, die Bevölkerung auf erhebliche Weise einzuschüchtern, eine Behörde oder eine internationale Organisation rechtswidrig mit Gewalt oder durch Drohung mit Gewalt zu nötigen oder die politischen, verfassungsrechtlichen, wirtschaftlichen oder sozialen Grundstrukturen eines Staates oder einer internationalen Organisation zu beseitigen oder erheblich zu beeinträchtigen, und durch die Art ihrer Begehung oder ihre Auswirkungen einen Staat oder eine internationale Organisation erheblich schädigen kann. (3) Sind die Zwecke oder die Tätigkeit der Vereinigung darauf gerichtet, eine der in Absatz 1 und 2 bezeichneten Straftaten anzudrohen, ist auf Freiheitsstrafe von sechs Monaten bis zu fünf Jahren zu erkennen. (4) Gehört der Täter zu den Rädelsführern oder Hintermännern, so ist in den Fällen der Absätze 1 und 2 auf Freiheitsstrafe nicht unter drei Jahren, in den Fällen des Absatzes 3 auf Freiheitsstrafe von einem Jahr bis zu zehn Jahren zu erkennen. (5) Wer eine in Absatz 1, 2 oder Absatz 3 bezeichnete Vereinigung unterstützt, wird in den Fällen der Absätze 1 und 2 mit Freiheitsstrafe von sechs Monaten bis zu zehn Jahren, in den Fällen des Absatzes 3 mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe bestraft. In den Fällen des Satzes 1 ist der Versuch strafbar. Wer für eine in Absatz 1 oder Absatz 2 bezeichnete Vereinigung um Mitglieder oder Unterstützer wirbt, wird mit Freiheitsstrafe von sechs Monaten bis zu fünf Jahren bestraft. (6) Das Gericht kann bei Beteiligten, deren Schuld gering und deren Mitwirkung von untergeordneter Bedeutung ist, in den Fällen der Absätze 1, 2, 3 und 5 die Strafe nach seinem Ermessen (§ 49 Abs. 2) mildern. (7) § 129 Absatz 7 gilt entsprechend. (8) Neben einer Freiheitsstrafe von mindestens sechs Monaten kann das Gericht die Fähigkeit, öffentliche Ämter zu bekleiden, und die Fähigkeit, Rechte aus öffentlichen Wahlen zu erlangen, aberkennen (§ 45 Abs. 2). (9) In den Fällen der Absätze 1, 2, 4 und 5 kann das Gericht Führungsaufsicht anordnen (§ 68 Abs. 1).",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__129a.html"
+      ]
+    },
+    "TestimonyInDistress": {
+      "title_de": "Aussagenotstand",
+      "text_de": "(1) Hat ein Zeuge oder Sachverständiger sich eines Meineids oder einer falschen uneidlichen Aussage schuldig gemacht, so kann das Gericht die Strafe nach seinem Ermessen mildern (§ 49 Abs. 2) und im Falle uneidlicher Aussage auch ganz von Strafe absehen, wenn der Täter die Unwahrheit gesagt hat, um von einem Angehörigen oder von sich selbst die Gefahr abzuwenden, bestraft oder einer freiheitsentziehenden Maßregel der Besserung und Sicherung unterworfen zu werden. (2) Das Gericht kann auch dann die Strafe nach seinem Ermessen mildern (§ 49 Abs. 2) oder ganz von Strafe absehen, wenn ein noch nicht Eidesmündiger uneidlich falsch ausgesagt hat.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__157.html"
+      ]
+    },
+    "Trespass": {
+      "title_de": "Hausfriedensbruch",
+      "text_de": "(1) Wer in die Wohnung, in die Geschäftsräume oder in das befriedete Besitztum eines anderen oder in abgeschlossene Räume, welche zum öffentlichen Dienst oder Verkehr bestimmt sind, widerrechtlich eindringt, oder wer, wenn er ohne Befugnis darin verweilt, auf die Aufforderung des Berechtigten sich nicht entfernt, wird mit Freiheitsstrafe bis zu einem Jahr oder mit Geldstrafe bestraft. (2) Die Tat wird nur auf Antrag verfolgt.",
+      "source_urls": [
+        "https://www.gesetze-im-internet.de/stgb/__123.html"
+      ]
+    }
+  }
+}

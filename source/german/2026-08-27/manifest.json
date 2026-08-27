@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "jurisdiction": "DE",
+  "instrument": "Strafgesetzbuch (StGB)",
+  "retrieved": "2026-08-27",
+  "consolidation_date": "2026-03-20",
+  "official_landing_url": "https://www.gesetze-im-internet.de/stgb/",
+  "official_artifact_url": "https://www.gesetze-im-internet.de/stgb/xml.zip",
+  "artifact": "xml.zip",
+  "artifact_sha256": "b46c869233cafc395c2237240c9567e0b8b08070dab18faa63058d2a52e6b7bf",
+  "xml_member": "BJNR001270871.xml",
+  "xml_builddate": "20260702215503",
+  "standkommentar": "zuletzt geändert durch Art. 1 G v. 20.3.2026 I Nr. 95"
+}

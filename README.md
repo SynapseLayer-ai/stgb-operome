@@ -35,8 +35,10 @@ provision that produced it.
 | --- | --- |
 | `substrates/` | The ten package carriers (XSD), the authoritative machine layer |
 | `corpus/corpus.json` | The same content in the serving format, generated only by `scripts/xsd_to_json.py` |
+| `corpus/german-search.json` | German titles and statutory text used for local bilingual discovery, generated from the pinned official XML snapshot |
 | `corpus/tests.json` | 3,033 golden vectors with expected outcomes; any implementation passing them implements the dialect correctly |
 | `corpus/SCHEMA.md` | The JSON shape, the expression grammar and the three-valued semantics |
+| `source/german/` | The byte-for-byte official German XML package and its checksum, consolidation statement and retrieval manifest |
 | `review/` | Ten section-by-section review documents: source text beside the markup, every strike visible |
 | `scripts/` | The XSD-to-JSON generator and the reference evaluator |
 | `.github/workflows/` | CI that regenerates `corpus.json` from `substrates/` on every commit and fails on any difference |
@@ -46,7 +48,11 @@ Corpus statistics: 105 scopes across ten chapters, 1,381 rules, 1,330 scope-loca
 `provenance` block of `corpus.json` embeds the sha256 of every source carrier and the count
 arithmetic, so nothing can be dropped silently.
 
-The generator resolves repeated element and computable names within the scope that declares them.
+The German discovery index is generated offline from the versioned official XML package. Search
+clients can therefore bundle it without fetching 105 government pages at runtime or build time.
+Its source checksum and consolidation date travel with the index, and CI rejects any drift.
+
+The corpus generator resolves repeated element and computable names within the scope that declares them.
 It does not use a carrier-wide last-write-wins map: names such as `ProtectedData` and `Conduct`
 legitimately occur in several scopes with different declaration roles and definitions.
 
@@ -58,6 +64,7 @@ Verify the corpus yourself:
 python scripts/operome_cli.py evaluate 211 KillsPerson=true
 python scripts/reference_evaluator.py corpus/corpus.json corpus/tests.json
 python scripts/xsd_to_json.py substrates corpus/corpus.json /tmp/regenerated.json
+python scripts/build_german_search.py --verify
 python scripts/verify_machine_research_package.py
 ```
 

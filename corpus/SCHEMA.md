@@ -38,3 +38,13 @@ Results map as: composite true → `realised`, false → `not_realised`, otherwi
 
 An implementation conforms when it passes every vector in `tests.json` (3,033 vectors).
 `scripts/reference_evaluator.py` is the reference implementation.
+
+## German discovery index
+
+`german-search.json` is a non-evaluative, bilingual-discovery companion to `corpus.json`. It maps
+each corpus scope ID to the official German section title, full German statutory text and canonical
+section URL. Its `source_artifact` block identifies the versioned official XML package, checksum,
+consolidation date and XML build timestamp from which the index was deterministically generated.
+
+The index does not alter any variable, computable, condition or evaluation result. Regenerate it
+with `scripts/build_german_search.py`; CI verifies the committed file without network access.

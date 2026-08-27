@@ -22,3 +22,5 @@ jobs:
           PY
       - name: Run golden vectors against the reference evaluator
         run: python scripts/reference_evaluator.py corpus/corpus.json corpus/tests.json
+      - name: Verify German discovery index against the pinned official source
+        run: python scripts/build_german_search.py --verify
